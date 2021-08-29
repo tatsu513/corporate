@@ -31,14 +31,6 @@ function MyApp({ Component, pageProps }: AppProps) {
     [],
   );
   const checkUser = useCallback(() => {
-    console.log(
-      username,
-      process.env.NEXT_PUBLIC_BASIC_AUTH_USERNAME,
-    );
-    console.log(
-      password,
-      process.env.NEXT_PUBLIC_BASIC_AUTH_PASSWORD,
-    );
     if (
       username === process.env.NEXT_PUBLIC_BASIC_AUTH_USERNAME &&
       password === process.env.NEXT_PUBLIC_BASIC_AUTH_PASSWORD
