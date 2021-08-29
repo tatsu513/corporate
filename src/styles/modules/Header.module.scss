@@ -1,0 +1,48 @@
+@import '../common.scss';
+
+.headerWrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: auto;
+  left: 0;
+  background-color: rgba($white, 0.9);
+  z-index: 100;
+}
+
+.logo {
+  height: 80px;
+  padding-left: 32px;
+  line-height: 80px;
+}
+
+.menu {
+  height: 80px;
+  width: 80px;
+  background-color: $black;
+  position: relative;
+  cursor: pointer;
+  text-align: center;
+
+  .menuBar {
+    display: inline-block;
+    height: 3px;
+    width: 42px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $white;
+
+    &.menubarTop {
+      top: 24px;
+    }
+
+    &.menubarBottom {
+      top: 56px;
+    }
+  }
+}
