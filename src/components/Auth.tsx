@@ -27,7 +27,9 @@ const Auth: React.VFC<Props> = (props) => {
         value={props.password}
         onChange={(event) => props.onChange(event)}
       />
-      <button onClick={props.onSubmit}>ログイン</button>
+      <button className={styles.button} onClick={props.onSubmit}>
+        ログイン
+      </button>
     </div>
   );
 };
