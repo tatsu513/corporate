@@ -1,0 +1,30 @@
+@import '../common.scss';
+
+.itemBox {
+  display: flex;
+}
+
+.item {
+  margin-right: 40px;
+  padding-bottom: 16px;
+  cursor: pointer;
+  font-size: 20px;
+
+  &::after {
+    content: '';
+    display: inline-block;
+    height: 1px;
+    width: 100%;
+    transform: scaleX(0);
+    transition: transform 200ms ease;
+    background-color: $grey-main;
+  }
+
+  &.isActive::after {
+    transform: scaleX(1);
+  }
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+}

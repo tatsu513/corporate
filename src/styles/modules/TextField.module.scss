@@ -1,0 +1,21 @@
+@import '../common.scss';
+
+.textFieldWrap {
+  width: 100%;
+}
+
+.label {
+  display: inline-block;
+  margin-bottom: 8px;
+  width: 100%;
+  color: $grey-main;
+  font-size: 12px;
+}
+
+.input {
+  height: 48px;
+  width: 100%;
+  background-color: $white;
+  border: 1px solid $grey-main;
+  border-radius: 0;
+}

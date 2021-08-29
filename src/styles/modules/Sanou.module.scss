@@ -1,0 +1,15 @@
+@import '../common.scss';
+
+.workWrap {
+  margin: 80px auto 64px;
+  width: 100%;
+  max-width: 1024px;
+}
+
+.worksErea {
+  @import '../markdown.scss';
+}
+
+.controller {
+  text-align: center;
+}
