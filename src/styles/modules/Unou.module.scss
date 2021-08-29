@@ -1,0 +1,105 @@
+@import '../common.scss';
+.aaa {
+  color: red;
+
+  h2 {
+    color: blue;
+  }
+}
+
+.topImage {
+  width: 100%;
+
+  & > div {
+    vertical-align: top;
+  }
+}
+
+.newsWrap {
+  margin-bottom: 72px;
+  background-color: $back-color;
+}
+
+.newsContents {
+  display: flex;
+  margin: 0 auto;
+  padding-bottom: 48px;
+  width: 100%;
+  max-width: 1024px;
+}
+
+.sectionTitleBox {
+  margin-right: 40px;
+  border-right: 1px solid $grey-main;
+}
+
+.newsBody {
+  width: 100%;
+}
+
+.itemWrap {
+  padding: 48px 0;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 32px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.date {
+  width: 160px;
+  display: inline-block;
+}
+
+.text {
+  width: calc(100% - 160px);
+  line-height: 1.5;
+}
+
+.controller {
+  text-align: center;
+}
+
+.portfolioWrap {
+  margin-bottom: 64px;
+}
+
+.works {
+  display: flex;
+  margin: 48px auto;
+  width: 100%;
+  max-width: 1024px;
+}
+
+.imageBox {
+  width: 24%;
+  margin-right: calc((100% - 96%) / 3);
+  position: relative;
+
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
+
+  &:before {
+    display: block;
+    content: '';
+    padding-top: 100%;
+  }
+
+  .imageAjBox {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  img {
+    object-fit: cover;
+  }
+}
