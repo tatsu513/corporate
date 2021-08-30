@@ -10,6 +10,37 @@
   @import '../markdown.scss';
 }
 
+.aboutWrap {
+  margin-bottom: 72px;
+  background-color: $back-color;
+}
+
+.aboutContents {
+  display: flex;
+  margin: 0 auto;
+  padding-bottom: 48px;
+  width: 100%;
+  max-width: 1024px;
+}
+
+.sectionTitleBox {
+  margin-right: 52px;
+  border-right: 1px solid $grey-main;
+}
+
+.aboutBody {
+  margin-top: 72px;
+  width: 100%;
+}
+
+.text {
+  margin-bottom: 24px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
 .controller {
   text-align: center;
 }
