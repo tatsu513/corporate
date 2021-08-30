@@ -12,7 +12,11 @@ const TextField: React.VFC<Props> = (props) => {
   return (
     <div className={styles.textFieldWrap}>
       <span className={styles.label}>{props.label}</span>
-      <input className={styles.input} type='text' />
+      <input
+        className={styles.input}
+        type='text'
+        onChange={(event) => props.onChange(event)}
+      />
     </div>
   );
 };
