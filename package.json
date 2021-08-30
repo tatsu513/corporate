@@ -10,6 +10,7 @@
     "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json,css}'"
   },
   "dependencies": {
+    "@sendgrid/mail": "^7.4.6",
     "gray-matter": "^4.0.3",
     "marked": "^3.0.2",
     "next": "11.1.0",

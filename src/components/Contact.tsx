@@ -30,11 +30,58 @@ const Contact: React.VFC = () => {
     [],
   );
   const inputBody = useCallback(
-    (event: ChangeEvent<HTMLInputElement>) => {
+    (event: ChangeEvent<HTMLTextAreaElement>) => {
       setBody(event.target.value);
     },
     [],
   );
+
+  const sendMail = useCallback(
+    async (event?: Event) => {
+      console.log(email, name, title, body);
+      if (event) {
+        event.preventDefault();
+      }
+      const res = await fetch('/api/send', {
+        body: JSON.stringify({
+          email: email,
+          name: name,
+          title: title,
+          message: body,
+        }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        method: 'POST',
+      });
+
+      const result = await res.json();
+      console.log(result);
+    },
+    [email, name, title, body],
+  );
+
+  // const registerUser = async (event?: Event) => {
+  //   if (event) {
+  //     event.preventDefault();
+  //   }
+
+  //   const res = await fetch('/api/send', {
+  //     body: JSON.stringify({
+  //       email: email,
+  //       name: name,
+  //       title: title,
+  //       message: body,
+  //     }),
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //     method: 'POST',
+  //   });
+
+  //   const result = await res.json();
+  //   console.log(result);
+  // };
   return (
     <div className={styles.contactWrap}>
       <SectionTitle title={'Contact'} />
@@ -72,10 +119,7 @@ const Contact: React.VFC = () => {
           </div>
         </div>
         <div className={styles.controller}>
-          <PrimaryButton
-            text={'Send'}
-            onClick={() => alert('送信')}
-          />
+          <PrimaryButton text={'Send'} onClick={sendMail} />
         </div>
       </div>
     </div>

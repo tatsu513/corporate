@@ -5,14 +5,18 @@ interface Props {
   label: string;
   value: string;
   // eslint-disable-next-line no-unused-vars
-  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+  onChange: (event: ChangeEvent<HTMLTextAreaElement>) => void;
 }
 
 const TextArea: React.VFC<Props> = (props) => {
   return (
     <div className={styles.textAreaWrap}>
       <span className={styles.label}>{props.label}</span>
-      <textarea className={styles.input} rows={5} />
+      <textarea
+        className={styles.input}
+        rows={5}
+        onChange={(event) => props.onChange(event)}
+      />
     </div>
   );
 };
