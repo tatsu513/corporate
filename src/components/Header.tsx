@@ -28,12 +28,14 @@ const Header: React.VFC = () => {
               alt={'インスタグラム'}
               width={28}
               marginRight={16}
+              href={'https://www.instagram.com/akemi_kokubo/'}
             />
             <Icon
               icon={facebookIcon}
               alt={'フェイスブック'}
               width={28}
               marginRight={16}
+              href={'https://www.facebook.com/kokubo.akemi'}
             />
             <div className={styles.goAnotherPageLink}>
               <ArrowLink

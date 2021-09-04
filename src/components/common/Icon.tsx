@@ -6,6 +6,7 @@ interface Props {
   icon: string | StaticImageData;
   width: number;
   height?: number;
+  href?: string;
   marginTop?: number;
   marginRight?: number;
   marginBottom?: number;
@@ -14,7 +15,7 @@ interface Props {
 
 const Icon: React.VFC<Props> = (props) => {
   return (
-    <div
+    <a
       className={styles.iconBox}
       style={{
         width: `${props.width}px`,
@@ -24,9 +25,12 @@ const Icon: React.VFC<Props> = (props) => {
         marginBottom: `${props.marginBottom || 0}px`,
         marginLeft: `${props.marginLeft || 0}px`,
       }}
+      href={props.href || '#'}
+      rel='noreferrer'
+      target='_blank'
     >
       <Image src={props.icon} alt={props.alt} />
-    </div>
+    </a>
   );
 };
 

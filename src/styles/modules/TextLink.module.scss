@@ -1,5 +1,29 @@
+@import '../common.scss';
+
 .link {
   display: inline-block;
   margin-right: 40px;
+  color: $black;
   font-size: 18px;
+
+  &:hover ::after {
+    width: 100%;
+  }
+}
+
+.text {
+  position: relative;
+  cursor: pointer;
+
+  &::after {
+    content: '';
+    display: inline-block;
+    height: 1px;
+    width: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 200ms ease;
+    background-color: $grey-main;
+  }
 }
