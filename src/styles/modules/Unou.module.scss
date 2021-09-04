@@ -66,24 +66,29 @@
 }
 
 .portfolioWrap {
-  margin-bottom: 64px;
+  margin-bottom: 80px;
 }
 
 .works {
   display: flex;
-  margin: 48px auto;
+  margin: 48px auto 80px;
   width: 100%;
-  max-width: 1024px;
+  max-width: 1000px;
+}
+
+.workBox {
+  width: 30%;
+  margin-right: calc((100% - 90%) / 2);
+
+  &:nth-child(3n) {
+    margin-right: 0;
+  }
 }
 
 .imageBox {
-  width: 24%;
-  margin-right: calc((100% - 96%) / 3);
+  width: 100%;
+  margin-bottom: 24px;
   position: relative;
-
-  &:nth-child(4n) {
-    margin-right: 0;
-  }
 
   &:before {
     display: block;
@@ -102,4 +107,8 @@
   img {
     object-fit: cover;
   }
+}
+
+.worksText {
+  font-size: 18px;
 }

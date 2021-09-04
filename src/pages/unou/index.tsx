@@ -9,7 +9,7 @@ import Contact from '@/components/Contact';
 import PrimaryButton from '@/components/buttons/PrimaryButton';
 import SectionTitle from '@/components/common/SectionTitle';
 import SectionTitleVertical from '@/components/common/SectionTitleVertical';
-import topImage from 'images/a.png';
+import topImage from 'images/unou-image.png';
 import styles from 'styles/modules/Unou.module.scss';
 
 interface markdownInfo {
@@ -29,6 +29,7 @@ interface Props {
 }
 
 const Unou: React.VFC<Props> = ({ articles, news }) => {
+  console.log(articles);
   const router = useRouter();
   return (
     <>
@@ -72,14 +73,20 @@ const Unou: React.VFC<Props> = ({ articles, news }) => {
         <SectionTitle title={'Portfolio'} />
         <div className={styles.works}>
           {articles.map((article, i) => (
-            <div className={styles.imageBox} key={i}>
-              <div className={styles.imageAjBox}>
-                <Image
-                  src={article.frontmatter.coverImage}
-                  width='360'
-                  height='360'
-                  alt={'トップイメージ'}
-                />
+            <div className={styles.workBox} key={i}>
+              <div className={styles.imageBox} key={i}>
+                <div className={styles.imageAjBox}>
+                  <Image
+                    src={article.frontmatter.coverImage}
+                    width='360'
+                    height='360'
+                    alt={'トップイメージ'}
+                  />
+                </div>
+              </div>
+              <div className={styles.worksText}>
+                {article.frontmatter.title}／
+                {article.frontmatter.excerpt}
               </div>
             </div>
           ))}

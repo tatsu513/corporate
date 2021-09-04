@@ -4,4 +4,11 @@
   padding: 16px 56px;
   font-size: 20px;
   border: 1px solid $grey-main;
+  color: $grey-main;
+  transition: all 400ms ease;
+
+  &:hover {
+    background-color: $grey-main;
+    color: $white;
+  }
 }
