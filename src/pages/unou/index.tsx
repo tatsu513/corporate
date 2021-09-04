@@ -5,6 +5,7 @@ import marked from 'marked';
 import { GetStaticProps } from 'next';
 import { useRouter } from 'next/dist/client/router';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 import Contact from '@/components/Contact';
 import Profile from '@/components/Profile';
 import PrimaryButton from '@/components/buttons/PrimaryButton';
@@ -30,8 +31,26 @@ interface Props {
 }
 
 const Unou: React.VFC<Props> = ({ articles, news }) => {
-  console.log(articles);
   const router = useRouter();
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  const NewsSectionTitle = () => {
+    if (windowWidth > 1024) {
+      return (
+        <div className={styles.sectionTitleBox}>
+          <SectionTitleVertical title={'News'} />
+        </div>
+      );
+    } else {
+      return <SectionTitle title={'News'} side={'left'} />;
+    }
+  };
+
+  useEffect(() => {
+    const onResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
   return (
     <>
       {/* {articles.map((article, i) => (
@@ -45,9 +64,7 @@ const Unou: React.VFC<Props> = ({ articles, news }) => {
       </div>
       <div className={styles.newsWrap}>
         <div className={styles.newsContents}>
-          <div className={styles.sectionTitleBox}>
-            <SectionTitleVertical title={'News'} />
-          </div>
+          <NewsSectionTitle />
           <div className={styles.newsBody}>
             <ul className={styles.itemWrap}>
               {news.map((item, i) => (
@@ -79,8 +96,8 @@ const Unou: React.VFC<Props> = ({ articles, news }) => {
                 <div className={styles.imageAjBox}>
                   <Image
                     src={article.frontmatter.coverImage}
-                    width='360'
-                    height='360'
+                    width='1000'
+                    height='1000'
                     alt={'トップイメージ'}
                   />
                 </div>
@@ -100,7 +117,7 @@ const Unou: React.VFC<Props> = ({ articles, news }) => {
         </div>
       </div>
       <div className={styles.profileWrap}>
-        <Profile />
+        <Profile windowWidth={windowWidth} />
       </div>
       <Contact />
     </>

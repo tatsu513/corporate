@@ -1,7 +1,9 @@
 @import '../common.scss';
+@import '../_breakpoint';
+@import '../_mixin';
 
 .contactWrap {
-  padding: 70px;
+  padding: 70px 0;
   width: 100%;
   background-color: $back-color;
 }
@@ -14,20 +16,31 @@
 }
 
 .contents {
-  display: flex;
-  justify-content: space-between;
   margin-bottom: 48px;
+
+  @include mq(lg) {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .itemBox {
-  width: 47%;
+  @include mq(md) {
+    width: 100%;
+  }
+
+  @include mq(lg) {
+    width: 47%;
+  }
 }
 
 .item {
   margin-bottom: 16px;
 
   &:nth-child(3) {
-    margin-bottom: 0;
+    @include mq(lg) {
+      margin-bottom: 0;
+    }
   }
 }
 

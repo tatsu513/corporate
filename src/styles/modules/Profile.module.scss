@@ -1,9 +1,18 @@
 @import '../common.scss';
+@import '../_breakpoint';
+@import '../_mixin';
 
 .profileWrap {
-  display: flex;
-  padding: 0 24px 40px 40px;
   border: 1px solid $grey-main;
+
+  @include mq(md) {
+    padding: 32px;
+  }
+
+  @include mq(lg) {
+    display: flex;
+    padding: 0 24px 40px 40px;
+  }
 }
 
 .sectionTitleBox {
@@ -11,8 +20,21 @@
   border-right: 1px solid $grey-main;
 }
 
+.contentBody {
+  display: flex;
+
+  @include mq(md) {
+    padding-top: 32px;
+  }
+}
+
 .contantBox {
-  padding: 40px 32px 0 0;
+  @include mq(md) {
+    margin-right: 32px;
+  }
+  @include mq(lg) {
+    padding: 40px 32px 0 0;
+  }
 }
 
 .jobTitle,
@@ -21,10 +43,29 @@
   font-weight: 600;
 }
 
+.jobTitle {
+  margin-bottom: 8px;
+}
+
 .name {
-  display: flex;
-  align-items: center;
   margin-bottom: 24px;
+
+  @include mq(lg) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.nameText {
+  @include mq(md) {
+    display: block;
+    margin-bottom: 16px;
+    width: 100%;
+  }
+  @include mq(lg) {
+    display: inline-block;
+    margin-bottom: 0;
+  }
 }
 
 .recode {
@@ -37,7 +78,9 @@
 }
 
 .imageBox {
-  padding-top: 40px;
+  @include mq(lg) {
+    padding-top: 40px;
+  }
 }
 
 .image {
