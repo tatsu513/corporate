@@ -19,3 +19,14 @@
   align-items: center;
   padding-left: 16px;
 }
+
+.controllers {
+  display: flex;
+  align-items: center;
+}
+
+.goAnotherPageLink {
+  padding: 0 16px;
+  border-left: 1px solid $grey-main;
+  line-height: 74px;
+}

@@ -1,0 +1,49 @@
+@import '../common.scss';
+
+.arrowLinkBox {
+  display: inline-block;
+
+  &:hover .text {
+    &::before {
+      right: -4px;
+    }
+
+    &::after {
+      right: -6px;
+    }
+  }
+}
+
+.text {
+  padding-right: 32px;
+  position: relative;
+  cursor: pointer;
+  color: $black;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    height: 1px;
+    width: 24px;
+    position: absolute;
+    top: auto;
+    right: 0;
+    bottom: 6px;
+    transition: right 100ms ease;
+    background-color: $black;
+  }
+
+  &::after {
+    content: '';
+    display: inline-block;
+    height: 1px;
+    width: 12px;
+    position: absolute;
+    top: 12px;
+    right: -2px;
+    bottom: auto;
+    transform: rotate(45deg);
+    transition: right 100ms ease;
+    background-color: $grey-main;
+  }
+}
