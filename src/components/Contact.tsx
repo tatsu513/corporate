@@ -101,17 +101,17 @@ const Contact: React.VFC = () => {
         <div className={styles.controller}>
           <PrimaryButton text={'Send'} onClick={sendMail} />
         </div>
-        <div className={styles.message}>
-          <Icon
-            icon={instaIcon}
-            alt={'インスタグラム'}
-            width={30}
-            marginRight={16}
-          />
-          <span>
+        {false && (
+          <div className={styles.message}>
+            <Icon
+              icon={instaIcon}
+              alt={'インスタグラム'}
+              width={30}
+              marginRight={16}
+            />
             送信完了しました。メッセージありがとうございました。
-          </span>
-        </div>
+          </div>
+        )}
       </div>
     </div>
   );

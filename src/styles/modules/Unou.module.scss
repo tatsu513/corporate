@@ -71,7 +71,8 @@
 
 .works {
   display: flex;
-  margin: 48px auto 80px;
+  flex-wrap: wrap;
+  margin: 48px auto 0;
   width: 100%;
   max-width: 1000px;
 }
@@ -79,6 +80,7 @@
 .workBox {
   width: 30%;
   margin-right: calc((100% - 90%) / 2);
+  margin-bottom: 88px;
 
   &:nth-child(3n) {
     margin-right: 0;
