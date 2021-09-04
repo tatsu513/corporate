@@ -1,8 +1,10 @@
 import { useState, useCallback, ChangeEvent } from 'react';
 import PrimaryButton from './buttons/PrimaryButton';
+import Icon from './common/Icon';
 import SectionTitle from './common/SectionTitle';
 import TextArea from './forms/TextArea';
 import TextField from './forms/TextField';
+import instaIcon from 'images/instagram.svg';
 import styles from 'styles/modules/Contact.module.scss';
 
 const Contact: React.VFC = () => {
@@ -60,28 +62,6 @@ const Contact: React.VFC = () => {
     },
     [email, name, title, body],
   );
-
-  // const registerUser = async (event?: Event) => {
-  //   if (event) {
-  //     event.preventDefault();
-  //   }
-
-  //   const res = await fetch('/api/send', {
-  //     body: JSON.stringify({
-  //       email: email,
-  //       name: name,
-  //       title: title,
-  //       message: body,
-  //     }),
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     },
-  //     method: 'POST',
-  //   });
-
-  //   const result = await res.json();
-  //   console.log(result);
-  // };
   return (
     <div className={styles.contactWrap}>
       <SectionTitle title={'Contact'} side={'left'} />
@@ -120,6 +100,17 @@ const Contact: React.VFC = () => {
         </div>
         <div className={styles.controller}>
           <PrimaryButton text={'Send'} onClick={sendMail} />
+        </div>
+        <div className={styles.message}>
+          <Icon
+            icon={instaIcon}
+            alt={'インスタグラム'}
+            width={30}
+            marginRight={16}
+          />
+          <span>
+            送信完了しました。メッセージありがとうございました。
+          </span>
         </div>
       </div>
     </div>

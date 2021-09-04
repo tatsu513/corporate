@@ -16,7 +16,7 @@ interface Props {
 const Icon: React.VFC<Props> = (props) => {
   return (
     <a
-      className={styles.iconBox}
+      className={`${styles.iconBox} ${props.href && styles.linkIcon}`}
       style={{
         width: `${props.width}px`,
         height: `${props.height || props.width}px`,
