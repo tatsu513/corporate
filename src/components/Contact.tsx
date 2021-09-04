@@ -84,7 +84,7 @@ const Contact: React.VFC = () => {
   // };
   return (
     <div className={styles.contactWrap}>
-      <SectionTitle title={'Contact'} />
+      <SectionTitle title={'Contact'} side={'left'} />
       <div className={styles.contactContainer}>
         <div className={styles.contents}>
           <div className={styles.itemBox}>

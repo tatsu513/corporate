@@ -1,6 +1,11 @@
 .iconBox {
   display: inline-block;
   position: relative;
+  transition: opacity 400ms ease;
+
+  &:hover {
+    opacity: 0.4;
+  }
 
   & > div {
     position: absolute;

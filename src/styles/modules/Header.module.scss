@@ -18,6 +18,12 @@
   display: flex;
   align-items: center;
   padding-left: 16px;
+  cursor: pointer;
+  transition: opacity 400ms ease;
+
+  &:hover {
+    opacity: 0.4;
+  }
 }
 
 .controllers {

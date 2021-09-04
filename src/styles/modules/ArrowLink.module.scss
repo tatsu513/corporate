@@ -2,16 +2,6 @@
 
 .arrowLinkBox {
   display: inline-block;
-
-  &:hover .text {
-    &::before {
-      right: -4px;
-    }
-
-    &::after {
-      right: -6px;
-    }
-  }
 }
 
 .text {
@@ -29,7 +19,7 @@
     top: auto;
     right: 0;
     bottom: 6px;
-    transition: right 100ms ease;
+    transition: right 300ms ease;
     background-color: $black;
   }
 
@@ -43,7 +33,17 @@
     right: -2px;
     bottom: auto;
     transform: rotate(45deg);
-    transition: right 100ms ease;
+    transition: right 300ms ease;
     background-color: $grey-main;
+  }
+
+  &:hover {
+    &::before {
+      right: -4px;
+    }
+
+    &::after {
+      right: -6px;
+    }
   }
 }

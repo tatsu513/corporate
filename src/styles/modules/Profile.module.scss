@@ -1,0 +1,47 @@
+@import '../common.scss';
+
+.profileWrap {
+  display: flex;
+  padding: 0 24px 40px 40px;
+  border: 1px solid $grey-main;
+}
+
+.sectionTitleBox {
+  margin-right: 40px;
+  border-right: 1px solid $grey-main;
+}
+
+.contantBox {
+  padding: 40px 32px 0 0;
+}
+
+.jobTitle,
+.name {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.name {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.recode {
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+.text {
+  line-height: 1.5;
+}
+
+.imageBox {
+  padding-top: 40px;
+}
+
+.image {
+  width: 310px;
+  background-color: azure;
+  height: 100%;
+}

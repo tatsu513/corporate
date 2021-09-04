@@ -6,6 +6,7 @@ import { GetStaticProps } from 'next';
 import { useRouter } from 'next/dist/client/router';
 import Image from 'next/image';
 import Contact from '@/components/Contact';
+import Profile from '@/components/Profile';
 import PrimaryButton from '@/components/buttons/PrimaryButton';
 import SectionTitle from '@/components/common/SectionTitle';
 import SectionTitleVertical from '@/components/common/SectionTitleVertical';
@@ -97,6 +98,9 @@ const Unou: React.VFC<Props> = ({ articles, news }) => {
             onClick={() => router.push('/illusts')}
           />
         </div>
+      </div>
+      <div className={styles.profileWrap}>
+        <Profile />
       </div>
       <Contact />
     </>
