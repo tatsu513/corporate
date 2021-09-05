@@ -5,7 +5,7 @@ import marked from 'marked';
 import { useEffect, useState } from 'react';
 import Breadcrumb from '@/components/Breadcrumb';
 import Contact from '@/components/Contact';
-import { newsBreadcrumb } from 'domains/unou';
+import { portfolioBreadcrumb } from 'domains/unou';
 import styles from 'styles/modules/Slug.module.scss';
 
 interface Props {
@@ -19,17 +19,17 @@ interface Props {
   content: string;
 }
 
-const NewsPage: React.VFC<Props> = (props) => {
-  const [breadcrumbList, setBreadcrumbList] =
-    useState(newsBreadcrumb);
+const PortfolioPage: React.VFC<Props> = (props) => {
+  const [breadcrumbList, setBreadcrumbList] = useState(
+    portfolioBreadcrumb,
+  );
 
   useEffect(() => {
-    const customList = [...newsBreadcrumb];
+    const customList = [...portfolioBreadcrumb];
     customList.push({ name: props.frontmatter.title, path: '' });
     console.log(customList);
     setBreadcrumbList([...customList]);
   }, [props.frontmatter.title]);
-
   return (
     <>
       <Breadcrumb items={breadcrumbList} />
@@ -58,7 +58,7 @@ interface Params {
 
 export const getStaticPaths = async () => {
   const newsFiles = fs.readdirSync(
-    path.join('src', 'articles', 'news'),
+    path.join('src', 'articles', 'unou'),
   );
 
   const paths = newsFiles.map((filename) => ({
@@ -75,11 +75,11 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params }: Params) => {
   const markdownWithMeta = fs.readFileSync(
-    path.join('src', 'articles', 'news', `${params.slug}.md`),
+    path.join('src', 'articles', 'unou', `${params.slug}.md`),
     'utf-8',
   );
   const { data: frontmatter, content } = matter(markdownWithMeta);
   return { props: { frontmatter, slug: params.slug, content } };
 };
 
-export default NewsPage;
+export default PortfolioPage;

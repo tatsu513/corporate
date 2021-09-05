@@ -43,7 +43,7 @@ const Header: React.VFC = () => {
               icon={facebookIcon}
               alt={'フェイスブック'}
               width={28}
-              marginRight={16}
+              marginRight={24}
               href={'https://www.facebook.com/kokubo.akemi'}
             />
             {}
