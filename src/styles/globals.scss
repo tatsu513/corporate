@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400;500&display=swap');
+@import './_breakpoint';
+@import './_mixin';
 
 html,
 body {
@@ -20,7 +22,21 @@ a {
 
 main {
   width: 100%;
-  margin-top: 72px;
+}
+
+section {
+  width: 100%;
+  margin: 0 auto;
+  @include mq(md) {
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  @include mq(lg) {
+    max-width: 1000px;
+    width: 100%;
+    padding: 0 16px;
+  }
 }
 
 img {

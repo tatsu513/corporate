@@ -25,7 +25,7 @@ const Profile: React.VFC<Props> = ({ windowWidth }) => {
     <div className={styles.profileWrap}>
       <Sectiontitle />
       <div className={styles.contentBody}>
-        <div className={styles.contantBox}>
+        <div className={styles.contentBox}>
           <div className={styles.jobTitle}>イラストレーター</div>
           <div className={styles.name}>
             <div className={styles.nameText}>

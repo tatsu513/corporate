@@ -65,7 +65,7 @@ const Unou: React.VFC<Props> = ({ articles, news }) => {
       <div className={styles.newsWrap}>
         <div className={styles.newsContents}>
           <NewsSectionTitle />
-          <div className={styles.newsBody}>
+          <section className={styles.newsBody}>
             <ul className={styles.itemWrap}>
               {news.map((item, i) => (
                 <li className={styles.item} key={i}>
@@ -84,12 +84,12 @@ const Unou: React.VFC<Props> = ({ articles, news }) => {
                 onClick={() => router.push('news')}
               />
             </div>
-          </div>
+          </section>
         </div>
       </div>
       <div className={styles.portfolioWrap}>
         <SectionTitle title={'Portfolio'} />
-        <div className={styles.works}>
+        <section className={styles.works}>
           {articles.map((article, i) => (
             <div className={styles.workBox} key={i}>
               <div className={styles.imageBox} key={i}>
@@ -108,7 +108,7 @@ const Unou: React.VFC<Props> = ({ articles, news }) => {
               </div>
             </div>
           ))}
-        </div>
+        </section>
         <div className={styles.controller}>
           <PrimaryButton
             text={'More'}
@@ -116,9 +116,9 @@ const Unou: React.VFC<Props> = ({ articles, news }) => {
           />
         </div>
       </div>
-      <div className={styles.profileWrap}>
+      <section className={styles.profileWrap}>
         <Profile windowWidth={windowWidth} />
-      </div>
+      </section>
       <Contact />
     </>
   );

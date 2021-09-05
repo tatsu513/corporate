@@ -39,18 +39,6 @@
   border-right: 1px solid $grey-main;
 }
 
-.newsBody {
-  @include mq(md) {
-    max-width: 900px;
-    margin: 0 auto;
-  }
-
-  @include mq(lg) {
-    width: 100%;
-    margin: 0;
-  }
-}
-
 .itemWrap {
   padding: 48px 0;
 }
@@ -86,16 +74,7 @@
 .works {
   display: flex;
   flex-wrap: wrap;
-  margin: 48px auto 0;
-  width: 100%;
-
-  @include mq(md) {
-    padding: 0 32px;
-  }
-
-  @include mq(lg) {
-    max-width: 1000px;
-  }
+  margin-top: 48px;
 }
 
 .workBox {
@@ -167,6 +146,5 @@
 }
 
 .profileWrap {
-  max-width: 1000px;
-  margin: 48px auto 80px;
+  margin-bottom: 80px;
 }
