@@ -26,7 +26,7 @@ interface Props {
 const News: React.VFC<Props> = ({ news }) => {
   return (
     <>
-      <div className={styles.titleBox}>
+      <div className='top-title-box'>
         <SectionTitle title={'News Archive'} />
       </div>
       <section className={styles.newsWrap}>

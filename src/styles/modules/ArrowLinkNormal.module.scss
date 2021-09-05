@@ -8,7 +8,8 @@
   padding-right: 72px;
   position: relative;
   cursor: pointer;
-  color: $black;
+  color: $grey-main;
+  font-size: 16px;
 
   &::before {
     content: '';
@@ -20,7 +21,7 @@
     right: 0;
     bottom: 7px;
     transition: right 300ms ease;
-    background-color: $black;
+    background-color: $grey-main;
   }
 
   &::after {
@@ -29,7 +30,7 @@
     height: 1px;
     width: 16px;
     position: absolute;
-    top: 13px;
+    top: 10px;
     right: -3px;
     bottom: auto;
     transform: rotate(45deg);
