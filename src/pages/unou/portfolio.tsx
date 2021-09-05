@@ -6,6 +6,7 @@ import { GetStaticProps } from 'next';
 import { useState } from 'react';
 import Contact from '@/components/Contact';
 import Menu from '@/components/Menu';
+import Portfolio from '@/components/PortfolioList';
 import SectionTitle from '@/components/common/SectionTitle';
 import { illustCategories } from 'domains';
 import styles from 'styles/modules/Illusts.module.scss';
@@ -45,28 +46,20 @@ const Illusts: React.VFC<Props> = ({ articles }) => {
     <>
       <SectionTitle title={'Portfolio'} />
       <div className={styles.workWrap}>
-        <Menu
-          selectedItem={selectedItem}
-          items={illustCategories}
-          onClick={selectItem}
-        />
-        <div className={styles.worksErea}>
-          {works.map((article, i) => (
-            <div className={styles.aaa} key={i}>
-              <h3>{article.frontmatter.title}</h3>
-              <h4>{article.frontmatter.category}</h4>
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: marked(article.content),
-                }}
-              />
-            </div>
-          ))}
-        </div>
-        <p className={styles.note}>
-          ※
-          公開している事例はごく一部です。より詳しい事例は直接お問い合わせください。
-        </p>
+        <section>
+          <Menu
+            selectedItem={selectedItem}
+            items={illustCategories}
+            onClick={selectItem}
+          />
+        </section>
+        <section className={styles.works}>
+          <Portfolio items={works} />
+          <p className={styles.note}>
+            ※
+            公開している事例はごく一部です。より詳しい事例は直接お問い合わせください。
+          </p>
+        </section>
       </div>
       <Contact />
     </>

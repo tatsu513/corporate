@@ -13,5 +13,13 @@
 }
 
 .worksErea {
-  @import '../markdown.scss';
+  margin: 40px auto 64px;
+  width: 100%;
+  max-width: 1024px;
+}
+
+.works {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 48px;
 }
