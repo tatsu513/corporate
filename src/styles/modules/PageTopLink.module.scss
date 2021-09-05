@@ -1,3 +1,7 @@
+@import '../common.scss';
+@import '../_breakpoint';
+@import '../_mixin';
+
 .linkWrap {
   position: fixed;
   top: auto;
@@ -14,8 +18,6 @@
     pointer-events: visible;
   }
 }
-
-@import '../common.scss';
 
 .arrowLinkBox {
   display: inline-block;
@@ -35,9 +37,16 @@
     position: absolute;
     top: auto;
     right: 0;
-    bottom: 6px;
     transition: right 300ms ease;
     background-color: $black;
+
+    @include mq(sm) {
+      bottom: 6px;
+    }
+
+    @include mq(md) {
+      bottom: 7px;
+    }
   }
 
   &::after {
@@ -46,11 +55,18 @@
     height: 1px;
     width: 16px;
     position: absolute;
-    top: 11px;
     right: -3px;
     bottom: auto;
     transform: rotate(45deg);
     transition: right 300ms ease;
     background-color: $grey-main;
+
+    @include mq(sm) {
+      top: 11px;
+    }
+
+    @include mq(md) {
+      top: 13px;
+    }
   }
 }
