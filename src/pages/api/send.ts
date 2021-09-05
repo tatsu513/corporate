@@ -38,9 +38,13 @@ export default async function (
   sgMail
     .send(msg)
     .then(() => {
-      console.log('Email sent');
+      res.status(200).json({
+        statusCode: 200,
+      });
     })
     .catch((error: Error) => {
-      console.error(error);
+      res.status(200).json({
+        statusCode: 500,
+      });
     });
 }

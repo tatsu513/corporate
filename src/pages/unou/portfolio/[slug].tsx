@@ -27,7 +27,6 @@ const PortfolioPage: React.VFC<Props> = (props) => {
   useEffect(() => {
     const customList = [...portfolioBreadcrumb];
     customList.push({ name: props.frontmatter.title, path: '' });
-    console.log(customList);
     setBreadcrumbList([...customList]);
   }, [props.frontmatter.title]);
   return (

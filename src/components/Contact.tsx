@@ -13,6 +13,8 @@ const Contact: React.VFC = () => {
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
 
+  const [isSuccess, setIsSuccess] = useState(false);
+
   const inputEmail = useCallback(
     (event: ChangeEvent<HTMLInputElement>) => {
       setEmail(event.target.value);
@@ -40,7 +42,6 @@ const Contact: React.VFC = () => {
 
   const sendMail = useCallback(
     async (event?: Event) => {
-      console.log(email, name, title, body);
       if (event) {
         event.preventDefault();
       }
@@ -57,8 +58,8 @@ const Contact: React.VFC = () => {
         method: 'POST',
       });
 
-      const result = await res.json();
-      console.log(result);
+      const result: { statusCode: number } = await res.json();
+      setIsSuccess(result.statusCode === 200);
     },
     [email, name, title, body],
   );
@@ -101,21 +102,23 @@ const Contact: React.VFC = () => {
         <div className={styles.controller}>
           <PrimaryButton text={'Send'} onClick={sendMail} />
         </div>
-        {true && (
-          <div className={styles.message}>
-            <span className={styles.messageIcon}>
-              <Icon
-                icon={check}
-                alt={'チェックアイコン'}
-                width={30}
-                marginRight={16}
-              />
-            </span>
-            <span className={styles.messageText}>
-              送信完了しました。メッセージありがとうございました。
-            </span>
-          </div>
-        )}
+        <div
+          className={`${styles.message} ${
+            isSuccess && styles.isSuccess
+          }`}
+        >
+          <span className={styles.messageIcon}>
+            <Icon
+              icon={check}
+              alt={'チェックアイコン'}
+              width={30}
+              marginRight={16}
+            />
+          </span>
+          <span className={styles.messageText}>
+            送信完了しました。メッセージありがとうございました。
+          </span>
+        </div>
       </div>
     </div>
   );

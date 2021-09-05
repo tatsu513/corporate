@@ -26,7 +26,6 @@ const NewsPage: React.VFC<Props> = (props) => {
   useEffect(() => {
     const customList = [...newsBreadcrumb];
     customList.push({ name: props.frontmatter.title, path: '' });
-    console.log(customList);
     setBreadcrumbList([...customList]);
   }, [props.frontmatter.title]);
 
