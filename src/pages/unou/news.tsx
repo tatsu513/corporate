@@ -3,6 +3,7 @@ import * as path from 'path';
 import matter from 'gray-matter';
 import marked from 'marked';
 import { GetStaticProps } from 'next';
+import { useRouter } from 'next/dist/client/router';
 import Contact from '@/components/Contact';
 import ArrowLinkNormal from '@/components/common/ArrowLinkNormal';
 import SectionTitle from '@/components/common/SectionTitle';
@@ -24,6 +25,7 @@ interface Props {
 }
 
 const News: React.VFC<Props> = ({ news }) => {
+  const router = useRouter();
   return (
     <>
       <div className='top-title-box'>
@@ -47,7 +49,7 @@ const News: React.VFC<Props> = ({ news }) => {
             <div className={styles.controller}>
               <ArrowLinkNormal
                 text={'More'}
-                onClick={() => alert('more')}
+                onClick={() => router.push(`/unou/news/${item.slug}`)}
               />
             </div>
           </div>
@@ -59,12 +61,14 @@ const News: React.VFC<Props> = ({ news }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const newsFiles = fs.readdirSync(path.join('src', 'news'));
+  const newsFiles = fs.readdirSync(
+    path.join('src', 'articles', 'news'),
+  );
 
   const news = newsFiles.map((filename) => {
     const slug = filename.replace(/.md/, '');
     const markdownWithMeta = fs.readFileSync(
-      path.join('src', 'news', filename),
+      path.join('src', 'articles', 'news', filename),
       'utf-8',
     );
     const { data: frontmatter, content } = matter(markdownWithMeta);
