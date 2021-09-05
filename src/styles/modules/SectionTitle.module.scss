@@ -1,4 +1,6 @@
 @import '../common.scss';
+@import '../_breakpoint';
+@import '../_mixin';
 
 .titleWrap {
   padding-top: 32px;
@@ -12,8 +14,15 @@
   margin-bottom: 20px;
   padding-bottom: 32px;
   position: relative;
-  font-size: 40px;
   text-align: center;
+
+  @include mq(sm) {
+    font-size: 40px;
+  }
+
+  @include mq(md) {
+    font-size: 50px;
+  }
 
   &::after {
     content: '';

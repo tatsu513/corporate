@@ -20,9 +20,8 @@
 }
 
 .contentBody {
-  display: flex;
-
   @include mq(md) {
+    display: flex;
     padding: 32px 32px;
   }
 
@@ -32,7 +31,11 @@
 }
 
 .contentBox {
+  @include mq(sm) {
+    padding: 16px;
+  }
   @include mq(md) {
+    padding: 0;
     margin-right: 32px;
   }
   @include mq(lg) {
@@ -45,10 +48,24 @@
 .name {
   font-size: 20px;
   font-weight: 600;
+
+  @include mq(sm) {
+    margin-bottom: 16px;
+  }
+
+  @include mq(md) {
+    margin-bottom: 0;
+  }
 }
 
 .jobTitle {
-  margin-bottom: 8px;
+  @include mq(sm) {
+    margin-bottom: 12px;
+  }
+
+  @include mq(md) {
+    margin-bottom: 8px;
+  }
 }
 
 .name {
@@ -61,9 +78,10 @@
 }
 
 .nameText {
+  margin-bottom: 16px;
+
   @include mq(md) {
     display: block;
-    margin-bottom: 16px;
     width: 100%;
   }
   @include mq(lg) {
@@ -82,13 +100,25 @@
 }
 
 .imageBox {
+  @include mq(sm) {
+    padding: 16px;
+  }
   @include mq(lg) {
     padding-top: 40px;
   }
 }
 
 .image {
-  width: 310px;
+  margin: 0 auto;
   background-color: azure;
-  height: 100%;
+
+  @include mq(sm) {
+    width: 82vw;
+    height: 82vw;
+  }
+
+  @include mq(md) {
+    width: 310px;
+    height: 310px;
+  }
 }

@@ -8,7 +8,14 @@ body {
   margin: 0;
   font-family: 'Noto Serif JP', serif;
   color: #707070;
-  font-size: 18px;
+
+  @include mq(sm) {
+    font-size: 16px;
+  }
+
+  @include mq(md) {
+    font-size: 18px;
+  }
 }
 
 a {
@@ -25,12 +32,9 @@ main {
 }
 
 section {
-  width: 100%;
   margin: 0 auto;
-  @include mq(md) {
-    margin: 0 auto;
-    padding: 0 32px;
-  }
+  padding: 0 32px;
+  width: 100%;
 
   @include mq(lg) {
     max-width: 1000px;

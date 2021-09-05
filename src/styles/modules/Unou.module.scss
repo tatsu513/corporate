@@ -15,6 +15,19 @@
 
   & > div {
     vertical-align: top;
+    height: 100%;
+
+    img {
+      object-fit: cover;
+    }
+  }
+
+  @include mq(sm) {
+    height: 90vh;
+  }
+
+  @include mq(md) {
+    height: auto;
   }
 }
 
@@ -40,13 +53,26 @@
 }
 
 .itemWrap {
-  padding: 48px 0;
+  @include mq(sm) {
+    padding: 24px 0 56px;
+  }
+
+  @include mq(md) {
+    padding: 24px 0;
+  }
+
+  @include mq(lg) {
+    padding: 48px 0;
+  }
 }
 
 .item {
-  display: flex;
-  align-items: center;
   margin-bottom: 32px;
+
+  @include mq(lg) {
+    display: flex;
+    align-items: center;
+  }
 
   &:last-of-type {
     margin-bottom: 0;
@@ -54,8 +80,15 @@
 }
 
 .date {
-  width: 160px;
-  display: inline-block;
+  width: 100%;
+  display: block;
+  margin-bottom: 8px;
+
+  @include mq(lg) {
+    margin-bottom: 0;
+    width: 160px;
+    display: inline-block;
+  }
 }
 
 .text {
@@ -81,6 +114,11 @@
   width: 30%;
   margin-right: calc((100% - 90%) / 2);
   margin-bottom: 88px;
+
+  @include mq(sm) {
+    width: 100%;
+    margin-right: 0;
+  }
 
   @include mq(md) {
     width: 46%;
