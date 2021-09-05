@@ -67,11 +67,11 @@ const Illusts: React.VFC<Props> = ({ articles }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const files = fs.readdirSync(path.join('src', 'unou'));
+  const files = fs.readdirSync(path.join('src', 'articles', 'unou'));
   const articles = files.map((filename) => {
     const slug = filename.replace(/.md/, '');
     const markdownWithMeta = fs.readFileSync(
-      path.join('src', 'unou', filename),
+      path.join('src', 'articles', 'unou', filename),
       'utf-8',
     );
 
