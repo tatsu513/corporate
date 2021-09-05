@@ -20,9 +20,7 @@ const BaseProvider: React.VFC<Props> = ({ children }) => {
     <Width.Provider value={windowWidth}>
       <Header />
       {children}
-      {windowWidth < 600 && (
-        <PageTopLink text={'Page Top'} onClick={() => alert('top')} />
-      )}
+      <PageTopLink text={'Page Top'} onClick={() => alert('top')} />
     </Width.Provider>
   );
 };

@@ -7,6 +7,7 @@ import { useRouter } from 'next/dist/client/router';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import Contact from '@/components/Contact';
+import Portfolio from '@/components/PortfolioList';
 import Profile from '@/components/Profile';
 import PrimaryButton from '@/components/buttons/PrimaryButton';
 import SectionTitle from '@/components/common/SectionTitle';
@@ -90,29 +91,12 @@ const Unou: React.VFC<Props> = ({ articles, news }) => {
       <div className={styles.portfolioWrap}>
         <SectionTitle title={'Portfolio'} />
         <section className={styles.works}>
-          {articles.map((article, i) => (
-            <div className={styles.workBox} key={i}>
-              <div className={styles.imageBox} key={i}>
-                <div className={styles.imageAjBox}>
-                  <Image
-                    src={article.frontmatter.coverImage}
-                    width='1000'
-                    height='1000'
-                    alt={'トップイメージ'}
-                  />
-                </div>
-              </div>
-              <div className={styles.worksText}>
-                {article.frontmatter.title}／
-                {article.frontmatter.excerpt}
-              </div>
-            </div>
-          ))}
+          <Portfolio items={articles} />
         </section>
         <div className={styles.controller}>
           <PrimaryButton
             text={'More'}
-            onClick={() => router.push('/illusts')}
+            onClick={() => router.push('/unou/portfolio')}
           />
         </div>
       </div>
@@ -125,13 +109,17 @@ const Unou: React.VFC<Props> = ({ articles, news }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const articleFiles = fs.readdirSync(path.join('src', 'unou'));
-  const newsFiles = fs.readdirSync(path.join('src', 'news'));
+  const articleFiles = fs.readdirSync(
+    path.join('src', 'articles', 'unou'),
+  );
+  const newsFiles = fs.readdirSync(
+    path.join('src', 'articles', 'news'),
+  );
 
   const articles = articleFiles.map((filename) => {
     const slug = filename.replace(/.md/, '');
     const markdownWithMeta = fs.readFileSync(
-      path.join('src', 'unou', filename),
+      path.join('src', 'articles', 'unou', filename),
       'utf-8',
     );
 
@@ -142,7 +130,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const news = newsFiles.map((filename) => {
     const slug = filename.replace(/.md/, '');
     const markdownWithMeta = fs.readFileSync(
-      path.join('src', 'news', filename),
+      path.join('src', 'articles', 'news', filename),
       'utf-8',
     );
     const { data: frontmatter, content } = matter(markdownWithMeta);

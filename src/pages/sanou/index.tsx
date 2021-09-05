@@ -87,11 +87,11 @@ const Sanou: React.VFC<Props> = ({ articles }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const files = fs.readdirSync(path.join('src', 'sanou'));
+  const files = fs.readdirSync(path.join('src', 'articles', 'sanou'));
   const articles = files.map((filename) => {
     const slug = filename.replace(/.md/, '');
     const markdownWithMeta = fs.readFileSync(
-      path.join('src', 'sanou', filename),
+      path.join('src', 'articles', 'sanou', filename),
       'utf-8',
     );
 
