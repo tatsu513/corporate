@@ -109,13 +109,17 @@ const Unou: React.VFC<Props> = ({ articles, news }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const articleFiles = fs.readdirSync(path.join('src', 'unou'));
-  const newsFiles = fs.readdirSync(path.join('src', 'news'));
+  const articleFiles = fs.readdirSync(
+    path.join('src', 'articles', 'unou'),
+  );
+  const newsFiles = fs.readdirSync(
+    path.join('src', 'articles', 'news'),
+  );
 
   const articles = articleFiles.map((filename) => {
     const slug = filename.replace(/.md/, '');
     const markdownWithMeta = fs.readFileSync(
-      path.join('src', 'unou', filename),
+      path.join('src', 'articles', 'unou', filename),
       'utf-8',
     );
 
@@ -126,7 +130,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const news = newsFiles.map((filename) => {
     const slug = filename.replace(/.md/, '');
     const markdownWithMeta = fs.readFileSync(
-      path.join('src', 'news', filename),
+      path.join('src', 'articles', 'news', filename),
       'utf-8',
     );
     const { data: frontmatter, content } = matter(markdownWithMeta);
