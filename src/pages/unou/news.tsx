@@ -4,9 +4,11 @@ import matter from 'gray-matter';
 import marked from 'marked';
 import { GetStaticProps } from 'next';
 import { useRouter } from 'next/dist/client/router';
+import Breadcrumb from '@/components/Breadcrumb';
 import Contact from '@/components/Contact';
 import ArrowLinkNormal from '@/components/common/ArrowLinkNormal';
 import SectionTitle from '@/components/common/SectionTitle';
+import { newsBreadcrumb } from 'domains/unou';
 import styles from 'styles/modules/News.module.scss';
 
 interface markdownInfo {
@@ -28,6 +30,7 @@ const News: React.VFC<Props> = ({ news }) => {
   const router = useRouter();
   return (
     <>
+      <Breadcrumb items={newsBreadcrumb} />
       <div className='top-title-box'>
         <SectionTitle title={'News Archive'} />
       </div>

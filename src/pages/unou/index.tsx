@@ -82,7 +82,7 @@ const Unou: React.VFC<Props> = ({ articles, news }) => {
             <div className={styles.controller}>
               <PrimaryButton
                 text={'More'}
-                onClick={() => router.push('news')}
+                onClick={() => router.push('unou/news')}
               />
             </div>
           </section>

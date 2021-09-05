@@ -2,7 +2,10 @@ import * as fs from 'fs';
 import * as path from 'path';
 import matter from 'gray-matter';
 import marked from 'marked';
+import { useEffect, useState } from 'react';
+import Breadcrumb from '@/components/Breadcrumb';
 import Contact from '@/components/Contact';
+import { newsBreadcrumb } from 'domains/unou';
 import styles from 'styles/modules/Slug.module.scss';
 
 interface Props {
@@ -17,9 +20,19 @@ interface Props {
 }
 
 const NewsPage: React.VFC<Props> = (props) => {
-  console.log(props);
+  const [breadcrumbList, setBreadcrumbList] =
+    useState(newsBreadcrumb);
+
+  useEffect(() => {
+    const customList = [...newsBreadcrumb];
+    customList.push({ name: props.frontmatter.title, path: '' });
+    console.log(customList);
+    setBreadcrumbList([...customList]);
+  }, [props.frontmatter.title]);
+
   return (
     <>
+      <Breadcrumb items={breadcrumbList} />
       <section className={styles.newsWrao}>
         <div className={styles.date}>{props.frontmatter.date}</div>
         <div className={styles.title}>
