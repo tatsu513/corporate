@@ -4,27 +4,18 @@ import matter from 'gray-matter';
 import marked from 'marked';
 import { GetStaticProps } from 'next';
 import { useState } from 'react';
+import Breadcrumb from '@/components/Breadcrumb';
 import Contact from '@/components/Contact';
 import Menu from '@/components/Menu';
-import Portfolio from '@/components/PortfolioList';
+import PortfolioList from '@/components/PortfolioList';
 import SectionTitle from '@/components/common/SectionTitle';
 import { illustCategories } from 'domains';
+import { portfolioBreadcrumb } from 'domains/unou';
+import { MarkdownFileData } from 'models/';
 import styles from 'styles/modules/Illusts.module.scss';
 
-interface Articles {
-  slug: string;
-  frontmatter: {
-    title: string;
-    date: string;
-    excerpt: string;
-    coverImage: string;
-    category: string;
-  };
-  content: string;
-}
-
 interface Props {
-  articles: Articles[];
+  articles: MarkdownFileData[];
 }
 
 const Illusts: React.VFC<Props> = ({ articles }) => {
@@ -44,6 +35,7 @@ const Illusts: React.VFC<Props> = ({ articles }) => {
 
   return (
     <>
+      <Breadcrumb items={portfolioBreadcrumb} />
       <SectionTitle title={'Portfolio'} />
       <div className={styles.workWrap}>
         <section>
@@ -54,7 +46,7 @@ const Illusts: React.VFC<Props> = ({ articles }) => {
           />
         </section>
         <section className={styles.works}>
-          <Portfolio items={works} />
+          <PortfolioList items={works} />
           <p className={styles.note}>
             ※
             公開している事例はごく一部です。より詳しい事例は直接お問い合わせください。

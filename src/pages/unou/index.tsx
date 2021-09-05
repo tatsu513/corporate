@@ -13,22 +13,12 @@ import PrimaryButton from '@/components/buttons/PrimaryButton';
 import SectionTitle from '@/components/common/SectionTitle';
 import SectionTitleVertical from '@/components/common/SectionTitleVertical';
 import topImage from 'images/unou-image.png';
+import { MarkdownFileData } from 'models/';
 import styles from 'styles/modules/Unou.module.scss';
 
-interface markdownInfo {
-  slug: string;
-  frontmatter: {
-    title: string;
-    date: string;
-    excerpt: string;
-    coverImage: string;
-  };
-  content: string;
-}
-
 interface Props {
-  articles: markdownInfo[];
-  news: markdownInfo[];
+  articles: MarkdownFileData[];
+  news: MarkdownFileData[];
 }
 
 const Unou: React.VFC<Props> = ({ articles, news }) => {
@@ -82,7 +72,7 @@ const Unou: React.VFC<Props> = ({ articles, news }) => {
             <div className={styles.controller}>
               <PrimaryButton
                 text={'More'}
-                onClick={() => router.push('news')}
+                onClick={() => router.push('unou/news')}
               />
             </div>
           </section>
