@@ -4,6 +4,7 @@ import matter from 'gray-matter';
 import marked from 'marked';
 import { GetStaticProps } from 'next';
 import Contact from '@/components/Contact';
+import ArrowLinkNormal from '@/components/common/ArrowLinkNormal';
 import SectionTitle from '@/components/common/SectionTitle';
 import styles from 'styles/modules/News.module.scss';
 
@@ -26,9 +27,9 @@ const News: React.VFC<Props> = ({ news }) => {
   return (
     <>
       <div className={styles.titleBox}>
-        <SectionTitle title={'News'} />
+        <SectionTitle title={'News Archive'} />
       </div>
-      <div className={styles.newsWrap}>
+      <section className={styles.newsWrap}>
         {news.map((item, i) => (
           <div className={styles.itemBox} key={i}>
             <div className={styles.date}>
@@ -38,13 +39,20 @@ const News: React.VFC<Props> = ({ news }) => {
               {item.frontmatter.excerpt}
             </div>
             <div
+              className={styles.body}
               dangerouslySetInnerHTML={{
                 __html: marked(item.content),
               }}
             />
+            <div className={styles.controller}>
+              <ArrowLinkNormal
+                text={'More'}
+                onClick={() => alert('more')}
+              />
+            </div>
           </div>
         ))}
-      </div>
+      </section>
       <Contact />
     </>
   );
