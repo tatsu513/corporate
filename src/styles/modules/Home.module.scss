@@ -2,6 +2,26 @@
 @import '../_breakpoint';
 @import '../_mixin';
 
+@keyframes bottomUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .homeWrap {
   margin: 0 auto;
   position: relative;
@@ -26,6 +46,11 @@
   margin-bottom: 120px;
   color: $black;
   text-align: center;
+  animation-name: bottomUp;
+  animation-duration: 1.5s;
+  animation-delay: 0;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 
   @include mq(sm) {
     margin: 24px auto 48px;
@@ -35,6 +60,7 @@
   }
 
   @include mq(md) {
+    margin: 24px auto 20vh;
     font-size: 28px;
     letter-spacing: 0.2rem;
     writing-mode: horizontal-tb;
@@ -64,6 +90,12 @@
 
 .controllers {
   display: flex;
+  opacity: 0;
+  animation-name: bottomUp;
+  animation-duration: 1.5s;
+  animation-delay: 0;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 
   @include mq(sm) {
     justify-content: space-around;
@@ -123,10 +155,16 @@
   position: absolute;
   top: auto;
   bottom: 0;
+  opacity: 0;
+  animation-name: opacity;
+  animation-duration: 1.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 .leftImageBox {
   bottom: 56px;
+  animation-delay: 2s;
 
   @include mq(sm) {
     left: -14px;
@@ -146,6 +184,7 @@
 
 .rightImageBox {
   width: 261px;
+  animation-delay: 3s;
 
   @include mq(sm) {
     right: -20px;
@@ -167,6 +206,11 @@
 
 .mainImageBox {
   margin: 0 auto;
+  animation-name: bottomUp;
+  animation-duration: 1.5s;
+  animation-delay: 0;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 
   @include mq(sm) {
     width: 50%;
