@@ -6,20 +6,10 @@ import { useEffect, useState } from 'react';
 import Breadcrumb from '@/components/Breadcrumb';
 import Contact from '@/components/Contact';
 import { newsBreadcrumb } from 'domains/unou';
+import { MarkdownFileData } from 'models/';
 import styles from 'styles/modules/Slug.module.scss';
 
-interface Props {
-  slug: string;
-  frontmatter: {
-    title: string;
-    date: string;
-    excerpt: string;
-    coverImage: string;
-  };
-  content: string;
-}
-
-const NewsPage: React.VFC<Props> = (props) => {
+const NewsPage: React.VFC<MarkdownFileData> = (props) => {
   const [breadcrumbList, setBreadcrumbList] =
     useState(newsBreadcrumb);
 

@@ -11,22 +11,11 @@ import PortfolioList from '@/components/PortfolioList';
 import SectionTitle from '@/components/common/SectionTitle';
 import { illustCategories } from 'domains';
 import { portfolioBreadcrumb } from 'domains/unou';
+import { MarkdownFileData } from 'models/';
 import styles from 'styles/modules/Illusts.module.scss';
 
-interface Article {
-  slug: string;
-  frontmatter: {
-    title: string;
-    date: string;
-    excerpt: string;
-    coverImage: string;
-    category: string;
-  };
-  content: string;
-}
-
 interface Props {
-  articles: Article[];
+  articles: MarkdownFileData[];
 }
 
 const Illusts: React.VFC<Props> = ({ articles }) => {
