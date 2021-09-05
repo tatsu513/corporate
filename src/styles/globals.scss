@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400;500&display=swap');
+@import './_breakpoint';
+@import './_mixin';
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Noto Serif JP', serif;
+  color: #707070;
+
+  @include mq(sm) {
+    font-size: 16px;
+  }
+
+  @include mq(md) {
+    font-size: 18px;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+main {
+  width: 100%;
+}
+
+section {
+  margin: 0 auto;
+  padding: 0 32px;
+  width: 100%;
+
+  @include mq(lg) {
+    max-width: 1000px;
+    width: 100%;
+    padding: 0 16px;
+  }
+}
+
+img {
+  width: 100%;
+}

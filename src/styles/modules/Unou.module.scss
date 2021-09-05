@@ -1,4 +1,7 @@
 @import '../common.scss';
+@import '../_breakpoint';
+@import '../_mixin';
+
 .aaa {
   color: red;
 
@@ -12,6 +15,19 @@
 
   & > div {
     vertical-align: top;
+    height: 100%;
+
+    img {
+      object-fit: cover;
+    }
+  }
+
+  @include mq(sm) {
+    height: 90vh;
+  }
+
+  @include mq(md) {
+    height: auto;
   }
 }
 
@@ -21,11 +37,14 @@
 }
 
 .newsContents {
-  display: flex;
   margin: 0 auto;
   padding-bottom: 48px;
   width: 100%;
-  max-width: 1024px;
+
+  @include mq(lg) {
+    display: flex;
+    max-width: 1000px;
+  }
 }
 
 .sectionTitleBox {
@@ -33,18 +52,27 @@
   border-right: 1px solid $grey-main;
 }
 
-.newsBody {
-  width: 100%;
-}
-
 .itemWrap {
-  padding: 48px 0;
+  @include mq(sm) {
+    padding: 24px 0 56px;
+  }
+
+  @include mq(md) {
+    padding: 24px 0;
+  }
+
+  @include mq(lg) {
+    padding: 48px 0;
+  }
 }
 
 .item {
-  display: flex;
-  align-items: center;
   margin-bottom: 32px;
+
+  @include mq(lg) {
+    display: flex;
+    align-items: center;
+  }
 
   &:last-of-type {
     margin-bottom: 0;
@@ -52,8 +80,15 @@
 }
 
 .date {
-  width: 160px;
-  display: inline-block;
+  width: 100%;
+  display: block;
+  margin-bottom: 8px;
+
+  @include mq(lg) {
+    margin-bottom: 0;
+    width: 160px;
+    display: inline-block;
+  }
 }
 
 .text {
@@ -66,23 +101,65 @@
 }
 
 .portfolioWrap {
-  margin-bottom: 64px;
+  margin-bottom: 80px;
 }
 
 .works {
   display: flex;
-  margin: 48px auto;
-  width: 100%;
-  max-width: 1024px;
+  flex-wrap: wrap;
+  margin-top: 48px;
+}
+
+.workBox {
+  width: 30%;
+  margin-right: calc((100% - 90%) / 2);
+  margin-bottom: 88px;
+
+  @include mq(sm) {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  @include mq(md) {
+    width: 46%;
+    margin-right: calc(100% - 92%);
+  }
+
+  @include mq(lg) {
+    width: 30%;
+    margin-right: calc((100% - 90%) / 2);
+  }
+
+  &:nth-child(3n) {
+    @include mq(md) {
+      margin-right: calc(100% - 92%);
+    }
+
+    @include mq(lg) {
+      margin-right: 0;
+    }
+  }
+
+  &:nth-child(2n) {
+    @include mq(md) {
+      margin-right: 0;
+    }
+
+    @include mq(lg) {
+      margin-right: calc((100% - 90%) / 2);
+    }
+  }
 }
 
 .imageBox {
-  width: 24%;
-  margin-right: calc((100% - 96%) / 3);
+  width: 100%;
+  margin-bottom: 24px;
   position: relative;
 
-  &:nth-child(4n) {
-    margin-right: 0;
+  &:hover {
+    img {
+      transform: scale(1.2);
+    }
   }
 
   &:before {
@@ -101,5 +178,11 @@
 
   img {
     object-fit: cover;
+    transform: scale(1);
+    transition: all 400ms ease-out;
   }
+}
+
+.profileWrap {
+  margin-bottom: 80px;
 }

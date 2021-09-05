@@ -1,8 +1,10 @@
 import { useState, useCallback, ChangeEvent } from 'react';
 import PrimaryButton from './buttons/PrimaryButton';
+import Icon from './common/Icon';
 import SectionTitle from './common/SectionTitle';
 import TextArea from './forms/TextArea';
 import TextField from './forms/TextField';
+import check from 'images/check-circle.svg';
 import styles from 'styles/modules/Contact.module.scss';
 
 const Contact: React.VFC = () => {
@@ -60,31 +62,9 @@ const Contact: React.VFC = () => {
     },
     [email, name, title, body],
   );
-
-  // const registerUser = async (event?: Event) => {
-  //   if (event) {
-  //     event.preventDefault();
-  //   }
-
-  //   const res = await fetch('/api/send', {
-  //     body: JSON.stringify({
-  //       email: email,
-  //       name: name,
-  //       title: title,
-  //       message: body,
-  //     }),
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     },
-  //     method: 'POST',
-  //   });
-
-  //   const result = await res.json();
-  //   console.log(result);
-  // };
   return (
     <div className={styles.contactWrap}>
-      <SectionTitle title={'Contact'} />
+      <SectionTitle title={'Contact'} side={'left'} />
       <div className={styles.contactContainer}>
         <div className={styles.contents}>
           <div className={styles.itemBox}>
@@ -121,6 +101,21 @@ const Contact: React.VFC = () => {
         <div className={styles.controller}>
           <PrimaryButton text={'Send'} onClick={sendMail} />
         </div>
+        {true && (
+          <div className={styles.message}>
+            <span className={styles.messageIcon}>
+              <Icon
+                icon={check}
+                alt={'チェックアイコン'}
+                width={30}
+                marginRight={16}
+              />
+            </span>
+            <span className={styles.messageText}>
+              送信完了しました。メッセージありがとうございました。
+            </span>
+          </div>
+        )}
       </div>
     </div>
   );

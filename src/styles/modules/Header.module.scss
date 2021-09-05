@@ -1,4 +1,16 @@
 @import '../common.scss';
+@import '../_breakpoint';
+@import '../_mixin';
+
+.header {
+  @include mq(md) {
+    height: 60px;
+  }
+
+  @include mq(lg) {
+    height: 74px;
+  }
+}
 
 .headerWrap {
   display: flex;
@@ -11,38 +23,70 @@
   left: 0;
   background-color: rgba($white, 0.9);
   z-index: 100;
+
+  @include mq(md) {
+    height: 60px;
+  }
+
+  @include mq(lg) {
+    height: 74px;
+  }
 }
 
 .logo {
-  height: 80px;
-  padding-left: 32px;
-  line-height: 80px;
+  display: flex;
+  align-items: center;
+  padding-left: 16px;
+  cursor: pointer;
+  transition: opacity 400ms ease;
+
+  &:hover {
+    opacity: 0.4;
+  }
+
+  @include mq(sm) {
+    width: 60%;
+  }
+
+  @include mq(md) {
+    width: 300px;
+  }
 }
 
-.menu {
-  height: 80px;
-  width: 80px;
+.controllers {
+  display: flex;
+  align-items: center;
+}
+
+.goAnotherPageLink {
+  padding: 0 16px;
+  border-left: 1px solid $grey-main;
+  line-height: 74px;
+}
+
+.menuBox {
+  width: 60px;
+  height: 60px;
   background-color: $black;
   position: relative;
   cursor: pointer;
-  text-align: center;
 
-  .menuBar {
+  .bar {
     display: inline-block;
     height: 3px;
-    width: 42px;
+    width: 30px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: $white;
+  }
 
-    &.menubarTop {
-      top: 24px;
-    }
+  .barTop {
+    top: 28%;
+  }
 
-    &.menubarBottom {
-      top: 56px;
-    }
+  .barBottom {
+    top: 72%;
   }
 }

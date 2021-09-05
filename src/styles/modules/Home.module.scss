@@ -1,10 +1,178 @@
-.test {
-  color: red;
+@import '../common.scss';
+@import '../_breakpoint';
+@import '../_mixin';
+
+.homeWrap {
+  margin: 0 auto;
+  position: relative;
+
+  @include mq(sm) {
+    width: 100%;
+  }
+
+  @include mq(md) {
+    height: calc(100vh - 74px);
+    width: 100%;
+    overflow: hidden;
+  }
+
+  @include mq(lg) {
+    overflow: visible;
+    width: 460px;
+  }
 }
 
-.aaa {
-  color: red;
-  h2 {
-    color: blue;
+.leadText {
+  margin-bottom: 120px;
+  color: $black;
+  text-align: center;
+
+  @include mq(sm) {
+    margin: 24px auto 48px;
+    font-size: 20px;
+    letter-spacing: 0.6rem;
+    writing-mode: vertical-rl;
+  }
+
+  @include mq(md) {
+    font-size: 28px;
+    letter-spacing: 0.2rem;
+    writing-mode: horizontal-tb;
+  }
+}
+
+.mainContents {
+  position: absolute;
+  top: auto;
+  right: auto;
+  left: 50%;
+  bottom: auto;
+  transform: translateX(-50%);
+
+  @include mq(sm) {
+    padding: 0 24px;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  @include mq(md) {
+    bottom: 0;
+    overflow: visible;
+    width: 460px;
+  }
+}
+
+.controllers {
+  display: flex;
+
+  @include mq(sm) {
+    justify-content: space-around;
+  }
+
+  @include mq(md) {
+    justify-content: space-between;
+  }
+}
+
+.button {
+  padding: 8px;
+  background-color: $white;
+  border: 1px solid $grey-main;
+  color: $grey-main;
+  text-align: center;
+  transition: all 400ms ease-in;
+
+  &:hover {
+    background-color: $grey-main;
+    color: $white;
+  }
+
+  @include mq(sm) {
+    width: 132px;
+  }
+
+  @include mq(md) {
+    width: 168px;
+  }
+}
+
+.buttonText {
+  margin-bottom: 8px;
+
+  @include mq(sm) {
+    font-size: 18px;
+  }
+
+  @include mq(md) {
+    font-size: 24px;
+  }
+}
+
+.buttonSubText {
+  @include mq(sm) {
+    font-size: 12px;
+  }
+
+  @include mq(md) {
+    font-size: 16px;
+  }
+}
+
+.leftImageBox,
+.rightImageBox {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+}
+
+.leftImageBox {
+  bottom: 56px;
+
+  @include mq(sm) {
+    left: -14px;
+    width: 30%;
+  }
+
+  @include mq(md) {
+    left: -90px;
+    width: 168px;
+  }
+
+  @include mq(lg) {
+    left: -168px;
+    width: 242px;
+  }
+}
+
+.rightImageBox {
+  width: 261px;
+
+  @include mq(sm) {
+    right: -20px;
+    bottom: 64px;
+    width: 30%;
+  }
+
+  @include mq(md) {
+    right: -90px;
+    bottom: 120px;
+    width: 160px;
+  }
+
+  @include mq(lg) {
+    right: -188px;
+    width: 261px;
+  }
+}
+
+.mainImageBox {
+  margin: 0 auto;
+
+  @include mq(sm) {
+    width: 50%;
+  }
+
+  @include mq(md) {
+    width: 300px;
   }
 }

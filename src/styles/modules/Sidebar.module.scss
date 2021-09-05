@@ -1,0 +1,70 @@
+@import '../common.scss';
+@import '../_breakpoint';
+@import '../_mixin';
+
+.sidebarWrap {
+  width: 320px;
+  position: fixed;
+  top: 0;
+  right: -320px;
+  bottom: 0;
+  left: auto;
+  background-color: rgba($black, 0.9);
+  transition: right 400ms ease;
+  z-index: 200;
+
+  &.isOpen {
+    right: 0;
+  }
+}
+
+.controller {
+  text-align: right;
+}
+
+.close {
+  display: inline-block;
+  height: 60px;
+  width: 60px;
+  position: relative;
+  cursor: pointer;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    height: 2px;
+    width: 32px;
+    background-color: $white;
+    position: absolute;
+    top: 49%;
+    left: 24%;
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    content: '';
+    display: inline-block;
+    height: 2px;
+    width: 32px;
+    background-color: $white;
+    position: absolute;
+    top: 49%;
+    left: 24%;
+    transform: rotate(-45deg);
+  }
+}
+
+.listWrap {
+  padding: 0 32px;
+  color: $white;
+  font-size: 24px;
+
+  .listItem {
+    padding: 16px 0;
+    cursor: pointer;
+
+    &.icons {
+      margin-top: 40px;
+    }
+  }
+}

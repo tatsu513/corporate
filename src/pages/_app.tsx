@@ -1,6 +1,7 @@
-import 'styles/globals.css';
+import 'styles/globals.scss';
 import 'styles/reset.css';
 import type { AppProps } from 'next/app';
+import dynamic from 'next/dynamic';
 import {
   ChangeEvent,
   useCallback,
@@ -8,7 +9,10 @@ import {
   useState,
 } from 'react';
 import Auth from '@/components/Auth';
-import Header from '@/components/Header';
+
+const DynamicComponent = dynamic(() => import('./BaseProvider'), {
+  ssr: false,
+});
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [isAdmin, setIsAdmin] = useState(false);
@@ -44,19 +48,20 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, [username, password]);
   return (
     <>
-      <Header />
-      <main>
-        {isAdmin ? (
-          <Component {...pageProps} />
-        ) : (
-          <Auth
-            username={username}
-            password={password}
-            onChange={inputValue}
-            onSubmit={checkUser}
-          />
-        )}
-      </main>
+      <DynamicComponent>
+        <main>
+          {isAdmin ? (
+            <Component {...pageProps} />
+          ) : (
+            <Auth
+              username={username}
+              password={password}
+              onChange={inputValue}
+              onSubmit={checkUser}
+            />
+          )}
+        </main>
+      </DynamicComponent>
     </>
   );
 }

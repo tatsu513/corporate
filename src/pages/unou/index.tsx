@@ -5,11 +5,13 @@ import marked from 'marked';
 import { GetStaticProps } from 'next';
 import { useRouter } from 'next/dist/client/router';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 import Contact from '@/components/Contact';
+import Profile from '@/components/Profile';
 import PrimaryButton from '@/components/buttons/PrimaryButton';
 import SectionTitle from '@/components/common/SectionTitle';
 import SectionTitleVertical from '@/components/common/SectionTitleVertical';
-import topImage from 'images/a.png';
+import topImage from 'images/unou-image.png';
 import styles from 'styles/modules/Unou.module.scss';
 
 interface markdownInfo {
@@ -30,6 +32,25 @@ interface Props {
 
 const Unou: React.VFC<Props> = ({ articles, news }) => {
   const router = useRouter();
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  const NewsSectionTitle = () => {
+    if (windowWidth > 1024) {
+      return (
+        <div className={styles.sectionTitleBox}>
+          <SectionTitleVertical title={'News'} />
+        </div>
+      );
+    } else {
+      return <SectionTitle title={'News'} side={'left'} />;
+    }
+  };
+
+  useEffect(() => {
+    const onResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
   return (
     <>
       {/* {articles.map((article, i) => (
@@ -43,10 +64,8 @@ const Unou: React.VFC<Props> = ({ articles, news }) => {
       </div>
       <div className={styles.newsWrap}>
         <div className={styles.newsContents}>
-          <div className={styles.sectionTitleBox}>
-            <SectionTitleVertical title={'News'} />
-          </div>
-          <div className={styles.newsBody}>
+          <NewsSectionTitle />
+          <section className={styles.newsBody}>
             <ul className={styles.itemWrap}>
               {news.map((item, i) => (
                 <li className={styles.item} key={i}>
@@ -65,25 +84,31 @@ const Unou: React.VFC<Props> = ({ articles, news }) => {
                 onClick={() => router.push('news')}
               />
             </div>
-          </div>
+          </section>
         </div>
       </div>
       <div className={styles.portfolioWrap}>
         <SectionTitle title={'Portfolio'} />
-        <div className={styles.works}>
+        <section className={styles.works}>
           {articles.map((article, i) => (
-            <div className={styles.imageBox} key={i}>
-              <div className={styles.imageAjBox}>
-                <Image
-                  src={article.frontmatter.coverImage}
-                  width='360'
-                  height='360'
-                  alt={'トップイメージ'}
-                />
+            <div className={styles.workBox} key={i}>
+              <div className={styles.imageBox} key={i}>
+                <div className={styles.imageAjBox}>
+                  <Image
+                    src={article.frontmatter.coverImage}
+                    width='1000'
+                    height='1000'
+                    alt={'トップイメージ'}
+                  />
+                </div>
+              </div>
+              <div className={styles.worksText}>
+                {article.frontmatter.title}／
+                {article.frontmatter.excerpt}
               </div>
             </div>
           ))}
-        </div>
+        </section>
         <div className={styles.controller}>
           <PrimaryButton
             text={'More'}
@@ -91,6 +116,9 @@ const Unou: React.VFC<Props> = ({ articles, news }) => {
           />
         </div>
       </div>
+      <section className={styles.profileWrap}>
+        <Profile windowWidth={windowWidth} />
+      </section>
       <Contact />
     </>
   );
