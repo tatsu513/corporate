@@ -4,7 +4,7 @@ import Icon from './common/Icon';
 import SectionTitle from './common/SectionTitle';
 import TextArea from './forms/TextArea';
 import TextField from './forms/TextField';
-import instaIcon from 'images/instagram.svg';
+import check from 'images/check-circle.svg';
 import styles from 'styles/modules/Contact.module.scss';
 
 const Contact: React.VFC = () => {
@@ -101,15 +101,19 @@ const Contact: React.VFC = () => {
         <div className={styles.controller}>
           <PrimaryButton text={'Send'} onClick={sendMail} />
         </div>
-        {false && (
+        {true && (
           <div className={styles.message}>
-            <Icon
-              icon={instaIcon}
-              alt={'インスタグラム'}
-              width={30}
-              marginRight={16}
-            />
-            送信完了しました。メッセージありがとうございました。
+            <span className={styles.messageIcon}>
+              <Icon
+                icon={check}
+                alt={'チェックアイコン'}
+                width={30}
+                marginRight={16}
+              />
+            </span>
+            <span className={styles.messageText}>
+              送信完了しました。メッセージありがとうございました。
+            </span>
           </div>
         )}
       </div>
