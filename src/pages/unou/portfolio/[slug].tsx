@@ -7,7 +7,7 @@ import Breadcrumb from '@/components/Breadcrumb';
 import Contact from '@/components/Contact';
 import { portfolioBreadcrumb } from 'domains/unou';
 import { MarkdownFileData } from 'models/';
-import styles from 'styles/modules/Slug.module.scss';
+import styles from 'styles/modules/PortfolioPage.module.scss';
 
 const PortfolioPage: React.VFC<MarkdownFileData> = (props) => {
   const [breadcrumbList, setBreadcrumbList] = useState(
@@ -22,7 +22,7 @@ const PortfolioPage: React.VFC<MarkdownFileData> = (props) => {
   return (
     <>
       <Breadcrumb items={breadcrumbList} />
-      <section className={styles.newsWrao}>
+      <section className={`${styles.portfolioWrap} a-nbu`}>
         <div className={styles.date}>{props.frontmatter.date}</div>
         <div className={styles.title}>
           {props.frontmatter.excerpt}

@@ -50,13 +50,13 @@ const Unou: React.VFC<Props> = ({ articles, news }) => {
           <div dangerouslySetInnerHTML={{ __html: marked(article.content) }} />
         </div>
       ))} */}
-      <div className={styles.topImage}>
+      <div className={`${styles.topImage} a-nop `}>
         <Image src={topImage} alt={'トップイメージ'} />
       </div>
       <div className={styles.newsWrap}>
         <div className={styles.newsContents}>
           <NewsSectionTitle />
-          <section className={styles.newsBody}>
+          <section className='a-nbu'>
             <ul className={styles.itemWrap}>
               {news.map((item, i) => (
                 <li className={styles.item} key={i}>
@@ -80,7 +80,7 @@ const Unou: React.VFC<Props> = ({ articles, news }) => {
       </div>
       <div className={styles.portfolioWrap}>
         <SectionTitle title={'Portfolio'} />
-        <section className={styles.works}>
+        <section className={`${styles.works} a-nbu`}>
           <Portfolio items={articles} />
         </section>
         <div className={styles.controller}>
@@ -90,7 +90,7 @@ const Unou: React.VFC<Props> = ({ articles, news }) => {
           />
         </div>
       </div>
-      <section className={styles.profileWrap}>
+      <section className={`${styles.profileWrap} a-nop`}>
         <Profile windowWidth={windowWidth} />
       </section>
       <Contact />

@@ -37,14 +37,14 @@ const Illusts: React.VFC<Props> = ({ articles }) => {
     <>
       <Breadcrumb items={portfolioBreadcrumb} />
       <SectionTitle title={'Portfolio'} />
-      <section className={styles.workWrap}>
+      <section className={`${styles.workWrap} a-nbu`}>
         <Menu
           selectedItem={selectedItem}
           items={illustCategories}
           onClick={selectItem}
         />
       </section>
-      <section className={styles.works}>
+      <section className={`${styles.works} a-nbu`}>
         <PortfolioList items={works} />
         <p className={styles.note}>
           ※
