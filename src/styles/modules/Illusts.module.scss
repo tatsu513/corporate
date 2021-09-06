@@ -1,25 +1,28 @@
 @import '../common.scss';
+@import '../animation';
 @import url(http://fonts.googleapis.com/css?family=Ubuntu:bold);
 @import url(http://fonts.googleapis.com/css?family=Vollkorn);
 
 .workWrap {
   margin: 40px auto 64px;
-  width: 100%;
-  max-width: 1024px;
+  animation-name: normalbottomUp;
+  animation-duration: 0.8s;
+  animation-delay: 0;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 .note {
   color: $grey-main;
 }
 
-.worksErea {
-  margin: 40px auto 64px;
-  width: 100%;
-  max-width: 1024px;
-}
-
 .works {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 48px;
+  margin-bottom: 48px;
+  animation-name: normalbottomUp;
+  animation-duration: 0.8s;
+  animation-delay: 0;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }

@@ -1,6 +1,7 @@
 @import '../common.scss';
 @import '../_breakpoint';
 @import '../_mixin';
+@import '../animation';
 
 .homeWrap {
   margin: 0 auto;
@@ -26,6 +27,11 @@
   margin-bottom: 120px;
   color: $black;
   text-align: center;
+  animation-name: bottomUp;
+  animation-duration: 1.5s;
+  animation-delay: 0;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 
   @include mq(sm) {
     margin: 24px auto 48px;
@@ -35,6 +41,7 @@
   }
 
   @include mq(md) {
+    margin: 24px auto 20vh;
     font-size: 28px;
     letter-spacing: 0.2rem;
     writing-mode: horizontal-tb;
@@ -64,6 +71,12 @@
 
 .controllers {
   display: flex;
+  opacity: 0;
+  animation-name: bottomUp;
+  animation-duration: 1.5s;
+  animation-delay: 0;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 
   @include mq(sm) {
     justify-content: space-around;
@@ -123,10 +136,16 @@
   position: absolute;
   top: auto;
   bottom: 0;
+  opacity: 0;
 }
 
 .leftImageBox {
   bottom: 56px;
+  animation-name: opacity;
+  animation-duration: 14.5s;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
 
   @include mq(sm) {
     left: -14px;
@@ -146,6 +165,11 @@
 
 .rightImageBox {
   width: 261px;
+  animation-name: opacity;
+  animation-duration: 14.5s;
+  animation-delay: 8.5s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
 
   @include mq(sm) {
     right: -20px;
@@ -167,6 +191,12 @@
 
 .mainImageBox {
   margin: 0 auto;
+  animation-name: bottomUp;
+  animation-duration: 1.5s;
+  animation-delay: 0;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  position: relative;
 
   @include mq(sm) {
     width: 50%;
@@ -175,4 +205,27 @@
   @include mq(md) {
     width: 300px;
   }
+}
+
+.mainImageTop {
+  opacity: 1;
+  animation-name: topMainOpacityHide;
+  animation-duration: 8s;
+  animation-delay: 4s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+}
+
+.mainImageBottom {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  animation-name: topMainOpacityShow;
+  animation-duration: 8s;
+  animation-delay: 4s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
 }

@@ -1,6 +1,7 @@
 @import '../common.scss';
 @import '../_breakpoint';
 @import '../_mixin';
+@import '../animation';
 
 .titleWrap {
   padding-top: 32px;
@@ -15,6 +16,19 @@
   padding-bottom: 32px;
   position: relative;
   text-align: center;
+  animation-name: leftRight;
+  animation-duration: 0.8s;
+  animation-delay: 0;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+
+  &.left {
+    animation-name: rightLeft;
+    animation-duration: 0.8s;
+    animation-delay: 0;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
 
   @include mq(sm) {
     font-size: 40px;
@@ -33,6 +47,11 @@
     left: -64px;
     bottom: 0;
     background-color: $grey-main;
+    animation-name: rightLeftLine;
+    animation-duration: 0.8s;
+    animation-delay: 0;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
   }
 
   &.left::after {

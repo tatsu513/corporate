@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import leftImg from 'images/top_left.png';
 import leftMdImg from 'images/top_left_md.png';
 import mainImg from 'images/top_main.png';
+import mainImg2 from 'images/top_main2.png';
 import rightImg from 'images/top_right.png';
 import rightMdImg from 'images/top_right_md.png';
 import styles from 'styles/modules/Home.module.scss';
@@ -76,7 +77,16 @@ export const Home: React.VFC = () => {
         </div>
         <LeftImage />
         <div className={styles.mainImageBox}>
-          <Image src={mainImg} alt='右脳・左脳' />
+          <div className={styles.mainImageTop}>
+            <Image src={mainImg} alt='右脳・左脳' />
+          </div>
+          <div className={styles.mainImageBottom}>
+            <Image
+              className={styles.ooooo}
+              src={mainImg2}
+              alt='右脳・左脳'
+            />
+          </div>
         </div>
         <RightImage />
       </div>

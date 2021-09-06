@@ -1,10 +1,31 @@
 @import '../common.scss';
+@import '../animation';
 
 .titleWrap {
   display: inline-block;
   height: 100%;
+  margin-right: 40px;
+  position: relative;
   text-align: left;
   overflow-x: visible;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    width: 1px;
+    position: absolute;
+    top: 0;
+    right: -1px;
+    bottom: 0;
+    left: auto;
+    background-color: $grey-main;
+    animation-name: rightLeftLineVertical;
+    animation-duration: 0.8s;
+    animation-delay: 0;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
 }
 
 .title {
@@ -15,6 +36,11 @@
   text-align: right;
   transform: rotate(180deg);
   writing-mode: tb;
+  animation-name: leftRightVertical;
+  animation-duration: 0.8s;
+  animation-delay: 0;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 .subTitle {
