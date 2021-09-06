@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400;500&display=swap');
 @import './_breakpoint';
 @import './_mixin';
+@import './animation';
 
 html,
 body {
@@ -49,4 +50,21 @@ section {
 
 img {
   width: 100%;
+}
+
+// アニメーション用
+.a-nbu {
+  animation-name: normalbottomUp;
+  animation-duration: 0.8s;
+  animation-delay: 0;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.a-nop {
+  animation-name: normalOpacity;
+  animation-duration: 1s;
+  animation-delay: 0;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }

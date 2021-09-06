@@ -1,4 +1,4 @@
-import 'styles/globals.scss';
+import 'styles/global.scss';
 import 'styles/reset.css';
 import type { AppProps } from 'next/app';
 import dynamic from 'next/dynamic';

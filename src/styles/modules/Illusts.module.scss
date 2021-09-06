@@ -5,11 +5,6 @@
 
 .workWrap {
   margin: 40px auto 64px;
-  animation-name: normalbottomUp;
-  animation-duration: 0.8s;
-  animation-delay: 0;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
 }
 
 .note {
@@ -20,9 +15,4 @@
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 48px;
-  animation-name: normalbottomUp;
-  animation-duration: 0.8s;
-  animation-delay: 0;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
 }

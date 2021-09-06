@@ -13,11 +13,6 @@
 
 .topImage {
   width: 100%;
-  animation-name: normalOpacity;
-  animation-duration: 2s;
-  animation-delay: 0;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
 
   & > div {
     vertical-align: top;
@@ -51,14 +46,6 @@
     display: flex;
     max-width: 1000px;
   }
-}
-
-.newsBody {
-  animation-name: normalbottomUp;
-  animation-duration: 0.8s;
-  animation-delay: 0;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
 }
 
 .itemWrap {
@@ -117,11 +104,6 @@
   display: flex;
   flex-wrap: wrap;
   margin-top: 48px;
-  animation-name: normalbottomUp;
-  animation-duration: 0.8s;
-  animation-delay: 0;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
 }
 
 .workBox {
@@ -199,9 +181,4 @@
 
 .profileWrap {
   margin-bottom: 80px;
-  animation-name: normalOpacity;
-  animation-duration: 1s;
-  animation-delay: 0;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
 }

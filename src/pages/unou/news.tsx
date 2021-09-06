@@ -24,7 +24,7 @@ const News: React.VFC<Props> = ({ news }) => {
       <div className='top-title-box'>
         <SectionTitle title={'News Archive'} />
       </div>
-      <section className={styles.newsWrap}>
+      <section className={`${styles.newsWrap} a-nbu`}>
         {news.map((item, i) => (
           <div className={styles.itemBox} key={i}>
             <div className={styles.date}>
