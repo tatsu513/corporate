@@ -88,3 +88,37 @@
     transform: translateY(0);
   }
 }
+
+// SECTION TITLE TEXT
+@keyframes leftRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// SECTION TITLE TEXT
+@keyframes rightLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// SECTION TITLE LINE
+@keyframes rightLeftLine {
+  0% {
+    transform: translateX(30px) scaleX(0);
+  }
+  100% {
+    transform: translateX(0) scaleX(1);
+  }
+}
