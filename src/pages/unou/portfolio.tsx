@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import matter from 'gray-matter';
-import marked from 'marked';
+// import marked from 'marked';
 import { GetStaticProps } from 'next';
 import { useState } from 'react';
 import Contact from '@/components/Contact';
@@ -45,22 +45,20 @@ const Illusts: React.VFC<Props> = ({ articles }) => {
   return (
     <>
       <SectionTitle title={'Portfolio'} />
-      <div className={styles.workWrap}>
-        <section>
-          <Menu
-            selectedItem={selectedItem}
-            items={illustCategories}
-            onClick={selectItem}
-          />
-        </section>
-        <section className={styles.works}>
-          <Portfolio items={works} />
-          <p className={styles.note}>
-            ※
-            公開している事例はごく一部です。より詳しい事例は直接お問い合わせください。
-          </p>
-        </section>
-      </div>
+      <section className={styles.workWrap}>
+        <Menu
+          selectedItem={selectedItem}
+          items={illustCategories}
+          onClick={selectItem}
+        />
+      </section>
+      <section className={styles.works}>
+        <Portfolio items={works} />
+        <p className={styles.note}>
+          ※
+          公開している事例はごく一部です。より詳しい事例は直接お問い合わせください。
+        </p>
+      </section>
       <Contact />
     </>
   );

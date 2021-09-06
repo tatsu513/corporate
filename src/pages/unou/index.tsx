@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import matter from 'gray-matter';
-import marked from 'marked';
+// import marked from 'marked';
 import { GetStaticProps } from 'next';
 import { useRouter } from 'next/dist/client/router';
 import Image from 'next/image';
@@ -82,7 +82,7 @@ const Unou: React.VFC<Props> = ({ articles, news }) => {
             <div className={styles.controller}>
               <PrimaryButton
                 text={'More'}
-                onClick={() => router.push('news')}
+                onClick={() => router.push('unou/news')}
               />
             </div>
           </section>
