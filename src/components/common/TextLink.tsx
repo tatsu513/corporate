@@ -4,11 +4,17 @@ interface Props {
   text: string;
   size?: number;
   color?: string;
+  marginRight?: number;
 }
 
 const TextLink: React.VFC<Props> = (props) => {
   return (
-    <div className={styles.link}>
+    <div
+      className={styles.link}
+      style={{
+        marginRight: `${props.marginRight || 40}px`,
+      }}
+    >
       <span
         className={`${styles.text} ${
           props.color === 'white' && styles.white

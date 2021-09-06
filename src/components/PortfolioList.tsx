@@ -1,15 +1,22 @@
+import { useRouter } from 'next/dist/client/router';
 import Image from 'next/image';
-import styles from 'styles/modules/Portfolio.module.scss';
+import { MarkdownFileData } from 'models/';
+import styles from 'styles/modules/PortfolioList.module.scss';
 
 interface Props {
-  items: any[];
+  items: MarkdownFileData[];
 }
 
-const Portfolio: React.VFC<Props> = ({ items }) => {
+const PortfolioList: React.VFC<Props> = ({ items }) => {
+  const router = useRouter();
   return (
     <>
       {items.map((item, i) => (
-        <div className={styles.workBox} key={i}>
+        <div
+          className={styles.workBox}
+          key={i}
+          onClick={() => router.push(`/unou/portfolio/${item.slug}`)}
+        >
           <div className={styles.imageBox} key={i}>
             <div className={styles.imageAjBox}>
               <Image
@@ -29,4 +36,4 @@ const Portfolio: React.VFC<Props> = ({ items }) => {
   );
 };
 
-export default Portfolio;
+export default PortfolioList;

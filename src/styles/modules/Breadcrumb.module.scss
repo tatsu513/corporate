@@ -1,0 +1,19 @@
+.breadcrumbWrap {
+  display: flex;
+  margin-top: 24px;
+}
+
+.arrow {
+  display: inline-block;
+  margin: 0 16px;
+  cursor: default;
+  font-size: 10px;
+}
+
+.item {
+  cursor: pointer;
+  &.disabled {
+    cursor: default;
+    pointer-events: none;
+  }
+}

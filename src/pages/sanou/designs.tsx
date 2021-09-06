@@ -8,22 +8,11 @@ import Contact from '@/components/Contact';
 import Menu from '@/components/Menu';
 import SectionTitle from '@/components/common/SectionTitle';
 import { workCategories } from 'domains';
+import { MarkdownFileData } from 'models/';
 import styles from 'styles/modules/Designs.module.scss';
 
-interface Articles {
-  slug: string;
-  frontmatter: {
-    title: string;
-    date: string;
-    excerpt: string;
-    coverImage: string;
-    category: string;
-  };
-  content: string;
-}
-
 interface Props {
-  articles: Articles[];
+  articles: MarkdownFileData[];
 }
 
 const Designs: React.VFC<Props> = (props) => {

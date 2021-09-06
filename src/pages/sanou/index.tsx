@@ -8,22 +8,11 @@ import Contact from '@/components/Contact';
 import PrimaryButton from '@/components/buttons/PrimaryButton';
 import SectionTitle from '@/components/common/SectionTitle';
 import SectionTitleVertical from '@/components/common/SectionTitleVertical';
+import { MarkdownFileData } from 'models/';
 import styles from 'styles/modules/Sanou.module.scss';
 
-interface Articles {
-  slug: string;
-  frontmatter: {
-    title: string;
-    date: string;
-    excerpt: string;
-    coverImage: string;
-    category: string;
-  };
-  content: string;
-}
-
 interface Props {
-  articles: Articles[];
+  articles: MarkdownFileData[];
 }
 
 const Sanou: React.VFC<Props> = ({ articles }) => {
