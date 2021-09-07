@@ -141,8 +141,8 @@
 
 .leftImageBox {
   bottom: 56px;
-  animation-name: opacity;
-  animation-duration: 14.5s;
+  animation-name: topLeftOpacity;
+  animation-duration: 80s;
   animation-delay: 2s;
   animation-iteration-count: infinite;
   animation-fill-mode: forwards;
@@ -165,11 +165,11 @@
 
 .rightImageBox {
   width: 261px;
-  animation-name: opacity;
-  animation-duration: 14.5s;
-  animation-delay: 8.5s;
+  animation-name: topRightOpacity;
+  animation-duration: 80s;
+  animation-delay: 2s;
   animation-iteration-count: infinite;
-  animation-fill-mode: both;
+  animation-fill-mode: forwards;
 
   @include mq(sm) {
     right: -20px;
@@ -210,8 +210,8 @@
 .mainImageTop {
   opacity: 1;
   animation-name: topMainOpacityHide;
-  animation-duration: 8s;
-  animation-delay: 4s;
+  animation-duration: 40s;
+  animation-delay: 2s;
   animation-iteration-count: infinite;
   animation-fill-mode: both;
 }
@@ -224,8 +224,8 @@
   left: 0;
   opacity: 0;
   animation-name: topMainOpacityShow;
-  animation-duration: 8s;
-  animation-delay: 4s;
+  animation-duration: 40s;
+  animation-delay: 2s;
   animation-iteration-count: infinite;
   animation-fill-mode: both;
 }
