@@ -6,6 +6,7 @@
   border: 1px solid $grey-main;
 
   @include mq(md) {
+    padding-top: 32px;
   }
 
   @include mq(lg) {
@@ -97,9 +98,6 @@
 }
 
 .imageBox {
-  @include mq(sm) {
-    padding: 16px;
-  }
   @include mq(lg) {
     padding-top: 40px;
   }

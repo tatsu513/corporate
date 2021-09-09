@@ -38,12 +38,26 @@
 
 .newsContents {
   margin: 0 auto;
-  padding-bottom: 144px;
   width: 100%;
+
+  @include mq(md) {
+    padding: 72px 0;
+  }
 
   @include mq(lg) {
     display: flex;
     max-width: 1000px;
+    padding-top: 0;
+    padding-bottom: 144px;
+  }
+}
+
+.newsBody {
+  @include mq(md) {
+    padding-top: 0;
+  }
+  @include mq(lg) {
+    padding-top: 144px;
   }
 }
 

@@ -6,6 +6,12 @@
 
 .itemBox {
   margin-bottom: 72px;
+  cursor: pointer;
+  transition: opacity 400ms ease;
+
+  &:hover {
+    opacity: 0.6;
+  }
 }
 
 .date {

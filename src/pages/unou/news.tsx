@@ -26,7 +26,11 @@ const News: React.VFC<Props> = ({ news }) => {
       </div>
       <section className={`${styles.newsWrap} a-nbu`}>
         {news.map((item, i) => (
-          <div className={styles.itemBox} key={i}>
+          <div
+            className={styles.itemBox}
+            key={i}
+            onClick={() => router.push(`/unou/news/${item.slug}`)}
+          >
             <div className={styles.date}>
               {item.frontmatter.date.replace(/-/g, '.')}
             </div>
@@ -42,7 +46,7 @@ const News: React.VFC<Props> = ({ news }) => {
             <div className={styles.controller}>
               <ArrowLinkNormal
                 text={'More'}
-                onClick={() => router.push(`/unou/news/${item.slug}`)}
+                onClick={() => router.push('#')}
               />
             </div>
           </div>

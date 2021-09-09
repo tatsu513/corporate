@@ -56,7 +56,9 @@ const Unou: React.VFC<Props> = ({ articles, news }) => {
       <div className={styles.newsWrap}>
         <div className={styles.newsContents}>
           <NewsSectionTitle />
-          <section className='a-nbu sectionWrapper'>
+          <section
+            className={`${styles.newsBody} a-nbu sectionWrapper`}
+          >
             <ul className={styles.itemWrap}>
               {news.map((item, i) => (
                 <li className={styles.item} key={i}>
