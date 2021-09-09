@@ -42,7 +42,7 @@
 .jobTitle,
 .name {
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 500;
 
   @include mq(sm) {
     margin-bottom: 16px;
@@ -88,10 +88,12 @@
 .recode {
   margin-bottom: 24px;
   line-height: 1.5;
+  font-size: 14px;
 }
 
 .text {
   line-height: 1.5;
+  font-size: 14px;
 }
 
 .imageBox {

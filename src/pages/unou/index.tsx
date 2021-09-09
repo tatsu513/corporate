@@ -56,7 +56,7 @@ const Unou: React.VFC<Props> = ({ articles, news }) => {
       <div className={styles.newsWrap}>
         <div className={styles.newsContents}>
           <NewsSectionTitle />
-          <section className='a-nbu'>
+          <section className='a-nbu sectionWrapper'>
             <ul className={styles.itemWrap}>
               {news.map((item, i) => (
                 <li className={styles.item} key={i}>
@@ -78,7 +78,7 @@ const Unou: React.VFC<Props> = ({ articles, news }) => {
           </section>
         </div>
       </div>
-      <div className={styles.portfolioWrap}>
+      <div className='sectionWrapper'>
         <SectionTitle title={'Portfolio'} />
         <section className={`${styles.works} a-nbu`}>
           <Portfolio items={articles} />
@@ -90,7 +90,7 @@ const Unou: React.VFC<Props> = ({ articles, news }) => {
           />
         </div>
       </div>
-      <section className={`${styles.profileWrap} a-nop`}>
+      <section className='sectionWrapper a-nop'>
         <Profile windowWidth={windowWidth} />
       </section>
       <Contact />

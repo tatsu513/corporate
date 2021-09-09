@@ -33,13 +33,12 @@
 }
 
 .newsWrap {
-  margin-bottom: 72px;
   background-color: $back-color;
 }
 
 .newsContents {
   margin: 0 auto;
-  padding-bottom: 48px;
+  padding-bottom: 144px;
   width: 100%;
 
   @include mq(lg) {
@@ -58,7 +57,7 @@
   }
 
   @include mq(lg) {
-    padding: 48px 0;
+    padding: 0 0 48px 0;
   }
 }
 
@@ -94,10 +93,6 @@
 
 .controller {
   text-align: center;
-}
-
-.portfolioWrap {
-  margin-bottom: 80px;
 }
 
 .works {
@@ -177,8 +172,4 @@
     transform: scale(1);
     transition: all 400ms ease-out;
   }
-}
-
-.profileWrap {
-  margin-bottom: 80px;
 }
