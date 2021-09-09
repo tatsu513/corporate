@@ -7,7 +7,7 @@ import { useRouter } from 'next/dist/client/router';
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import Contact from '@/components/Contact';
-import Portfolio from '@/components/PortfolioList';
+import PortfolioList from '@/components/PortfolioList';
 import Profile from '@/components/Profile';
 import PrimaryButton from '@/components/buttons/PrimaryButton';
 import SectionTitle from '@/components/common/SectionTitle';
@@ -83,7 +83,7 @@ const Unou: React.VFC<Props> = ({ articles, news }) => {
       <div className='sectionWrapper'>
         <SectionTitle title={'Portfolio'} />
         <section className={`${styles.works} a-nbu`}>
-          <Portfolio items={articles} windowWidth={windowWidth} />
+          <PortfolioList items={articles} windowWidth={windowWidth} />
         </section>
         <div className={styles.controller}>
           <PrimaryButton

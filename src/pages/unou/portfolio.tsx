@@ -3,7 +3,7 @@ import * as path from 'path';
 import matter from 'gray-matter';
 // import marked from 'marked';
 import { GetStaticProps } from 'next';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import Breadcrumb from '@/components/Breadcrumb';
 import Contact from '@/components/Contact';
 import Menu from '@/components/Menu';
@@ -12,15 +12,18 @@ import SectionTitle from '@/components/common/SectionTitle';
 import { illustCategories } from 'domains';
 import { portfolioBreadcrumb } from 'domains/unou';
 import { MarkdownFileData } from 'models/';
+import { Width } from 'pages/BaseProvider';
 import styles from 'styles/modules/Illusts.module.scss';
 
 interface Props {
   articles: MarkdownFileData[];
 }
 
-const Illusts: React.VFC<Props> = ({ articles }) => {
+const IllustPortfolio: React.VFC<Props> = ({ articles }) => {
   const [works, setWorks] = useState(articles);
   const [selectedItem, setSelectedItem] = useState('all');
+
+  const windowWidth = useContext(Width);
 
   const selectItem = (type: string) => {
     type === 'all'
@@ -45,7 +48,7 @@ const Illusts: React.VFC<Props> = ({ articles }) => {
         />
       </section>
       <section className={`${styles.works} a-nbu`}>
-        <PortfolioList items={works} />
+        <PortfolioList items={works} windowWidth={windowWidth} />
         <p className={styles.note}>
           ※
           公開している事例はごく一部です。より詳しい事例は直接お問い合わせください。
@@ -72,4 +75,4 @@ export const getStaticProps: GetStaticProps = async () => {
   return { props: { articles } };
 };
 
-export default Illusts;
+export default IllustPortfolio;
