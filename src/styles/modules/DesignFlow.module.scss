@@ -1,0 +1,68 @@
+@import '../common.scss';
+
+.flowBox {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 80px;
+}
+
+.flow {
+  padding: 24px;
+  width: 30%;
+  position: relative;
+  background-color: $white;
+  border-top: solid 12px $yellow;
+  text-align: left;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    height: 1px;
+    width: 24px;
+    position: absolute;
+    top: 50%;
+    right: -38px;
+    bottom: auto;
+    transition: right 300ms ease;
+    background-color: $grey-main;
+  }
+
+  &::after {
+    content: '';
+    display: inline-block;
+    height: 1px;
+    width: 12px;
+    position: absolute;
+    top: calc(50% - 4px);
+    right: -40px;
+    bottom: auto;
+    transform: rotate(45deg);
+    transition: right 300ms ease;
+    background-color: $grey-main;
+  }
+
+  &:nth-child(3) {
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.flowTitle {
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid $grey-main;
+  font-size: 26px;
+}
+
+.text {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.flowListItem {
+  line-height: 1.6;
+  font-size: 14px;
+}

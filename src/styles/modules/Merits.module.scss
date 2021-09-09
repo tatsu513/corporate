@@ -12,6 +12,10 @@
   &.inversion {
     flex-flow: row-reverse;
   }
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 }
 
 .meritContents {

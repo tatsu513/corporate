@@ -7,6 +7,7 @@ import { useRouter } from 'next/dist/client/router';
 import Image from 'next/image';
 import { useContext } from 'react';
 import Contact from '@/components/Contact';
+import DesignFlow from '@/components/DesignFlow';
 import Merits from '@/components/Merits';
 import PortfolioList from '@/components/PortfolioList';
 import PrimaryButton from '@/components/buttons/PrimaryButton';
@@ -91,6 +92,9 @@ const Sanou: React.VFC<Props> = ({ articles }) => {
           <section className={styles.meritBox}>
             <Merits />
           </section>
+          <div className={styles.meritDesignFlowWrap}>
+            <DesignFlow />
+          </div>
         </div>
       </div>
       <Contact />
