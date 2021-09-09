@@ -24,7 +24,7 @@ const Designs: React.VFC<Props> = (props) => {
       ? setWorks(props.articles)
       : setWorks(
           props.articles.filter(
-            (article) => article.frontmatter.category === type,
+            (article) => article.frontmatter.categories === type,
           ),
         );
     setSelectedItem(type);
@@ -42,7 +42,7 @@ const Designs: React.VFC<Props> = (props) => {
           {works.map((article, i) => (
             <div className={styles.aaa} key={i}>
               <h3>{article.frontmatter.title}</h3>
-              <h4>{article.frontmatter.category}</h4>
+              <h4>{article.frontmatter.categories}</h4>
               <div
                 dangerouslySetInnerHTML={{
                   __html: marked(article.content),

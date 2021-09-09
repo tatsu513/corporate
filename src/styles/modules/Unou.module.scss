@@ -56,7 +56,7 @@
     display: flex;
     max-width: 1000px;
     padding-top: 0;
-    padding-bottom: 144px;
+    padding-bottom: 72px;
   }
 }
 
@@ -65,7 +65,7 @@
     padding-top: 0;
   }
   @include mq(lg) {
-    padding-top: 144px;
+    padding-top: 72px;
   }
 }
 

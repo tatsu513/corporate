@@ -30,7 +30,7 @@ const IllustPortfolio: React.VFC<Props> = ({ articles }) => {
       ? setWorks(articles)
       : setWorks(
           articles.filter(
-            (article) => article.frontmatter.category === type,
+            (article) => article.frontmatter.categories === type,
           ),
         );
     setSelectedItem(type);

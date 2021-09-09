@@ -2,8 +2,8 @@
 title: 'MD TEST 1'
 date: '2021-08-26'
 excerpt: 'this is excerpt text'
-coverImage: '*'
-category: 'graphic'
+coverImage: '/images/sample.png'
+categories: ['graphic', 'aaaaaa']
 ---
 
 <link href="https://raw.github.com/kottkrig/Markdown-CSS/master/markdown.css" rel="stylesheet"></link>

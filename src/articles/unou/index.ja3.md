@@ -3,7 +3,7 @@ title: 'MD TEST 1'
 date: '2021-08-26'
 excerpt: 'this is excerpt text'
 coverImage: '/images/sample.png'
-category: 'client'
+categories: ['client']
 ---
 
 ## Headding 2

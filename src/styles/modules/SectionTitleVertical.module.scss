@@ -1,5 +1,7 @@
 @import '../common.scss';
 @import '../animation';
+@import '../_breakpoint';
+@import '../_mixin';
 
 .titleWrap {
   display: inline-block;
@@ -41,6 +43,10 @@
   animation-delay: 0;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+
+  @include mq(lg) {
+    padding: 0 0 72px 32px;
+  }
 }
 
 .subTitle {

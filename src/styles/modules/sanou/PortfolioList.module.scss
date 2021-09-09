@@ -1,0 +1,105 @@
+@import '../../common.scss';
+@import '../../_breakpoint';
+@import '../../_mixin';
+
+.workWrap {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 48px;
+}
+
+.workBox {
+  width: 30%;
+  margin-right: calc((100% - 90%) / 2);
+  margin-bottom: 88px;
+
+  &:nth-child(3n) {
+    @include mq(md) {
+      margin-right: calc(100% - 92%);
+    }
+
+    @include mq(lg) {
+      margin-right: 0;
+    }
+  }
+
+  @include mq(sm) {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  @include mq(md) {
+    width: 46%;
+    margin-right: calc(100% - 92%);
+
+    &.minWidth {
+      width: 100%;
+      margin-right: 0;
+    }
+  }
+
+  @include mq(lg) {
+    width: 30%;
+    margin-right: calc((100% - 90%) / 2);
+  }
+
+  &:nth-child(2n) {
+    @include mq(md) {
+      margin-right: 0;
+    }
+
+    @include mq(lg) {
+      margin-right: calc((100% - 90%) / 2);
+    }
+  }
+}
+
+.imageBox {
+  width: 100%;
+  margin-bottom: 24px;
+  position: relative;
+  cursor: pointer;
+
+  &:hover {
+    img {
+      transform: scale(1.2);
+    }
+  }
+
+  &:before {
+    display: block;
+    content: '';
+    padding-top: 100%;
+  }
+
+  .imageAjBox {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  img {
+    object-fit: cover;
+    transform: scale(1);
+    transition: all 400ms ease-out;
+  }
+}
+
+.worksText {
+  margin-bottom: 16px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.workCategoryBox {
+  display: flex;
+}
+
+.workCategory {
+  margin-right: 8px;
+  padding: 4px 16px;
+  border: 1px solid $grey-main;
+  font-size: 14px;
+}
