@@ -2,6 +2,12 @@
 @import '../_breakpoint';
 @import '../_mixin';
 
+.workWrap {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 48px;
+}
+
 .workBox {
   width: 30%;
   margin-right: calc((100% - 90%) / 2);
@@ -82,6 +88,18 @@
 }
 
 .worksText {
+  margin-bottom: 16px;
   cursor: pointer;
   font-size: 16px;
+}
+
+.workCategoryBox {
+  display: flex;
+}
+
+.workCategory {
+  margin-right: 8px;
+  padding: 4px 16px;
+  border: 1px solid $grey-main;
+  font-size: 14px;
 }

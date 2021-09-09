@@ -26,11 +26,19 @@ const IllustPortfolio: React.VFC<Props> = ({ articles }) => {
   const windowWidth = useContext(Width);
 
   const selectItem = (type: string) => {
+    const filter = (data: MarkdownFileData[]) => {
+      const n = data.filter((d) => {
+        return d.frontmatter.categories.includes(type);
+      });
+      console.log(n);
+      return data;
+    };
+    filter(articles);
     type === 'all'
       ? setWorks(articles)
       : setWorks(
-          articles.filter(
-            (article) => article.frontmatter.categories === type,
+          articles.filter((article) =>
+            article.frontmatter.categories.includes(type),
           ),
         );
     setSelectedItem(type);

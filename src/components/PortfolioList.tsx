@@ -20,7 +20,7 @@ const PortfolioList: React.VFC<Props> = ({ items, windowWidth }) => {
   };
   const router = useRouter();
   return (
-    <>
+    <div className={styles.workWrap}>
       {items.map((item, i) => (
         <div
           className={`${styles.workBox} ${
@@ -42,9 +42,16 @@ const PortfolioList: React.VFC<Props> = ({ items, windowWidth }) => {
           <div className={styles.worksText}>
             {item.frontmatter.title}／{item.frontmatter.excerpt}
           </div>
+          <ul className={styles.workCategoryBox}>
+            {item.frontmatter.categories.map((cacategory, i) => (
+              <li className={styles.workCategory} key={i}>
+                {cacategory}
+              </li>
+            ))}
+          </ul>
         </div>
       ))}
-    </>
+    </div>
   );
 };
 
