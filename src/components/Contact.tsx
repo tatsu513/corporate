@@ -64,61 +64,63 @@ const Contact: React.VFC = () => {
     [email, name, title, body],
   );
   return (
-    <div className={styles.contactWrap}>
-      <SectionTitle title={'Contact'} side={'left'} />
-      <div className={`${styles.contactContainer} a-nbu`}>
-        <div className={styles.contents}>
-          <div className={styles.itemBox}>
-            <div className={styles.item}>
-              <TextField
-                label={'メールアドレス'}
-                value={email}
-                onChange={inputEmail}
-              />
+    <div className='sectionWrapper'>
+      <div className={`${styles.contactWrap} sectionWrapper`}>
+        <SectionTitle title={'Contact'} side={'left'} />
+        <section className={`${styles.contactContainer} a-nbu`}>
+          <div className={styles.contents}>
+            <div className={styles.itemBox}>
+              <div className={styles.item}>
+                <TextField
+                  label={'メールアドレス'}
+                  value={email}
+                  onChange={inputEmail}
+                />
+              </div>
+              <div className={styles.item}>
+                <TextField
+                  label={'貴社名・お名前'}
+                  value={name}
+                  onChange={inputName}
+                />
+              </div>
+              <div className={styles.item}>
+                <TextField
+                  label={'タイトル'}
+                  value={title}
+                  onChange={inputTitle}
+                />
+              </div>
             </div>
-            <div className={styles.item}>
-              <TextField
-                label={'貴社名・お名前'}
-                value={name}
-                onChange={inputName}
-              />
-            </div>
-            <div className={styles.item}>
-              <TextField
-                label={'タイトル'}
-                value={title}
-                onChange={inputTitle}
+            <div className={styles.itemBox}>
+              <TextArea
+                label={'お問い合わせ内容'}
+                value={body}
+                onChange={inputBody}
               />
             </div>
           </div>
-          <div className={styles.itemBox}>
-            <TextArea
-              label={'お問い合わせ内容'}
-              value={body}
-              onChange={inputBody}
-            />
+          <div className={styles.controller}>
+            <PrimaryButton text={'Send'} onClick={sendMail} />
           </div>
-        </div>
-        <div className={styles.controller}>
-          <PrimaryButton text={'Send'} onClick={sendMail} />
-        </div>
-        <div
-          className={`${styles.message} ${
-            isSuccess && styles.isSuccess
-          }`}
-        >
-          <span className={styles.messageIcon}>
-            <Icon
-              icon={check}
-              alt={'チェックアイコン'}
-              width={30}
-              marginRight={16}
-            />
-          </span>
-          <span className={styles.messageText}>
-            送信完了しました。メッセージありがとうございました。
-          </span>
-        </div>
+          <div
+            className={`${styles.message} ${
+              isSuccess && styles.isSuccess
+            }`}
+          >
+            <span className={styles.messageIcon}>
+              <Icon
+                icon={check}
+                alt={'チェックアイコン'}
+                width={30}
+                marginRight={16}
+              />
+            </span>
+            <span className={styles.messageText}>
+              送信完了しました。メッセージありがとうございました。
+            </span>
+          </div>
+        </section>
       </div>
     </div>
   );

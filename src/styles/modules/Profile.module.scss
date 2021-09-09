@@ -5,7 +5,12 @@
 .profileWrap {
   border: 1px solid $grey-main;
 
+  @include mq(sm) {
+    padding: 32px;
+  }
+
   @include mq(md) {
+    padding-top: 32px;
   }
 
   @include mq(lg) {
@@ -18,6 +23,10 @@
   @include mq(md) {
     display: flex;
     padding: 32px 32px;
+
+    &.minWidth {
+      flex-direction: column;
+    }
   }
 
   @include mq(lg) {
@@ -27,11 +36,15 @@
 
 .contentBox {
   @include mq(sm) {
-    padding: 16px;
+    margin-bottom: 24px;
   }
   @include mq(md) {
     padding: 0;
     margin-right: 32px;
+
+    &.minWidth {
+      margin-bottom: 24px;
+    }
   }
   @include mq(lg) {
     margin-right: 0;
@@ -42,7 +55,7 @@
 .jobTitle,
 .name {
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 500;
 
   @include mq(sm) {
     margin-bottom: 16px;
@@ -88,16 +101,15 @@
 .recode {
   margin-bottom: 24px;
   line-height: 1.5;
+  font-size: 14px;
 }
 
 .text {
   line-height: 1.5;
+  font-size: 14px;
 }
 
 .imageBox {
-  @include mq(sm) {
-    padding: 16px;
-  }
   @include mq(lg) {
     padding-top: 40px;
   }
@@ -108,12 +120,17 @@
   background-color: azure;
 
   @include mq(sm) {
-    width: 82vw;
-    height: 82vw;
+    width: 100%;
+    padding-top: 100%;
   }
 
   @include mq(md) {
     width: 310px;
     height: 310px;
+
+    &.minWidth {
+      width: 100%;
+      padding-top: 100%;
+    }
   }
 }

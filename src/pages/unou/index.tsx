@@ -5,9 +5,9 @@ import matter from 'gray-matter';
 import { GetStaticProps } from 'next';
 import { useRouter } from 'next/dist/client/router';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Contact from '@/components/Contact';
-import Portfolio from '@/components/PortfolioList';
+import PortfolioList from '@/components/PortfolioList';
 import Profile from '@/components/Profile';
 import PrimaryButton from '@/components/buttons/PrimaryButton';
 import SectionTitle from '@/components/common/SectionTitle';
@@ -53,10 +53,12 @@ const Unou: React.VFC<Props> = ({ articles, news }) => {
       <div className={`${styles.topImage} a-nop `}>
         <Image src={topImage} alt={'トップイメージ'} />
       </div>
-      <div className={styles.newsWrap}>
+      <div className={`${styles.newsWrap} sectionWrapper`}>
         <div className={styles.newsContents}>
           <NewsSectionTitle />
-          <section className='a-nbu'>
+          <section
+            className={`${styles.newsBody} a-nbu sectionWrapper`}
+          >
             <ul className={styles.itemWrap}>
               {news.map((item, i) => (
                 <li className={styles.item} key={i}>
@@ -78,10 +80,10 @@ const Unou: React.VFC<Props> = ({ articles, news }) => {
           </section>
         </div>
       </div>
-      <div className={styles.portfolioWrap}>
+      <div className='sectionWrapper'>
         <SectionTitle title={'Portfolio'} />
         <section className={`${styles.works} a-nbu`}>
-          <Portfolio items={articles} />
+          <PortfolioList items={articles} windowWidth={windowWidth} />
         </section>
         <div className={styles.controller}>
           <PrimaryButton
@@ -90,7 +92,7 @@ const Unou: React.VFC<Props> = ({ articles, news }) => {
           />
         </div>
       </div>
-      <section className={`${styles.profileWrap} a-nop`}>
+      <section className='sectionWrapper a-nop'>
         <Profile windowWidth={windowWidth} />
       </section>
       <Contact />

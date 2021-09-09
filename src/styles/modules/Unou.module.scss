@@ -33,18 +33,39 @@
 }
 
 .newsWrap {
-  margin-bottom: 72px;
   background-color: $back-color;
+
+  @include mq(lg) {
+    padding-top: 0;
+  }
 }
 
 .newsContents {
   margin: 0 auto;
-  padding-bottom: 48px;
   width: 100%;
+
+  @include mq(sm) {
+    padding-bottom: 64px;
+  }
+
+  @include mq(md) {
+    padding: 0 0 72px;
+  }
 
   @include mq(lg) {
     display: flex;
     max-width: 1000px;
+    padding-top: 0;
+    padding-bottom: 144px;
+  }
+}
+
+.newsBody {
+  @include mq(sm) {
+    padding-top: 0;
+  }
+  @include mq(lg) {
+    padding-top: 144px;
   }
 }
 
@@ -58,7 +79,7 @@
   }
 
   @include mq(lg) {
-    padding: 48px 0;
+    padding: 0 0 48px 0;
   }
 }
 
@@ -94,10 +115,6 @@
 
 .controller {
   text-align: center;
-}
-
-.portfolioWrap {
-  margin-bottom: 80px;
 }
 
 .works {
@@ -177,8 +194,4 @@
     transform: scale(1);
     transition: all 400ms ease-out;
   }
-}
-
-.profileWrap {
-  margin-bottom: 80px;
 }

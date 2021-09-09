@@ -4,16 +4,17 @@
 @import '../animation';
 
 .contactWrap {
-  padding: 70px 0;
   width: 100%;
   background-color: $back-color;
 }
 
 .contactContainer {
   margin: 32px auto 0;
-  padding: 0 40px;
-  width: 100%;
-  max-width: 1000px;
+
+  @include mq(lg) {
+    width: 100%;
+    max-width: 1000px;
+  }
 }
 
 .contents {
