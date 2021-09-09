@@ -7,10 +7,12 @@ import { useRouter } from 'next/dist/client/router';
 import Image from 'next/image';
 import { useContext } from 'react';
 import Contact from '@/components/Contact';
+import Merits from '@/components/Merits';
 import PortfolioList from '@/components/PortfolioList';
 import PrimaryButton from '@/components/buttons/PrimaryButton';
 import SectionTitle from '@/components/common/SectionTitle';
 import SectionTitleVertical from '@/components/common/SectionTitleVertical';
+import MeritTitle from 'images/merit_title.svg';
 import topImage from 'images/sanou_top_image.svg';
 import { MarkdownFileData } from 'models/';
 import { Width } from 'pages/BaseProvider';
@@ -77,6 +79,19 @@ const Sanou: React.VFC<Props> = ({ articles }) => {
             />
           </div>
         </section>
+      </div>
+      <div className='sectionWrapper'>
+        <div className={`${styles.meritWrap}`}>
+          <div className={styles.meritTitle}>
+            <Image
+              src={MeritTitle}
+              alt={'「聴くと描く」の、いいこと4つ'}
+            />
+          </div>
+          <section className={styles.meritBox}>
+            <Merits />
+          </section>
+        </div>
       </div>
       <Contact />
     </div>

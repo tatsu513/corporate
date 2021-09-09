@@ -1,0 +1,67 @@
+@import '../common.scss';
+
+.meritBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 48px;
+  padding: 56px;
+  background-color: $white;
+  text-align: left;
+
+  &.inversion {
+    flex-flow: row-reverse;
+  }
+}
+
+.meritContents {
+  width: 54%;
+}
+
+.meritNumber {
+  margin-bottom: 24px;
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.meritTitle {
+  margin-bottom: 24px;
+}
+
+.meritTitleText {
+  display: inline-block;
+  position: relative;
+  line-height: 2;
+  font-size: 27px;
+  z-index: 1;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 100%;
+    height: 12px;
+    position: absolute;
+    top: auto;
+    right: 0;
+    bottom: 8px;
+    left: 0;
+    background-color: #faf000e0;
+    z-index: -1;
+  }
+}
+
+.meritText {
+  margin-bottom: 16px;
+  width: 100%;
+  font-size: 16px;
+  line-height: 2;
+  letter-spacing: 0.1em;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.meritImage {
+  width: 40%;
+}
