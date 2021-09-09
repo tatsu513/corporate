@@ -5,15 +5,27 @@ import styles from 'styles/modules/PortfolioList.module.scss';
 
 interface Props {
   items: MarkdownFileData[];
+  windowWidth: number;
 }
 
-const PortfolioList: React.VFC<Props> = ({ items }) => {
+const PortfolioList: React.VFC<Props> = ({ items, windowWidth }) => {
+  const isMinWidth = () => {
+    if (windowWidth <= 1024) {
+      const sectionWidth = windowWidth * 0.9;
+      const workBoxWidth = sectionWidth * 0.46;
+      return workBoxWidth <= 300;
+    } else {
+      return false;
+    }
+  };
   const router = useRouter();
   return (
     <>
       {items.map((item, i) => (
         <div
-          className={styles.workBox}
+          className={`${styles.workBox} ${
+            isMinWidth() && styles.minWidth
+          }`}
           key={i}
           onClick={() => router.push(`/unou/portfolio/${item.slug}`)}
         >

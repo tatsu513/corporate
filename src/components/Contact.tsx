@@ -65,9 +65,9 @@ const Contact: React.VFC = () => {
   );
   return (
     <div className='sectionWrapper'>
-      <div className={`${styles.contactWrap}`}>
+      <div className={`${styles.contactWrap} sectionWrapper`}>
         <SectionTitle title={'Contact'} side={'left'} />
-        <div className={`${styles.contactContainer} a-nbu`}>
+        <section className={`${styles.contactContainer} a-nbu`}>
           <div className={styles.contents}>
             <div className={styles.itemBox}>
               <div className={styles.item}>
@@ -120,7 +120,7 @@ const Contact: React.VFC = () => {
               送信完了しました。メッセージありがとうございました。
             </span>
           </div>
-        </div>
+        </section>
       </div>
     </div>
   );

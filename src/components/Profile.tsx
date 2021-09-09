@@ -21,11 +21,29 @@ const Profile: React.VFC<Props> = ({ windowWidth }) => {
       return <SectionTitle title={'Profile'} />;
     }
   };
+  const isMinWidth = () => {
+    if (windowWidth <= 1024) {
+      const sectionWidth = windowWidth * 0.9;
+      const marginWidth = 32 + 32;
+      const workBoxWidth = sectionWidth - (310 + marginWidth);
+      return workBoxWidth <= 400;
+    } else {
+      return false;
+    }
+  };
   return (
     <div className={styles.profileWrap}>
       <Sectiontitle />
-      <div className={styles.contentBody}>
-        <div className={styles.contentBox}>
+      <div
+        className={`${styles.contentBody} ${
+          isMinWidth() && styles.minWidth
+        }`}
+      >
+        <div
+          className={`${styles.contentBox} ${
+            isMinWidth() && styles.minWidth
+          }`}
+        >
           <div className={styles.jobTitle}>イラストレーター</div>
           <div className={styles.name}>
             <div className={styles.nameText}>
@@ -61,7 +79,11 @@ const Profile: React.VFC<Props> = ({ windowWidth }) => {
           </p>
         </div>
         <div className={styles.imageBox}>
-          <div className={styles.image}>画像</div>
+          <div
+            className={`${styles.image} ${
+              isMinWidth() && styles.minWidth
+            }`}
+          ></div>
         </div>
       </div>
     </div>

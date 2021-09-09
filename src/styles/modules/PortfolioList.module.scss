@@ -7,21 +7,6 @@
   margin-right: calc((100% - 90%) / 2);
   margin-bottom: 88px;
 
-  @include mq(sm) {
-    width: 100%;
-    margin-right: 0;
-  }
-
-  @include mq(md) {
-    width: 46%;
-    margin-right: calc(100% - 92%);
-  }
-
-  @include mq(lg) {
-    width: 30%;
-    margin-right: calc((100% - 90%) / 2);
-  }
-
   &:nth-child(3n) {
     @include mq(md) {
       margin-right: calc(100% - 92%);
@@ -30,6 +15,26 @@
     @include mq(lg) {
       margin-right: 0;
     }
+  }
+
+  @include mq(sm) {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  @include mq(md) {
+    width: 46%;
+    margin-right: calc(100% - 92%);
+
+    &.minWidth {
+      width: 100%;
+      margin-right: 0;
+    }
+  }
+
+  @include mq(lg) {
+    width: 30%;
+    margin-right: calc((100% - 90%) / 2);
   }
 
   &:nth-child(2n) {

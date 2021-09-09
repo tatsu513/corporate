@@ -5,7 +5,7 @@ import matter from 'gray-matter';
 import { GetStaticProps } from 'next';
 import { useRouter } from 'next/dist/client/router';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Contact from '@/components/Contact';
 import Portfolio from '@/components/PortfolioList';
 import Profile from '@/components/Profile';
@@ -53,7 +53,7 @@ const Unou: React.VFC<Props> = ({ articles, news }) => {
       <div className={`${styles.topImage} a-nop `}>
         <Image src={topImage} alt={'トップイメージ'} />
       </div>
-      <div className={styles.newsWrap}>
+      <div className={`${styles.newsWrap} sectionWrapper`}>
         <div className={styles.newsContents}>
           <NewsSectionTitle />
           <section
@@ -83,7 +83,7 @@ const Unou: React.VFC<Props> = ({ articles, news }) => {
       <div className='sectionWrapper'>
         <SectionTitle title={'Portfolio'} />
         <section className={`${styles.works} a-nbu`}>
-          <Portfolio items={articles} />
+          <Portfolio items={articles} windowWidth={windowWidth} />
         </section>
         <div className={styles.controller}>
           <PrimaryButton

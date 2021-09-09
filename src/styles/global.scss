@@ -33,13 +33,18 @@ main {
 }
 
 .sectionWrapper {
-  padding-top: 114px;
+  @include mq(sm) {
+    padding-top: 64px;
+  }
+
+  @include mq(md) {
+    padding-top: 114px;
+  }
 }
 
 section {
   margin: 0 auto;
-  padding: 0 32px;
-  width: 100%;
+  width: 90%;
 
   @include mq(lg) {
     max-width: 1000px;

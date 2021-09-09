@@ -34,14 +34,22 @@
 
 .newsWrap {
   background-color: $back-color;
+
+  @include mq(lg) {
+    padding-top: 0;
+  }
 }
 
 .newsContents {
   margin: 0 auto;
   width: 100%;
 
+  @include mq(sm) {
+    padding-bottom: 64px;
+  }
+
   @include mq(md) {
-    padding: 72px 0;
+    padding: 0 0 72px;
   }
 
   @include mq(lg) {
@@ -53,7 +61,7 @@
 }
 
 .newsBody {
-  @include mq(md) {
+  @include mq(sm) {
     padding-top: 0;
   }
   @include mq(lg) {
