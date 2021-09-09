@@ -1,11 +1,11 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import matter from 'gray-matter';
-import marked from 'marked';
+// import marked from 'marked';
 import { GetStaticProps } from 'next';
 import { useRouter } from 'next/dist/client/router';
 import Image from 'next/image';
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import Contact from '@/components/Contact';
 import PrimaryButton from '@/components/buttons/PrimaryButton';
 import SectionTitle from '@/components/common/SectionTitle';

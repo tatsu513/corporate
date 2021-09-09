@@ -1,6 +1,5 @@
 import { useRouter } from 'next/dist/client/router';
 import Image from 'next/image';
-import { workCategories } from 'domains';
 import { MarkdownFileData } from 'models/';
 import styles from 'styles/modules/sanou/PortfolioList.module.scss';
 
