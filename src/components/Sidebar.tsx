@@ -1,3 +1,4 @@
+import { useRouter } from 'next/dist/client/router';
 import Icon from './common/Icon';
 import TextLink from './common/TextLink';
 import facebookIcon from 'images/facebook_white.svg';
@@ -10,6 +11,7 @@ interface Props {
 }
 
 const Sidebar: React.VFC<Props> = (props) => {
+  const router = useRouter();
   return (
     <div
       className={`${styles.sidebarWrap} ${
@@ -24,16 +26,36 @@ const Sidebar: React.VFC<Props> = (props) => {
       </div>
       <ul className={styles.listWrap}>
         <li className={styles.listItem}>
-          <TextLink text={'Home'} size={24} color={'white'} />
+          <TextLink
+            text={'Home'}
+            size={24}
+            color={'white'}
+            onClick={() => router.push('/')}
+          />
         </li>
         <li className={styles.listItem}>
-          <TextLink text={'News'} size={24} color={'white'} />
+          <TextLink
+            text={'News'}
+            size={24}
+            color={'white'}
+            onClick={() => alert('News')}
+          />
         </li>
         <li className={styles.listItem}>
-          <TextLink text={'Portfolio'} size={24} color={'white'} />
+          <TextLink
+            text={'Portfolio'}
+            size={24}
+            color={'white'}
+            onClick={() => alert('Portfolio')}
+          />
         </li>
         <li className={styles.listItem}>
-          <TextLink text={'Contact'} size={24} color={'white'} />
+          <TextLink
+            text={'Contact'}
+            size={24}
+            color={'white'}
+            onClick={() => alert('Contact')}
+          />
         </li>
         <li className={`${styles.listItem} ${styles.icons}`}>
           <Icon

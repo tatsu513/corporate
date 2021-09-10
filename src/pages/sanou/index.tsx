@@ -1,14 +1,25 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import matter from 'gray-matter';
-import marked from 'marked';
+// import marked from 'marked';
 import { GetStaticProps } from 'next';
 import { useRouter } from 'next/dist/client/router';
+import Image from 'next/image';
+import { useContext } from 'react';
 import Contact from '@/components/Contact';
+import DesignFlow from '@/components/DesignFlow';
+import Merits from '@/components/Merits';
+import PortfolioList from '@/components/PortfolioList';
+import PriceList from '@/components/PriceList';
+import Recommendation from '@/components/Recommendation';
+import SanouProfile from '@/components/SanouProfile';
 import PrimaryButton from '@/components/buttons/PrimaryButton';
 import SectionTitle from '@/components/common/SectionTitle';
 import SectionTitleVertical from '@/components/common/SectionTitleVertical';
+import MeritTitle from 'images/merit_title.svg';
+import topImage from 'images/sanou_top_image.svg';
 import { MarkdownFileData } from 'models/';
+import { Width } from 'pages/BaseProvider';
 import styles from 'styles/modules/Sanou.module.scss';
 
 interface Props {
@@ -16,9 +27,22 @@ interface Props {
 }
 
 const Sanou: React.VFC<Props> = ({ articles }) => {
+  console.log(articles);
+  const windowWidth = useContext(Width);
   const router = useRouter();
+
   return (
     <div>
+      <div className={styles.topImage}>
+        <h1 className={styles.topCopy}>
+          よく聴き
+          <br />
+          よく描く
+          <div className={styles.topImageBox}>
+            <Image src={topImage} alt={'トップイメージ'} />
+          </div>
+        </h1>
+      </div>
       <div className={styles.aboutWrap}>
         <div className={styles.aboutContents}>
           <div className={styles.sectionTitleBox}>
@@ -45,31 +69,46 @@ const Sanou: React.VFC<Props> = ({ articles }) => {
           </div>
         </div>
       </div>
-      <SectionTitle
-        title={'Portfolio'}
-        subTitle={'グラフィック・WEB・UI/UXデザイン'}
-      />
-      <div className={styles.workWrap}>
-        <div className={styles.worksErea}>
-          {articles.map((article, i) => (
-            <div className={styles.aaa} key={i}>
-              <h3>{article.frontmatter.title}</h3>
-              <h4>{article.frontmatter.category}</h4>
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: marked(article.content),
-                }}
-              />
-            </div>
-          ))}
-        </div>
-        <div className={styles.controller}>
-          <PrimaryButton
-            text={'More'}
-            onClick={() => router.push('/designs')}
-          />
+      <div className='sectionWrapper'>
+        <SectionTitle
+          title={'Portfolio'}
+          subTitle={'グラフィック・WEB・UI/UXデザイン'}
+        />
+        <section className={styles.workWrap}>
+          <PortfolioList items={articles} windowWidth={windowWidth} />
+          <div className={styles.controller}>
+            <PrimaryButton
+              text={'More'}
+              onClick={() => router.push('/designs')}
+            />
+          </div>
+        </section>
+      </div>
+      <div className='sectionWrapper'>
+        <div className={`${styles.meritWrap}`}>
+          <div className={styles.meritTitle}>
+            <Image
+              src={MeritTitle}
+              alt={'「聴くと描く」の、いいこと4つ'}
+            />
+          </div>
+          <section className={styles.meritBox}>
+            <Merits />
+          </section>
+          <div className={styles.meritDesignFlowWrap}>
+            <DesignFlow />
+          </div>
+          <section className={styles.priceListWrap}>
+            <PriceList />
+          </section>
         </div>
       </div>
+      <div className={styles.recommendationWrap}>
+        <Recommendation />
+      </div>
+      <section className='sectionWrapper'>
+        <SanouProfile />
+      </section>
       <Contact />
     </div>
   );
@@ -85,6 +124,7 @@ export const getStaticProps: GetStaticProps = async () => {
     );
 
     const { data: frontmatter, content } = matter(markdownWithMeta);
+
     return { slug, frontmatter, content };
   });
 

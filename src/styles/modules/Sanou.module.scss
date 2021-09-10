@@ -1,31 +1,47 @@
 @import '../common.scss';
 
+.topImage {
+  height: calc(100vh - 78px);
+  overflow: hidden;
+}
+
+.topCopy {
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+  font-size: 34px;
+  line-height: 3;
+  letter-spacing: 1em;
+  text-align: center;
+  writing-mode: vertical-rl;
+}
+
+.topImageBox {
+  position: absolute;
+  top: auto;
+  right: auto;
+  bottom: -40%;
+  left: -120%;
+}
+
+.aboutWrap {
+  background-color: $back-sanou;
+}
+
 .workWrap {
-  margin: 80px auto 64px;
-  width: 100%;
-  max-width: 1024px;
+  margin-top: 80px;
 }
 
 .worksErea {
   @import '../markdown.scss';
 }
 
-.aboutWrap {
-  margin-bottom: 72px;
-  background-color: $back-color;
-}
-
 .aboutContents {
   display: flex;
   margin: 0 auto;
-  padding-bottom: 48px;
+  padding-bottom: 72px;
   width: 100%;
   max-width: 1024px;
-}
-
-.sectionTitleBox {
-  margin-right: 52px;
-  border-right: 1px solid $grey-main;
 }
 
 .aboutBody {
@@ -35,6 +51,7 @@
 
 .text {
   margin-bottom: 24px;
+  line-height: 2;
 
   &:last-of-type {
     margin-bottom: 0;
@@ -43,4 +60,28 @@
 
 .controller {
   text-align: center;
+}
+
+.meritWrap {
+  padding-top: 114px;
+  padding-bottom: 114px;
+  background-color: $back-sanou;
+  text-align: center;
+}
+
+.meritTitle {
+  margin-bottom: 32px;
+}
+
+.meritBox {
+  padding-top: 0;
+}
+
+.meritDesignFlowWrap,
+.priceListWrap {
+  padding-top: 114px;
+}
+
+.priceListWrap {
+  text-align: left;
 }

@@ -1,0 +1,55 @@
+.recommendBox {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 80px;
+}
+
+.item {
+  width: 30%;
+}
+
+.image {
+  margin: 0 auto 32px;
+  padding-top: 70%;
+  width: 70%;
+  background-image: url('../../images/recommend_01.png');
+  background-size: 300%;
+  background-position: 48% 24%;
+  border-radius: 50%;
+
+  &.image2 {
+    background-image: url('../../images/recommend_02.png');
+    background-size: 150%;
+    background-position: 67% 24%;
+  }
+
+  &.image3 {
+    background-image: url('../../images/recommend_03.png');
+    background-size: 124%;
+  }
+}
+
+.company {
+  display: inline-block;
+  margin-bottom: 8px;
+  cursor: pointer;
+
+  &::after {
+    content: '';
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    margin-left: 8px;
+    background-image: url('../../images/icon_browser.svg');
+  }
+}
+
+.name {
+  margin-bottom: 32px;
+}
+
+.text {
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 1.7;
+}

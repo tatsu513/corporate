@@ -6,7 +6,7 @@ export interface WorkCategories {
 export interface MarkdownFileData {
   slug: string;
   frontmatter: {
-    category: string;
+    categories: string[];
     title: string;
     date: string;
     excerpt: string;

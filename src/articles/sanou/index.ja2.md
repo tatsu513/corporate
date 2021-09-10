@@ -2,8 +2,8 @@
 title: 'MD TEST 2'
 date: '2021-08-26'
 excerpt: 'this is excerpt text'
-coverImage: '*'
-category: 'illust'
+coverImage: '/images/sample.png'
+categories: ['illust', 'aaa']
 ---
 
 ## Headding 2
