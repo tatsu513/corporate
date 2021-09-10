@@ -1,7 +1,9 @@
+import { useRouter } from 'next/dist/client/router';
 import TextLink from './common/TextLink';
 import styles from 'styles/modules/PriceList.module.scss';
 
 const PriceList: React.VFC = () => {
+  const router = useRouter();
   return (
     <>
       <h2 className={styles.priceTitle}>Price - 料金例</h2>
@@ -105,10 +107,11 @@ const PriceList: React.VFC = () => {
               </h4>
               <div className={styles.contentItemLink}>
                 <TextLink
-                  color={'#707070'}
+                  color={'#303030'}
                   marginRight={0}
                   size={14}
                   text={'アート&イラストの作品紹介はこちら →'}
+                  onClick={() => router.push('/unou')}
                 />
               </div>
             </li>

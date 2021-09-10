@@ -29,9 +29,15 @@ const Header: React.VFC = () => {
         </div>
         {windowWidth > 1024 && (
           <div className={styles.controllers}>
-            <TextLink text={'News'} />
-            <TextLink text={'Portfolio'} />
-            <TextLink text={'Contact'} />
+            <TextLink text={'News'} onClick={() => alert('News')} />
+            <TextLink
+              text={'Portfolio'}
+              onClick={() => alert('Portfolio')}
+            />
+            <TextLink
+              text={'Contact'}
+              onClick={() => alert('Contact')}
+            />
             <Icon
               icon={instaIcon}
               alt={'インスタグラム'}
