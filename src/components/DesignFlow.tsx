@@ -5,9 +5,9 @@ const DesignFlow = () => {
   return (
     <>
       <SectionTitle
-        title={'Design Flow'}
+        title={'Flow & Price'}
         side={'left'}
-        subTitle={'こんな流れでデザインします'}
+        subTitle={'デザインの流れと料金例'}
       />
       <section className={styles.flowBox}>
         <div className={styles.flow}>

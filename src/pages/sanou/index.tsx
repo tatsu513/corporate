@@ -11,6 +11,7 @@ import DesignFlow from '@/components/DesignFlow';
 import Merits from '@/components/Merits';
 import PortfolioList from '@/components/PortfolioList';
 import PriceList from '@/components/PriceList';
+import Recommendation from '@/components/Recommendation';
 import PrimaryButton from '@/components/buttons/PrimaryButton';
 import SectionTitle from '@/components/common/SectionTitle';
 import SectionTitleVertical from '@/components/common/SectionTitleVertical';
@@ -100,6 +101,9 @@ const Sanou: React.VFC<Props> = ({ articles }) => {
             <PriceList />
           </section>
         </div>
+      </div>
+      <div className={styles.recommendationWrap}>
+        <Recommendation />
       </div>
       <Contact />
     </div>
