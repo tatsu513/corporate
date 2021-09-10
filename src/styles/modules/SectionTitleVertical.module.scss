@@ -28,6 +28,12 @@
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
   }
+
+  &.white {
+    &::before {
+      background-color: $white;
+    }
+  }
 }
 
 .title {

@@ -12,6 +12,7 @@ import Merits from '@/components/Merits';
 import PortfolioList from '@/components/PortfolioList';
 import PriceList from '@/components/PriceList';
 import Recommendation from '@/components/Recommendation';
+import SanouProfile from '@/components/SanouProfile';
 import PrimaryButton from '@/components/buttons/PrimaryButton';
 import SectionTitle from '@/components/common/SectionTitle';
 import SectionTitleVertical from '@/components/common/SectionTitleVertical';
@@ -105,6 +106,9 @@ const Sanou: React.VFC<Props> = ({ articles }) => {
       <div className={styles.recommendationWrap}>
         <Recommendation />
       </div>
+      <section className='sectionWrapper'>
+        <SanouProfile />
+      </section>
       <Contact />
     </div>
   );

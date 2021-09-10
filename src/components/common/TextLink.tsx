@@ -5,6 +5,7 @@ interface Props {
   size?: number;
   color?: string;
   marginRight?: number;
+  onClick: any;
 }
 
 const TextLink: React.VFC<Props> = (props) => {

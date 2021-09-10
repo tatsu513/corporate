@@ -4,11 +4,17 @@ interface Props {
   title: string;
   side?: string;
   subTitle?: string;
+  isWhite?: boolean;
 }
 
 const SectionTitleVertical: React.VFC<Props> = (props) => {
+  console.log(props.isWhite);
   return (
-    <div className={styles.titleWrap}>
+    <div
+      className={`${styles.titleWrap} ${
+        props.isWhite && styles.white
+      }`}
+    >
       <h2 className={styles.title}>{props.title}</h2>
       {props.subTitle && (
         <div className={styles.subTitleWrap}>

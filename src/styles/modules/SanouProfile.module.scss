@@ -1,0 +1,176 @@
+@import '../common.scss';
+@import '../_breakpoint';
+@import '../_mixin';
+
+.profileBox {
+  display: flex;
+  border: 1px solid $grey-main;
+
+  &.companyInfo {
+    background-color: $grey-main;
+    color: $white;
+
+    @include mq(lg) {
+      display: flex;
+      padding: 0 24px 40px 40px;
+    }
+  }
+
+  @include mq(sm) {
+    padding: 32px;
+  }
+
+  @include mq(md) {
+    padding-top: 32px;
+  }
+
+  @include mq(lg) {
+    display: flex;
+    padding: 0 24px 0 40px;
+  }
+}
+
+.contentBody {
+  @include mq(md) {
+    display: flex;
+    padding: 32px 32px;
+
+    &.minWidth {
+      flex-direction: column;
+    }
+  }
+
+  @include mq(lg) {
+    padding: 32px 0 0;
+  }
+}
+
+.contentBox {
+  &.companyInfoBox {
+    @include mq(lg) {
+      margin-bottom: 0;
+    }
+  }
+  @include mq(sm) {
+    margin-bottom: 24px;
+  }
+  @include mq(md) {
+    padding: 0;
+    margin-right: 32px;
+
+    &.minWidth {
+      margin-bottom: 24px;
+    }
+  }
+  @include mq(lg) {
+    margin-right: 0;
+    padding: 40px 32px 0 0;
+  }
+}
+
+.jobTitle,
+.name {
+  font-size: 20px;
+  font-weight: 500;
+
+  @include mq(sm) {
+    margin-bottom: 16px;
+  }
+
+  @include mq(md) {
+    margin-bottom: 0;
+  }
+}
+
+.jobTitle {
+  @include mq(sm) {
+    margin-bottom: 12px;
+  }
+
+  @include mq(md) {
+    margin-bottom: 8px;
+  }
+}
+
+.name {
+  margin-bottom: 24px;
+
+  @include mq(lg) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.nameText {
+  margin-bottom: 16px;
+
+  @include mq(md) {
+    display: block;
+    width: 100%;
+  }
+  @include mq(lg) {
+    display: inline-block;
+    margin-bottom: 0;
+  }
+}
+
+.text {
+  font-size: 14px;
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+.imageBox {
+  @include mq(lg) {
+    padding-top: 40px;
+  }
+}
+
+.image {
+  margin: 0 auto;
+  background-color: azure;
+
+  @include mq(sm) {
+    width: 100%;
+    padding-top: 100%;
+  }
+
+  @include mq(md) {
+    width: 310px;
+    height: 310px;
+
+    &.minWidth {
+      width: 100%;
+      padding-top: 100%;
+    }
+  }
+}
+
+.companyInfoBox {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  .label {
+    margin-bottom: 12px;
+    width: 130px;
+    font-weight: 300;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  .body {
+    margin-bottom: 12px;
+    width: calc(100% - 130px);
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.settlement {
+  margin-top: 32px;
+}
