@@ -12,7 +12,7 @@ const TextLink: React.VFC<Props> = (props) => {
     <div
       className={styles.link}
       style={{
-        marginRight: `${props.marginRight || 40}px`,
+        marginRight: `${props.marginRight}px`,
       }}
     >
       <span

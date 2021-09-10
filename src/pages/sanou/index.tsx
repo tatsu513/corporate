@@ -10,6 +10,7 @@ import Contact from '@/components/Contact';
 import DesignFlow from '@/components/DesignFlow';
 import Merits from '@/components/Merits';
 import PortfolioList from '@/components/PortfolioList';
+import PriceList from '@/components/PriceList';
 import PrimaryButton from '@/components/buttons/PrimaryButton';
 import SectionTitle from '@/components/common/SectionTitle';
 import SectionTitleVertical from '@/components/common/SectionTitleVertical';
@@ -95,6 +96,9 @@ const Sanou: React.VFC<Props> = ({ articles }) => {
           <div className={styles.meritDesignFlowWrap}>
             <DesignFlow />
           </div>
+          <section className={styles.priceListWrap}>
+            <PriceList />
+          </section>
         </div>
       </div>
       <Contact />

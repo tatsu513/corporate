@@ -77,7 +77,11 @@
   padding-top: 0;
 }
 
-.meritDesignFlowWrap {
+.meritDesignFlowWrap,
+.priceListWrap {
   padding-top: 114px;
-  padding-bottom: 114px;
+}
+
+.priceListWrap {
+  text-align: left;
 }

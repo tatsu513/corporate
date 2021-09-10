@@ -1,0 +1,68 @@
+@import '../common.scss';
+
+.priceTitle {
+  margin-bottom: 16px;
+  font-size: 26px;
+  letter-spacing: 0.2em;
+}
+
+.priceText {
+  margin-bottom: 32px;
+}
+
+.priceBox {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.priceContents {
+  margin-bottom: 80px;
+  width: 48%;
+
+  &:nth-child(3),
+  &:nth-child(4) {
+    margin-bottom: 0;
+  }
+}
+
+.contenttitle {
+  padding-bottom: 12px;
+  border-bottom: 3px solid $grey-main;
+  font-size: 20px;
+}
+
+.contentItemList {
+  margin-bottom: 8px;
+}
+
+.contentItem {
+  padding: 24px 0;
+  border-bottom: 1px solid $grey-main;
+}
+
+.contentItemTitle {
+  margin-bottom: 16px;
+  font-size: 16px;
+}
+
+.contentItemPrice {
+  text-align: right;
+}
+
+.contentItemNotes {
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.contentItemText {
+  margin-bottom: 0;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.contentItemLink {
+  margin-top: 16px;
+  text-align: right;
+}
