@@ -70,4 +70,14 @@
       top: 13px;
     }
   }
+
+  &:hover {
+    &::before {
+      right: -8px;
+    }
+
+    &::after {
+      right: -10px;
+    }
+  }
 }
