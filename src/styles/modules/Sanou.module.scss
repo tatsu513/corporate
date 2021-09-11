@@ -76,14 +76,6 @@
   }
 }
 
-.workWrap {
-  margin-top: 80px;
-}
-
-.worksErea {
-  @import '../markdown.scss';
-}
-
 .aboutContents {
   margin: 0 auto;
   padding-bottom: 72px;
@@ -122,6 +114,14 @@
 
 .controller {
   text-align: center;
+}
+
+.workWrap {
+  margin-top: 80px;
+}
+
+.worksErea {
+  @import '../markdown.scss';
 }
 
 .meritWrap {

@@ -13,6 +13,7 @@ import React, {
   useState,
 } from 'react';
 import Contact from '@/components/Contact';
+import PageSecondSection from '@/components/PageSecondSection';
 import PortfolioList from '@/components/PortfolioList';
 import Profile from '@/components/Profile';
 import PrimaryButton from '@/components/buttons/PrimaryButton';
@@ -30,18 +31,6 @@ interface Props {
 const Unou: React.VFC<Props> = ({ articles, news }) => {
   const router = useRouter();
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
-  const NewsSectionTitle = () => {
-    if (windowWidth > 1024) {
-      return (
-        <div className={styles.sectionTitleBox}>
-          <SectionTitleVertical title={'News'} />
-        </div>
-      );
-    } else {
-      return <SectionTitle title={'News'} side={'left'} />;
-    }
-  };
 
   const homeRef = createRef<HTMLDivElement>();
   const newsRef = createRef<HTMLDivElement>();
@@ -111,11 +100,8 @@ const Unou: React.VFC<Props> = ({ articles, news }) => {
         className={`${styles.newsWrap} sectionWrapper`}
         ref={newsRef}
       >
-        <div className={styles.newsContents}>
-          <NewsSectionTitle />
-          <section
-            className={`${styles.newsBody} a-nbu sectionWrapper`}
-          >
+        <PageSecondSection>
+          <section className={`${styles.newsBody} a-nbu`}>
             <ul className={styles.itemWrap}>
               {news.map((item, i) => (
                 <li className={styles.item} key={i}>
@@ -135,7 +121,7 @@ const Unou: React.VFC<Props> = ({ articles, news }) => {
               />
             </div>
           </section>
-        </div>
+        </PageSecondSection>
       </div>
       <div className='sectionWrapper' ref={portfolioRef}>
         <SectionTitle title={'Portfolio'} />

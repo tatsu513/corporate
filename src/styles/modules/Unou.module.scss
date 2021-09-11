@@ -60,15 +60,6 @@
   }
 }
 
-.newsBody {
-  @include mq(sm) {
-    padding-top: 0;
-  }
-  @include mq(lg) {
-    padding-top: 72px;
-  }
-}
-
 .itemWrap {
   @include mq(sm) {
     padding: 24px 0 56px;

@@ -15,6 +15,7 @@ import {
 import Contact from '@/components/Contact';
 import DesignFlow from '@/components/DesignFlow';
 import Merits from '@/components/Merits';
+import PageSecondSection from '@/components/PageSecondSection';
 import PortfolioList from '@/components/PortfolioList';
 import PriceList from '@/components/PriceList';
 import Recommendation from '@/components/Recommendation';
@@ -129,34 +130,25 @@ const Sanou: React.VFC<Props> = ({ articles }) => {
         className={`${styles.aboutWrap} ${isSp && 'sectionWrapper'}`}
         ref={aboutRef}
       >
-        <div className={styles.aboutContents}>
-          <div className={styles.sectionTitleBox}>
-            {isSp ? (
-              <SectionTitle title={'About'} />
-            ) : (
-              <SectionTitleVertical title={'About'} />
-            )}
-          </div>
-          <div className={styles.aboutBody}>
-            <p className={styles.text}>
-              よいデザインは、どうやったら生まれるでしょうか？
-            </p>
-            <p className={styles.text}>
-              第一に、相手の話や自分の内なる声に真摯に耳を傾ける、徹底的な「聴く」姿勢
-            </p>
-            <p className={styles.text}>
-              第二に、聴いた事を咀嚼し、夢ある具体物へと「描く」力
-            </p>
-            <p className={styles.text}>
-              この２つが両輪となって、デザインを生み出す原動力になると私たちは考えます
-            </p>
-            <p className={styles.text}>
-              まずは、あなたのお話・やりたいことを、聴かせてください。
-              <br />
-              株式会社聴くと描くが、ワンストップで実現のお手伝いを致します。
-            </p>
-          </div>
-        </div>
+        <PageSecondSection>
+          <p className={styles.text}>
+            よいデザインは、どうやったら生まれるでしょうか？
+          </p>
+          <p className={styles.text}>
+            第一に、相手の話や自分の内なる声に真摯に耳を傾ける、徹底的な「聴く」姿勢
+          </p>
+          <p className={styles.text}>
+            第二に、聴いた事を咀嚼し、夢ある具体物へと「描く」力
+          </p>
+          <p className={styles.text}>
+            この２つが両輪となって、デザインを生み出す原動力になると私たちは考えます
+          </p>
+          <p className={styles.text}>
+            まずは、あなたのお話・やりたいことを、聴かせてください。
+            <br />
+            株式会社聴くと描くが、ワンストップで実現のお手伝いを致します。
+          </p>
+        </PageSecondSection>
       </div>
       <div className='sectionWrapper' ref={portfolioRef}>
         <SectionTitle
