@@ -6,14 +6,14 @@ import SectionTitleVertical from './common/SectionTitleVertical';
 import TextLink from './common/TextLink';
 import facebookIcon from 'images/facebook.svg';
 import instaIcon from 'images/instagram.svg';
-import { Width } from 'pages/BaseProvider';
+import { ContextData } from 'pages/BaseProvider';
 import styles from 'styles/modules/SanouProfile.module.scss';
 
 const SanouProfile = () => {
   const router = useRouter();
-  const windowWidth = useContext(Width);
+  const contextVal = useContext(ContextData);
   const Sectiontitle = () => {
-    if (windowWidth > 1024) {
+    if (contextVal.width > 1024) {
       return (
         <div className={styles.sectionTitleBox}>
           <SectionTitleVertical title={'Profile'} />
@@ -24,8 +24,8 @@ const SanouProfile = () => {
     }
   };
   const isMinWidth = () => {
-    if (windowWidth <= 1024) {
-      const sectionWidth = windowWidth * 0.9;
+    if (contextVal.width <= 1024) {
+      const sectionWidth = contextVal.width * 0.9;
       const marginWidth = 32 + 32;
       const workBoxWidth = sectionWidth - (310 + marginWidth);
       return workBoxWidth <= 400;

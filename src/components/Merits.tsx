@@ -1,9 +1,12 @@
+import { useRouter } from 'next/dist/client/router';
 import Image from 'next/image';
+import TextLink from './common/TextLink';
 import MeritImage01 from 'images/merit_01.png';
 import MeritImage02 from 'images/merit_02.png';
 import styles from 'styles/modules/Merits.module.scss';
 
 const Merits = () => {
+  const router = useRouter();
   return (
     <>
       <div className={styles.meritBox}>
@@ -109,6 +112,15 @@ const Merits = () => {
             ロジカルに構築するとデザインと、感覚を重視するアート&イラスト。
             この異なる特性を持つ２つを、絶妙なバランスで融合させて、他にはない、唯一無二のクリエイティブを作り出します。
           </p>
+          <div className={styles.artLinkBox}>
+            <TextLink
+              color={'#303030'}
+              size={14}
+              marginRight={0}
+              text={'アート&イラストの紹介はこちら →'}
+              onClick={() => router.push('/unou')}
+            />
+          </div>
         </div>
         <div className={styles.meritImage}>
           <Image

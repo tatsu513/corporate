@@ -5,7 +5,7 @@ interface Props {
   size?: number;
   color?: string;
   marginRight?: number;
-  onClick: any;
+  onClick: () => void;
 }
 
 const TextLink: React.VFC<Props> = (props) => {
@@ -15,6 +15,7 @@ const TextLink: React.VFC<Props> = (props) => {
       style={{
         marginRight: `${props.marginRight}px`,
       }}
+      onClick={() => props.onClick()}
     >
       <span
         className={`${styles.text} ${

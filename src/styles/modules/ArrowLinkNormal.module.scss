@@ -38,6 +38,18 @@
     background-color: $grey-main;
   }
 
+  &.isWhite {
+    color: $white;
+
+    &::before {
+      background-color: $white;
+    }
+
+    &::after {
+      background-color: $white;
+    }
+  }
+
   &:hover {
     &::before {
       right: -8px;
