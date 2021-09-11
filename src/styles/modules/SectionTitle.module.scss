@@ -65,6 +65,13 @@
     left: auto;
     background-color: $grey-main;
   }
+
+  &.center::after {
+    content: '';
+    left: -250px;
+    right: 0;
+    width: 500%;
+  }
 }
 
 .subTitle {

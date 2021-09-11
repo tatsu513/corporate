@@ -21,7 +21,7 @@ const SanouProfile = () => {
         </div>
       );
     } else {
-      return <SectionTitle title={'Profile'} />;
+      return <SectionTitle title={'Profile'} side={'center'} />;
     }
   };
   const isMinWidth = () => {
@@ -48,7 +48,7 @@ const SanouProfile = () => {
               isMinWidth() && styles.minWidth
             }`}
           >
-            <div className={styles.jobTitle}>株式会社聴くと描く</div>
+            <div className={styles.jobTitle}>株式会社 聴くと描く</div>
             <div className={styles.name}>
               <div className={styles.nameText}>
                 代表取締役　小久保 明美
