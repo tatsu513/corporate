@@ -19,6 +19,12 @@
   width: 100%;
   margin-bottom: 80px;
 
+  @include mq(sm) {
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
   @include mq(md) {
     width: 30%;
     margin-bottom: 0;

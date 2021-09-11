@@ -33,6 +33,10 @@
 
   @include mq(sm) {
     width: 100%;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
   }
 
   @include mq(md) {

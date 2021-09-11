@@ -133,6 +133,13 @@
 
 .meritTitle {
   margin-bottom: 32px;
+
+  @include mq(sm) {
+    & > div {
+      margin: 0 auto 32px;
+      width: 90%;
+    }
+  }
 }
 
 .meritBox {
