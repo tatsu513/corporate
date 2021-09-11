@@ -99,13 +99,6 @@ const Sanou: React.VFC<Props> = ({ articles }) => {
     ],
   );
 
-  const scrollInPage = useCallback(
-    (target: string) => {
-      swichTarget(target);
-    },
-    [swichTarget],
-  );
-
   useEffect(() => {
     const target = router.query.target as string;
     if (!target) return;
