@@ -1,11 +1,28 @@
+@import '../breakpoint';
+@import '../mixin';
+
 .recommendBox {
   display: flex;
   justify-content: space-between;
   margin-top: 80px;
+
+  @include mq(sm) {
+    flex-direction: column;
+  }
+
+  @include mq(md) {
+    flex-direction: row;
+  }
 }
 
 .item {
-  width: 30%;
+  width: 100%;
+  margin-bottom: 80px;
+
+  @include mq(md) {
+    width: 30%;
+    margin-bottom: 0;
+  }
 }
 
 .image {

@@ -1,30 +1,61 @@
 @import '../common.scss';
+@import '../breakpoint';
+@import '../mixin';
 
 .flowBox {
   display: flex;
   justify-content: space-between;
   margin-top: 80px;
+
+  @include mq(sm) {
+    flex-direction: column;
+  }
+
+  @include mq(md) {
+    flex-direction: row;
+  }
 }
 
 .flow {
-  padding: 24px;
-  width: 30%;
   position: relative;
   background-color: $white;
   border-top: solid 12px $yellow;
   text-align: left;
 
+  @include mq(sm) {
+    margin-bottom: 56px;
+    padding: 40px;
+    width: 100%;
+  }
+
+  @include mq(md) {
+    margin-bottom: 0;
+    padding: 24px;
+    width: 30%;
+  }
+
   &::before {
     content: '';
     display: inline-block;
-    height: 1px;
-    width: 24px;
     position: absolute;
-    top: 50%;
-    right: -38px;
-    bottom: auto;
     transition: right 300ms ease;
     background-color: $grey-main;
+
+    @include mq(sm) {
+      height: 24px;
+      width: 1px;
+      top: auto;
+      right: 50%;
+      bottom: -42px;
+    }
+
+    @include mq(md) {
+      height: 1px;
+      width: 24px;
+      top: 50%;
+      right: -38px;
+      bottom: auto;
+    }
   }
 
   &::after {
@@ -36,9 +67,22 @@
     top: calc(50% - 4px);
     right: -40px;
     bottom: auto;
-    transform: rotate(45deg);
     transition: right 300ms ease;
     background-color: $grey-main;
+
+    @include mq(sm) {
+      top: auto;
+      right: calc(50% - 9px);
+      bottom: -38px;
+      transform: rotate(135deg);
+    }
+
+    @include mq(md) {
+      top: calc(50% - 4px);
+      right: -40px;
+      bottom: auto;
+      transform: rotate(45deg);
+    }
   }
 
   &:nth-child(3) {

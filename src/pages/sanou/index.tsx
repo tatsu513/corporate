@@ -23,7 +23,9 @@ import PrimaryButton from '@/components/buttons/PrimaryButton';
 import SectionTitle from '@/components/common/SectionTitle';
 import SectionTitleVertical from '@/components/common/SectionTitleVertical';
 import MeritTitle from 'images/merit_title.svg';
+import MeritTitleSp from 'images/merit_title_sp.svg';
 import topImage from 'images/sanou_top_image.svg';
+import topImageSp from 'images/sanou_top_image_sp.svg';
 import { MarkdownFileData } from 'models/';
 import { ContextData } from 'pages/BaseProvider';
 import styles from 'styles/modules/Sanou.module.scss';
@@ -35,6 +37,8 @@ interface Props {
 const Sanou: React.VFC<Props> = ({ articles }) => {
   const contextVal = useContext(ContextData);
   const router = useRouter();
+
+  const isSp = contextVal.width < 600;
 
   const homeRef = createRef<HTMLDivElement>();
   const aboutRef = createRef<HTMLDivElement>();
@@ -113,14 +117,25 @@ const Sanou: React.VFC<Props> = ({ articles }) => {
           <br />
           よく描く
           <div className={styles.topImageBox}>
-            <Image src={topImage} alt={'トップイメージ'} />
+            {isSp ? (
+              <Image src={topImageSp} alt={'トップイメージ'} />
+            ) : (
+              <Image src={topImage} alt={'トップイメージ'} />
+            )}
           </div>
         </h1>
       </div>
-      <div className={styles.aboutWrap} ref={aboutRef}>
+      <div
+        className={`${styles.aboutWrap} ${isSp && 'sectionWrapper'}`}
+        ref={aboutRef}
+      >
         <div className={styles.aboutContents}>
           <div className={styles.sectionTitleBox}>
-            <SectionTitleVertical title={'About'} />
+            {isSp ? (
+              <SectionTitle title={'About'} />
+            ) : (
+              <SectionTitleVertical title={'About'} />
+            )}
           </div>
           <div className={styles.aboutBody}>
             <p className={styles.text}>
@@ -164,10 +179,17 @@ const Sanou: React.VFC<Props> = ({ articles }) => {
       <div className='sectionWrapper' ref={goodPointRef}>
         <div className={`${styles.meritWrap}`}>
           <div className={styles.meritTitle}>
-            <Image
-              src={MeritTitle}
-              alt={'「聴くと描く」の、いいこと4つ'}
-            />
+            {isSp ? (
+              <Image
+                src={MeritTitleSp}
+                alt={'「聴くと描く」の、いいこと4つ'}
+              />
+            ) : (
+              <Image
+                src={MeritTitle}
+                alt={'「聴くと描く」の、いいこと4つ'}
+              />
+            )}
           </div>
           <section className={styles.meritBox}>
             <Merits />
@@ -183,10 +205,7 @@ const Sanou: React.VFC<Props> = ({ articles }) => {
           </section>
         </div>
       </div>
-      <div
-        className={styles.recommendationWrap}
-        ref={recommendationRef}
-      >
+      <div className='sectionWrapper' ref={recommendationRef}>
         <Recommendation />
       </div>
       <section className='sectionWrapper' ref={profileRef}>
