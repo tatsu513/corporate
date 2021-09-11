@@ -5,7 +5,13 @@ import matter from 'gray-matter';
 import { GetStaticProps } from 'next';
 import { useRouter } from 'next/dist/client/router';
 import Image from 'next/image';
-import React, { useEffect, useState } from 'react';
+import React, {
+  createRef,
+  RefObject,
+  useCallback,
+  useEffect,
+  useState,
+} from 'react';
 import Contact from '@/components/Contact';
 import PortfolioList from '@/components/PortfolioList';
 import Profile from '@/components/Profile';
@@ -37,6 +43,54 @@ const Unou: React.VFC<Props> = ({ articles, news }) => {
     }
   };
 
+  const homeRef = createRef<HTMLDivElement>();
+  const newsRef = createRef<HTMLDivElement>();
+  const portfolioRef = createRef<HTMLDivElement>();
+  const profileRef = createRef<HTMLDivElement>();
+  const contactRef = createRef<HTMLDivElement>();
+
+  const scrollToTarget = (
+    ref: RefObject<HTMLDivElement>,
+    minus: number = 0,
+  ) => {
+    window.scrollTo({
+      top: ref.current!.offsetTop - minus,
+      left: 0,
+      behavior: 'smooth',
+    });
+  };
+
+  const swichTarget = useCallback(
+    (target: string) => {
+      switch (target) {
+        case 'home':
+          scrollToTarget(homeRef);
+          break;
+        case 'news':
+          scrollToTarget(newsRef, 114);
+          break;
+        case 'portfolio':
+          scrollToTarget(portfolioRef);
+          break;
+        case 'profile':
+          scrollToTarget(profileRef);
+          break;
+        case 'contact':
+          scrollToTarget(contactRef);
+          break;
+        default:
+          break;
+      }
+    },
+    [homeRef, newsRef, portfolioRef, profileRef, contactRef],
+  );
+
+  useEffect(() => {
+    const target = router.query.target as string;
+    if (!target) return;
+    swichTarget(target || 'home');
+  }, [swichTarget, router.query]);
+
   useEffect(() => {
     const onResize = () => setWindowWidth(window.innerWidth);
     window.addEventListener('resize', onResize);
@@ -50,10 +104,13 @@ const Unou: React.VFC<Props> = ({ articles, news }) => {
           <div dangerouslySetInnerHTML={{ __html: marked(article.content) }} />
         </div>
       ))} */}
-      <div className={`${styles.topImage} a-nop `}>
+      <div className={`${styles.topImage} a-nop `} ref={homeRef}>
         <Image src={topImage} alt={'トップイメージ'} />
       </div>
-      <div className={`${styles.newsWrap} sectionWrapper`}>
+      <div
+        className={`${styles.newsWrap} sectionWrapper`}
+        ref={newsRef}
+      >
         <div className={styles.newsContents}>
           <NewsSectionTitle />
           <section
@@ -80,7 +137,7 @@ const Unou: React.VFC<Props> = ({ articles, news }) => {
           </section>
         </div>
       </div>
-      <div className='sectionWrapper'>
+      <div className='sectionWrapper' ref={portfolioRef}>
         <SectionTitle title={'Portfolio'} />
         <section className={`${styles.works} a-nbu`}>
           <PortfolioList items={articles} windowWidth={windowWidth} />
@@ -92,10 +149,12 @@ const Unou: React.VFC<Props> = ({ articles, news }) => {
           />
         </div>
       </div>
-      <section className='sectionWrapper a-nop'>
+      <section className='sectionWrapper a-nop' ref={profileRef}>
         <Profile windowWidth={windowWidth} />
       </section>
-      <Contact />
+      <div ref={contactRef}>
+        <Contact />
+      </div>
     </>
   );
 };

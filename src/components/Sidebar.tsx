@@ -126,7 +126,12 @@ const Sidebar: React.VFC<Props> = (props) => {
                   text={'News'}
                   size={24}
                   color={'white'}
-                  onClick={() => alert('News')}
+                  onClick={() =>
+                    router.push({
+                      pathname: '/unou',
+                      query: { target: 'news' },
+                    })
+                  }
                 />
               </li>
               <li className={styles.listItem}>
@@ -134,7 +139,12 @@ const Sidebar: React.VFC<Props> = (props) => {
                   text={'Portfolio'}
                   size={24}
                   color={'white'}
-                  onClick={() => alert('Portfolio')}
+                  onClick={() =>
+                    router.push({
+                      pathname: '/unou',
+                      query: { target: 'portfolio' },
+                    })
+                  }
                 />
               </li>
             </>

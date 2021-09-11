@@ -38,14 +38,32 @@ const Header: React.VFC = () => {
         </div>
         {contextVal.isUnou && contextVal.width > 1024 && (
           <div className={styles.controllers}>
-            <TextLink text={'News'} onClick={() => alert('News')} />
+            <TextLink
+              text={'News'}
+              onClick={() =>
+                router.push({
+                  pathname: '/unou',
+                  query: { target: 'news' },
+                })
+              }
+            />
             <TextLink
               text={'Portfolio'}
-              onClick={() => alert('Portfolio')}
+              onClick={() =>
+                router.push({
+                  pathname: '/unou',
+                  query: { target: 'portfolio' },
+                })
+              }
             />
             <TextLink
               text={'Contact'}
-              onClick={() => alert('Contact')}
+              onClick={() =>
+                router.push({
+                  pathname: '/unou',
+                  query: { target: 'contact' },
+                })
+              }
             />
             <Icon
               icon={instaIcon}
