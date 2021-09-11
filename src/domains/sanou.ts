@@ -1,4 +1,4 @@
-export const newsBreadcrumb = [
+export const settlementBreadcrumb = [
   {
     name: 'Home',
     path: '/unou',

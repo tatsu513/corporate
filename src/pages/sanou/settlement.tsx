@@ -1,7 +1,7 @@
 import Breadcrumb from '@/components/Breadcrumb';
 import Contact from '@/components/Contact';
 import SectionTitle from '@/components/common/SectionTitle';
-import { settlementBreadcrumb } from 'domains/unou';
+import { settlementBreadcrumb } from 'domains/sanou';
 import styles from 'styles/modules/Settlement.module.scss';
 
 const Settlement: React.VFC = () => {
