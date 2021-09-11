@@ -48,31 +48,33 @@
     padding-top: 0;
   }
 
-  &::before {
-    content: '';
-    display: inline-block;
-    height: 156px;
-    width: 1px;
-    position: absolute;
-    top: -78px;
-    right: auto;
-    bottom: auto;
-    left: 50%;
-    background-color: $grey-main;
-  }
+  @include mq(lg) {
+    &::before {
+      content: '';
+      display: inline-block;
+      height: 156px;
+      width: 1px;
+      position: absolute;
+      top: -78px;
+      right: auto;
+      bottom: auto;
+      left: 50%;
+      background-color: $grey-main;
+    }
 
-  &::after {
-    content: '';
-    display: inline-block;
-    height: 28px;
-    width: 1px;
-    position: absolute;
-    top: 54px;
-    right: auto;
-    bottom: auto;
-    left: calc(50% - (10px * -1));
-    transform: rotate(45deg);
-    background-color: $grey-main;
+    &::after {
+      content: '';
+      display: inline-block;
+      height: 28px;
+      width: 1px;
+      position: absolute;
+      top: 54px;
+      right: auto;
+      bottom: auto;
+      left: calc(50% - (10px * -1));
+      transform: rotate(45deg);
+      background-color: $grey-main;
+    }
   }
 }
 

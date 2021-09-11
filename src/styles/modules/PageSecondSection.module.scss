@@ -2,29 +2,30 @@
 @import '../breakpoint';
 @import '../mixin';
 
-.aboutContents {
+.contents {
+  display: flex;
+  flex-direction: column;
   margin: 0 auto;
-  padding-bottom: 72px;
+  padding: 0 0 72px 0;
   width: 100%;
   max-width: 1024px;
 
-  @include mq(sm) {
+  @include mq(md) {
+    padding: 100px 0 72px 0;
   }
 
-  @include mq(md) {
-    display: flex;
+  @include mq(lg) {
+    flex-direction: row;
+    padding: 0 0 72px 0;
   }
 }
 
-.aboutBody {
-  @include mq(sm) {
-    margin-top: 64px;
-    margin: 0 auto;
-    width: 90%;
-  }
+.body {
+  margin: 64px auto 0;
+  width: 90%;
 
-  @include mq(md) {
-    margin-top: 112px;
+  @include mq(lg) {
+    margin: 114px auto 0;
     width: 100%;
   }
 }

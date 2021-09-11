@@ -22,7 +22,6 @@ import Recommendation from '@/components/Recommendation';
 import SanouProfile from '@/components/SanouProfile';
 import PrimaryButton from '@/components/buttons/PrimaryButton';
 import SectionTitle from '@/components/common/SectionTitle';
-import SectionTitleVertical from '@/components/common/SectionTitleVertical';
 import MeritTitle from 'images/merit_title.svg';
 import MeritTitleSp from 'images/merit_title_sp.svg';
 import topImage from 'images/sanou_top_image.svg';
@@ -131,23 +130,25 @@ const Sanou: React.VFC<Props> = ({ articles }) => {
         ref={aboutRef}
       >
         <PageSecondSection>
-          <p className={styles.text}>
-            よいデザインは、どうやったら生まれるでしょうか？
-          </p>
-          <p className={styles.text}>
-            第一に、相手の話や自分の内なる声に真摯に耳を傾ける、徹底的な「聴く」姿勢
-          </p>
-          <p className={styles.text}>
-            第二に、聴いた事を咀嚼し、夢ある具体物へと「描く」力
-          </p>
-          <p className={styles.text}>
-            この２つが両輪となって、デザインを生み出す原動力になると私たちは考えます
-          </p>
-          <p className={styles.text}>
-            まずは、あなたのお話・やりたいことを、聴かせてください。
-            <br />
-            株式会社聴くと描くが、ワンストップで実現のお手伝いを致します。
-          </p>
+          <section>
+            <p className={styles.text}>
+              よいデザインは、どうやったら生まれるでしょうか？
+            </p>
+            <p className={styles.text}>
+              第一に、相手の話や自分の内なる声に真摯に耳を傾ける、徹底的な「聴く」姿勢
+            </p>
+            <p className={styles.text}>
+              第二に、聴いた事を咀嚼し、夢ある具体物へと「描く」力
+            </p>
+            <p className={styles.text}>
+              この２つが両輪となって、デザインを生み出す原動力になると私たちは考えます
+            </p>
+            <p className={styles.text}>
+              まずは、あなたのお話・やりたいことを、聴かせてください。
+              <br />
+              株式会社聴くと描くが、ワンストップで実現のお手伝いを致します。
+            </p>
+          </section>
         </PageSecondSection>
       </div>
       <div className='sectionWrapper' ref={portfolioRef}>

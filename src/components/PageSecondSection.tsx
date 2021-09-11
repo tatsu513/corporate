@@ -11,19 +11,19 @@ interface Props {
 const PageSecondSection: React.VFC<Props> = ({ children }) => {
   const ctx = useContext(ContextData);
   const isSanou = ctx.isSanou;
-  const isSp = ctx.width < 600;
+  const isMd = ctx.width < 1024;
 
   const sectionTitleText = isSanou ? 'About' : 'News';
   return (
-    <div className={styles.aboutContents}>
+    <div className={styles.contents}>
       <div className={styles.sectionTitleBox}>
-        {isSp ? (
+        {isMd ? (
           <SectionTitle title={sectionTitleText} side={'left'} />
         ) : (
           <SectionTitleVertical title={sectionTitleText} />
         )}
       </div>
-      <div className={styles.aboutBody}>{children}</div>
+      <div className={styles.body}>{children}</div>
     </div>
   );
 };

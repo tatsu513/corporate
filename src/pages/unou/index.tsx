@@ -18,7 +18,6 @@ import PortfolioList from '@/components/PortfolioList';
 import Profile from '@/components/Profile';
 import PrimaryButton from '@/components/buttons/PrimaryButton';
 import SectionTitle from '@/components/common/SectionTitle';
-import SectionTitleVertical from '@/components/common/SectionTitleVertical';
 import topImage from 'images/unou-image.png';
 import { MarkdownFileData } from 'models/';
 import styles from 'styles/modules/Unou.module.scss';
@@ -96,10 +95,7 @@ const Unou: React.VFC<Props> = ({ articles, news }) => {
       <div className={`${styles.topImage} a-nop `} ref={homeRef}>
         <Image src={topImage} alt={'トップイメージ'} />
       </div>
-      <div
-        className={`${styles.newsWrap} sectionWrapper`}
-        ref={newsRef}
-      >
+      <div className={`${styles.newsWrap}`} ref={newsRef}>
         <PageSecondSection>
           <section className={`${styles.newsBody} a-nbu`}>
             <ul className={styles.itemWrap}>
