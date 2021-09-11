@@ -15,7 +15,7 @@
     padding: 40px;
   }
 
-  @include mq(md) {
+  @include mq(lg) {
     flex-direction: row;
     padding: 56px;
   }
@@ -25,7 +25,7 @@
       flex-direction: column;
     }
 
-    @include mq(md) {
+    @include mq(lg) {
       flex-flow: row-reverse;
     }
   }
@@ -42,7 +42,7 @@
     width: 100%;
   }
 
-  @include mq(md) {
+  @include mq(lg) {
     width: 54%;
   }
 }
@@ -98,6 +98,11 @@
   }
 
   @include mq(md) {
+    margin-top: 32px;
+    width: 60%;
+  }
+
+  @include mq(lg) {
     margin-top: 0;
     width: 40%;
   }

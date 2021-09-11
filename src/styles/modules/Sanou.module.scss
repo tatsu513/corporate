@@ -133,6 +133,17 @@
   text-align: center;
 }
 
+.meritContents {
+  @include mq(md) {
+    margin: 0 auto;
+    width: 70%;
+  }
+
+  @include mq(lg) {
+    width: 100%;
+  }
+}
+
 .meritTitle {
   margin-bottom: 32px;
 

@@ -35,10 +35,10 @@ interface Props {
 }
 
 const Sanou: React.VFC<Props> = ({ articles }) => {
-  const contextVal = useContext(ContextData);
+  const ctx = useContext(ContextData);
   const router = useRouter();
 
-  const isSp = contextVal.width < 600;
+  const isSp = ctx.width < 600;
 
   const homeRef = createRef<HTMLDivElement>();
   const aboutRef = createRef<HTMLDivElement>();
@@ -157,10 +157,7 @@ const Sanou: React.VFC<Props> = ({ articles }) => {
           subTitle={'グラフィック・WEB・UI/UXデザイン'}
         />
         <section className={styles.workWrap}>
-          <PortfolioList
-            items={articles}
-            windowWidth={contextVal.width}
-          />
+          <PortfolioList items={articles} windowWidth={ctx.width} />
           <div className={styles.controller}>
             <PrimaryButton
               text={'More'}
@@ -171,22 +168,24 @@ const Sanou: React.VFC<Props> = ({ articles }) => {
       </div>
       <div className='sectionWrapper' ref={goodPointRef}>
         <div className={`${styles.meritWrap}`}>
-          <div className={styles.meritTitle}>
-            {isSp ? (
-              <Image
-                src={MeritTitleSp}
-                alt={'「聴くと描く」の、いいこと4つ'}
-              />
-            ) : (
-              <Image
-                src={MeritTitle}
-                alt={'「聴くと描く」の、いいこと4つ'}
-              />
-            )}
+          <div className={styles.meritContents}>
+            <div className={styles.meritTitle}>
+              {isSp ? (
+                <Image
+                  src={MeritTitleSp}
+                  alt={'「聴くと描く」の、いいこと4つ'}
+                />
+              ) : (
+                <Image
+                  src={MeritTitle}
+                  alt={'「聴くと描く」の、いいこと4つ'}
+                />
+              )}
+            </div>
+            <section className={styles.meritBox}>
+              <Merits />
+            </section>
           </div>
-          <section className={styles.meritBox}>
-            <Merits />
-          </section>
           <div
             className={styles.meritDesignFlowWrap}
             ref={flowPriceRef}
