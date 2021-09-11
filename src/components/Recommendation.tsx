@@ -4,7 +4,7 @@ import styles from 'styles/modules/Recommendation.module.scss';
 
 const Recommendation = () => {
   return (
-    <div className='sectionWrapper'>
+    <>
       <SectionTitle
         title={`Recommen-\ndation`}
         subTitle={'スタートアップ・ベンチャー\n企業様からの推薦文'}
@@ -59,7 +59,7 @@ const Recommendation = () => {
           </p>
         </div>
       </section>
-    </div>
+    </>
   );
 };
 

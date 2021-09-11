@@ -1,21 +1,10 @@
-export const newsBreadcrumb = [
+export const settlementBreadcrumb = [
   {
     name: 'Home',
-    path: '/unou',
+    path: '/sanou',
   },
   {
-    name: 'News Archive',
-    path: '/unou/news',
-  },
-];
-
-export const portfolioBreadcrumb = [
-  {
-    name: 'Home',
-    path: '/unou',
-  },
-  {
-    name: 'Portfolio',
-    path: '/unou/portfolio',
+    name: '決算公告',
+    path: '/settlement',
   },
 ];

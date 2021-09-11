@@ -1,0 +1,32 @@
+.settlementBox {
+  width: 360px;
+  text-align: center;
+}
+
+.settlementItem {
+  margin-bottom: 24px;
+}
+
+.itemText {
+  position: relative;
+  padding-right: 26px;
+  cursor: pointer;
+
+  &::after {
+    content: '';
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    position: absolute;
+    top: 2px;
+    right: 0;
+    bottom: auto;
+    left: auto;
+    background-image: url('../../images/icon_pdf.png');
+    background-size: contain;
+  }
+
+  &.noItemText::after {
+    content: none;
+  }
+}
