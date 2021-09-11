@@ -10,24 +10,33 @@ import facebookIcon from 'images/facebook.svg';
 import instaIcon from 'images/instagram.svg';
 import logoBase from 'images/kikutokaku_logo.svg';
 import logoUnou from 'images/logo_unou.svg';
-import { Width } from 'pages/BaseProvider';
+import { ContextData } from 'pages/BaseProvider';
 import styles from 'styles/modules/Header.module.scss';
 
 const Header: React.VFC = () => {
   const router = useRouter();
-  const isUnou = router.pathname.indexOf('unou') !== -1;
+  const contextVal = useContext(ContextData);
 
   const [isOpenSidebar, setIsOpenSidebar] = useState(false);
 
-  const windowWidth = useContext(Width);
-
   return (
-    <header className={styles.header}>
-      <div className={styles.headerWrap}>
+    <header
+      className={`${styles.header} ${
+        contextVal.isSanou && styles.headerSanou
+      }`}
+    >
+      <div
+        className={`${styles.headerWrap} ${
+          contextVal.isSanou && styles.headerWrapSanou
+        }`}
+      >
         <div className={styles.logo}>
-          <Image src={isUnou ? logoUnou : logoBase} alt='ロゴ' />
+          <Image
+            src={contextVal.isUnou ? logoUnou : logoBase}
+            alt='ロゴ'
+          />
         </div>
-        {windowWidth > 1024 && (
+        {contextVal.isUnou && contextVal.width > 1024 && (
           <div className={styles.controllers}>
             <TextLink text={'News'} onClick={() => alert('News')} />
             <TextLink
@@ -61,7 +70,8 @@ const Header: React.VFC = () => {
             </div>
           </div>
         )}
-        {windowWidth <= 1024 && (
+        {((contextVal.width <= 1024 && contextVal.isUnou) ||
+          contextVal.isSanou) && (
           <div
             className={styles.menuBox}
             onClick={() => setIsOpenSidebar(true)}

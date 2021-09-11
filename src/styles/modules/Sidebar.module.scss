@@ -18,6 +18,12 @@
   }
 }
 
+.sidebarContentBox {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
 .controller {
   text-align: right;
 }
@@ -55,16 +61,26 @@
 }
 
 .listWrap {
-  padding: 0 32px;
+  padding: 0 40px;
   color: $white;
   font-size: 24px;
 
   .listItem {
+    margin-bottom: 24px;
     padding: 16px 0;
     cursor: pointer;
+    font-weight: 300;
 
     &.icons {
       margin-top: 40px;
     }
   }
+}
+
+.arrowLinkBox {
+  position: absolute;
+  top: auto;
+  right: auto;
+  bottom: 40px;
+  left: 40px;
 }

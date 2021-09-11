@@ -2,13 +2,19 @@ import styles from 'styles/modules/ArrowLinkNormal.module.scss';
 
 interface Props {
   text: string;
+  isWhite?: boolean;
   onClick: () => void;
 }
 
 const ArrowLinkNormal: React.VFC<Props> = (props) => {
   return (
     <div className={styles.arrowLinkBox}>
-      <span onClick={() => props.onClick()} className={styles.text}>
+      <span
+        onClick={() => props.onClick()}
+        className={`${styles.text} ${
+          props.isWhite && styles.isWhite
+        }`}
+      >
         {props.text}
       </span>
     </div>

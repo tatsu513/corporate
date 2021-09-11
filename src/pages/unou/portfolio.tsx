@@ -12,7 +12,7 @@ import SectionTitle from '@/components/common/SectionTitle';
 import { illustCategories } from 'domains';
 import { portfolioBreadcrumb } from 'domains/unou';
 import { MarkdownFileData } from 'models/';
-import { Width } from 'pages/BaseProvider';
+import { ContextData } from 'pages/BaseProvider';
 import styles from 'styles/modules/Illusts.module.scss';
 
 interface Props {
@@ -23,15 +23,14 @@ const IllustPortfolio: React.VFC<Props> = ({ articles }) => {
   const [works, setWorks] = useState(articles);
   const [selectedItem, setSelectedItem] = useState('all');
 
-  const windowWidth = useContext(Width);
+  const contextVal = useContext(ContextData);
 
   const selectItem = (type: string) => {
     const filter = (data: MarkdownFileData[]) => {
       const n = data.filter((d) => {
         return d.frontmatter.categories.includes(type);
       });
-      console.log(n);
-      return data;
+      return n;
     };
     filter(articles);
     type === 'all'
@@ -56,7 +55,7 @@ const IllustPortfolio: React.VFC<Props> = ({ articles }) => {
         />
       </section>
       <section className={`${styles.works} a-nbu`}>
-        <PortfolioList items={works} windowWidth={windowWidth} />
+        <PortfolioList items={works} windowWidth={contextVal.width} />
         <p className={styles.note}>
           ※
           公開している事例はごく一部です。より詳しい事例は直接お問い合わせください。

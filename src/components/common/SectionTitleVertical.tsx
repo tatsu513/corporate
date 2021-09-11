@@ -8,7 +8,6 @@ interface Props {
 }
 
 const SectionTitleVertical: React.VFC<Props> = (props) => {
-  console.log(props.isWhite);
   return (
     <div
       className={`${styles.titleWrap} ${

@@ -5,7 +5,13 @@ import matter from 'gray-matter';
 import { GetStaticProps } from 'next';
 import { useRouter } from 'next/dist/client/router';
 import Image from 'next/image';
-import { useContext } from 'react';
+import {
+  createRef,
+  RefObject,
+  useCallback,
+  useContext,
+  useEffect,
+} from 'react';
 import Contact from '@/components/Contact';
 import DesignFlow from '@/components/DesignFlow';
 import Merits from '@/components/Merits';
@@ -19,7 +25,7 @@ import SectionTitleVertical from '@/components/common/SectionTitleVertical';
 import MeritTitle from 'images/merit_title.svg';
 import topImage from 'images/sanou_top_image.svg';
 import { MarkdownFileData } from 'models/';
-import { Width } from 'pages/BaseProvider';
+import { ContextData } from 'pages/BaseProvider';
 import styles from 'styles/modules/Sanou.module.scss';
 
 interface Props {
@@ -27,13 +33,88 @@ interface Props {
 }
 
 const Sanou: React.VFC<Props> = ({ articles }) => {
-  console.log(articles);
-  const windowWidth = useContext(Width);
+  const contextVal = useContext(ContextData);
   const router = useRouter();
 
+  const homeRef = createRef<HTMLDivElement>();
+  const aboutRef = createRef<HTMLDivElement>();
+  const portfolioRef = createRef<HTMLDivElement>();
+  const goodPointRef = createRef<HTMLDivElement>();
+  const flowPriceRef = createRef<HTMLDivElement>();
+  const recommendationRef = createRef<HTMLDivElement>();
+  const profileRef = createRef<HTMLDivElement>();
+  const contactRef = createRef<HTMLDivElement>();
+
+  const scrollToTarget = (
+    ref: RefObject<HTMLDivElement>,
+    minus: number = 0,
+  ) => {
+    window.scrollTo({
+      top: ref.current!.offsetTop - minus,
+      left: 0,
+      behavior: 'smooth',
+    });
+  };
+
+  const swichTarget = useCallback(
+    (target: string) => {
+      switch (target) {
+        case 'home':
+          scrollToTarget(homeRef);
+          break;
+        case 'about':
+          scrollToTarget(aboutRef, 114);
+          break;
+        case 'portfolio':
+          scrollToTarget(portfolioRef);
+          break;
+        case 'goodPoint':
+          scrollToTarget(goodPointRef);
+          break;
+        case 'flowPrice':
+          scrollToTarget(flowPriceRef);
+          break;
+        case 'recommendation':
+          scrollToTarget(recommendationRef);
+          break;
+        case 'profile':
+          scrollToTarget(profileRef);
+          break;
+        case 'contact':
+          scrollToTarget(contactRef);
+          break;
+        default:
+          break;
+      }
+    },
+    [
+      homeRef,
+      aboutRef,
+      portfolioRef,
+      goodPointRef,
+      flowPriceRef,
+      recommendationRef,
+      profileRef,
+      contactRef,
+    ],
+  );
+
+  const scrollInPage = useCallback(
+    (target: string) => {
+      swichTarget(target);
+    },
+    [swichTarget],
+  );
+
+  useEffect(() => {
+    const target = router.query.target as string;
+    if (!target) return;
+    swichTarget(target || 'home');
+  }, [swichTarget, router.query]);
+
   return (
-    <div>
-      <div className={styles.topImage}>
+    <>
+      <div className={styles.topImage} ref={homeRef}>
         <h1 className={styles.topCopy}>
           よく聴き
           <br />
@@ -43,7 +124,7 @@ const Sanou: React.VFC<Props> = ({ articles }) => {
           </div>
         </h1>
       </div>
-      <div className={styles.aboutWrap}>
+      <div className={styles.aboutWrap} ref={aboutRef}>
         <div className={styles.aboutContents}>
           <div className={styles.sectionTitleBox}>
             <SectionTitleVertical title={'About'} />
@@ -69,13 +150,16 @@ const Sanou: React.VFC<Props> = ({ articles }) => {
           </div>
         </div>
       </div>
-      <div className='sectionWrapper'>
+      <div className='sectionWrapper' ref={portfolioRef}>
         <SectionTitle
           title={'Portfolio'}
           subTitle={'グラフィック・WEB・UI/UXデザイン'}
         />
         <section className={styles.workWrap}>
-          <PortfolioList items={articles} windowWidth={windowWidth} />
+          <PortfolioList
+            items={articles}
+            windowWidth={contextVal.width}
+          />
           <div className={styles.controller}>
             <PrimaryButton
               text={'More'}
@@ -84,7 +168,7 @@ const Sanou: React.VFC<Props> = ({ articles }) => {
           </div>
         </section>
       </div>
-      <div className='sectionWrapper'>
+      <div className='sectionWrapper' ref={goodPointRef}>
         <div className={`${styles.meritWrap}`}>
           <div className={styles.meritTitle}>
             <Image
@@ -95,7 +179,10 @@ const Sanou: React.VFC<Props> = ({ articles }) => {
           <section className={styles.meritBox}>
             <Merits />
           </section>
-          <div className={styles.meritDesignFlowWrap}>
+          <div
+            className={styles.meritDesignFlowWrap}
+            ref={flowPriceRef}
+          >
             <DesignFlow />
           </div>
           <section className={styles.priceListWrap}>
@@ -103,14 +190,19 @@ const Sanou: React.VFC<Props> = ({ articles }) => {
           </section>
         </div>
       </div>
-      <div className={styles.recommendationWrap}>
+      <div
+        className={styles.recommendationWrap}
+        ref={recommendationRef}
+      >
         <Recommendation />
       </div>
-      <section className='sectionWrapper'>
+      <section className='sectionWrapper' ref={profileRef}>
         <SanouProfile />
       </section>
-      <Contact />
-    </div>
+      <div ref={contactRef}>
+        <Contact />
+      </div>
+    </>
   );
 };
 
