@@ -3,6 +3,7 @@
 @import '../_mixin';
 
 .header {
+  min-height: 60px;
   @include mq(md) {
     height: 60px;
   }

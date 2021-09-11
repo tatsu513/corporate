@@ -12,7 +12,7 @@ const SectionTitle: React.VFC<Props> = (props) => {
       <h2
         className={`${styles.title} ${
           props.side === 'left' && styles.left
-        }`}
+        } ${props.side === 'center' && styles.center}`}
       >
         {props.title}
       </h2>

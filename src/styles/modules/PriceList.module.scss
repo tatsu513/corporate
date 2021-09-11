@@ -1,4 +1,6 @@
 @import '../common.scss';
+@import '../breakpoint';
+@import '../mixin';
 
 .priceTitle {
   margin-bottom: 16px;
@@ -15,15 +17,37 @@
   align-items: flex-start;
   flex-wrap: wrap;
   justify-content: space-between;
+
+  @include mq(sm) {
+    flex-direction: column;
+  }
+
+  @include mq(md) {
+    flex-direction: row;
+  }
 }
 
 .priceContents {
   margin-bottom: 80px;
   width: 48%;
 
+  @include mq(sm) {
+    width: 100%;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  @include mq(md) {
+    width: 48%;
+  }
+
   &:nth-child(3),
   &:nth-child(4) {
-    margin-bottom: 0;
+    @include mq(md) {
+      margin-bottom: 0;
+    }
   }
 }
 

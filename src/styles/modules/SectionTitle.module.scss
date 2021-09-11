@@ -15,6 +15,7 @@
   padding-bottom: 32px;
   position: relative;
   text-align: center;
+  white-space: break-spaces;
   animation-name: leftRight;
   animation-duration: 0.8s;
   animation-delay: 0;
@@ -64,4 +65,16 @@
     left: auto;
     background-color: $grey-main;
   }
+
+  &.center::after {
+    content: '';
+    left: -250px;
+    right: 0;
+    width: 500%;
+  }
+}
+
+.subTitle {
+  line-height: 1.5;
+  white-space: break-spaces;
 }

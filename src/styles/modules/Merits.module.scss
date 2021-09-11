@@ -1,16 +1,33 @@
 @import '../common.scss';
+@import '../breakpoint';
+@import '../mixin';
 
 .meritBox {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 48px;
-  padding: 56px;
   background-color: $white;
   text-align: left;
 
+  @include mq(sm) {
+    flex-direction: column;
+    padding: 40px;
+  }
+
+  @include mq(md) {
+    flex-direction: row;
+    padding: 56px;
+  }
+
   &.inversion {
-    flex-flow: row-reverse;
+    @include mq(sm) {
+      flex-direction: column;
+    }
+
+    @include mq(md) {
+      flex-flow: row-reverse;
+    }
   }
 
   &:last-of-type {
@@ -20,6 +37,14 @@
 
 .meritContents {
   width: 54%;
+
+  @include mq(sm) {
+    width: 100%;
+  }
+
+  @include mq(md) {
+    width: 54%;
+  }
 }
 
 .meritNumber {
@@ -67,7 +92,15 @@
 }
 
 .meritImage {
-  width: 40%;
+  @include mq(sm) {
+    margin-top: 24px;
+    width: 80%;
+  }
+
+  @include mq(md) {
+    margin-top: 0;
+    width: 40%;
+  }
 }
 
 .artLinkBox {

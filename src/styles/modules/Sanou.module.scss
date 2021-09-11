@@ -1,4 +1,6 @@
 @import '../common.scss';
+@import '../breakpoint';
+@import '../mixin';
 
 .topImage {
   height: calc(100vh - 60px);
@@ -20,13 +22,31 @@
   position: absolute;
   top: auto;
   right: auto;
-  bottom: -40%;
-  left: -120%;
+
+  @include mq(sm) {
+    bottom: -23%;
+    left: -53%;
+    width: 260%;
+  }
+
+  @include mq(md) {
+    bottom: -40%;
+    left: -120%;
+    width: auto;
+  }
 }
 
 .aboutWrap {
   background-color: $back-sanou;
   position: relative;
+
+  @include mq(sm) {
+    padding-top: 120px;
+  }
+
+  @include mq(md) {
+    padding-top: 0;
+  }
 
   &::before {
     content: '';
@@ -65,16 +85,30 @@
 }
 
 .aboutContents {
-  display: flex;
   margin: 0 auto;
   padding-bottom: 72px;
   width: 100%;
   max-width: 1024px;
+
+  @include mq(sm) {
+  }
+
+  @include mq(md) {
+    display: flex;
+  }
 }
 
 .aboutBody {
-  margin-top: 112px;
-  width: 100%;
+  @include mq(sm) {
+    margin-top: 64px;
+    margin: 0 auto;
+    width: 90%;
+  }
+
+  @include mq(md) {
+    margin-top: 112px;
+    width: 100%;
+  }
 }
 
 .text {
@@ -99,6 +133,13 @@
 
 .meritTitle {
   margin-bottom: 32px;
+
+  @include mq(sm) {
+    & > div {
+      margin: 0 auto 32px;
+      width: 90%;
+    }
+  }
 }
 
 .meritBox {

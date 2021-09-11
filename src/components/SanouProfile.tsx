@@ -12,6 +12,7 @@ import styles from 'styles/modules/SanouProfile.module.scss';
 const SanouProfile = () => {
   const router = useRouter();
   const contextVal = useContext(ContextData);
+  const isSp = contextVal.width < 600;
   const Sectiontitle = () => {
     if (contextVal.width > 1024) {
       return (
@@ -20,7 +21,7 @@ const SanouProfile = () => {
         </div>
       );
     } else {
-      return <SectionTitle title={'Profile'} />;
+      return <SectionTitle title={'Profile'} side={'center'} />;
     }
   };
   const isMinWidth = () => {
@@ -47,10 +48,10 @@ const SanouProfile = () => {
               isMinWidth() && styles.minWidth
             }`}
           >
-            <div className={styles.jobTitle}>イラストレーター</div>
+            <div className={styles.jobTitle}>株式会社 聴くと描く</div>
             <div className={styles.name}>
               <div className={styles.nameText}>
-                小久保あけみ（Kokubo Akemi）
+                代表取締役　小久保 明美
               </div>
               <Icon
                 icon={instaIcon}
@@ -94,9 +95,11 @@ const SanouProfile = () => {
         </div>
       </div>
       <div className={`${styles.profileBox} ${styles.companyInfo}`}>
-        <div className={styles.sectionTitleBox}>
-          <SectionTitleVertical title={'　'} isWhite={true} />
-        </div>
+        {!isSp && (
+          <div className={styles.sectionTitleBox}>
+            <SectionTitleVertical title={'　'} isWhite={true} />
+          </div>
+        )}
         <div className={styles.contentBody}>
           <div
             className={`${styles.contentBox} ${styles.companyInfoBox}`}
