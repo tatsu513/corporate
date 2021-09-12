@@ -24,12 +24,15 @@
   right: auto;
 
   @include mq(sm) {
-    bottom: -23%;
-    left: -53%;
-    width: 260%;
+    top: 50%;
+    bottom: auto;
+    left: 50%;
+    transform: translate(-50%, -40%) scale(3.3);
+    width: 100%;
   }
 
   @include mq(md) {
+    top: auto;
     bottom: -40%;
     left: -120%;
     width: auto;
