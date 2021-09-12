@@ -2,6 +2,16 @@
 @import '../breakpoint';
 @import '../mixin';
 
+.priceListBox {
+  @include mq(md) {
+    width: 70%;
+    margin: 0 auto;
+  }
+  @include mq(lg) {
+    width: 100%;
+  }
+}
+
 .priceTitle {
   margin-bottom: 16px;
   font-size: 26px;

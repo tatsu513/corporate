@@ -5,7 +5,7 @@ import styles from 'styles/modules/PriceList.module.scss';
 const PriceList: React.VFC = () => {
   const router = useRouter();
   return (
-    <>
+    <div className={styles.priceListBox}>
       <h2 className={styles.priceTitle}>Price - 料金例</h2>
       <p className={styles.priceText}>
         ご依頼内容により料金は変動します。目安としてご覧ください。
@@ -118,7 +118,7 @@ const PriceList: React.VFC = () => {
           </ul>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
