@@ -12,7 +12,8 @@ import styles from 'styles/modules/SanouProfile.module.scss';
 const SanouProfile = () => {
   const router = useRouter();
   const contextVal = useContext(ContextData);
-  const isSp = contextVal.width < 600;
+  const isMd = contextVal.width < 1024;
+
   const Sectiontitle = () => {
     if (contextVal.width > 1024) {
       return (
@@ -95,7 +96,7 @@ const SanouProfile = () => {
         </div>
       </div>
       <div className={`${styles.profileBox} ${styles.companyInfo}`}>
-        {!isSp && (
+        {!isMd && (
           <div className={styles.sectionTitleBox}>
             <SectionTitleVertical title={'　'} isWhite={true} />
           </div>

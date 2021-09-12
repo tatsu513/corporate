@@ -13,11 +13,11 @@ import React, {
   useState,
 } from 'react';
 import Contact from '@/components/Contact';
+import PageSecondSection from '@/components/PageSecondSection';
 import PortfolioList from '@/components/PortfolioList';
 import Profile from '@/components/Profile';
 import PrimaryButton from '@/components/buttons/PrimaryButton';
 import SectionTitle from '@/components/common/SectionTitle';
-import SectionTitleVertical from '@/components/common/SectionTitleVertical';
 import topImage from 'images/unou-image.png';
 import { MarkdownFileData } from 'models/';
 import styles from 'styles/modules/Unou.module.scss';
@@ -30,18 +30,6 @@ interface Props {
 const Unou: React.VFC<Props> = ({ articles, news }) => {
   const router = useRouter();
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
-  const NewsSectionTitle = () => {
-    if (windowWidth > 1024) {
-      return (
-        <div className={styles.sectionTitleBox}>
-          <SectionTitleVertical title={'News'} />
-        </div>
-      );
-    } else {
-      return <SectionTitle title={'News'} side={'left'} />;
-    }
-  };
 
   const homeRef = createRef<HTMLDivElement>();
   const newsRef = createRef<HTMLDivElement>();
@@ -107,15 +95,9 @@ const Unou: React.VFC<Props> = ({ articles, news }) => {
       <div className={`${styles.topImage} a-nop `} ref={homeRef}>
         <Image src={topImage} alt={'トップイメージ'} />
       </div>
-      <div
-        className={`${styles.newsWrap} sectionWrapper`}
-        ref={newsRef}
-      >
-        <div className={styles.newsContents}>
-          <NewsSectionTitle />
-          <section
-            className={`${styles.newsBody} a-nbu sectionWrapper`}
-          >
+      <div className={`${styles.newsWrap}`} ref={newsRef}>
+        <PageSecondSection>
+          <section className={`${styles.newsBody} a-nbu`}>
             <ul className={styles.itemWrap}>
               {news.map((item, i) => (
                 <li className={styles.item} key={i}>
@@ -135,7 +117,7 @@ const Unou: React.VFC<Props> = ({ articles, news }) => {
               />
             </div>
           </section>
-        </div>
+        </PageSecondSection>
       </div>
       <div className='sectionWrapper' ref={portfolioRef}>
         <SectionTitle title={'Portfolio'} />

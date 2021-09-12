@@ -1,0 +1,44 @@
+@import '../common.scss';
+@import '../breakpoint';
+@import '../mixin';
+
+.contents {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 0 0 72px 0;
+  width: 100%;
+  max-width: 1024px;
+
+  @include mq(md) {
+    padding: 100px 0 72px 0;
+  }
+
+  @include mq(lg) {
+    flex-direction: row;
+    padding: 0 0 72px 0;
+  }
+}
+
+.body {
+  margin: 64px auto 0;
+  width: 90%;
+
+  @include mq(lg) {
+    margin: 114px auto 0;
+    width: 100%;
+  }
+}
+
+.text {
+  margin-bottom: 24px;
+  line-height: 2;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.controller {
+  text-align: center;
+}

@@ -15,13 +15,13 @@ import {
 import Contact from '@/components/Contact';
 import DesignFlow from '@/components/DesignFlow';
 import Merits from '@/components/Merits';
+import PageSecondSection from '@/components/PageSecondSection';
 import PortfolioList from '@/components/PortfolioList';
 import PriceList from '@/components/PriceList';
 import Recommendation from '@/components/Recommendation';
 import SanouProfile from '@/components/SanouProfile';
 import PrimaryButton from '@/components/buttons/PrimaryButton';
 import SectionTitle from '@/components/common/SectionTitle';
-import SectionTitleVertical from '@/components/common/SectionTitleVertical';
 import MeritTitle from 'images/merit_title.svg';
 import MeritTitleSp from 'images/merit_title_sp.svg';
 import topImage from 'images/sanou_top_image.svg';
@@ -35,10 +35,10 @@ interface Props {
 }
 
 const Sanou: React.VFC<Props> = ({ articles }) => {
-  const contextVal = useContext(ContextData);
+  const ctx = useContext(ContextData);
   const router = useRouter();
 
-  const isSp = contextVal.width < 600;
+  const isSp = ctx.width < 600;
 
   const homeRef = createRef<HTMLDivElement>();
   const aboutRef = createRef<HTMLDivElement>();
@@ -129,15 +129,8 @@ const Sanou: React.VFC<Props> = ({ articles }) => {
         className={`${styles.aboutWrap} ${isSp && 'sectionWrapper'}`}
         ref={aboutRef}
       >
-        <div className={styles.aboutContents}>
-          <div className={styles.sectionTitleBox}>
-            {isSp ? (
-              <SectionTitle title={'About'} />
-            ) : (
-              <SectionTitleVertical title={'About'} />
-            )}
-          </div>
-          <div className={styles.aboutBody}>
+        <PageSecondSection>
+          <section>
             <p className={styles.text}>
               よいデザインは、どうやったら生まれるでしょうか？
             </p>
@@ -155,8 +148,8 @@ const Sanou: React.VFC<Props> = ({ articles }) => {
               <br />
               株式会社聴くと描くが、ワンストップで実現のお手伝いを致します。
             </p>
-          </div>
-        </div>
+          </section>
+        </PageSecondSection>
       </div>
       <div className='sectionWrapper' ref={portfolioRef}>
         <SectionTitle
@@ -164,10 +157,7 @@ const Sanou: React.VFC<Props> = ({ articles }) => {
           subTitle={'グラフィック・WEB・UI/UXデザイン'}
         />
         <section className={styles.workWrap}>
-          <PortfolioList
-            items={articles}
-            windowWidth={contextVal.width}
-          />
+          <PortfolioList items={articles} windowWidth={ctx.width} />
           <div className={styles.controller}>
             <PrimaryButton
               text={'More'}
@@ -178,22 +168,24 @@ const Sanou: React.VFC<Props> = ({ articles }) => {
       </div>
       <div className='sectionWrapper' ref={goodPointRef}>
         <div className={`${styles.meritWrap}`}>
-          <div className={styles.meritTitle}>
-            {isSp ? (
-              <Image
-                src={MeritTitleSp}
-                alt={'「聴くと描く」の、いいこと4つ'}
-              />
-            ) : (
-              <Image
-                src={MeritTitle}
-                alt={'「聴くと描く」の、いいこと4つ'}
-              />
-            )}
+          <div className={styles.meritContents}>
+            <div className={styles.meritTitle}>
+              {isSp ? (
+                <Image
+                  src={MeritTitleSp}
+                  alt={'「聴くと描く」の、いいこと4つ'}
+                />
+              ) : (
+                <Image
+                  src={MeritTitle}
+                  alt={'「聴くと描く」の、いいこと4つ'}
+                />
+              )}
+            </div>
+            <section className={styles.meritBox}>
+              <Merits />
+            </section>
           </div>
-          <section className={styles.meritBox}>
-            <Merits />
-          </section>
           <div
             className={styles.meritDesignFlowWrap}
             ref={flowPriceRef}

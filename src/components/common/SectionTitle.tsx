@@ -7,12 +7,14 @@ interface Props {
 }
 
 const SectionTitle: React.VFC<Props> = (props) => {
+  const isCenter = props.side === 'center';
+  const isLeft = props.side === 'left';
   return (
     <div className={styles.titleWrap}>
       <h2
-        className={`${styles.title} ${
-          props.side === 'left' && styles.left
-        } ${props.side === 'center' && styles.center}`}
+        className={`${styles.title} ${isLeft && styles.left} ${
+          isCenter && styles.center
+        }`}
       >
         {props.title}
       </h2>

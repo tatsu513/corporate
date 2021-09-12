@@ -24,12 +24,15 @@
   right: auto;
 
   @include mq(sm) {
-    bottom: -23%;
-    left: -53%;
-    width: 260%;
+    top: 50%;
+    bottom: auto;
+    left: 50%;
+    transform: translate(-50%, -40%) scale(3.3);
+    width: 100%;
   }
 
   @include mq(md) {
+    top: auto;
     bottom: -40%;
     left: -120%;
     width: auto;
@@ -48,40 +51,34 @@
     padding-top: 0;
   }
 
-  &::before {
-    content: '';
-    display: inline-block;
-    height: 156px;
-    width: 1px;
-    position: absolute;
-    top: -78px;
-    right: auto;
-    bottom: auto;
-    left: 50%;
-    background-color: $grey-main;
+  @include mq(lg) {
+    &::before {
+      content: '';
+      display: inline-block;
+      height: 156px;
+      width: 1px;
+      position: absolute;
+      top: -78px;
+      right: auto;
+      bottom: auto;
+      left: 50%;
+      background-color: $grey-main;
+    }
+
+    &::after {
+      content: '';
+      display: inline-block;
+      height: 28px;
+      width: 1px;
+      position: absolute;
+      top: 54px;
+      right: auto;
+      bottom: auto;
+      left: calc(50% - (10px * -1));
+      transform: rotate(45deg);
+      background-color: $grey-main;
+    }
   }
-
-  &::after {
-    content: '';
-    display: inline-block;
-    height: 28px;
-    width: 1px;
-    position: absolute;
-    top: 54px;
-    right: auto;
-    bottom: auto;
-    left: calc(50% - (10px * -1));
-    transform: rotate(45deg);
-    background-color: $grey-main;
-  }
-}
-
-.workWrap {
-  margin-top: 80px;
-}
-
-.worksErea {
-  @import '../markdown.scss';
 }
 
 .aboutContents {
@@ -124,11 +121,30 @@
   text-align: center;
 }
 
+.workWrap {
+  margin-top: 80px;
+}
+
+.worksErea {
+  @import '../markdown.scss';
+}
+
 .meritWrap {
   padding-top: 114px;
   padding-bottom: 114px;
   background-color: $back-sanou;
   text-align: center;
+}
+
+.meritContents {
+  @include mq(md) {
+    margin: 0 auto;
+    width: 70%;
+  }
+
+  @include mq(lg) {
+    width: 100%;
+  }
 }
 
 .meritTitle {
