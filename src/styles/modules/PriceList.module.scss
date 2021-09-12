@@ -22,14 +22,13 @@
     flex-direction: column;
   }
 
-  @include mq(md) {
+  @include mq(lg) {
     flex-direction: row;
   }
 }
 
 .priceContents {
   margin-bottom: 80px;
-  width: 48%;
 
   @include mq(sm) {
     width: 100%;
@@ -39,13 +38,13 @@
     }
   }
 
-  @include mq(md) {
+  @include mq(lg) {
     width: 48%;
   }
 
   &:nth-child(3),
   &:nth-child(4) {
-    @include mq(md) {
+    @include mq(lg) {
       margin-bottom: 0;
     }
   }
