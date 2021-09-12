@@ -11,7 +11,7 @@
     flex-direction: column;
   }
 
-  @include mq(md) {
+  @include mq(lg) {
     flex-direction: row;
   }
 }
@@ -32,6 +32,11 @@
   }
 
   @include mq(md) {
+    margin: 0 auto 56px;
+    width: 70%;
+  }
+
+  @include mq(lg) {
     margin-bottom: 0;
     padding: 24px;
     width: 30%;
@@ -52,7 +57,7 @@
       bottom: -42px;
     }
 
-    @include mq(md) {
+    @include mq(lg) {
       height: 1px;
       width: 24px;
       top: 50%;
@@ -80,7 +85,7 @@
       transform: rotate(135deg);
     }
 
-    @include mq(md) {
+    @include mq(lg) {
       top: calc(50% - 4px);
       right: -40px;
       bottom: auto;
