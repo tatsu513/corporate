@@ -1,11 +1,14 @@
 import { useRouter } from 'next/dist/client/router';
 import Image from 'next/image';
+import { useContext } from 'react';
 import TextLink from './common/TextLink';
 import MeritImage01 from 'images/merit_01.png';
 import MeritImage02 from 'images/merit_02.png';
+import { ContextData } from 'pages/BaseProvider';
 import styles from 'styles/modules/Merits.module.scss';
 
 const Merits = () => {
+  const ctx = useContext(ContextData);
   const router = useRouter();
   return (
     <>
@@ -13,13 +16,32 @@ const Merits = () => {
         <div className={styles.meritContents}>
           <div className={styles.meritNumber}>Good Point 01</div>
           <div className={styles.meritTitle}>
-            <span className={styles.meritTitleText}>
-              デザインに関わること、
-            </span>
-            <br />
-            <span className={styles.meritTitleText}>
-              全部できます。
-            </span>
+            {ctx.width >= 600 && (
+              <>
+                <span className={styles.meritTitleText}>
+                  デザインに関わること、
+                </span>
+                <br />
+                <span className={styles.meritTitleText}>
+                  全部できます。
+                </span>
+              </>
+            )}
+            {ctx.width < 600 && (
+              <>
+                <span className={styles.meritTitleText}>
+                  デザインに
+                </span>
+                <br />
+                <span className={styles.meritTitleText}>
+                  関わること、
+                </span>
+                <br />
+                <span className={styles.meritTitleText}>
+                  全部できます。
+                </span>
+              </>
+            )}
           </div>
           <p className={styles.meritText}>
             ポスター・パンフレット・ロゴ・Web・UI/UX・イラスト…
@@ -42,11 +64,32 @@ const Merits = () => {
         <div className={styles.meritContents}>
           <div className={styles.meritNumber}>Good Point 02</div>
           <div className={styles.meritTitle}>
-            <span className={styles.meritTitleText}>
-              モヤっとしたご依頼、
-            </span>
-            <br />
-            <span className={styles.meritTitleText}>大歓迎です</span>
+            {ctx.width >= 600 && (
+              <>
+                <span className={styles.meritTitleText}>
+                  モヤっとしたご依頼、
+                </span>
+                <br />
+                <span className={styles.meritTitleText}>
+                  大歓迎です。
+                </span>
+              </>
+            )}
+            {ctx.width < 600 && (
+              <>
+                <span className={styles.meritTitleText}>
+                  モヤっとした
+                </span>
+                <br />
+                <span className={styles.meritTitleText}>
+                  ご依頼、
+                </span>
+                <br />
+                <span className={styles.meritTitleText}>
+                  大歓迎です。
+                </span>
+              </>
+            )}
           </div>
           <p className={styles.meritText}>
             「Webサイトを作りたいけど、どういう内容にしたらいいか、全然決まっていない…」
@@ -67,13 +110,36 @@ const Merits = () => {
         <div className={styles.meritContents}>
           <div className={styles.meritNumber}>Good Point 03</div>
           <div className={styles.meritTitle}>
-            <span className={styles.meritTitleText}>
-              「なんとなく格好いい」だけ、
-            </span>
-            <br />
-            <span className={styles.meritTitleText}>
-              のデザインはしません。
-            </span>
+            {ctx.width >= 600 && (
+              <>
+                <span className={styles.meritTitleText}>
+                  「なんとなく格好いい」だけ、
+                </span>
+                <br />
+                <span className={styles.meritTitleText}>
+                  のデザインはしません。
+                </span>
+              </>
+            )}
+            {ctx.width < 600 && (
+              <>
+                <span className={styles.meritTitleText}>
+                  「なんとなく
+                </span>
+                <br />
+                <span className={styles.meritTitleText}>
+                  格好いい」だけ、
+                </span>
+                <br />
+                <span className={styles.meritTitleText}>
+                  のデザインは
+                </span>
+                <br />
+                <span className={styles.meritTitleText}>
+                  しません。
+                </span>
+              </>
+            )}
           </div>
           <p className={styles.meritText}>
             よいデザインとは、目的を達成出来るデザインです。
@@ -98,13 +164,36 @@ const Merits = () => {
         <div className={styles.meritContents}>
           <div className={styles.meritNumber}>Good Point 04</div>
           <div className={styles.meritTitle}>
-            <span className={styles.meritTitleText}>
-              アートとデザインの融合で、
-            </span>
-            <br />
-            <span className={styles.meritTitleText}>
-              他と、ちょっと差をつけます。
-            </span>
+            {ctx.width >= 600 && (
+              <>
+                <span className={styles.meritTitleText}>
+                  アートとデザインの融合で、
+                </span>
+                <br />
+                <span className={styles.meritTitleText}>
+                  他と、ちょっと差をつけます。
+                </span>
+              </>
+            )}
+            {ctx.width < 600 && (
+              <>
+                <span className={styles.meritTitleText}>
+                  アートとデザイン、
+                </span>
+                <br />
+                <span className={styles.meritTitleText}>
+                  の融合で、
+                </span>
+                <br />
+                <span className={styles.meritTitleText}>
+                  他と、ちょっと差を
+                </span>
+                <br />
+                <span className={styles.meritTitleText}>
+                  つけます。
+                </span>
+              </>
+            )}
           </div>
           <p className={styles.meritText}>
             アートやイラストも、聴くと描くの得意分野です。

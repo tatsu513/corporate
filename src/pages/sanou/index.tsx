@@ -130,7 +130,7 @@ const Sanou: React.VFC<Props> = ({ articles }) => {
         ref={aboutRef}
       >
         <PageSecondSection>
-          <section>
+          <section className={styles.aboutBody}>
             <p className={styles.text}>
               よいデザインは、どうやったら生まれるでしょうか？
             </p>

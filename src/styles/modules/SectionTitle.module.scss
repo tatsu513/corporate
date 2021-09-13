@@ -48,7 +48,6 @@
     height: 1px;
     width: calc(100vw + 100px);
     position: absolute;
-    left: -100px;
     bottom: 0;
     background-color: $grey-main;
     animation-name: rightLeftLine;
@@ -56,6 +55,14 @@
     animation-delay: 0;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
+
+    @include mq(sm) {
+      left: -25%;
+    }
+
+    @include mq(md) {
+      left: -100px;
+    }
   }
 
   &.left::after {
@@ -68,6 +75,14 @@
     bottom: 0;
     left: auto;
     background-color: $grey-main;
+
+    @include mq(sm) {
+      right: -25%;
+    }
+
+    @include mq(md) {
+      right: -100px;
+    }
   }
 }
 
