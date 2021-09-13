@@ -10,7 +10,6 @@ import React, {
   RefObject,
   useCallback,
   useEffect,
-  useState,
 } from 'react';
 import Contact from '@/components/Contact';
 import PageSecondSection from '@/components/PageSecondSection';
@@ -29,7 +28,6 @@ interface Props {
 
 const Unou: React.VFC<Props> = ({ articles, news }) => {
   const router = useRouter();
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const homeRef = createRef<HTMLDivElement>();
   const newsRef = createRef<HTMLDivElement>();
@@ -79,11 +77,6 @@ const Unou: React.VFC<Props> = ({ articles, news }) => {
     swichTarget(target || 'home');
   }, [swichTarget, router.query]);
 
-  useEffect(() => {
-    const onResize = () => setWindowWidth(window.innerWidth);
-    window.addEventListener('resize', onResize);
-    return () => window.removeEventListener('resize', onResize);
-  }, []);
   return (
     <>
       {/* {articles.map((article, i) => (
