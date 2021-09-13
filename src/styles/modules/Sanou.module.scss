@@ -44,11 +44,8 @@
     padding-top: 120px;
   }
 
-  @include mq(md) {
-    padding-top: 0;
-  }
-
   @include mq(lg) {
+    padding-top: 0;
     &::before {
       content: '';
       display: inline-block;

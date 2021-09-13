@@ -86,7 +86,11 @@ const SanouProfile = () => {
               単なるデザイン制作に留まらず、要求整理・業務フロー・ストーリーマッピング・ペルソナ等の作成を通して、「本当に必要なデザインは何なのか？」「より良いユーザー体験とは何か？」を探り、要件定義から関わることを得意とする。
             </p>
           </div>
-          <div className={styles.imageBox}>
+          <div
+            className={`${styles.imageBox} ${
+              isMinWidth() && styles.minWidth
+            }`}
+          >
             <div
               className={`${styles.image} ${
                 isMinWidth() && styles.minWidth
