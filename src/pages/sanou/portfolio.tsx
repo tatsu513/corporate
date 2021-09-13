@@ -9,8 +9,10 @@ import Contact from '@/components/Contact';
 import Menu from '@/components/Menu';
 import PortfolioList from '@/components/PortfolioList';
 import SectionTitle from '@/components/common/SectionTitle';
-import { sanouPortfolioCategories } from 'domains';
-import { sanouPortfolioBreadcrumb } from 'domains/sanou';
+import {
+  sanouPortfolioBreadcrumb,
+  sanouPortfolioCategories,
+} from 'domains/sanou';
 import { MarkdownFileData } from 'models/';
 import styles from 'styles/modules/Illusts.module.scss';
 

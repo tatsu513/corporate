@@ -9,7 +9,7 @@ import Contact from '@/components/Contact';
 import Menu from '@/components/Menu';
 import PortfolioList from '@/components/PortfolioList';
 import SectionTitle from '@/components/common/SectionTitle';
-import { illustCategories } from 'domains';
+import { unouPortfolioCategories } from 'domains/unou';
 import { portfolioBreadcrumb } from 'domains/unou';
 import { MarkdownFileData } from 'models/';
 import { ContextData } from 'pages/BaseProvider';
@@ -50,12 +50,12 @@ const IllustPortfolio: React.VFC<Props> = ({ articles }) => {
       <section className={`${styles.workWrap} a-nbu`}>
         <Menu
           selectedItem={selectedItem}
-          items={illustCategories}
+          items={unouPortfolioCategories}
           onClick={selectItem}
         />
       </section>
       <section className={`${styles.works} a-nbu`}>
-        <PortfolioList items={works} windowWidth={contextVal.width} />
+        <PortfolioList items={works} />
         <p className={styles.note}>
           ※
           公開している事例はごく一部です。より詳しい事例は直接お問い合わせください。

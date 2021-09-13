@@ -1,3 +1,5 @@
+import { WorkCategories } from 'models';
+
 export const newsBreadcrumb = [
   {
     name: 'Home',
@@ -17,5 +19,20 @@ export const portfolioBreadcrumb = [
   {
     name: 'Portfolio',
     path: '/unou/portfolio',
+  },
+];
+
+export const unouPortfolioCategories: WorkCategories[] = [
+  {
+    name: '全て',
+    type: 'all',
+  },
+  {
+    name: 'クライアントワーク',
+    type: 'client',
+  },
+  {
+    name: '自主制作',
+    type: 'art',
   },
 ];
