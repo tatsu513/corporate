@@ -3,7 +3,7 @@ import * as path from 'path';
 import matter from 'gray-matter';
 // import marked from 'marked';
 import { GetStaticProps } from 'next';
-import { useState, useContext } from 'react';
+import { useState } from 'react';
 import Breadcrumb from '@/components/Breadcrumb';
 import Contact from '@/components/Contact';
 import Menu from '@/components/Menu';
@@ -12,7 +12,6 @@ import SectionTitle from '@/components/common/SectionTitle';
 import { illustCategories } from 'domains';
 import { portfolioBreadcrumb } from 'domains/unou';
 import { MarkdownFileData } from 'models/';
-import { ContextData } from 'pages/BaseProvider';
 import styles from 'styles/modules/Illusts.module.scss';
 
 interface Props {
@@ -22,8 +21,6 @@ interface Props {
 const IllustPortfolio: React.VFC<Props> = ({ articles }) => {
   const [works, setWorks] = useState(articles);
   const [selectedItem, setSelectedItem] = useState('all');
-
-  const contextVal = useContext(ContextData);
 
   const selectItem = (type: string) => {
     const filter = (data: MarkdownFileData[]) => {
