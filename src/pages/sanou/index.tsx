@@ -157,11 +157,11 @@ const Sanou: React.VFC<Props> = ({ articles }) => {
           subTitle={'グラフィック・WEB・UI/UXデザイン'}
         />
         <section className={styles.workWrap}>
-          <PortfolioList items={articles} windowWidth={ctx.width} />
+          <PortfolioList items={articles} />
           <div className={styles.controller}>
             <PrimaryButton
               text={'More'}
-              onClick={() => router.push('/designs')}
+              onClick={() => router.push('/sanou/portfolio')}
             />
           </div>
         </section>
