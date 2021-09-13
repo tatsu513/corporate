@@ -1,6 +1,6 @@
 import { WorkCategories } from 'models';
 
-export const workCategories: WorkCategories[] = [
+export const sanouPortfolioCategories: WorkCategories[] = [
   {
     name: '全て',
     type: 'all',

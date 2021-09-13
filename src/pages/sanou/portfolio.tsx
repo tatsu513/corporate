@@ -9,8 +9,8 @@ import Contact from '@/components/Contact';
 import Menu from '@/components/Menu';
 import PortfolioList from '@/components/PortfolioList';
 import SectionTitle from '@/components/common/SectionTitle';
-import { illustCategories } from 'domains';
-import { portfolioBreadcrumb } from 'domains/unou';
+import { sanouPortfolioCategories } from 'domains';
+import { sanouPortfolioBreadcrumb } from 'domains/sanou';
 import { MarkdownFileData } from 'models/';
 import styles from 'styles/modules/Illusts.module.scss';
 
@@ -42,12 +42,12 @@ const IllustPortfolio: React.VFC<Props> = ({ articles }) => {
 
   return (
     <>
-      <Breadcrumb items={portfolioBreadcrumb} />
+      <Breadcrumb items={sanouPortfolioBreadcrumb} />
       <SectionTitle title={'Portfolio'} />
       <section className={`${styles.workWrap} a-nbu`}>
         <Menu
           selectedItem={selectedItem}
-          items={illustCategories}
+          items={sanouPortfolioCategories}
           onClick={selectItem}
         />
       </section>
@@ -64,11 +64,11 @@ const IllustPortfolio: React.VFC<Props> = ({ articles }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const files = fs.readdirSync(path.join('src', 'articles', 'unou'));
+  const files = fs.readdirSync(path.join('src', 'articles', 'sanou'));
   const articles = files.map((filename) => {
     const slug = filename.replace(/.md/, '');
     const markdownWithMeta = fs.readFileSync(
-      path.join('src', 'articles', 'unou', filename),
+      path.join('src', 'articles', 'sanou', filename),
       'utf-8',
     );
 
