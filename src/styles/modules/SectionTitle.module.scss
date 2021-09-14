@@ -16,22 +16,34 @@
   position: relative;
   text-align: center;
   white-space: break-spaces;
-  animation-name: leftRight;
-  animation-duration: 0.8s;
-  animation-delay: 0;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
+  opacity: 0;
 
-  &.center {
-    width: 100%;
-  }
-
-  &.left {
-    animation-name: rightLeft;
+  &.inView {
+    animation-name: leftRight;
     animation-duration: 0.8s;
     animation-delay: 0;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
+
+    &.left {
+      animation-name: rightLeft;
+      animation-duration: 0.8s;
+      animation-delay: 0;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+    }
+
+    &::after {
+      animation-name: rightLeftLine;
+      animation-duration: 0.8s;
+      animation-delay: 0;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+    }
+  }
+
+  &.center {
+    width: 100%;
   }
 
   @include mq(sm) {
@@ -50,11 +62,6 @@
     position: absolute;
     bottom: 0;
     background-color: $grey-main;
-    animation-name: rightLeftLine;
-    animation-duration: 0.8s;
-    animation-delay: 0;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
 
     @include mq(sm) {
       left: -25%;

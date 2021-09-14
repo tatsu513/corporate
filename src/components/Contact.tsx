@@ -1,4 +1,5 @@
 import { useState, useCallback, ChangeEvent } from 'react';
+import { useInView } from 'react-intersection-observer';
 import PrimaryButton from './buttons/PrimaryButton';
 import Icon from './common/Icon';
 import SectionTitle from './common/SectionTitle';
@@ -63,11 +64,21 @@ const Contact: React.VFC = () => {
     },
     [email, name, title, body],
   );
+
+  const [formRef, inView] = useInView({
+    rootMargin: '-50px 0px',
+    triggerOnce: true,
+  });
   return (
     <div className='sectionWrapper'>
       <div className={`${styles.contactWrap} sectionWrapper`}>
         <SectionTitle title={'Contact'} side={'left'} />
-        <section className={`${styles.contactContainer} a-nbu`}>
+        <section
+          ref={formRef}
+          className={`${styles.contactContainer} ${
+            inView && styles.inView
+          }`}
+        >
           <div className={styles.contents}>
             <div className={styles.itemBox}>
               <div className={styles.item}>
