@@ -35,6 +35,10 @@
 .newsWrap {
   background-color: $back-color;
 
+  @include mq(sm) {
+    padding-top: 120px;
+  }
+
   @include mq(lg) {
     padding-top: 0;
   }
@@ -42,7 +46,7 @@
 
 .itemWrap {
   @include mq(sm) {
-    padding: 24px 0 56px;
+    padding: 0 0 56px;
   }
 
   @include mq(md) {

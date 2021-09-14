@@ -57,38 +57,40 @@ export const Home: React.VFC = () => {
           どちらを見ますか？
           {windowWidth >= 600}
         </h1>
-        <div className={styles.controllers}>
-          <button
-            className={styles.button}
-            onClick={() => router.push('/unou')}
-          >
-            <div className={styles.buttonText}>右脳</div>
-            <div className={styles.buttonSubText}>
-              （イラスト/アート）
+        <div className={styles.contentBottom}>
+          <div className={styles.controllers}>
+            <button
+              className={styles.button}
+              onClick={() => router.push('/unou')}
+            >
+              <div className={styles.buttonText}>右脳</div>
+              <div className={styles.buttonSubText}>
+                （イラスト/アート）
+              </div>
+            </button>
+            <button
+              className={styles.button}
+              onClick={() => router.push('/sanou')}
+            >
+              <div className={styles.buttonText}>左脳</div>
+              <div className={styles.buttonSubText}>（デザイン）</div>
+            </button>
+          </div>
+          <LeftImage />
+          <div className={styles.mainImageBox}>
+            <div className={styles.mainImageTop}>
+              <Image src={mainImg} alt='右脳・左脳' />
             </div>
-          </button>
-          <button
-            className={styles.button}
-            onClick={() => router.push('/sanou')}
-          >
-            <div className={styles.buttonText}>左脳</div>
-            <div className={styles.buttonSubText}>（デザイン）</div>
-          </button>
-        </div>
-        <LeftImage />
-        <div className={styles.mainImageBox}>
-          <div className={styles.mainImageTop}>
-            <Image src={mainImg} alt='右脳・左脳' />
+            <div className={styles.mainImageBottom}>
+              <Image
+                className={styles.ooooo}
+                src={mainImg2}
+                alt='右脳・左脳'
+              />
+            </div>
           </div>
-          <div className={styles.mainImageBottom}>
-            <Image
-              className={styles.ooooo}
-              src={mainImg2}
-              alt='右脳・左脳'
-            />
-          </div>
+          <RightImage />
         </div>
-        <RightImage />
       </div>
     </div>
   );

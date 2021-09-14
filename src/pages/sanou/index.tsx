@@ -130,7 +130,7 @@ const Sanou: React.VFC<Props> = ({ articles }) => {
         ref={aboutRef}
       >
         <PageSecondSection>
-          <section>
+          <section className={styles.aboutBody}>
             <p className={styles.text}>
               よいデザインは、どうやったら生まれるでしょうか？
             </p>
@@ -157,11 +157,11 @@ const Sanou: React.VFC<Props> = ({ articles }) => {
           subTitle={'グラフィック・WEB・UI/UXデザイン'}
         />
         <section className={styles.workWrap}>
-          <PortfolioList items={articles} windowWidth={ctx.width} />
+          <PortfolioList items={articles} />
           <div className={styles.controller}>
             <PrimaryButton
               text={'More'}
-              onClick={() => router.push('/designs')}
+              onClick={() => router.push('/sanou/portfolio')}
             />
           </div>
         </section>

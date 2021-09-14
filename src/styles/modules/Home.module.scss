@@ -8,11 +8,11 @@
   position: relative;
 
   @include mq(sm) {
+    height: calc(100vh - 74px);
     width: 100%;
   }
 
   @include mq(md) {
-    height: calc(100vh - 74px);
     width: 100%;
     overflow: hidden;
   }
@@ -34,14 +34,14 @@
   animation-fill-mode: forwards;
 
   @include mq(sm) {
-    margin: 24px auto 48px;
+    margin: 20% auto;
     font-size: 20px;
     letter-spacing: 0.6rem;
     writing-mode: vertical-rl;
   }
 
   @include mq(md) {
-    margin: 24px auto 20vh;
+    margin: 54% auto;
     font-size: 28px;
     letter-spacing: 0.2rem;
     writing-mode: horizontal-tb;
@@ -50,14 +50,13 @@
 
 .mainContents {
   position: absolute;
-  top: auto;
+  top: 0;
   right: auto;
   left: 50%;
-  bottom: auto;
+  bottom: 0;
   transform: translateX(-50%);
 
   @include mq(sm) {
-    padding: 0 24px;
     overflow: hidden;
     width: 100%;
   }
@@ -66,6 +65,20 @@
     bottom: 0;
     overflow: visible;
     width: 460px;
+  }
+}
+
+.contentBottom {
+  position: absolute;
+  top: auto;
+  right: auto;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+
+  @include mq(md) {
+    width: 464px;
   }
 }
 

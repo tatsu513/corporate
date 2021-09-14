@@ -10,12 +10,11 @@ import React, {
   RefObject,
   useCallback,
   useEffect,
-  useState,
 } from 'react';
 import Contact from '@/components/Contact';
 import PageSecondSection from '@/components/PageSecondSection';
 import PortfolioList from '@/components/PortfolioList';
-import Profile from '@/components/Profile';
+import UnouProfile from '@/components/UnouProfile';
 import PrimaryButton from '@/components/buttons/PrimaryButton';
 import SectionTitle from '@/components/common/SectionTitle';
 import topImage from 'images/unou-image.png';
@@ -29,7 +28,6 @@ interface Props {
 
 const Unou: React.VFC<Props> = ({ articles, news }) => {
   const router = useRouter();
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const homeRef = createRef<HTMLDivElement>();
   const newsRef = createRef<HTMLDivElement>();
@@ -79,11 +77,6 @@ const Unou: React.VFC<Props> = ({ articles, news }) => {
     swichTarget(target || 'home');
   }, [swichTarget, router.query]);
 
-  useEffect(() => {
-    const onResize = () => setWindowWidth(window.innerWidth);
-    window.addEventListener('resize', onResize);
-    return () => window.removeEventListener('resize', onResize);
-  }, []);
   return (
     <>
       {/* {articles.map((article, i) => (
@@ -97,7 +90,7 @@ const Unou: React.VFC<Props> = ({ articles, news }) => {
       </div>
       <div className={`${styles.newsWrap}`} ref={newsRef}>
         <PageSecondSection>
-          <section className={`${styles.newsBody} a-nbu`}>
+          <section className='a-nbu'>
             <ul className={styles.itemWrap}>
               {news.map((item, i) => (
                 <li className={styles.item} key={i}>
@@ -122,7 +115,7 @@ const Unou: React.VFC<Props> = ({ articles, news }) => {
       <div className='sectionWrapper' ref={portfolioRef}>
         <SectionTitle title={'Portfolio'} />
         <section className={`${styles.works} a-nbu`}>
-          <PortfolioList items={articles} windowWidth={windowWidth} />
+          <PortfolioList items={articles} />
         </section>
         <div className={styles.controller}>
           <PrimaryButton
@@ -132,7 +125,7 @@ const Unou: React.VFC<Props> = ({ articles, news }) => {
         </div>
       </div>
       <section className='sectionWrapper a-nop' ref={profileRef}>
-        <Profile windowWidth={windowWidth} />
+        <UnouProfile />
       </section>
       <div ref={contactRef}>
         <Contact />

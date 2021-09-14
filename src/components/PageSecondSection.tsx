@@ -15,16 +15,18 @@ const PageSecondSection: React.VFC<Props> = ({ children }) => {
 
   const sectionTitleText = isSanou ? 'About' : 'News';
   return (
-    <div className={styles.contents}>
-      <div className={styles.sectionTitleBox}>
-        {isMd ? (
-          <SectionTitle title={sectionTitleText} side={'left'} />
-        ) : (
-          <SectionTitleVertical title={sectionTitleText} />
-        )}
+    <>
+      <div className={styles.contentWrap}>
+        <div className={styles.sectionTitleBox}>
+          {isMd ? (
+            <SectionTitle title={sectionTitleText} side={'left'} />
+          ) : (
+            <SectionTitleVertical title={sectionTitleText} />
+          )}
+        </div>
+        <div className={styles.body}>{children}</div>
       </div>
-      <div className={styles.body}>{children}</div>
-    </div>
+    </>
   );
 };
 

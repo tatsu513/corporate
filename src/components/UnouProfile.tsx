@@ -1,29 +1,28 @@
+import { useContext } from 'react';
 import Icon from './common/Icon';
 import SectionTitle from './common/SectionTitle';
 import SectionTitleVertical from './common/SectionTitleVertical';
 import facebookIcon from 'images/facebook.svg';
 import instaIcon from 'images/instagram.svg';
-import styles from 'styles/modules/Profile.module.scss';
+import { ContextData } from 'pages/BaseProvider';
+import styles from 'styles/modules/UnouProfile.module.scss';
 
-interface Props {
-  windowWidth: number;
-}
-
-const Profile: React.VFC<Props> = ({ windowWidth }) => {
+const UnouProfile: React.VFC = () => {
+  const ctx = useContext(ContextData);
   const Sectiontitle = () => {
-    if (windowWidth > 1024) {
+    if (ctx.width > 1024) {
       return (
         <div className={styles.sectionTitleBox}>
           <SectionTitleVertical title={'Profile'} />
         </div>
       );
     } else {
-      return <SectionTitle title={'Profile'} />;
+      return <SectionTitle title={'Profile'} side={'center'} />;
     }
   };
   const isMinWidth = () => {
-    if (windowWidth <= 1024) {
-      const sectionWidth = windowWidth * 0.9;
+    if (ctx.width <= 1024) {
+      const sectionWidth = ctx.width * 0.9;
       const marginWidth = 32 + 32;
       const workBoxWidth = sectionWidth - (310 + marginWidth);
       return workBoxWidth <= 400;
@@ -90,4 +89,4 @@ const Profile: React.VFC<Props> = ({ windowWidth }) => {
   );
 };
 
-export default Profile;
+export default UnouProfile;

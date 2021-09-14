@@ -15,28 +15,37 @@ import styles from 'styles/modules/Header.module.scss';
 
 const Header: React.VFC = () => {
   const router = useRouter();
-  const contextVal = useContext(ContextData);
+  const ctx = useContext(ContextData);
 
   const [isOpenSidebar, setIsOpenSidebar] = useState(false);
+
+  const isTop = !ctx.isSanou && !ctx.isUnou;
+
+  const goToHome = () => {
+    if (isTop) {
+      router.push('/');
+    } else if (ctx.isSanou) {
+      router.push('/sanou');
+    } else if (ctx.isUnou) {
+      router.push('/unou');
+    }
+  };
 
   return (
     <header
       className={`${styles.header} ${
-        contextVal.isSanou && styles.headerSanou
+        ctx.isSanou && styles.headerSanou
       }`}
     >
       <div
         className={`${styles.headerWrap} ${
-          contextVal.isSanou && styles.headerWrapSanou
+          ctx.isSanou && styles.headerWrapSanou
         }`}
       >
-        <div className={styles.logo}>
-          <Image
-            src={contextVal.isUnou ? logoUnou : logoBase}
-            alt='ロゴ'
-          />
+        <div className={styles.logo} onClick={goToHome}>
+          <Image src={ctx.isUnou ? logoUnou : logoBase} alt='ロゴ' />
         </div>
-        {contextVal.isUnou && contextVal.width > 1024 && (
+        {ctx.isUnou && ctx.width > 1024 && (
           <div className={styles.controllers}>
             <TextLink
               text={'News'}
@@ -88,8 +97,7 @@ const Header: React.VFC = () => {
             </div>
           </div>
         )}
-        {((contextVal.width <= 1024 && contextVal.isUnou) ||
-          contextVal.isSanou) && (
+        {((ctx.width <= 1024 && ctx.isUnou) || ctx.isSanou) && (
           <div
             className={styles.menuBox}
             onClick={() => setIsOpenSidebar(true)}

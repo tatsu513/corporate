@@ -3,16 +3,17 @@ import * as path from 'path';
 import matter from 'gray-matter';
 // import marked from 'marked';
 import { GetStaticProps } from 'next';
-import { useState, useContext } from 'react';
+import { useState } from 'react';
 import Breadcrumb from '@/components/Breadcrumb';
 import Contact from '@/components/Contact';
 import Menu from '@/components/Menu';
 import PortfolioList from '@/components/PortfolioList';
 import SectionTitle from '@/components/common/SectionTitle';
-import { unouPortfolioCategories } from 'domains/unou';
-import { portfolioBreadcrumb } from 'domains/unou';
+import {
+  sanouPortfolioBreadcrumb,
+  sanouPortfolioCategories,
+} from 'domains/sanou';
 import { MarkdownFileData } from 'models/';
-import { ContextData } from 'pages/BaseProvider';
 import styles from 'styles/modules/Illusts.module.scss';
 
 interface Props {
@@ -23,18 +24,16 @@ const IllustPortfolio: React.VFC<Props> = ({ articles }) => {
   const [works, setWorks] = useState(articles);
   const [selectedItem, setSelectedItem] = useState('all');
 
-  const contextVal = useContext(ContextData);
-
   const selectItem = (type: string) => {
     const filter = (data: MarkdownFileData[]) => {
-      const n = data.filter((d) => {
+      const filterdItems = data.filter((d) => {
         return d.frontmatter.categories.includes(type);
       });
-      return n;
+      return filterdItems;
     };
-    filter(articles);
+    filter(works);
     type === 'all'
-      ? setWorks(articles)
+      ? setWorks(works)
       : setWorks(
           articles.filter((article) =>
             article.frontmatter.categories.includes(type),
@@ -45,12 +44,12 @@ const IllustPortfolio: React.VFC<Props> = ({ articles }) => {
 
   return (
     <>
-      <Breadcrumb items={portfolioBreadcrumb} />
+      <Breadcrumb items={sanouPortfolioBreadcrumb} />
       <SectionTitle title={'Portfolio'} />
       <section className={`${styles.workWrap} a-nbu`}>
         <Menu
           selectedItem={selectedItem}
-          items={unouPortfolioCategories}
+          items={sanouPortfolioCategories}
           onClick={selectItem}
         />
       </section>
@@ -67,11 +66,11 @@ const IllustPortfolio: React.VFC<Props> = ({ articles }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const files = fs.readdirSync(path.join('src', 'articles', 'unou'));
+  const files = fs.readdirSync(path.join('src', 'articles', 'sanou'));
   const articles = files.map((filename) => {
     const slug = filename.replace(/.md/, '');
     const markdownWithMeta = fs.readFileSync(
-      path.join('src', 'articles', 'unou', filename),
+      path.join('src', 'articles', 'sanou', filename),
       'utf-8',
     );
 

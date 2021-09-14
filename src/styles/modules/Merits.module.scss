@@ -61,8 +61,15 @@
   display: inline-block;
   position: relative;
   line-height: 2;
-  font-size: 27px;
   z-index: 1;
+
+  @include mq(sm) {
+    font-size: 22px;
+  }
+
+  @include mq(lg) {
+    font-size: 27px;
+  }
 
   &::before {
     content: '';

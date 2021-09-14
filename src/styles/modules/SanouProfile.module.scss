@@ -68,15 +68,15 @@
   @include mq(md) {
     width: 55%;
     margin-bottom: 0;
+
+    &.minWidth {
+      width: 100%;
+    }
   }
   @include mq(lg) {
     margin-right: 0;
-    padding: 40px 32px 32px 0;
+    padding: 40px 32px 0 0;
     width: auto;
-
-    &.minWidth {
-      margin-bottom: 24px;
-    }
   }
 }
 
@@ -135,6 +135,10 @@
 .imageBox {
   @include mq(md) {
     width: 40%;
+
+    &.minWidth {
+      width: 100%;
+    }
   }
 
   @include mq(lg) {
