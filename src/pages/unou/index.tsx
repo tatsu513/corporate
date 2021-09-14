@@ -11,7 +11,6 @@ import React, {
   useCallback,
   useEffect,
 } from 'react';
-import { useInView } from 'react-intersection-observer';
 import Contact from '@/components/Contact';
 import PageSecondSection from '@/components/PageSecondSection';
 import PortfolioList from '@/components/PortfolioList';
@@ -35,11 +34,6 @@ const Unou: React.VFC<Props> = ({ articles, news }) => {
   const portfolioRef = createRef<HTMLDivElement>();
   const profileRef = createRef<HTMLDivElement>();
   const contactRef = createRef<HTMLDivElement>();
-
-  const [topImageRef, inView] = useInView({
-    rootMargin: '-50px 0px',
-    triggerOnce: true,
-  });
 
   const scrollToTarget = (
     ref: RefObject<HTMLDivElement>,
@@ -91,13 +85,8 @@ const Unou: React.VFC<Props> = ({ articles, news }) => {
           <div dangerouslySetInnerHTML={{ __html: marked(article.content) }} />
         </div>
       ))} */}
-      <div className={`${styles.topImage}`} ref={homeRef}>
-        <span
-          ref={topImageRef}
-          className={`${styles.imageWrap} ${inView && styles.inView}`}
-        >
-          <Image src={topImage} alt={'トップイメージ'} />
-        </span>
+      <div className={`${styles.topImage} a-nop`} ref={homeRef}>
+        <Image src={topImage} alt={'トップイメージ'} />
       </div>
       <div className={`${styles.newsWrap}`} ref={newsRef}>
         <PageSecondSection>
