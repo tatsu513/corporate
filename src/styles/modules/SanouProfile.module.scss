@@ -1,3 +1,4 @@
+@import '../animation';
 @import '../common.scss';
 @import '../_breakpoint';
 @import '../_mixin';
@@ -40,6 +41,15 @@
 
 .contentBody {
   padding-top: 64px;
+  opacity: 0;
+
+  &.inView {
+    animation-name: normalOpacity;
+    animation-duration: 1s;
+    animation-delay: 0;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
   @include mq(md) {
     display: flex;
     justify-content: space-between;
