@@ -383,3 +383,44 @@
     height: 100%;
   }
 }
+
+// BLUR ANIMATION
+@keyframes blurAnime {
+  from {
+    filter: blur(10px);
+    // transform: scale(1.02);
+    opacity: 0;
+  }
+
+  to {
+    filter: blur(0);
+    // transform: scale(1);
+    opacity: 1;
+  }
+}
+
+// SANOU TOP ARROW
+@keyframes snouTopArrow {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(30px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+// SANOU TOP ARROW ROTATE 45
+@keyframes snouTopArrowRotate45 {
+  0% {
+    transform: translateY(0) rotate(45deg);
+  }
+  50% {
+    transform: translateY(30px) rotate(45deg);
+  }
+  100% {
+    transform: translateY(0) rotate(45deg);
+  }
+}
