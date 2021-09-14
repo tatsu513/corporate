@@ -4,6 +4,8 @@
 @import '../mixin';
 
 .priceListBox {
+  opacity: 0;
+
   &.inView {
     animation-name: normalbottomUp;
     animation-duration: 0.8s;
