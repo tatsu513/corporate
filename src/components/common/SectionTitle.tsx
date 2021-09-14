@@ -26,7 +26,11 @@ const SectionTitle: React.VFC<Props> = (props) => {
         {props.title}
       </h2>
       {props.subTitle && (
-        <div className={styles.subTitleWrap}>
+        <div
+          className={`${styles.subTitleWrap} ${
+            isLeft && styles.left
+          } ${inView && styles.inView}`}
+        >
           <span className={styles.subTitle}>{props.subTitle}</span>
         </div>
       )}

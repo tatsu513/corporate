@@ -19,14 +19,14 @@
   opacity: 0;
 
   &.inView {
-    animation-name: leftRight;
+    animation-name: rightLeft;
     animation-duration: 0.8s;
     animation-delay: 0;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 
     &.left {
-      animation-name: rightLeft;
+      animation-name: leftRight;
       animation-duration: 0.8s;
       animation-delay: 0;
       animation-iteration-count: 1;
@@ -89,6 +89,26 @@
 
     @include mq(md) {
       right: -100px;
+    }
+  }
+}
+
+.subTitleWrap {
+  &.inView {
+    opacity: 0;
+    animation-name: leftRight;
+    animation-duration: 0.8s;
+    animation-delay: 0;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+
+    &.left {
+      opacity: 0;
+      animation-name: rightLeft;
+      animation-duration: 0.8s;
+      animation-delay: 0;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
     }
   }
 }
