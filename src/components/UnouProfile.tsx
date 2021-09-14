@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { useInView } from 'react-intersection-observer';
 import Icon from './common/Icon';
 import SectionTitle from './common/SectionTitle';
 import SectionTitleVertical from './common/SectionTitleVertical';
@@ -9,6 +10,12 @@ import styles from 'styles/modules/UnouProfile.module.scss';
 
 const UnouProfile: React.VFC = () => {
   const ctx = useContext(ContextData);
+
+  const [contentRef, inView] = useInView({
+    rootMargin: '-50px 0px',
+    triggerOnce: true,
+  });
+
   const Sectiontitle = () => {
     if (ctx.width > 1024) {
       return (
@@ -31,7 +38,10 @@ const UnouProfile: React.VFC = () => {
     }
   };
   return (
-    <div className={styles.profileWrap}>
+    <div
+      ref={contentRef}
+      className={`${styles.profileWrap} ${inView && styles.inView}`}
+    >
       <Sectiontitle />
       <div
         className={`${styles.contentBody} ${
@@ -63,12 +73,14 @@ const UnouProfile: React.VFC = () => {
               href={'https://www.facebook.com/kokubo.akemi'}
             />
           </div>
-          <p className={styles.recode}>
+          <p
+            className={`${styles.recode} ${inView && styles.inView}`}
+          >
             日本女子大学 住居化学住居環境デザイン専攻卒
             <br />
             イラストレーション青山塾 ドローイング科卒
           </p>
-          <p className={styles.text}>
+          <p className={`${styles.text} ${inView && styles.inView}`}>
             筆でさっと描いた、オシャレで個性的な女の子を得意とする。企業の販促ツール・雑誌の挿絵・カフェのパッケージイラストなど、様々な媒体で活動中。
             <br />■ 主な使用ツール
             <br />
@@ -77,7 +89,9 @@ const UnouProfile: React.VFC = () => {
             ・デジタル：Procreate（iPad）／Adobe CC
           </p>
         </div>
-        <div className={styles.imageBox}>
+        <div
+          className={`${styles.imageBox} ${inView && styles.inView}`}
+        >
           <div
             className={`${styles.image} ${
               isMinWidth() && styles.minWidth

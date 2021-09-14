@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { useContext } from 'react';
+import { useInView } from 'react-intersection-observer';
 import SectionTitle from './common/SectionTitle';
 import { ContextData } from 'pages/BaseProvider';
 import styles from 'styles/modules/Recommendation.module.scss';
@@ -8,6 +9,11 @@ const Recommendation = () => {
   const ctx = useContext(ContextData);
   const isSp = ctx.width < 600;
   const IsUnderMd = ctx.width < 1024;
+
+  const [contentRef, inView] = useInView({
+    rootMargin: '-50px 0px',
+    triggerOnce: true,
+  });
   return (
     <>
       <SectionTitle
@@ -19,7 +25,12 @@ const Recommendation = () => {
         }
       />
       {/* 株式会社新閃力 */}
-      <section className={styles.recommendBox}>
+      <section
+        ref={contentRef}
+        className={`${styles.recommendBox} ${
+          inView && styles.inView
+        }`}
+      >
         <div className={styles.item}>
           <div className={styles.image} />
           <div className={styles.itemBody}>

@@ -12,6 +12,7 @@ import {
   useContext,
   useEffect,
 } from 'react';
+import { useInView } from 'react-intersection-observer';
 import Contact from '@/components/Contact';
 import DesignFlow from '@/components/DesignFlow';
 import Merits from '@/components/Merits';
@@ -39,6 +40,11 @@ const Sanou: React.VFC<Props> = ({ articles }) => {
   const router = useRouter();
 
   const isSp = ctx.width < 600;
+
+  const [meritTitleRef, inView] = useInView({
+    rootMargin: '-50px 0px',
+    triggerOnce: true,
+  });
 
   const homeRef = createRef<HTMLDivElement>();
   const aboutRef = createRef<HTMLDivElement>();
@@ -113,9 +119,11 @@ const Sanou: React.VFC<Props> = ({ articles }) => {
     <>
       <div className={styles.topImage} ref={homeRef}>
         <h1 className={styles.topCopy}>
-          よく聴き
+          <span className={styles.topText1}>よく</span>
+          <span className={styles.topText2}>聴き</span>
           <br />
-          よく描く
+          <span className={styles.topText3}>よく</span>
+          <span className={styles.topText4}>描く</span>
           <div className={styles.topImageBox}>
             {isSp ? (
               <Image src={topImageSp} alt={'トップイメージ'} />
@@ -169,7 +177,12 @@ const Sanou: React.VFC<Props> = ({ articles }) => {
       <div className='sectionWrapper' ref={goodPointRef}>
         <div className={`${styles.meritWrap}`}>
           <div className={styles.meritContents}>
-            <div className={styles.meritTitle}>
+            <div
+              ref={meritTitleRef}
+              className={`${styles.meritTitle} ${
+                inView && styles.inView
+              }`}
+            >
               {isSp ? (
                 <Image
                   src={MeritTitleSp}

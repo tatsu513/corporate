@@ -1,7 +1,12 @@
+import { useInView } from 'react-intersection-observer';
 import SectionTitle from './common/SectionTitle';
 import styles from 'styles/modules/DesignFlow.module.scss';
 
 const DesignFlow = () => {
+  const [contentRef, inView] = useInView({
+    rootMargin: '-50px 0px',
+    triggerOnce: true,
+  });
   return (
     <>
       <SectionTitle
@@ -9,7 +14,10 @@ const DesignFlow = () => {
         side={'left'}
         subTitle={'デザインの流れと料金例'}
       />
-      <section className={styles.flowBox}>
+      <section
+        ref={contentRef}
+        className={`${styles.flowBox} ${inView && styles.inView}`}
+      >
         <div className={styles.flow}>
           <h3 className={styles.flowTitle}>1 聴く</h3>
           <p className={styles.text}>

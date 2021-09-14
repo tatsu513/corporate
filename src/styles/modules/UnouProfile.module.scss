@@ -1,9 +1,11 @@
 @import '../common.scss';
 @import '../_breakpoint';
 @import '../_mixin';
+@import '../animation';
 
 .profileWrap {
   border: 1px solid $grey-main;
+  opacity: 0;
 
   @include mq(sm) {
     padding: 32px;
@@ -16,6 +18,14 @@
   @include mq(lg) {
     display: flex;
     padding: 0 24px 40px 40px;
+  }
+
+  &.inView {
+    animation-name: normalOpacity;
+    animation-duration: 1s;
+    animation-delay: 0;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
   }
 }
 
@@ -102,16 +112,40 @@
   margin-bottom: 24px;
   line-height: 1.5;
   font-size: 14px;
+
+  &.inView {
+    animation-name: normalTopDown;
+    animation-duration: 0.8s;
+    animation-delay: 0;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
 }
 
 .text {
   line-height: 1.5;
   font-size: 14px;
+
+  &.inView {
+    animation-name: normalTopDown;
+    animation-duration: 0.8s;
+    animation-delay: 0;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
 }
 
 .imageBox {
   @include mq(lg) {
     padding-top: 40px;
+  }
+
+  &.inView {
+    animation-name: normalbottomUp;
+    animation-duration: 0.8s;
+    animation-delay: 0;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
   }
 }
 

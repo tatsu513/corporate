@@ -1,5 +1,6 @@
 import { useRouter } from 'next/dist/client/router';
 import { useContext } from 'react';
+import { useInView } from 'react-intersection-observer';
 import Icon from './common/Icon';
 import SectionTitle from './common/SectionTitle';
 import SectionTitleVertical from './common/SectionTitleVertical';
@@ -13,6 +14,11 @@ const SanouProfile = () => {
   const router = useRouter();
   const ctx = useContext(ContextData);
   const isMd = ctx.width < 1024;
+
+  const [contentRef, inView] = useInView({
+    rootMargin: '-50px 0px',
+    triggerOnce: true,
+  });
 
   const Sectiontitle = () => {
     if (ctx.width > 1024) {
@@ -40,9 +46,10 @@ const SanouProfile = () => {
       <div className={styles.profileBox}>
         <Sectiontitle />
         <div
+          ref={contentRef}
           className={`${styles.contentBody} ${
             isMinWidth() && styles.minWidth
-          }`}
+          } ${inView && styles.inView}`}
         >
           <div
             className={`${styles.contentBox} ${
@@ -105,7 +112,11 @@ const SanouProfile = () => {
             <SectionTitleVertical title={'　'} isWhite={true} />
           </div>
         )}
-        <div className={styles.contentBody}>
+        <div
+          className={`${styles.contentBody} ${
+            inView && styles.inView
+          }`}
+        >
           <div
             className={`${styles.contentBox} ${styles.companyInfoBox}`}
           >
