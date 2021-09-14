@@ -1,11 +1,21 @@
 @import '../common.scss';
 @import '../_breakpoint';
 @import '../_mixin';
+@import '../animation';
 
 .workWrap {
   display: flex;
   flex-wrap: wrap;
   margin-top: 48px;
+  opacity: 0;
+
+  &.inView {
+    animation-name: normalbottomUp;
+    animation-duration: 0.8s;
+    animation-delay: 0;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
 }
 
 .workBox {

@@ -1,6 +1,7 @@
 import { useRouter } from 'next/dist/client/router';
 import Image from 'next/image';
 import { useContext } from 'react';
+import { useInView } from 'react-intersection-observer';
 import { MarkdownFileData } from 'models/';
 import { ContextData } from 'pages/BaseProvider';
 import styles from 'styles/modules/PortfolioList.module.scss';
@@ -12,6 +13,11 @@ interface Props {
 const PortfolioList: React.VFC<Props> = ({ items }) => {
   const router = useRouter();
   const ctx = useContext(ContextData);
+
+  const [contentRef, inView] = useInView({
+    rootMargin: '-50px 0px',
+    triggerOnce: true,
+  });
 
   const isMinWidth = () => {
     if (ctx.width <= 1024) {
@@ -25,7 +31,10 @@ const PortfolioList: React.VFC<Props> = ({ items }) => {
 
   const maxItemLength = ctx.width > 1024 ? 9 : 6;
   return (
-    <div className={styles.workWrap}>
+    <div
+      ref={contentRef}
+      className={`${styles.workWrap} ${inView && styles.inView}`}
+    >
       {items.map(
         (item, i) =>
           i <= maxItemLength && (
