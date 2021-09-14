@@ -11,11 +11,11 @@ import styles from 'styles/modules/SanouProfile.module.scss';
 
 const SanouProfile = () => {
   const router = useRouter();
-  const contextVal = useContext(ContextData);
-  const isMd = contextVal.width < 1024;
+  const ctx = useContext(ContextData);
+  const isMd = ctx.width < 1024;
 
   const Sectiontitle = () => {
-    if (contextVal.width > 1024) {
+    if (ctx.width > 1024) {
       return (
         <div className={styles.sectionTitleBox}>
           <SectionTitleVertical title={'Profile'} />
@@ -26,8 +26,8 @@ const SanouProfile = () => {
     }
   };
   const isMinWidth = () => {
-    if (contextVal.width <= 1024) {
-      const sectionWidth = contextVal.width * 0.9;
+    if (ctx.width <= 1024) {
+      const sectionWidth = ctx.width * 0.9;
       const marginWidth = 32 + 32;
       const workBoxWidth = sectionWidth - (310 + marginWidth);
       return workBoxWidth <= 400;
