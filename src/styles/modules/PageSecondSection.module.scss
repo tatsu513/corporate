@@ -1,6 +1,7 @@
 @import '../common.scss';
 @import '../breakpoint';
 @import '../mixin';
+@import '../animation';
 
 .contentWrap {
   @include mq(lg) {
@@ -16,6 +17,15 @@
   margin: 64px auto 0;
   padding-bottom: 64px;
   width: 90%;
+  opacity: 0;
+
+  &.inView {
+    animation-name: normalbottomUp;
+    animation-duration: 0.8s;
+    animation-delay: 0;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
 
   @include mq(lg) {
     margin: 114px auto 0;

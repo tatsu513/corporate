@@ -22,6 +22,9 @@
     bottom: 0;
     left: auto;
     background-color: $grey-main;
+  }
+
+  &.inView::before {
     animation-name: rightLeftLineVertical;
     animation-duration: 0.8s;
     animation-delay: 0;
@@ -43,11 +46,14 @@
   text-align: right;
   transform: rotate(180deg);
   writing-mode: tb;
-  animation-name: leftRightVertical;
-  animation-duration: 0.8s;
-  animation-delay: 0;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
+
+  &.inView {
+    animation-name: leftRightVertical;
+    animation-duration: 0.8s;
+    animation-delay: 0;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
 
   @include mq(lg) {
     padding: 0 0 112px 32px;
