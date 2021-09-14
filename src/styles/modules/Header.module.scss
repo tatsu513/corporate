@@ -28,7 +28,7 @@
   right: 0;
   bottom: auto;
   left: 0;
-  background-color: rgba($white, 0.9);
+  background-color: $white;
   z-index: 100;
 
   @include mq(md) {

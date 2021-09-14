@@ -5,6 +5,7 @@
 
 .profileWrap {
   border: 1px solid $grey-main;
+  opacity: 0;
 
   @include mq(sm) {
     padding: 32px;
