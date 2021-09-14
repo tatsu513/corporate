@@ -5,7 +5,10 @@
 .contentWrap {
   @include mq(lg) {
     display: flex;
+    margin: 0 auto;
+    max-width: 1024px;
     padding-bottom: 64px;
+    width: 100%;
   }
 }
 
