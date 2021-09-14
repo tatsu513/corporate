@@ -1,6 +1,7 @@
 import { useRouter } from 'next/dist/client/router';
 import Image from 'next/image';
 import { useContext } from 'react';
+import { useInView } from 'react-intersection-observer';
 import TextLink from './common/TextLink';
 import MeritImage01 from 'images/merit_01.png';
 import MeritImage02 from 'images/merit_02.png';
@@ -10,9 +11,31 @@ import styles from 'styles/modules/Merits.module.scss';
 const Merits = () => {
   const ctx = useContext(ContextData);
   const router = useRouter();
+
+  const [point1Ref, inView1] = useInView({
+    rootMargin: '-50px 0px',
+    triggerOnce: true,
+  });
+  const [point2Ref, inView2] = useInView({
+    rootMargin: '-50px 0px',
+    triggerOnce: true,
+  });
+  const [point3Ref, inView3] = useInView({
+    rootMargin: '-50px 0px',
+    triggerOnce: true,
+  });
+  const [point4Ref, inView4] = useInView({
+    rootMargin: '-50px 0px',
+    triggerOnce: true,
+  });
   return (
     <>
-      <div className={styles.meritBox}>
+      <div
+        ref={point1Ref}
+        className={`${styles.meritBox} ${styles.meritBox1} ${
+          inView1 && styles.inView
+        }`}
+      >
         <div className={styles.meritContents}>
           <div className={styles.meritNumber}>Good Point 01</div>
           <div className={styles.meritTitle}>
@@ -60,7 +83,12 @@ const Merits = () => {
           />
         </div>
       </div>
-      <div className={`${styles.meritBox} ${styles.inversion}`}>
+      <div
+        ref={point2Ref}
+        className={`${styles.meritBox} ${styles.inversion} ${
+          inView2 && styles.inView
+        }`}
+      >
         <div className={styles.meritContents}>
           <div className={styles.meritNumber}>Good Point 02</div>
           <div className={styles.meritTitle}>
@@ -106,7 +134,10 @@ const Merits = () => {
           />
         </div>
       </div>
-      <div className={styles.meritBox}>
+      <div
+        ref={point3Ref}
+        className={`${styles.meritBox} ${inView3 && styles.inView}`}
+      >
         <div className={styles.meritContents}>
           <div className={styles.meritNumber}>Good Point 03</div>
           <div className={styles.meritTitle}>
@@ -160,7 +191,12 @@ const Merits = () => {
           />
         </div>
       </div>
-      <div className={`${styles.meritBox} ${styles.inversion}`}>
+      <div
+        ref={point4Ref}
+        className={`${styles.meritBox} ${styles.inversion} ${
+          inView4 && styles.inView
+        }`}
+      >
         <div className={styles.meritContents}>
           <div className={styles.meritNumber}>Good Point 04</div>
           <div className={styles.meritTitle}>

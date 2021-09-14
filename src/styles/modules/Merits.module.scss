@@ -1,3 +1,4 @@
+@import '../animation';
 @import '../common.scss';
 @import '../breakpoint';
 @import '../mixin';
@@ -9,6 +10,50 @@
   margin-bottom: 48px;
   background-color: $white;
   text-align: left;
+
+  &:nth-child(1) {
+    opacity: 0;
+    &.inView {
+      animation-name: leftRight;
+      animation-duration: 0.8s;
+      animation-delay: 0;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+    }
+  }
+
+  &:nth-child(2) {
+    opacity: 0;
+    &.inView {
+      animation-name: rightLeft;
+      animation-duration: 0.8s;
+      animation-delay: 0;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+    }
+  }
+
+  &:nth-child(3) {
+    opacity: 0;
+    &.inView {
+      animation-name: leftRight;
+      animation-duration: 0.8s;
+      animation-delay: 0;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+    }
+  }
+
+  &:nth-child(4) {
+    opacity: 0;
+    &.inView {
+      animation-name: rightLeft;
+      animation-duration: 0.8s;
+      animation-delay: 0;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+    }
+  }
 
   @include mq(sm) {
     flex-direction: column;
@@ -33,6 +78,9 @@
   &:last-of-type {
     margin-bottom: 0;
   }
+}
+
+.meritBox1 {
 }
 
 .meritContents {
