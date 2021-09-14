@@ -3,7 +3,7 @@ import * as path from 'path';
 import matter from 'gray-matter';
 // import marked from 'marked';
 import { GetStaticProps } from 'next';
-import { useState } from 'react';
+import { createRef, useContext, useState } from 'react';
 import Breadcrumb from '@/components/Breadcrumb';
 import Contact from '@/components/Contact';
 import Menu from '@/components/Menu';
@@ -14,6 +14,7 @@ import {
   sanouPortfolioCategories,
 } from 'domains/sanou';
 import { MarkdownFileData } from 'models/';
+import { ContextData } from 'pages/BaseProvider';
 import styles from 'styles/modules/Illusts.module.scss';
 
 interface Props {
@@ -21,19 +22,22 @@ interface Props {
 }
 
 const IllustPortfolio: React.VFC<Props> = ({ articles }) => {
-  const [works, setWorks] = useState(articles);
+  const ctx = useContext(ContextData);
+  const [works, setWorks] = useState(articles.slice(0, 6));
   const [selectedItem, setSelectedItem] = useState('all');
+
+  const worksWrappRef = createRef<HTMLDivElement>();
 
   const selectItem = (type: string) => {
     const filter = (data: MarkdownFileData[]) => {
-      const n = data.filter((d) => {
+      const filterdItems = data.filter((d) => {
         return d.frontmatter.categories.includes(type);
       });
-      return n;
+      return filterdItems;
     };
-    filter(articles);
+    filter(works);
     type === 'all'
-      ? setWorks(articles)
+      ? setWorks(works)
       : setWorks(
           articles.filter((article) =>
             article.frontmatter.categories.includes(type),
@@ -53,7 +57,10 @@ const IllustPortfolio: React.VFC<Props> = ({ articles }) => {
           onClick={selectItem}
         />
       </section>
-      <section className={`${styles.works} a-nbu`}>
+      <section
+        className={`${styles.works} a-nbu`}
+        ref={worksWrappRef}
+      >
         <PortfolioList items={works} />
         <p className={styles.note}>
           ※

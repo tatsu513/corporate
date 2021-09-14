@@ -1,9 +1,9 @@
 ---
-title: 'MD TEST 3'
+title: 'MD TEST 5'
 date: '2021-08-26'
 excerpt: 'this is excerpt text'
 coverImage: '/images/sample.png'
-categories: ['graphic', 'illust']
+categories: ['illust']
 ---
 
 ## Headding 2
