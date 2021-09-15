@@ -14,6 +14,7 @@
 .topImage {
   width: 100%;
   font-size: 0;
+  opacity: 0;
 
   & > div {
     vertical-align: top;
@@ -30,18 +31,6 @@
 
   @include mq(md) {
     height: auto;
-  }
-}
-
-.imageWrap {
-  opacity: 0;
-
-  &.inView {
-    animation-name: normalOpacity;
-    animation-duration: 1s;
-    animation-delay: 0;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
   }
 }
 

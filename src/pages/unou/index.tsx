@@ -9,9 +9,9 @@ import React, {
   createRef,
   RefObject,
   useCallback,
+  useContext,
   useEffect,
 } from 'react';
-import { useInView } from 'react-intersection-observer';
 import Contact from '@/components/Contact';
 import PageSecondSection from '@/components/PageSecondSection';
 import PortfolioList from '@/components/PortfolioList';
@@ -20,6 +20,7 @@ import PrimaryButton from '@/components/buttons/PrimaryButton';
 import SectionTitle from '@/components/common/SectionTitle';
 import topImage from 'images/unou-image.png';
 import { MarkdownFileData } from 'models/';
+import { ContextData } from 'pages/BaseProvider';
 import styles from 'styles/modules/Unou.module.scss';
 
 interface Props {
@@ -28,6 +29,7 @@ interface Props {
 }
 
 const Unou: React.VFC<Props> = ({ articles, news }) => {
+  const ctx = useContext(ContextData);
   const router = useRouter();
 
   const homeRef = createRef<HTMLDivElement>();
@@ -36,10 +38,7 @@ const Unou: React.VFC<Props> = ({ articles, news }) => {
   const profileRef = createRef<HTMLDivElement>();
   const contactRef = createRef<HTMLDivElement>();
 
-  const [topImageRef, inView] = useInView({
-    rootMargin: '-50px 0px',
-    triggerOnce: true,
-  });
+  const isPc = ctx.width > 1024;
 
   const scrollToTarget = (
     ref: RefObject<HTMLDivElement>,
@@ -56,10 +55,10 @@ const Unou: React.VFC<Props> = ({ articles, news }) => {
     (target: string) => {
       switch (target) {
         case 'home':
-          scrollToTarget(homeRef);
+          scrollToTarget(homeRef, isPc ? 74 : 60);
           break;
         case 'news':
-          scrollToTarget(newsRef, 114);
+          scrollToTarget(newsRef, 58);
           break;
         case 'portfolio':
           scrollToTarget(portfolioRef);
@@ -74,14 +73,20 @@ const Unou: React.VFC<Props> = ({ articles, news }) => {
           break;
       }
     },
-    [homeRef, newsRef, portfolioRef, profileRef, contactRef],
+    [homeRef, isPc, newsRef, portfolioRef, profileRef, contactRef],
   );
 
   useEffect(() => {
-    const target = router.query.target as string;
-    if (!target) return;
-    swichTarget(target || 'home');
-  }, [swichTarget, router.query]);
+    const targetQuery = router.query.target as string;
+    const targetSamePage = ctx.target;
+    if (!targetQuery && targetSamePage === '') return;
+    const moveInPage = targetSamePage !== '';
+    if (moveInPage) {
+      swichTarget(targetSamePage);
+    } else {
+      swichTarget(targetQuery);
+    }
+  }, [swichTarget, router.query, ctx.target]);
 
   return (
     <>
@@ -91,13 +96,8 @@ const Unou: React.VFC<Props> = ({ articles, news }) => {
           <div dangerouslySetInnerHTML={{ __html: marked(article.content) }} />
         </div>
       ))} */}
-      <div className={`${styles.topImage}`} ref={homeRef}>
-        <span
-          ref={topImageRef}
-          className={`${styles.imageWrap} ${inView && styles.inView}`}
-        >
-          <Image src={topImage} alt={'トップイメージ'} />
-        </span>
+      <div className={`${styles.topImage} a-nop`} ref={homeRef}>
+        <Image src={topImage} alt={'トップイメージ'} />
       </div>
       <div className={`${styles.newsWrap}`} ref={newsRef}>
         <PageSecondSection>
