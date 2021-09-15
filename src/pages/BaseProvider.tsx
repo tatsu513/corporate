@@ -44,34 +44,19 @@ const BaseProvider: React.VFC<Props> = ({ children }) => {
   });
 
   useEffect(() => {
-    const onResize = () =>
+    const onResize = () => {
       setContextDate((prevState) => ({
         ...prevState,
         width: window.innerWidth,
+        isUnou: router.pathname.indexOf('unou') !== -1,
+        isSanou: router.pathname.indexOf('sanou') !== -1,
       }));
+      setWindowWidth(window.innerWidth);
+    };
     window.addEventListener('resize', onResize);
-
-    setContextDate((prevState) => ({
-      ...prevState,
-      width: prevState.width,
-      isUnou: router.pathname.indexOf('unou') !== -1,
-      isSanou: router.pathname.indexOf('sanou') !== -1,
-    }));
     return () => window.removeEventListener('resize', onResize);
   }, [router.pathname]);
 
-  useEffect(() => {
-    const onResize = () => setWindowWidth(window.innerWidth);
-    window.addEventListener('resize', onResize);
-
-    setContextDate((prevState) => ({
-      ...prevState,
-      width: prevState.width,
-      isUnou: router.pathname.indexOf('unou') !== -1,
-      isSanou: router.pathname.indexOf('sanou') !== -1,
-    }));
-    return () => window.removeEventListener('resize', onResize);
-  }, [router.pathname]);
   return (
     <ContextData.Provider value={{ ...ctxData, setContextDate }}>
       <Header />
