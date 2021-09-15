@@ -73,7 +73,7 @@ const Sanou: React.VFC<Props> = ({ articles }) => {
           scrollToTarget(homeRef, 60);
           break;
         case 'about':
-          scrollToTarget(aboutRef, 114);
+          scrollToTarget(aboutRef, 58);
           break;
         case 'portfolio':
           scrollToTarget(portfolioRef);
@@ -110,10 +110,16 @@ const Sanou: React.VFC<Props> = ({ articles }) => {
   );
 
   useEffect(() => {
-    const target = router.query.target as string;
-    if (!target) return;
-    swichTarget(target || 'home');
-  }, [swichTarget, router.query]);
+    const targetQuery = router.query.target as string;
+    const targetSamePage = ctx.target;
+    if (!targetQuery && targetSamePage === '') return;
+    const moveInPage = targetSamePage !== '';
+    if (moveInPage) {
+      swichTarget(targetSamePage);
+    } else {
+      swichTarget(targetQuery);
+    }
+  }, [swichTarget, router.query, ctx.target]);
 
   return (
     <>

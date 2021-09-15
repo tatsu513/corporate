@@ -85,7 +85,6 @@ const Unou: React.VFC<Props> = ({ articles, news }) => {
       swichTarget(targetSamePage);
     } else {
       swichTarget(targetQuery);
-      console.log(router.query);
     }
   }, [swichTarget, router.query, ctx.target]);
 
