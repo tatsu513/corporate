@@ -50,7 +50,8 @@
     }
   }
 
-  &:hover {
+  &:hover,
+  &.isHover {
     &::before {
       right: -8px;
     }

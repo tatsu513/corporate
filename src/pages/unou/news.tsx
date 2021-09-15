@@ -4,6 +4,7 @@ import matter from 'gray-matter';
 import marked from 'marked';
 import { GetStaticProps } from 'next';
 import { useRouter } from 'next/dist/client/router';
+import { useState } from 'react';
 import Breadcrumb from '@/components/Breadcrumb';
 import Contact from '@/components/Contact';
 import ArrowLinkNormal from '@/components/common/ArrowLinkNormal';
@@ -18,6 +19,8 @@ interface Props {
 
 const News: React.VFC<Props> = ({ news }) => {
   const router = useRouter();
+  const [hoveredItem, setIsHoverdItem] = useState(-1);
+
   return (
     <>
       <Breadcrumb items={newsBreadcrumb} />
@@ -30,6 +33,8 @@ const News: React.VFC<Props> = ({ news }) => {
             className={styles.itemBox}
             key={i}
             onClick={() => router.push(`/unou/news/${item.slug}`)}
+            onMouseEnter={() => setIsHoverdItem(i)}
+            onMouseLeave={() => setIsHoverdItem(-1)}
           >
             <div className={styles.date}>
               {item.frontmatter.date.replace(/-/g, '.')}
@@ -46,6 +51,7 @@ const News: React.VFC<Props> = ({ news }) => {
             <div className={styles.controller}>
               <ArrowLinkNormal
                 text={'More'}
+                isHover={hoveredItem === i}
                 onClick={() => router.push('#')}
               />
             </div>
