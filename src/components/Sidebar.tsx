@@ -14,14 +14,33 @@ interface Props {
 }
 
 const Sidebar: React.VFC<Props> = (props) => {
-  const contextData = useContext(ContextData);
+  const ctx = useContext(ContextData);
   const router = useRouter();
 
-  const homeLink = () => {
-    return contextData.isSanou ? '/sanou' : '/unou';
+  const onClickMenu = (target: string) => {
+    const basePage = ctx.isSanou ? 'sanou' : 'unou';
+    const splitPath = router.pathname.split(/\//);
+    const pathNum = splitPath.length;
+    const isBasePage = basePage === splitPath[pathNum - 1];
+    if (isBasePage) {
+      ctx.setContextDate((prevState) => ({
+        ...prevState,
+        target: target,
+      }));
+    } else {
+      ctx.setContextDate((prevState) => ({
+        ...prevState,
+        target: '',
+      }));
+      router.push({
+        pathname: `/${basePage}`,
+        query: { target: target },
+      });
+    }
   };
+
   const arrowLink = () => {
-    return contextData.isSanou ? '/unou' : '/sanou';
+    return ctx.isSanou ? '/unou' : '/sanou';
   };
   return (
     <div
@@ -42,27 +61,17 @@ const Sidebar: React.VFC<Props> = (props) => {
               text={'Home'}
               size={24}
               color={'white'}
-              onClick={() =>
-                router.push({
-                  pathname: '/sanou',
-                  query: { target: 'goodPoint' },
-                })
-              }
+              onClick={() => onClickMenu('home')}
             />
           </li>
-          {contextData.isSanou && (
+          {ctx.isSanou && (
             <>
               <li className={styles.listItem}>
                 <TextLink
                   text={'About'}
                   size={24}
                   color={'white'}
-                  onClick={() =>
-                    router.push({
-                      pathname: homeLink(),
-                      query: { target: 'about' },
-                    })
-                  }
+                  onClick={() => onClickMenu('about')}
                 />
               </li>
               <li className={styles.listItem}>
@@ -70,12 +79,7 @@ const Sidebar: React.VFC<Props> = (props) => {
                   text={'Portfolio'}
                   size={24}
                   color={'white'}
-                  onClick={() =>
-                    router.push({
-                      pathname: '/sanou',
-                      query: { target: 'portfolio' },
-                    })
-                  }
+                  onClick={() => onClickMenu('portfolio')}
                 />
               </li>
               <li className={styles.listItem}>
@@ -83,12 +87,7 @@ const Sidebar: React.VFC<Props> = (props) => {
                   text={'GoodPoint'}
                   size={24}
                   color={'white'}
-                  onClick={() =>
-                    router.push({
-                      pathname: '/sanou',
-                      query: { target: 'goodPoint' },
-                    })
-                  }
+                  onClick={() => onClickMenu('goodPoint')}
                 />
               </li>
               <li className={styles.listItem}>
@@ -96,12 +95,7 @@ const Sidebar: React.VFC<Props> = (props) => {
                   text={'Flow & Price'}
                   size={24}
                   color={'white'}
-                  onClick={() =>
-                    router.push({
-                      pathname: '/sanou',
-                      query: { target: 'flowPrice' },
-                    })
-                  }
+                  onClick={() => onClickMenu('flowPrice')}
                 />
               </li>
               <li className={styles.listItem}>
@@ -109,29 +103,19 @@ const Sidebar: React.VFC<Props> = (props) => {
                   text={'Recommendation'}
                   size={24}
                   color={'white'}
-                  onClick={() =>
-                    router.push({
-                      pathname: '/sanou',
-                      query: { target: 'recommendation' },
-                    })
-                  }
+                  onClick={() => onClickMenu('recommendation')}
                 />
               </li>
             </>
           )}
-          {contextData.isUnou && (
+          {ctx.isUnou && (
             <>
               <li className={styles.listItem}>
                 <TextLink
                   text={'News'}
                   size={24}
                   color={'white'}
-                  onClick={() =>
-                    router.push({
-                      pathname: '/unou',
-                      query: { target: 'news' },
-                    })
-                  }
+                  onClick={() => onClickMenu('news')}
                 />
               </li>
               <li className={styles.listItem}>
@@ -139,12 +123,7 @@ const Sidebar: React.VFC<Props> = (props) => {
                   text={'Portfolio'}
                   size={24}
                   color={'white'}
-                  onClick={() =>
-                    router.push({
-                      pathname: '/unou',
-                      query: { target: 'portfolio' },
-                    })
-                  }
+                  onClick={() => onClickMenu('portfolio')}
                 />
               </li>
             </>
@@ -154,12 +133,7 @@ const Sidebar: React.VFC<Props> = (props) => {
               text={'Profile'}
               size={24}
               color={'white'}
-              onClick={() =>
-                router.push({
-                  pathname: homeLink(),
-                  query: { target: 'profile' },
-                })
-              }
+              onClick={() => onClickMenu('profile')}
             />
           </li>
           <li className={styles.listItem}>
@@ -167,12 +141,7 @@ const Sidebar: React.VFC<Props> = (props) => {
               text={'Contact'}
               size={24}
               color={'white'}
-              onClick={() =>
-                router.push({
-                  pathname: homeLink(),
-                  query: { target: 'contact' },
-                })
-              }
+              onClick={() => onClickMenu('contact')}
             />
           </li>
           <li className={`${styles.listItem} ${styles.icons}`}>
@@ -194,9 +163,7 @@ const Sidebar: React.VFC<Props> = (props) => {
         <div className={styles.arrowLinkBox}>
           <ArrowLink
             text={
-              contextData.isSanou
-                ? '右脳 - Art & Illust'
-                : '左脳 -Design'
+              ctx.isSanou ? '右脳 - Art & Illust' : '左脳 -Design'
             }
             isWhite={true}
             onClick={() => {

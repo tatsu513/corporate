@@ -70,7 +70,7 @@ const Sanou: React.VFC<Props> = ({ articles }) => {
     (target: string) => {
       switch (target) {
         case 'home':
-          scrollToTarget(homeRef);
+          scrollToTarget(homeRef, 60);
           break;
         case 'about':
           scrollToTarget(aboutRef, 114);
