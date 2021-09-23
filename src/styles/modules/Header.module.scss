@@ -14,7 +14,7 @@
 
   &.headerSanou {
     @include mq(lg) {
-      height: 60px;
+      height: 74px;
     }
   }
 }
@@ -32,7 +32,7 @@
   z-index: 100;
 
   @include mq(md) {
-    height: 60px;
+    height: 74px;
   }
 
   @include mq(lg) {
@@ -41,7 +41,7 @@
 
   &.headerWrapSanou {
     @include mq(lg) {
-      height: 60px;
+      height: 74px;
     }
   }
 }
@@ -80,8 +80,8 @@
 }
 
 .menuBox {
-  width: 60px;
-  height: 60px;
+  width: 74px;
+  height: 74px;
   background-color: $black;
   position: relative;
   cursor: pointer;
@@ -93,15 +93,15 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, 0);
     background-color: $white;
   }
 
   .barTop {
-    top: 28%;
+    top: 34%;
   }
 
   .barBottom {
-    top: 72%;
+    top: 66%;
   }
 }
