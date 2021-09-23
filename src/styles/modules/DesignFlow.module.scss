@@ -37,8 +37,24 @@
   position: relative;
   width: 100%;
   background-color: $white;
+  background-repeat: no-repeat;
   border-top: solid 12px $yellow;
   text-align: left;
+
+  &:nth-child(1) {
+    background-image: url('../../images/flow_back_1.svg');
+    background-position: top 0 right -100px;
+  }
+
+  &:nth-child(2) {
+    background-image: url('../../images/flow_back_2.svg');
+    background-position: top 0 right -16px;
+  }
+
+  &:nth-child(3) {
+    background-image: url('../../images/flow_back_3.svg');
+    background-position: top 0 left 12px;
+  }
 
   @include mq(sm) {
     &:nth-child(3) {
