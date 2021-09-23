@@ -44,16 +44,34 @@
   &:nth-child(1) {
     background-image: url('../../images/flow_back_1.svg');
     background-position: top 0 right -100px;
+    @include mq(md) {
+      background-position: top 0 right 0;
+    }
+    @include mq(lg) {
+      background-position: top 0 right -100px;
+    }
   }
 
   &:nth-child(2) {
     background-image: url('../../images/flow_back_2.svg');
     background-position: top 0 right -16px;
+    @include mq(md) {
+      background-position: top 0 right 54px;
+    }
+    @include mq(lg) {
+      background-position: top 0 right -16px;
+    }
   }
 
   &:nth-child(3) {
     background-image: url('../../images/flow_back_3.svg');
-    background-position: top 0 left 12px;
+    background-position: top 0 right -12px;
+    @include mq(md) {
+      background-position: top 0 right 0px;
+    }
+    @include mq(lg) {
+      background-position: top 0 left 12px;
+    }
   }
 
   @include mq(sm) {
