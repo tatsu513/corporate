@@ -142,10 +142,10 @@
   width: auto;
 
   @include mq(md) {
-    width: 607px;
+    width: 540px;
   }
 
-  @include mq(md) {
+  @include mq(lg) {
     width: auto;
   }
 }
@@ -186,7 +186,7 @@
 .meritContents {
   @include mq(md) {
     margin: 0 auto;
-    width: 70%;
+    width: 540px;
   }
 
   @include mq(lg) {
@@ -213,6 +213,13 @@
     }
   }
 
+  @include mq(md) {
+    & > div {
+      margin: 0 auto;
+      width: 100%;
+    }
+  }
+
   @include mq(lg) {
     margin: 0 auto 32px;
     max-width: 1024px;
@@ -235,4 +242,12 @@
 
 .priceListWrap {
   text-align: left;
+
+  @include mq(md) {
+    width: 540px;
+  }
+
+  @include mq(lg) {
+    width: 100%;
+  }
 }

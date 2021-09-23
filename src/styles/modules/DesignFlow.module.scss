@@ -21,8 +21,13 @@
     flex-direction: column;
   }
 
+  @include mq(md) {
+    width: 540px;
+  }
+
   @include mq(lg) {
     flex-direction: row;
+    width: 100%;
   }
 }
 
@@ -43,7 +48,7 @@
 
   @include mq(md) {
     margin: 0 auto 56px;
-    width: 70%;
+    width: 100%;
   }
 
   @include mq(lg) {
