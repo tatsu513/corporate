@@ -1,7 +1,7 @@
 import { GetStaticProps } from 'next';
 import { useRouter } from 'next/dist/client/router';
 import Image from 'next/image';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import Sidebar from './Sidebar';
 import ArrowLink from './common/ArrowLink';
 import Icon from './common/Icon';
@@ -18,6 +18,7 @@ const Header: React.VFC = () => {
   const ctx = useContext(ContextData);
 
   const [isOpenSidebar, setIsOpenSidebar] = useState(false);
+  const [isShowMiniMenu, setIsShowMiniMenu] = useState(false);
 
   const isTop = !ctx.isSanou && !ctx.isUnou;
 
@@ -30,6 +31,12 @@ const Header: React.VFC = () => {
       router.push('/unou');
     }
   };
+
+  useEffect(() => {
+    if ((ctx.width <= 1024 && ctx.isUnou) || ctx.isSanou) {
+      setIsShowMiniMenu(true);
+    }
+  }, [ctx.width, ctx.isUnou, ctx.isSanou]);
 
   return (
     <header
@@ -97,7 +104,7 @@ const Header: React.VFC = () => {
             </div>
           </div>
         )}
-        {((ctx.width <= 1024 && ctx.isUnou) || ctx.isSanou) && (
+        {isShowMiniMenu && (
           <div
             className={styles.menuBox}
             onClick={() => setIsOpenSidebar(true)}
