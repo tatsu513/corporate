@@ -53,11 +53,11 @@ export const Home: React.VFC = () => {
   return (
     <div className={styles.homeWrap}>
       <div className={styles.mainContents}>
-        <h1 className={styles.leadText}>
-          どちらを見ますか？
-          {windowWidth >= 600}
-        </h1>
         <div className={styles.contentBottom}>
+          <h1 className={styles.leadText}>
+            どちらを見ますか？
+            {windowWidth >= 600}
+          </h1>
           <div className={styles.controllers}>
             <button
               className={styles.button}
