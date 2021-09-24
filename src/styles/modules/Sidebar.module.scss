@@ -3,10 +3,10 @@
 @import '../_mixin';
 
 .sidebarWrap {
-  width: 320px;
+  width: 322px;
   position: fixed;
   top: 0;
-  right: -320px;
+  right: -322px;
   bottom: 0;
   left: auto;
   background-color: rgba($black, 0.9);
@@ -25,6 +25,7 @@
 }
 
 .controller {
+  height: 74px;
   text-align: right;
 }
 
@@ -42,8 +43,8 @@
     width: 32px;
     background-color: $white;
     position: absolute;
-    top: 49%;
-    left: 24%;
+    top: 60%;
+    left: 12%;
     transform: rotate(45deg);
   }
 
@@ -54,16 +55,18 @@
     width: 32px;
     background-color: $white;
     position: absolute;
-    top: 49%;
-    left: 24%;
+    top: 60%;
+    left: 12%;
     transform: rotate(-45deg);
   }
 }
 
 .listWrap {
+  height: calc(100vh - 74px);
   padding: 0 40px;
   color: $white;
   font-size: 24px;
+  overflow: auto;
 
   .listItem {
     margin-bottom: 24px;
@@ -73,14 +76,7 @@
 
     &.icons {
       margin-top: 40px;
+      margin-bottom: 48px;
     }
   }
-}
-
-.arrowLinkBox {
-  position: absolute;
-  top: auto;
-  right: auto;
-  bottom: 40px;
-  left: 40px;
 }

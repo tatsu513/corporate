@@ -159,19 +159,22 @@ const Sidebar: React.VFC<Props> = (props) => {
               href={'https://www.facebook.com/kokubo.akemi'}
             />
           </li>
+          <li
+            className={`${styles.listItem} ${styles.anotherPageLink}`}
+          >
+            <ArrowLink
+              text={
+                ctx.isSanou ? '右脳 - Art & Illust' : '左脳 -Design'
+              }
+              size={18}
+              isWhite={true}
+              onClick={() => {
+                router.push(arrowLink());
+                props.close();
+              }}
+            />
+          </li>
         </ul>
-        <div className={styles.arrowLinkBox}>
-          <ArrowLink
-            text={
-              ctx.isSanou ? '右脳 - Art & Illust' : '左脳 -Design'
-            }
-            isWhite={true}
-            onClick={() => {
-              router.push(arrowLink());
-              props.close();
-            }}
-          />
-        </div>
       </div>
     </div>
   );
