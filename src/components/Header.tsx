@@ -47,6 +47,8 @@ const Header: React.VFC = () => {
   useEffect(() => {
     if ((ctx.width <= 1024 && ctx.isUnou) || ctx.isSanou) {
       setIsShowMiniMenu(true);
+    } else {
+      setIsShowMiniMenu(false);
     }
   }, [ctx.width, ctx.isUnou, ctx.isSanou]);
 
