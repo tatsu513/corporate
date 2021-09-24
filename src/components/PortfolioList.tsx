@@ -2,6 +2,7 @@ import { useRouter } from 'next/dist/client/router';
 import Image from 'next/image';
 import { useContext, useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
+import Categories from './common/Categories';
 import { MarkdownFileData } from 'models/';
 import { ContextData } from 'pages/BaseProvider';
 import styles from 'styles/modules/PortfolioList.module.scss';
@@ -16,6 +17,10 @@ const PortfolioList: React.VFC<Props> = ({ items, isPage }) => {
   const ctx = useContext(ContextData);
   const [isMin, setIsMin] = useState(false);
   const [maxLength, setMaxLength] = useState(0);
+
+  const portfolioPath = ctx.isSanou
+    ? '/sanou/portfolio'
+    : '/unou/portfolio';
 
   const [contentRef, inView] = useInView({
     rootMargin: '-100px 0px',
@@ -73,7 +78,7 @@ const PortfolioList: React.VFC<Props> = ({ items, isPage }) => {
               }`}
               key={i}
               onClick={() =>
-                router.push(`/unou/portfolio/${item.slug}`)
+                router.push(`${portfolioPath}/${item.slug}`)
               }
             >
               <div className={styles.imageBox} key={i}>
@@ -89,13 +94,7 @@ const PortfolioList: React.VFC<Props> = ({ items, isPage }) => {
               <div className={styles.worksText}>
                 {item.frontmatter.title}／{item.frontmatter.excerpt}
               </div>
-              <ul className={styles.workCategoryBox}>
-                {item.frontmatter.categories.map((cacategory, i) => (
-                  <li className={styles.workCategory} key={i}>
-                    {cacategory}
-                  </li>
-                ))}
-              </ul>
+              <Categories categories={item.frontmatter.categories} />
             </div>
           ),
       )}

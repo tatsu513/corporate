@@ -6,17 +6,17 @@ import { useEffect, useState } from 'react';
 import Breadcrumb from '@/components/Breadcrumb';
 import Contact from '@/components/Contact';
 import Categories from '@/components/common/Categories';
-import { portfolioBreadcrumb } from 'domains/unou';
+import { sanouPortfolioBreadcrumb } from 'domains/sanou';
 import { MarkdownFileData } from 'models/';
 import styles from 'styles/modules/PortfolioPage.module.scss';
 
 const PortfolioPage: React.VFC<MarkdownFileData> = (props) => {
   const [breadcrumbList, setBreadcrumbList] = useState(
-    portfolioBreadcrumb,
+    sanouPortfolioBreadcrumb,
   );
 
   useEffect(() => {
-    const customList = [...portfolioBreadcrumb];
+    const customList = [...sanouPortfolioBreadcrumb];
     customList.push({ name: props.frontmatter.title, path: '' });
     setBreadcrumbList([...customList]);
   }, [props.frontmatter.title]);
@@ -49,7 +49,7 @@ interface Params {
 
 export const getStaticPaths = async () => {
   const newsFiles = fs.readdirSync(
-    path.join('src', 'articles', 'unou'),
+    path.join('src', 'articles', 'sanou'),
   );
 
   const paths = newsFiles.map((filename) => ({
@@ -66,7 +66,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params }: Params) => {
   const markdownWithMeta = fs.readFileSync(
-    path.join('src', 'articles', 'unou', `${params.slug}.md`),
+    path.join('src', 'articles', 'sanou', `${params.slug}.md`),
     'utf-8',
   );
   const { data: frontmatter, content } = matter(markdownWithMeta);
