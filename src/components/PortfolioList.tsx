@@ -1,35 +1,69 @@
 import { useRouter } from 'next/dist/client/router';
 import Image from 'next/image';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
+import Categories from './common/Categories';
 import { MarkdownFileData } from 'models/';
 import { ContextData } from 'pages/BaseProvider';
 import styles from 'styles/modules/PortfolioList.module.scss';
 
 interface Props {
   items: MarkdownFileData[];
+  isPage?: boolean;
 }
 
-const PortfolioList: React.VFC<Props> = ({ items }) => {
+const PortfolioList: React.VFC<Props> = ({ items, isPage }) => {
   const router = useRouter();
   const ctx = useContext(ContextData);
+  const [isMin, setIsMin] = useState(false);
+  const [maxLength, setMaxLength] = useState(0);
+
+  const portfolioPath = ctx.isSanou
+    ? '/sanou/portfolio'
+    : '/unou/portfolio';
 
   const [contentRef, inView] = useInView({
-    rootMargin: '-50px 0px',
+    rootMargin: '-100px 0px',
     triggerOnce: true,
   });
 
-  const isMinWidth = () => {
+  useEffect(() => {
     if (ctx.width <= 1024) {
       const sectionWidth = ctx.width * 0.9;
       const workBoxWidth = sectionWidth * 0.46;
-      return workBoxWidth <= 300;
+      setIsMin(workBoxWidth <= 300);
     } else {
-      return false;
+      setIsMin(false);
     }
-  };
+  }, [ctx.width]);
 
-  const maxItemLength = ctx.width > 1024 ? 9 : 6;
+  useEffect(() => {
+    !isPage
+      ? setMaxLength(items.length)
+      : isMin
+      ? setMaxLength(6)
+      : setMaxLength(3);
+  }, [isPage, items.length, isMin]);
+
+  useEffect(() => {
+    if (isPage) {
+      const onScroll = () => {
+        const scrollVal = document.documentElement.scrollTop;
+        const documentHeight = document.documentElement.clientHeight;
+        const pageXOffset = document.documentElement.scrollHeight;
+
+        if (
+          pageXOffset === scrollVal + documentHeight &&
+          items.length > maxLength
+        ) {
+          setMaxLength((prevState) => prevState + 6);
+        }
+      };
+      window.addEventListener('scroll', onScroll);
+      return () => window.removeEventListener('scroll', onScroll);
+    }
+  }, [isPage, maxLength, items.length]);
+
   return (
     <div
       ref={contentRef}
@@ -37,14 +71,14 @@ const PortfolioList: React.VFC<Props> = ({ items }) => {
     >
       {items.map(
         (item, i) =>
-          i <= maxItemLength && (
+          i + 1 <= maxLength && (
             <div
               className={`${styles.workBox} ${
-                isMinWidth() && styles.minWidth
+                isMin && styles.minWidth
               }`}
               key={i}
               onClick={() =>
-                router.push(`/unou/portfolio/${item.slug}`)
+                router.push(`${portfolioPath}/${item.slug}`)
               }
             >
               <div className={styles.imageBox} key={i}>
@@ -60,13 +94,7 @@ const PortfolioList: React.VFC<Props> = ({ items }) => {
               <div className={styles.worksText}>
                 {item.frontmatter.title}／{item.frontmatter.excerpt}
               </div>
-              <ul className={styles.workCategoryBox}>
-                {item.frontmatter.categories.map((cacategory, i) => (
-                  <li className={styles.workCategory} key={i}>
-                    {cacategory}
-                  </li>
-                ))}
-              </ul>
+              <Categories categories={item.frontmatter.categories} />
             </div>
           ),
       )}

@@ -1,0 +1,12 @@
+@import '../common.scss';
+
+.workCategoryBox {
+  display: flex;
+}
+
+.workCategory {
+  margin-right: 8px;
+  padding: 4px 16px;
+  border: 1px solid $grey-main;
+  font-size: 14px;
+}

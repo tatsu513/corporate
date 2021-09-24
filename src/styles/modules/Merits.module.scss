@@ -15,7 +15,7 @@
     opacity: 0;
     &.inView {
       animation-name: leftRight;
-      animation-duration: 0.8s;
+      animation-duration: 1s;
       animation-delay: 0;
       animation-iteration-count: 1;
       animation-fill-mode: forwards;
@@ -26,7 +26,7 @@
     opacity: 0;
     &.inView {
       animation-name: rightLeft;
-      animation-duration: 0.8s;
+      animation-duration: 1s;
       animation-delay: 0;
       animation-iteration-count: 1;
       animation-fill-mode: forwards;
@@ -37,7 +37,7 @@
     opacity: 0;
     &.inView {
       animation-name: leftRight;
-      animation-duration: 0.8s;
+      animation-duration: 1s;
       animation-delay: 0;
       animation-iteration-count: 1;
       animation-fill-mode: forwards;
@@ -48,7 +48,7 @@
     opacity: 0;
     &.inView {
       animation-name: rightLeft;
-      animation-duration: 0.8s;
+      animation-duration: 1s;
       animation-delay: 0;
       animation-iteration-count: 1;
       animation-fill-mode: forwards;

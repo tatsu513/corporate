@@ -5,7 +5,7 @@ import styles from 'styles/modules/PriceList.module.scss';
 
 const PriceList: React.VFC = () => {
   const [contentRef, inView] = useInView({
-    rootMargin: '-50px 0px',
+    rootMargin: '-100px 0px',
     triggerOnce: true,
   });
   const router = useRouter();

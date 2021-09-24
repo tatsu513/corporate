@@ -57,7 +57,7 @@
 
 .topImageBox {
   position: absolute;
-  top: 50%;
+  top: 0;
   right: auto;
   left: 50%;
   bottom: auto;
@@ -67,12 +67,12 @@
   animation-fill-mode: forwards;
 
   @include mq(sm) {
-    transform: translate(-40%, -44%) scale(2.8);
+    transform: translate(-40%, 0) scale(3.5);
     width: 100%;
   }
 
   @include mq(md) {
-    transform: translate(-40%, -37%) scale(1);
+    transform: translate(-40%, 0) scale(1);
     width: auto;
   }
 }
@@ -200,7 +200,7 @@
 
   &.inView {
     animation-name: normalTopDown;
-    animation-duration: 0.8s;
+    animation-duration: 1s;
     animation-delay: 0;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;

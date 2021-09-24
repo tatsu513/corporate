@@ -42,7 +42,7 @@ const Sanou: React.VFC<Props> = ({ articles }) => {
   const isSp = ctx.width < 600;
 
   const [meritTitleRef, inView] = useInView({
-    rootMargin: '-50px 0px',
+    rootMargin: '-100px 0px',
     triggerOnce: true,
   });
 
