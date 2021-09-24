@@ -48,13 +48,20 @@ const BaseProvider: React.VFC<Props> = ({ children }) => {
       setContextDate((prevState) => ({
         ...prevState,
         width: window.innerWidth,
-        isUnou: router.pathname.indexOf('unou') !== -1,
-        isSanou: router.pathname.indexOf('sanou') !== -1,
       }));
       setWindowWidth(window.innerWidth);
     };
     window.addEventListener('resize', onResize);
     return () => window.removeEventListener('resize', onResize);
+  }, [router.pathname]);
+
+  useEffect(() => {
+    setContextDate((prevState) => ({
+      ...prevState,
+      isUnou: router.pathname.indexOf('unou') !== -1,
+      isSanou: router.pathname.indexOf('sanou') !== -1,
+    }));
+    setWindowWidth(window.innerWidth);
   }, [router.pathname]);
 
   return (

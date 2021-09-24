@@ -3,10 +3,10 @@
 @import '../_mixin';
 
 .sidebarWrap {
-  width: 320px;
+  width: 322px;
   position: fixed;
   top: 0;
-  right: -320px;
+  right: -322px;
   bottom: 0;
   left: auto;
   background-color: rgba($black, 0.9);
@@ -25,7 +25,12 @@
 }
 
 .controller {
+  height: 60px;
   text-align: right;
+
+  @include mq(lg) {
+    height: 74px;
+  }
 }
 
 .close {
@@ -35,6 +40,11 @@
   position: relative;
   cursor: pointer;
 
+  @include mq(lg) {
+    height: 74px;
+    width: 74px;
+  }
+
   &::before {
     content: '';
     display: inline-block;
@@ -42,9 +52,14 @@
     width: 32px;
     background-color: $white;
     position: absolute;
-    top: 49%;
-    left: 24%;
+    top: 48%;
+    left: 22%;
     transform: rotate(45deg);
+
+    @include mq(lg) {
+      top: 50%;
+      left: 28%;
+    }
   }
 
   &::after {
@@ -54,16 +69,27 @@
     width: 32px;
     background-color: $white;
     position: absolute;
-    top: 49%;
-    left: 24%;
+    top: 48%;
+    left: 22%;
     transform: rotate(-45deg);
+
+    @include mq(lg) {
+      top: 50%;
+      left: 28%;
+    }
   }
 }
 
 .listWrap {
+  height: calc(100vh - 60px);
   padding: 0 40px;
   color: $white;
   font-size: 24px;
+  overflow: auto;
+
+  @include mq(lg) {
+    height: calc(100vh - 74px);
+  }
 
   .listItem {
     margin-bottom: 24px;
@@ -73,14 +99,7 @@
 
     &.icons {
       margin-top: 40px;
+      margin-bottom: 48px;
     }
   }
-}
-
-.arrowLinkBox {
-  position: absolute;
-  top: auto;
-  right: auto;
-  bottom: 40px;
-  left: 40px;
 }

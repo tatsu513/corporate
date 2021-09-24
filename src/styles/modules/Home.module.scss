@@ -34,14 +34,14 @@
   animation-fill-mode: forwards;
 
   @include mq(sm) {
-    margin: 20% auto;
+    margin: auto auto 48px;
     font-size: 20px;
     letter-spacing: 0.6rem;
     writing-mode: vertical-rl;
   }
 
   @include mq(md) {
-    margin: 54% auto;
+    margin-bottom: 120px;
     font-size: 28px;
     letter-spacing: 0.2rem;
     writing-mode: horizontal-tb;

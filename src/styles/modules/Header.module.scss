@@ -13,8 +13,9 @@
   }
 
   &.headerSanou {
+    height: 60px;
     @include mq(lg) {
-      height: 60px;
+      height: 74px;
     }
   }
 }
@@ -41,7 +42,7 @@
 
   &.headerWrapSanou {
     @include mq(lg) {
-      height: 60px;
+      height: 74px;
     }
   }
 }
@@ -86,22 +87,39 @@
   position: relative;
   cursor: pointer;
 
+  @include mq(lg) {
+    height: 74px;
+    width: 74px;
+  }
+
   .bar {
     display: inline-block;
     height: 3px;
-    width: 30px;
+    width: 26px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: $white;
+
+    @include mq(lg) {
+      width: 30px;
+    }
   }
 
   .barTop {
-    top: 28%;
+    top: 32%;
+
+    @include mq(lg) {
+      top: 34%;
+    }
   }
 
   .barBottom {
-    top: 72%;
+    top: 68%;
+
+    @include mq(lg) {
+      top: 66%;
+    }
   }
 }

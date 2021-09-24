@@ -201,9 +201,9 @@ const Sanou: React.VFC<Props> = ({ articles }) => {
                 />
               )}
             </div>
-            <section className={styles.meritBox}>
+            <div className={styles.meritBox}>
               <Merits />
-            </section>
+            </div>
           </div>
           <div
             className={styles.meritDesignFlowWrap}
