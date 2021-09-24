@@ -23,7 +23,7 @@ const IllustPortfolio: React.VFC<Props> = ({ articles }) => {
   const [works, setWorks] = useState(articles);
   const [selectedItem, setSelectedItem] = useState('all');
 
-  const contextVal = useContext(ContextData);
+  const ctx = useContext(ContextData);
 
   const selectItem = (type: string) => {
     const filter = (data: MarkdownFileData[]) => {
@@ -55,7 +55,7 @@ const IllustPortfolio: React.VFC<Props> = ({ articles }) => {
         />
       </section>
       <section className={`${styles.works} a-nbu`}>
-        <PortfolioList items={works} />
+        <PortfolioList items={works} isPage={true} />
         <p className={styles.note}>
           ※
           公開している事例はごく一部です。より詳しい事例は直接お問い合わせください。

@@ -1,6 +1,6 @@
 import { useRouter } from 'next/dist/client/router';
 import Image from 'next/image';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { MarkdownFileData } from 'models/';
 import { ContextData } from 'pages/BaseProvider';
@@ -8,28 +8,38 @@ import styles from 'styles/modules/PortfolioList.module.scss';
 
 interface Props {
   items: MarkdownFileData[];
+  isPage?: boolean;
 }
 
-const PortfolioList: React.VFC<Props> = ({ items }) => {
+const PortfolioList: React.VFC<Props> = ({ items, isPage }) => {
   const router = useRouter();
   const ctx = useContext(ContextData);
+  const [isMin, setIsMin] = useState(false);
+  const [maxLength, setMaxLength] = useState(0);
 
   const [contentRef, inView] = useInView({
     rootMargin: '-100px 0px',
     triggerOnce: true,
   });
 
-  const isMinWidth = () => {
+  useEffect(() => {
     if (ctx.width <= 1024) {
       const sectionWidth = ctx.width * 0.9;
       const workBoxWidth = sectionWidth * 0.46;
-      return workBoxWidth <= 300;
+      setIsMin(workBoxWidth <= 300);
     } else {
-      return false;
+      setIsMin(false);
     }
-  };
+  }, [ctx.width]);
 
-  const maxItemLength = ctx.width > 1024 ? 9 : 6;
+  useEffect(() => {
+    !isPage
+      ? setMaxLength(items.length)
+      : isMin
+      ? setMaxLength(9)
+      : setMaxLength(6);
+  }, [isPage, items.length, isMin]);
+
   return (
     <div
       ref={contentRef}
@@ -37,10 +47,10 @@ const PortfolioList: React.VFC<Props> = ({ items }) => {
     >
       {items.map(
         (item, i) =>
-          i <= maxItemLength && (
+          i + 1 <= maxLength && (
             <div
               className={`${styles.workBox} ${
-                isMinWidth() && styles.minWidth
+                isMin && styles.minWidth
               }`}
               key={i}
               onClick={() =>
