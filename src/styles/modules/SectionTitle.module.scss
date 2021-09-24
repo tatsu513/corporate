@@ -20,14 +20,14 @@
 
   &.inView {
     animation-name: rightLeft;
-    animation-duration: 0.8s;
+    animation-duration: 1s;
     animation-delay: 0;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 
     &.left {
       animation-name: leftRight;
-      animation-duration: 0.8s;
+      animation-duration: 1s;
       animation-delay: 0;
       animation-iteration-count: 1;
       animation-fill-mode: forwards;
@@ -35,7 +35,7 @@
 
     &::after {
       animation-name: rightLeftLine;
-      animation-duration: 0.8s;
+      animation-duration: 1s;
       animation-delay: 0;
       animation-iteration-count: 1;
       animation-fill-mode: forwards;
@@ -97,7 +97,7 @@
   &.inView {
     opacity: 0;
     animation-name: leftRight;
-    animation-duration: 0.8s;
+    animation-duration: 1s;
     animation-delay: 0;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
@@ -105,7 +105,7 @@
     &.left {
       opacity: 0;
       animation-name: rightLeft;
-      animation-duration: 0.8s;
+      animation-duration: 1s;
       animation-delay: 0;
       animation-iteration-count: 1;
       animation-fill-mode: forwards;

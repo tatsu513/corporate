@@ -26,7 +26,7 @@
 
   &.inView::before {
     animation-name: rightLeftLineVertical;
-    animation-duration: 0.8s;
+    animation-duration: 1s;
     animation-delay: 0;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
@@ -50,7 +50,7 @@
 
   &.inView {
     animation-name: leftRightVertical;
-    animation-duration: 0.8s;
+    animation-duration: 1s;
     animation-delay: 0;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
