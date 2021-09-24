@@ -36,9 +36,26 @@ const PortfolioList: React.VFC<Props> = ({ items, isPage }) => {
     !isPage
       ? setMaxLength(items.length)
       : isMin
-      ? setMaxLength(9)
-      : setMaxLength(6);
+      ? setMaxLength(6)
+      : setMaxLength(3);
   }, [isPage, items.length, isMin]);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const scrollVal = document.documentElement.scrollTop;
+      const documentHeight = document.documentElement.clientHeight;
+      const pageXOffset = document.documentElement.scrollHeight;
+
+      if (
+        pageXOffset === scrollVal + documentHeight &&
+        items.length > maxLength
+      ) {
+        setMaxLength((prevState) => prevState + 6);
+      }
+    };
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, [maxLength, items.length]);
 
   return (
     <div

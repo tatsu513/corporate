@@ -5,7 +5,6 @@ import matter from 'gray-matter';
 import { GetStaticProps } from 'next';
 import { useState } from 'react';
 import Breadcrumb from '@/components/Breadcrumb';
-import Contact from '@/components/Contact';
 import Menu from '@/components/Menu';
 import PortfolioList from '@/components/PortfolioList';
 import SectionTitle from '@/components/common/SectionTitle';
@@ -41,7 +40,6 @@ const IllustPortfolio: React.VFC<Props> = ({ articles }) => {
         );
     setSelectedItem(type);
   };
-
   return (
     <>
       <Breadcrumb items={sanouPortfolioBreadcrumb} />
@@ -60,7 +58,6 @@ const IllustPortfolio: React.VFC<Props> = ({ articles }) => {
           公開している事例はごく一部です。より詳しい事例は直接お問い合わせください。
         </p>
       </section>
-      <Contact />
     </>
   );
 };
