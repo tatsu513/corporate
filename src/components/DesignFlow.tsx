@@ -4,7 +4,7 @@ import styles from 'styles/modules/DesignFlow.module.scss';
 
 const DesignFlow = () => {
   const [contentRef, inView] = useInView({
-    rootMargin: '-50px 0px',
+    rootMargin: '-100px 0px',
     triggerOnce: true,
   });
   return (

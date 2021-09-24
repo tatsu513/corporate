@@ -12,7 +12,7 @@ const UnouProfile: React.VFC = () => {
   const ctx = useContext(ContextData);
 
   const [contentRef, inView] = useInView({
-    rootMargin: '-50px 0px',
+    rootMargin: '-100px 0px',
     triggerOnce: true,
   });
 

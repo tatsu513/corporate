@@ -12,7 +12,7 @@ const SectionTitle: React.VFC<Props> = (props) => {
   const isLeft = props.side === 'left';
 
   const [titleRef, inView] = useInView({
-    rootMargin: '-50px 0px',
+    rootMargin: '-100px 0px',
     triggerOnce: true,
   });
   return (
