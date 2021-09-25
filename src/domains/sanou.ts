@@ -3,7 +3,7 @@ import { WorkCategories } from 'models';
 export const settlementBreadcrumb = [
   {
     name: 'Home',
-    path: '/unou',
+    path: '/sanou',
   },
   {
     name: '決算公告',

@@ -42,7 +42,7 @@ const Sanou: React.VFC<Props> = ({ articles }) => {
   const isSp = ctx.width < 600;
 
   const [meritTitleRef, inView] = useInView({
-    rootMargin: '-100px 0px',
+    rootMargin: '-150px 0px',
     triggerOnce: true,
   });
 
@@ -201,9 +201,9 @@ const Sanou: React.VFC<Props> = ({ articles }) => {
                 />
               )}
             </div>
-            <div className={styles.meritBox}>
+            <section className={styles.meritBox}>
               <Merits />
-            </div>
+            </section>
           </div>
           <div
             className={styles.meritDesignFlowWrap}

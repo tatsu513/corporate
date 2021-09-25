@@ -13,19 +13,19 @@ const Merits = () => {
   const router = useRouter();
 
   const [point1Ref, inView1] = useInView({
-    rootMargin: '-100px 0px',
+    rootMargin: '-50px 0px',
     triggerOnce: true,
   });
   const [point2Ref, inView2] = useInView({
-    rootMargin: '-100px 0px',
+    rootMargin: '-50px 0px',
     triggerOnce: true,
   });
   const [point3Ref, inView3] = useInView({
-    rootMargin: '-100px 0px',
+    rootMargin: '-50px 0px',
     triggerOnce: true,
   });
   const [point4Ref, inView4] = useInView({
-    rootMargin: '-100px 0px',
+    rootMargin: '-50px 0px',
     triggerOnce: true,
   });
   return (

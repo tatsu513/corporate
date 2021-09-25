@@ -6,6 +6,10 @@
 .contactWrap {
   width: 100%;
   background-color: $back-color;
+
+  &.isSanou {
+    background-color: $back-sanou;
+  }
 }
 
 .contactContainer {

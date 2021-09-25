@@ -233,6 +233,14 @@
 
 .meritBox {
   padding-top: 0;
+
+  @include mq(md) {
+    width: 100%;
+  }
+
+  @include mq(lg) {
+    width: 90%;
+  }
 }
 
 .meritDesignFlowWrap,

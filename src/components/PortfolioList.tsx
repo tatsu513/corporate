@@ -23,7 +23,7 @@ const PortfolioList: React.VFC<Props> = ({ items, isPage }) => {
     : '/unou/portfolio';
 
   const [contentRef, inView] = useInView({
-    rootMargin: '-100px 0px',
+    rootMargin: '-150px 0px',
     triggerOnce: true,
   });
 
@@ -65,7 +65,7 @@ const PortfolioList: React.VFC<Props> = ({ items, isPage }) => {
   }, [isPage, maxLength, items.length]);
 
   return (
-    <div
+    <section
       ref={contentRef}
       className={`${styles.workWrap} ${inView && styles.inView}`}
     >
@@ -98,7 +98,7 @@ const PortfolioList: React.VFC<Props> = ({ items, isPage }) => {
             </div>
           ),
       )}
-    </div>
+    </section>
   );
 };
 

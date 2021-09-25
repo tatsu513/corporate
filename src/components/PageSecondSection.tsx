@@ -16,7 +16,7 @@ const PageSecondSection: React.VFC<Props> = ({ children }) => {
   const sectionTitleText = isSanou ? 'About' : 'News';
 
   const [contentRef, inView] = useInView({
-    rootMargin: '-100px 0px',
+    rootMargin: '-150px 0px',
     triggerOnce: true,
   });
   return (

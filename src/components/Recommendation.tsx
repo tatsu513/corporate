@@ -11,7 +11,7 @@ const Recommendation = () => {
   const IsUnderMd = ctx.width < 1024;
 
   const [contentRef, inView] = useInView({
-    rootMargin: '-100px 0px',
+    rootMargin: '-150px 0px',
     triggerOnce: true,
   });
   return (
