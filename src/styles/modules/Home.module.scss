@@ -93,10 +93,13 @@
 
   @include mq(sm) {
     justify-content: space-around;
+    margin: 0 auto;
+    width: 74%;
   }
 
   @include mq(md) {
     justify-content: space-between;
+    width: 100%;
   }
 }
 
@@ -212,11 +215,11 @@
   position: relative;
 
   @include mq(sm) {
-    width: 50%;
+    width: 179px;
   }
 
   @include mq(md) {
-    width: 300px;
+    width: 267px;
   }
 }
 

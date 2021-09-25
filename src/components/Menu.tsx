@@ -4,7 +4,7 @@ import styles from 'styles/modules/Menu.module.scss';
 interface Props {
   selectedItem: string;
   items: WorkCategories[];
-  onClick: (category: string) => void;
+  onClick: (category: string) => void; // eslint-disable-line
 }
 
 const Menu: React.VFC<Props> = (props) => {

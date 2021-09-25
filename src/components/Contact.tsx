@@ -1,4 +1,9 @@
-import { useState, useCallback, ChangeEvent } from 'react';
+import {
+  useState,
+  useCallback,
+  ChangeEvent,
+  useContext,
+} from 'react';
 import { useInView } from 'react-intersection-observer';
 import PrimaryButton from './buttons/PrimaryButton';
 import Icon from './common/Icon';
@@ -6,9 +11,11 @@ import SectionTitle from './common/SectionTitle';
 import TextArea from './forms/TextArea';
 import TextField from './forms/TextField';
 import check from 'images/check-circle.svg';
+import { ContextData } from 'pages/BaseProvider';
 import styles from 'styles/modules/Contact.module.scss';
 
 const Contact: React.VFC = () => {
+  const ctx = useContext(ContextData);
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
   const [title, setTitle] = useState('');
@@ -66,12 +73,16 @@ const Contact: React.VFC = () => {
   );
 
   const [formRef, inView] = useInView({
-    rootMargin: '-100px 0px',
+    rootMargin: '-150px 0px',
     triggerOnce: true,
   });
   return (
     <div className='sectionWrapper'>
-      <div className={`${styles.contactWrap} sectionWrapper`}>
+      <div
+        className={`${styles.contactWrap} ${
+          ctx.isSanou && styles.isSanou
+        } sectionWrapper`}
+      >
         <SectionTitle title={'Contact'} side={'left'} />
         <section
           ref={formRef}
