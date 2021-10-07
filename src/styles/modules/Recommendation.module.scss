@@ -17,8 +17,12 @@
   }
 
   @include mq(sm) {
-    width: 540px;
+    width: 100%;
     flex-direction: column;
+  }
+
+  @include mq(md) {
+    width: 540px;
   }
 
   @include mq(lg) {
