@@ -13,31 +13,33 @@ const Settlement: React.VFC = () => {
       </div>
       <section className={styles.settlementBox}>
         <ul className={styles.settlementItems}>
-          <li className={styles.settlementItem}>
-            <span className={styles.itemText}>
-              第５期決算公告 - 2026年9月期
-            </span>
-          </li>
-          <li className={styles.settlementItem}>
-            <span className={styles.itemText}>
-              第４期決算公告 - 2025年9月期
-            </span>
-          </li>
-          <li className={styles.settlementItem}>
-            <span className={styles.itemText}>
-              第３期決算公告 - 2024年9月期
-            </span>
-          </li>
-          <li className={styles.settlementItem}>
-            <span className={styles.itemText}>
-              第２期決算公告 - 2023年9月期
-            </span>
-          </li>
-          <li className={styles.settlementItem}>
-            <span className={styles.itemText}>
-              第１期決算公告 - 2022年9月期
-            </span>
-          </li>
+          {/*
+            <li className={styles.settlementItem}>
+              <span className={styles.itemText}>
+                第５期決算公告 - 2026年9月期
+              </span>
+            </li>
+            <li className={styles.settlementItem}>
+              <span className={styles.itemText}>
+                第４期決算公告 - 2025年9月期
+              </span>
+            </li>
+            <li className={styles.settlementItem}>
+              <span className={styles.itemText}>
+                第３期決算公告 - 2024年9月期
+              </span>
+            </li>
+            <li className={styles.settlementItem}>
+              <span className={styles.itemText}>
+                第２期決算公告 - 2023年9月期
+              </span>
+            </li>
+            <li className={styles.settlementItem}>
+              <span className={styles.itemText}>
+                第１期決算公告 - 2022年9月期
+              </span>
+            </li>
+          */}
           <li className={styles.settlementItem}>
             <span
               className={`${styles.itemText} ${styles.noItemText}`}
