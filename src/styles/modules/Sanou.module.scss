@@ -90,10 +90,10 @@
     &::before {
       content: '';
       display: inline-block;
-      height: 156px;
+      height: 80px;
       width: 1px;
       position: absolute;
-      top: -78px;
+      top: -40px;
       right: auto;
       bottom: auto;
       left: 50%;
@@ -110,7 +110,7 @@
       height: 28px;
       width: 1px;
       position: absolute;
-      top: 54px;
+      top: 16px;
       right: auto;
       bottom: auto;
       left: calc(50% - (10px * -1));
@@ -156,7 +156,7 @@
   font-size: 16px;
 
   @include mq(lg) {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   &:last-of-type {
