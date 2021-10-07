@@ -5,6 +5,10 @@
 
 .workWrap {
   margin: 40px auto 64px;
+
+  &.menuWrap {
+    overflow: scroll;
+  }
 }
 
 .works {
