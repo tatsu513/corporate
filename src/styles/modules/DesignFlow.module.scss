@@ -38,8 +38,21 @@
   width: 100%;
   background-color: $white;
   background-repeat: no-repeat;
-  border-top: solid 12px $yellow;
+  overflow: hidden;
   text-align: left;
+
+  .topLine {
+    display: inline-block;
+    height: 12px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: auto;
+    left: -100%;
+    background-color: $yellow;
+    transition: all 500ms ease;
+    transition-delay: 300ms;
+  }
 
   &:nth-child(1) {
     background-image: url('../../images/flow_back_1.svg');
@@ -148,6 +161,10 @@
       display: none;
     }
   }
+}
+
+.flowBox.inView .flow .topLine {
+  left: 0;
 }
 
 .flowTitle {

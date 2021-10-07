@@ -94,6 +94,7 @@
 }
 
 .subTitleWrap {
+  opacity: 0;
   &.inView {
     opacity: 0;
     animation-name: leftRight;

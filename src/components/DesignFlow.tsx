@@ -19,6 +19,7 @@ const DesignFlow = () => {
         className={`${styles.flowBox} ${inView && styles.inView}`}
       >
         <div className={styles.flow}>
+          <span className={styles.topLine} />
           <h3 className={styles.flowTitle}>1 聴く</h3>
           <p className={styles.text}>
             ヒアリングシートを元に、以下の様なお話を伺います。
@@ -37,6 +38,7 @@ const DesignFlow = () => {
           </ul>
         </div>
         <div className={styles.flow}>
+          <span className={styles.topLine} />
           <h3 className={styles.flowTitle}>2 描く</h3>
           <p className={styles.text}>
             １を元に、デザインの叩き台を作成します。この段階で納得行くまでやり取りします。
@@ -48,6 +50,7 @@ const DesignFlow = () => {
           </ul>
         </div>
         <div className={styles.flow}>
+          <span className={styles.topLine} />
           <h3 className={styles.flowTitle}>3 本番作成・納品</h3>
           <p className={styles.text}>
             ２を元に、最終的な納品物を作成します。お客様に検収頂き、OKなら納品完了です。

@@ -33,7 +33,7 @@ const Recommendation = () => {
       >
         <div className={styles.item}>
           <div className={styles.image} />
-          <div className={styles.itemBody}>
+          <section className={styles.itemBody}>
             <Link href='https://shinsenryoku.com/'>
               <a className={styles.company} target='_blank'>
                 株式会社新閃力
@@ -49,12 +49,14 @@ const Recommendation = () => {
               <br />
               おかげで、弊社の柱となる事業に成長しました。
             </p>
-          </div>
+          </section>
         </div>
         {/* 株式会社アンドパッド */}
         <div className={styles.item}>
           <div className={`${styles.image} ${styles.image2}`} />
-          <div className={`${styles.itemBody} ${styles.itemBody2}`}>
+          <section
+            className={`${styles.itemBody} ${styles.itemBody2}`}
+          >
             <Link href='https://andpad.co.jp/'>
               <a className={styles.company} target='_blank'>
                 株式会社アンドパッド
@@ -69,12 +71,12 @@ const Recommendation = () => {
               toB向けで業務+業界理解が必要ですが、自主的に勉強会を定期的に開催。
               チームメンバーを巻き込んだ結果、プロダクトの品質がとても向上しました。
             </p>
-          </div>
+          </section>
         </div>
         {/* 株式会社Colabo-ya */}
         <div className={styles.item}>
           <div className={`${styles.image} ${styles.image3}`} />
-          <div className={styles.itemBody}>
+          <section className={styles.itemBody}>
             <Link href='https://colabo-ya.jp/'>
               <a className={styles.company} target='_blank'>
                 株式会社Colabo-ya
@@ -84,7 +86,7 @@ const Recommendation = () => {
             <p className={styles.text}>
               彼女自身がIT系の企業で培ったヒアリング能力と幅広い表現力によって、イメージをすり合わせる時必要なアーキテクチャーがない状態から依頼をすることができ、できたデザインはコンセプトの背景まで一気に伝わる気持ちよさがあります。
             </p>
-          </div>
+          </section>
         </div>
       </section>
     </>

@@ -44,7 +44,7 @@ const IllustPortfolio: React.VFC<Props> = ({ articles }) => {
     <>
       <Breadcrumb items={sanouPortfolioBreadcrumb} />
       <SectionTitle title={'Portfolio'} />
-      <section className={`${styles.workWrap} a-nbu`}>
+      <section className={`${styles.workWrap} ${styles.menuWrap}`}>
         <Menu
           selectedItem={selectedItem}
           items={sanouPortfolioCategories}
