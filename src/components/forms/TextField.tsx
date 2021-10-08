@@ -15,6 +15,7 @@ const TextField: React.VFC<Props> = (props) => {
       <input
         className={styles.input}
         type='text'
+        value={props.value}
         onChange={(event) => props.onChange(event)}
       />
     </div>

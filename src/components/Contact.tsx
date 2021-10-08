@@ -23,6 +23,16 @@ const Contact: React.VFC = () => {
 
   const [isSuccess, setIsSuccess] = useState(false);
 
+  const reg =
+    /^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]{1,}\.[A-Za-z0-9]{1,}$/;
+  const isValidEmail = reg.test(email);
+  const isInvalidData =
+    !isValidEmail ||
+    email === '' ||
+    name === '' ||
+    title === '' ||
+    body === '';
+
   const inputEmail = useCallback(
     (event: ChangeEvent<HTMLInputElement>) => {
       setEmail(event.target.value);
@@ -67,7 +77,14 @@ const Contact: React.VFC = () => {
       });
 
       const result: { statusCode: number } = await res.json();
-      setIsSuccess(result.statusCode === 200);
+      const isSuccessSend = result.statusCode === 200;
+      setIsSuccess(isSuccessSend);
+      if (isSuccessSend) {
+        setEmail('');
+        setName('');
+        setTitle('');
+        setBody('');
+      }
     },
     [email, name, title, body],
   );
@@ -123,7 +140,11 @@ const Contact: React.VFC = () => {
             </div>
           </div>
           <div className={styles.controller}>
-            <PrimaryButton text={'Send'} onClick={sendMail} />
+            <PrimaryButton
+              text={'Send'}
+              disabled={isInvalidData}
+              onClick={sendMail}
+            />
           </div>
           <div
             className={`${styles.message} ${
@@ -139,7 +160,7 @@ const Contact: React.VFC = () => {
               />
             </span>
             <span className={styles.messageText}>
-              送信完了しました。メッセージありがとうございました。
+              送信完了しました。お問合せありがとうございました。
             </span>
           </div>
         </section>
