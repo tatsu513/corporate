@@ -13,25 +13,35 @@ export default async function (
 
   const msg = {
     to: email,
+    bcc: 'contact@kiku-to-kaku.com',
     from: 'no-reply@kiku-to-kaku.com',
     subject:
-      '【株式会社聴くと描く】お問い合わせありがとうございました。',
+      '【株式会社聴くと描く - 小久保】お問い合わせありがとうございます',
     text: 'and easy to do anywhere, even with Node.js',
     html: `
-      <strong>${name} 様</strong>
+      ${name} 様
       <br/>
       <p>
-      お問い合わせありがとうございます。<br/>
-      以下の内容でお問い合わせを受け付けました。
+      この度は、お問い合わせありがとうございます。<br/>
+      以下の内容でお問い合わせを受け付けました。<br/>
+      内容確認後、ご連絡致しますので今しばらくお待ちください。
       </p>
-      -----------------------------------
+      <span>-----------------------------------</span><br/>
       <pre style="white-space: pre-line;">
       ${title}
       </pre>
       <pre style="white-space: pre-line;">
       ${message}
       </pre>
-      -----------------------------------
+      <span>-----------------------------------</span><br/>
+      <br/>
+      <br/>
+      =====================================
+      株式会社 聴くと描く
+      小久保 明美 (Akemi Kokubo)
+      〒270-0163 千葉県流山市南流山3-6-7 Trist Airport
+      https://kiku-to-kaku.com/
+      =====================================
     `,
   };
 
