@@ -27,21 +27,19 @@ export default async function (
       内容確認後、ご連絡致しますので今しばらくお待ちください。
       </p>
       <span>-----------------------------------</span><br/>
-      <pre style="white-space: pre-line;">
-      ${title}
-      </pre>
-      <pre style="white-space: pre-line;">
-      ${message}
-      </pre>
-      <span>-----------------------------------</span><br/>
+      ${title}<br/>
+      <br/>
+      ${message}<br/>
+      <span>-----------------------------------</span>
       <br/>
       <br/>
-      =====================================
-      株式会社 聴くと描く
-      小久保 明美 (Akemi Kokubo)
-      〒270-0163 千葉県流山市南流山3-6-7 Trist Airport
-      https://kiku-to-kaku.com/
-      =====================================
+      <br/>
+      =====================================<br/>
+      株式会社 聴くと描く<br/>
+      小久保 明美 (Akemi Kokubo)<br/>
+      〒270-0163 千葉県流山市南流山3-6-7 Trist Airport<br/>
+      https://kiku-to-kaku.com/<br/>
+      =====================================<br/>
     `,
   };
 

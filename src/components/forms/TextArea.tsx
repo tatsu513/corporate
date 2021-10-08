@@ -15,6 +15,7 @@ const TextArea: React.VFC<Props> = (props) => {
       <textarea
         className={styles.input}
         rows={5}
+        value={props.value}
         onChange={(event) => props.onChange(event)}
       />
     </div>

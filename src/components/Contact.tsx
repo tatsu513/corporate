@@ -77,7 +77,14 @@ const Contact: React.VFC = () => {
       });
 
       const result: { statusCode: number } = await res.json();
-      setIsSuccess(result.statusCode === 200);
+      const isSuccessSend = result.statusCode === 200;
+      setIsSuccess(isSuccessSend);
+      if (isSuccessSend) {
+        setEmail('');
+        setName('');
+        setTitle('');
+        setBody('');
+      }
     },
     [email, name, title, body],
   );
@@ -153,7 +160,7 @@ const Contact: React.VFC = () => {
               />
             </span>
             <span className={styles.messageText}>
-              送信完了しました。メッセージありがとうございました。
+              送信完了しました。お問合せありがとうございました。
             </span>
           </div>
         </section>

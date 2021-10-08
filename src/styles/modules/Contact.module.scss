@@ -7,6 +7,10 @@
   width: 100%;
   background-color: $back-color;
 
+  @include mq(lg) {
+    padding-bottom: 114px;
+  }
+
   &.isSanou {
     background-color: $back-sanou;
   }
@@ -68,16 +72,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 16px;
-  padding: 8px;
+  height: 0;
+  margin-top: 0;
+  padding: 0 8px;
   background-color: $success;
   color: $white;
   opacity: 0;
   transform: translateY(-20px);
-  transition: all 500ms ease;
+  transition: opacity 500ms ease, transform 500ms ease;
   text-align: center;
 
   &.isSuccess {
+    height: auto;
+    margin-top: 32px;
+    padding: 8px;
     opacity: 1;
     transform: translateY(0);
   }
@@ -89,6 +97,10 @@
 
   @include mq(md) {
     text-align: center;
+  }
+
+  @include mq(lg) {
+    margin-top: 32px;
   }
 }
 
