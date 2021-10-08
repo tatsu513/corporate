@@ -7,6 +7,11 @@
   color: $grey-main;
   transition: all 400ms ease;
 
+  &.isDisabled {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+
   &:hover {
     background-color: $grey-main;
     color: $white;

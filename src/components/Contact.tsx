@@ -23,6 +23,9 @@ const Contact: React.VFC = () => {
 
   const [isSuccess, setIsSuccess] = useState(false);
 
+  const isInvalidData =
+    email === '' || name === '' || title === '' || body === '';
+
   const inputEmail = useCallback(
     (event: ChangeEvent<HTMLInputElement>) => {
       setEmail(event.target.value);
@@ -123,7 +126,11 @@ const Contact: React.VFC = () => {
             </div>
           </div>
           <div className={styles.controller}>
-            <PrimaryButton text={'Send'} onClick={sendMail} />
+            <PrimaryButton
+              text={'Send'}
+              disabled={isInvalidData}
+              onClick={sendMail}
+            />
           </div>
           <div
             className={`${styles.message} ${
