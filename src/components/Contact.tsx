@@ -23,8 +23,15 @@ const Contact: React.VFC = () => {
 
   const [isSuccess, setIsSuccess] = useState(false);
 
+  const reg =
+    /^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]{1,}\.[A-Za-z0-9]{1,}$/;
+  const isValidEmail = reg.test(email);
   const isInvalidData =
-    email === '' || name === '' || title === '' || body === '';
+    !isValidEmail ||
+    email === '' ||
+    name === '' ||
+    title === '' ||
+    body === '';
 
   const inputEmail = useCallback(
     (event: ChangeEvent<HTMLInputElement>) => {
