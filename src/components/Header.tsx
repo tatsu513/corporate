@@ -44,6 +44,22 @@ const Header: React.VFC = () => {
     target?.classList.remove('openSidebar');
   }, []);
 
+  const clickHeaderMenu = (target: string) => {
+    const isTopHierarchy = router.pathname.split('/').length === 2;
+    if (isTopHierarchy) {
+      ctx.setContextDate((prevState) => ({
+        ...prevState,
+        target: target,
+      }));
+      window.history.replaceState(null, '', router.pathname);
+    } else {
+      router.push({
+        pathname: '/unou',
+        query: { target: target },
+      });
+    }
+  };
+
   useEffect(() => {
     if ((ctx.width <= 1024 && ctx.isUnou) || ctx.isSanou) {
       setIsShowMiniMenu(true);
@@ -70,30 +86,15 @@ const Header: React.VFC = () => {
           <div className={styles.controllers}>
             <TextLink
               text={'News'}
-              onClick={() =>
-                router.push({
-                  pathname: '/unou',
-                  query: { target: 'news' },
-                })
-              }
+              onClick={() => clickHeaderMenu('news')}
             />
             <TextLink
               text={'Portfolio'}
-              onClick={() =>
-                router.push({
-                  pathname: '/unou',
-                  query: { target: 'portfolio' },
-                })
-              }
+              onClick={() => clickHeaderMenu('portfolio')}
             />
             <TextLink
               text={'Contact'}
-              onClick={() =>
-                router.push({
-                  pathname: '/unou',
-                  query: { target: 'contact' },
-                })
-              }
+              onClick={() => clickHeaderMenu('contact')}
             />
             <Icon
               icon={instaIcon}
