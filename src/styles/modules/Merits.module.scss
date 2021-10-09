@@ -119,13 +119,13 @@
   &::before {
     content: '';
     display: inline-block;
-    width: 100%;
+    width: 0;
     height: 12px;
     position: absolute;
     top: auto;
     right: 0;
     bottom: 8px;
-    left: -100%;
+    left: 0;
     background-color: #faf000e0;
     z-index: -1;
     transition: all 500ms ease;
@@ -134,7 +134,7 @@
 }
 
 .meritBox.inView .meritTitleText::before{
-  left: 0;
+  width: 100%;
 }
 
 .meritText {
