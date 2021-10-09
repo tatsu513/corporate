@@ -214,7 +214,7 @@ const Merits = () => {
             {ctx.width < 600 && (
               <>
                 <span className={styles.meritTitleText}>
-                  アートとデザイン、
+                  アートとデザイン
                 </span>
                 <br />
                 <span className={styles.meritTitleText}>
