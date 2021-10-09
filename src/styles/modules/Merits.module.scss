@@ -133,6 +133,10 @@
   }
 }
 
+.meritBox.inView .meritTitleText::before{
+  left: 0;
+}
+
 .meritText {
   margin-bottom: 16px;
   width: 100%;
