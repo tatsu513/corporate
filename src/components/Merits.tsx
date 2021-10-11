@@ -5,6 +5,8 @@ import { useInView } from 'react-intersection-observer';
 import TextLink from './common/TextLink';
 import MeritImage01 from 'images/merit_01.png';
 import MeritImage02 from 'images/merit_02.png';
+import MeritImage03 from 'images/merit_03.png';
+import MeritImage04 from 'images/merit_04.png';
 import { ContextData } from 'pages/BaseProvider';
 import styles from 'styles/modules/Merits.module.scss';
 
@@ -184,7 +186,7 @@ const Merits = () => {
         </div>
         <div className={styles.meritImage}>
           <Image
-            src={MeritImage01}
+            src={MeritImage03}
             alt={
               '「なんとなく格好いい」だけ、 のデザインはしません。'
             }
@@ -250,8 +252,8 @@ const Merits = () => {
         </div>
         <div className={styles.meritImage}>
           <Image
-            src={MeritImage02}
-            alt={'デザインに関わること、全部できます。'}
+            src={MeritImage04}
+            alt={'アートとデザインの融合で、他と、ちょっと差をつけます。'}
           />
         </div>
       </div>
