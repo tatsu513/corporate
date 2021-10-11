@@ -7,7 +7,7 @@
   width: 100%;
   background-color: $back-color;
 
-  @include mq(lg) {
+  @include mq(md) {
     padding-bottom: 114px;
   }
 
@@ -96,11 +96,8 @@
   }
 
   @include mq(md) {
-    text-align: center;
-  }
-
-  @include mq(lg) {
     margin-top: 32px;
+    text-align: center;
   }
 }
 
