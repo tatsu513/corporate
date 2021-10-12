@@ -28,7 +28,7 @@ const PageSecondSection: React.VFC<Props> = ({ children }) => {
           ) : (
             <SectionTitleVertical
               title={sectionTitleText}
-              isHightMargin={true}
+              isHighMargin={true}
             />
           )}
         </div>
