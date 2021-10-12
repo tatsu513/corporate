@@ -44,12 +44,13 @@
   opacity: 0;
 
   &.inView {
-    animation-name: normalOpacity;
+    animation-name: normalbottomUp;
     animation-duration: 1s;
     animation-delay: 0;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
   }
+  
   @include mq(md) {
     display: flex;
     justify-content: space-between;
@@ -112,6 +113,14 @@
   @include mq(lg) {
     margin-bottom: 8px;
   }
+
+  &.inView {
+    animation-name: normalbottomUp;
+    animation-duration: 1s;
+    animation-delay: 0;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
 }
 
 .name {
@@ -120,6 +129,14 @@
   @include mq(lg) {
     display: flex;
     align-items: center;
+  }
+
+  &.inView {
+    animation-name: normalbottomUp;
+    animation-duration: 1s;
+    animation-delay: 0;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
   }
 }
 
@@ -136,10 +153,32 @@
   }
 }
 
+.recode {
+  margin-bottom: 24px;
+  line-height: 1.5;
+  font-size: 14px;
+
+  &.inView {
+    animation-name: normalbottomUp;
+    animation-duration: 1s;
+    animation-delay: 0;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+}
+
 .text {
   font-size: 14px;
   margin-bottom: 32px;
   line-height: 2;
+
+  &.inView {
+    animation-name: normalbottomUp;
+    animation-duration: 1s;
+    animation-delay: 0;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
 }
 
 .imageBox {
@@ -153,6 +192,14 @@
 
   @include mq(lg) {
     padding-top: 40px;
+  }
+
+  &.inView {
+    animation-name: normalbottomUp;
+    animation-duration: 1s;
+    animation-delay: 0;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
   }
 }
 
