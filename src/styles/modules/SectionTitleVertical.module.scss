@@ -58,6 +58,10 @@
 
   @include mq(lg) {
     padding: 0 0 72px 32px;
+
+    &.hightMargin {
+      padding: 0 0 114px 32px;
+    }
   }
 }
 

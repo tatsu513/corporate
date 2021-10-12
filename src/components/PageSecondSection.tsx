@@ -26,7 +26,10 @@ const PageSecondSection: React.VFC<Props> = ({ children }) => {
           {isMd ? (
             <SectionTitle title={sectionTitleText} side={'left'} />
           ) : (
-            <SectionTitleVertical title={sectionTitleText} />
+            <SectionTitleVertical
+              title={sectionTitleText}
+              isHightMargin={true}
+            />
           )}
         </div>
         <div
