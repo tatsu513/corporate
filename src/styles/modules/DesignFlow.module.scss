@@ -43,11 +43,11 @@
   .topLine {
     display: inline-block;
     height: 12px;
-    width: 100%;
+    width: 0;
     position: absolute;
     top: 0;
     right: auto;
-    left: -100%;
+    left: 0;
     background-color: $yellow;
     transition: all 800ms ease;
     transition-delay: 500ms;
@@ -163,7 +163,7 @@
 }
 
 .flowBox.inView .flow .topLine {
-  left: 0;
+  width: 100%;
 }
 
 .flowTitle {
