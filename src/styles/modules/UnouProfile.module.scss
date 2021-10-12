@@ -167,7 +167,8 @@
 
 .image {
   margin: 0 auto;
-  background-color: azure;
+  background-image: url('../../images/profile_photo.png');
+  background-size: 100%;
 
   @include mq(sm) {
     width: 100%;
