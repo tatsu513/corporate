@@ -25,7 +25,7 @@ const NewsPage: React.VFC<MarkdownFileData> = (props) => {
       <section className={`${styles.newsWrap} a-nbu`}>
         <div className={styles.date}>{props.frontmatter.date}</div>
         <div className={styles.title}>
-          {props.frontmatter.excerpt}
+          {props.frontmatter.title}
         </div>
         <div
           className={styles.body}
