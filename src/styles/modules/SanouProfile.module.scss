@@ -44,12 +44,13 @@
   opacity: 0;
 
   &.inView {
-    animation-name: normalOpacity;
+    animation-name: normalbottomUp;
     animation-duration: 1s;
     animation-delay: 0;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
   }
+  
   @include mq(md) {
     display: flex;
     justify-content: space-between;
