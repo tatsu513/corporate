@@ -53,8 +53,8 @@ const UnouProfile: React.VFC = () => {
             isMinWidth() && styles.minWidth
           }`}
         >
-          <div className={styles.jobTitle}>イラストレーター</div>
-          <div className={styles.name}>
+          <div className={`${styles.jobTitle} ${inView && styles.inView}`}>イラストレーター</div>
+          <div className={`${styles.name} ${inView && styles.inView}`}>
             <div className={styles.nameText}>
               小久保あけみ（Kokubo Akemi）
             </div>
