@@ -56,8 +56,8 @@ const SanouProfile = () => {
               isMinWidth() && styles.minWidth
             }`}
           >
-            <div className={styles.jobTitle}>株式会社 聴くと描く</div>
-            <div className={styles.name}>
+            <div className={`${styles.jobTitle} ${inView && styles.inView}`}>株式会社 聴くと描く</div>
+            <div className={`${styles.name} ${inView && styles.inView}`}>
               <div className={styles.nameText}>
                 代表取締役　小久保 明美
               </div>
@@ -76,27 +76,27 @@ const SanouProfile = () => {
                 href={'https://www.facebook.com/kokubo.akemi'}
               />
             </div>
-            <p className={styles.text}>
+            <p className={`${styles.recode} ${inView && styles.inView}`}>
               日本女子大学 住居学科居住環境デザイン専攻　2006年卒
             </p>
-            <p className={styles.text}>
+            <p className={`${styles.text} ${inView && styles.inView}`}>
               大学卒業後から約7年間、日本電気株式会社(NEC)・NECグループで、クライアント企業の業務フロー作成支援を担当。当事者故に、把握しきれてない業務や問題点を傾聴して引き出し、整理・見える化することを信念としていた。
               <br />
               一方で、社内ポータルサイトや自社製品パンフレットデザインにも携わる。
             </p>
-            <p className={styles.text}>
+            <p className={`${styles.text} ${inView && styles.inView}`}>
               デザインに注力すべく、2013年に制作会社のグラフィック・Webデザイナーへ転身。
               <br />
               以降、株式会社アンドパッド（建設SaaSスタートアップ企業）のUI/UXデザイナーや、フリーランスとしての多種多様な業界のクライアンワークを通し、媒体・ジャンルに囚われないオールラウンドのデザイン経験を積む。
             </p>
-            <p className={styles.text}>
+            <p className={`${styles.text} ${inView && styles.inView}`}>
               単なるデザイン制作に留まらず、要求整理・業務フロー・ストーリーマッピング・ペルソナ等の作成を通して、「本当に必要なデザインは何なのか？」「より良いユーザー体験とは何か？」を探り、要件定義から関わることを得意とする。
             </p>
           </div>
           <div
             className={`${styles.imageBox} ${
               isMinWidth() && styles.minWidth
-            }`}
+            } ${inView && styles.inView}`}
           >
             <div
               className={`${styles.image} ${
