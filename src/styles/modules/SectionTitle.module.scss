@@ -33,6 +33,14 @@
       animation-fill-mode: forwards;
     }
 
+    &.center {
+      animation-name: normalTopDownt;
+      animation-duration: 1s;
+      animation-delay: 0;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+    }
+
     &::after {
       animation-name: rightLeftLine;
       animation-duration: 1s;
