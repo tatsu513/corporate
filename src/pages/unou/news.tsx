@@ -40,7 +40,7 @@ const News: React.VFC<Props> = ({ news }) => {
               {item.frontmatter.date.replace(/-/g, '.')}
             </div>
             <div className={styles.title}>
-              {item.frontmatter.excerpt}
+              {item.frontmatter.title}
             </div>
             <div
               className={styles.body}
