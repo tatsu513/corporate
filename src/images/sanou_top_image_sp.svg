@@ -1,12 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="360" height="700" viewBox="0 0 360 700">
-  <defs>
-    <clipPath id="clip-path">
-      <rect id="長方形_95" data-name="長方形 95" width="360" height="700" fill="none"/>
-    </clipPath>
-  </defs>
-  <g id="マスクグループ_27" data-name="マスクグループ 27" clip-path="url(#clip-path)">
-    <g id="グループ_3" data-name="グループ 3" transform="translate(-42.563)">
-      <path id="パス_37" data-name="パス 37" d="M464.606,1061.672c-74.8,7.878-204.375-78.155-193.278-192.539,10.8-111.224,149.152-132.838,51.864-239.483-251.16-275.272,192.758-521.793,405.53-433.2C854,248.631,841.865,413.859,786.543,519.5c-47.225,117.523-219.51,284.729-209.613,312.32C651.246,1038.879,499.414,1058.012,464.606,1061.672Z" transform="translate(-248.778 -178.102)" fill="none" stroke="rgba(48,48,48,0.6)" stroke-width="1"/>
-    </g>
-  </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.4.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="レイヤー_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" viewBox="0 0 582.6 885.1" style="enable-background:new 0 0 582.6 885.1;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;}
+</style>
+<path id="合体_4" class="st0" d="M25.2,691.7C36,580.5,174.4,558.9,77,452.2c-251.2-275.4,192.8-522,405.7-433.3
+	C608,71.1,595.9,236.3,540.5,342C493.3,459.6,321,626.8,330.9,654.4c74.3,207.1-77.5,226.3-112.4,229.9c-3.3,0.3-6.6,0.5-9.8,0.5
+	C132.9,884.8,14.6,801.3,25.2,691.7L25.2,691.7z"/>
 </svg>
