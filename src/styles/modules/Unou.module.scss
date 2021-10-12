@@ -15,14 +15,11 @@
   width: 100%;
   font-size: 0;
   opacity: 0;
-
-  &.inView {
-    animation-name: normalOpacity;
-    animation-duration: 3s;
-    animation-delay: 0.5s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-  }
+  animation-name: normalOpacity;
+  animation-duration: 1s;
+  animation-delay: 3.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 
   & > div {
     vertical-align: top;
