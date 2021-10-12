@@ -109,7 +109,7 @@ const Unou: React.VFC<Props> = ({ articles, news }) => {
                     {item.frontmatter.date.replace(/-/g, '.')}
                   </span>
                   <span className={styles.text}>
-                    {item.frontmatter.excerpt}
+                    {item.frontmatter.title}
                   </span>
                 </li>
               ))}
