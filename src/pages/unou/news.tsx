@@ -79,7 +79,7 @@ export const getStaticProps: GetStaticProps = async () => {
   });
 
   const orderedNews = news.sort((a, b) => {
-    if (a.frontmatter.date < b.frontmatter.date) {
+    if (a.frontmatter.date > b.frontmatter.date) {
       return -1;
     } else {
       return 1;

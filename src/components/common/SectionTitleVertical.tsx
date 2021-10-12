@@ -6,6 +6,7 @@ interface Props {
   side?: string;
   subTitle?: string;
   isWhite?: boolean;
+  isHighMargin?: boolean;
 }
 
 const SectionTitleVertical: React.VFC<Props> = (props) => {
@@ -21,7 +22,9 @@ const SectionTitleVertical: React.VFC<Props> = (props) => {
     >
       <h2
         ref={titleRef}
-        className={`${styles.title} ${inView && styles.inView}`}
+        className={`${styles.title} ${inView && styles.inView} ${
+          props.isHighMargin && styles.highMargin
+        }`}
       >
         {props.title}
       </h2>
