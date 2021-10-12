@@ -22,6 +22,10 @@
     display: none;
   }
 
+  @include mq(lg) {
+    display: block;
+  }
+
   &.isActive {
     opacity: 1;
     pointer-events: visible;
