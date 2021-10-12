@@ -1,6 +1,6 @@
 ---
 title: '流山市創業スクールチラシイラスト／株式会社新閃力ううううううううううううううううXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
-date: '2021-08-26'
+date: '2021-10-26'
 excerpt: 'this is excerpt text'
 coverImage: '/images/sample.png'
 categories: ['graphic']

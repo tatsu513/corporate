@@ -243,7 +243,15 @@ export const getStaticProps: GetStaticProps = async () => {
     return { slug, frontmatter, content };
   });
 
-  return { props: { articles } };
+  const orderedArticles = articles.sort((a, b) => {
+    if (a.frontmatter.date > b.frontmatter.date) {
+      return -1;
+    } else {
+      return 1;
+    }
+  });
+
+  return { props: { articles: orderedArticles } };
 };
 
 export default Sanou;

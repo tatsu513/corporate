@@ -1,6 +1,6 @@
 ---
-title: 'MD TEST 3'
-date: '2021-08-26'
+title: 'MD TEST 4/26'
+date: '2021-04-26'
 excerpt: 'this is excerpt text'
 coverImage: '/images/sample.png'
 categories: ['graphic', 'illust']
