@@ -3,7 +3,7 @@ title: ' 市議会議員サイトリニューアル'
 date: '2021-10-14'
 excerpt: '流山市議会議員 近藤みほ様'
 coverImage: '/images/koudou_sumbnail.png'
-categories: ['graphic', 'illust']
+categories: ['web', 'illust']
 ---
 
 ・クライアント名：[流山市議会議員 近藤みほ様](https://mihokondoh.net)  
