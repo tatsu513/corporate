@@ -18,8 +18,8 @@ const _document = () => {
         <link rel='icon' sizes='32x32' href='/favicons/favicon.ico' />
         <link rel='mask-icon' href='/favicons/favicon.ico' />
 
-        <meta name='msapplication-TileColor' content='#da532c' />
-        <meta name='theme-color' content='#ffffff' />
+        <meta name='msapplication-TileColor' content='#fff' />
+        <meta name='theme-color' content='#fff' />
       </Head>
       <body>
         <Main />
