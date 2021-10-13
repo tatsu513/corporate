@@ -1,4 +1,5 @@
 @import '../animation';
+@import '../mixin';
 
 .newsWrap {
   margin: 40px auto 64px;
@@ -29,11 +30,24 @@
   line-height: 1.5;
 
   p {
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    @include text-truncate(16, 1.5, 4, #fff);
+  }
+  @supports (-webkit-line-clamp: 4) {
+    p {
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      &::before {
+        content: '';
+      }
+
+      &::after {
+        content: '';
+      }
+    }
   }
 }
 

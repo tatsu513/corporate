@@ -46,12 +46,9 @@ const News: React.VFC<Props> = ({ news }) => {
             <div className={styles.title}>
               {item.frontmatter.title}
             </div>
-            <div
-              className={styles.body}
-              dangerouslySetInnerHTML={{
-                __html: marked(item.content),
-              }}
-            />
+            <div className={styles.body}>
+              <p>{item.content}</p>
+            </div>
             <div className={styles.controller}>
               <ArrowLinkNormal
                 text={'More'}
