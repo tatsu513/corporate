@@ -1,16 +1,17 @@
 ---
-title: 'ああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ'
-date: '2021-08-26'
-excerpt: 'this is excerpt text'
-coverImage: '/images/sample.png'
-categories: ['graphic']
+title: 'ブログサイト「久賀島Life」'
+date: '2021-10-14'
+excerpt: '編集長：斉藤俊幸様'
+coverImage: '/images/hisakajima-life_sumbnail.png'
+categories: ['web', 'logo']
 ---
 
-<link href="https://raw.github.com/kottkrig/Markdown-CSS/master/markdown.css" rel="stylesheet"></link>
+・クライアント名：[久賀島Life編集長：斉藤俊幸様](https://hisakajima.life)  
+・担当領域：サイトディレクション・デザイン・WordPressカスタマイズ・ロゴデザイン  
 
-## Headding 2
+地域再生をライフワークとする方から、縁あった久賀島に、関心を寄せてもらえる様、島の人々や旅をした人が投稿できるブログサイトを開設したいとの依頼。  
+限界集落であり、古い歴史息づく久賀島に心して来て貰うため、短編小説の様に、記事を上から順に読んで貰えるよう、敢えて記事検索を目立たない作りにしている。  
+サイトは、息を飲む美しさのある島を表現できる、シンプルで品あるデザインとした。  
+ロゴは、「久賀島Lifeは旅の書置き帖」というコンセプトから、人が書いた様な文字を取り入れた。
 
-- Item 1
-- Item 2
-
-Hello World! **bold text**.
+![全体画像](/images/hisakajima-life.png)

@@ -1,23 +1,22 @@
 ---
-title: 'コーポレートサイト'
+title: ' 市議会議員サイトリニューアル'
 date: '2021-10-14'
-excerpt: '株式会社キャリアライブ'
-coverImage: '/images/careerlive_sumbnail.jpg'
-categories: ['web']
+excerpt: '流山市議会議員 近藤みほ様'
+coverImage: '/images/koudou_sumbnail.png'
+categories: ['graphic', 'illust']
 ---
 
-・クライアント名：[株式会社キャリアライブ](https://www.careerlive.co.jp)  
-・担当領域：デザイン・Wixでの制作  
-・その他メンバ：Webディレクション１名 
+・クライアント名：[流山市議会議員 近藤みほ様](https://mihokondoh.net)  
+・担当領域：デザイン・イラスト   
+・その他メンバ：Webディレクション１名／WordPress構築・カスタマイズ１名／カメラマン１名
 
-キャリアカウンセリング事業を主とするスタートアップ企業様の新規サイト制作。  
-ロゴの丸と四角を基調にしたデザイン。  
-男女ともに顧客ターゲットであり、また企業研修等も担当されているので、フェミニン過ぎず、知的でスマートな印象を大切にした。
+ご自身で開設したブログを、選挙を機に Web サイトとしてリニューアルしたいとのご依頼。  
+イメージカラーのオレンジをベースに、骨太の活動をされる近藤さんの信頼感と、街の明るい未来を想像させるワクワク感をミックスしたデザイン。  
 
-![top画像](/images/careerlive_top.jpg)
+![top画像](/images/koudou_top.png)
 
-![ビジョン画像](/images/careerlive_about.png)
+![ミッション画像](/images/koudou_mission.png)
 
-![フロー画像](/images/careerlive_flow.png)
+![記事カテゴリ画像](/images/kondou_categoly.png)
 
-![プロフィール画像](/images/careerlive_profile.png)
+![メッセージ画像](/images/kondou_message.png)
