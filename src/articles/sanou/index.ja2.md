@@ -6,7 +6,6 @@ coverImage: '/images/careerlive_sumbnail.jpg'
 categories: ['web']
 ---
 
-#### コーポレートサイト作成
 ・クライアント名：[株式会社キャリアライブ](https://www.careerlive.co.jp)  
 ・担当領域：デザイン・Wixでの制作  
 ・その他メンバ：Webディレクション１名 
@@ -15,10 +14,10 @@ categories: ['web']
 ロゴの丸と四角を基調にしたデザイン。  
 男女ともに顧客ターゲットであり、また企業研修等も担当されているので、フェミニン過ぎず、知的でスマートな印象を大切にした。
 
-![サンプル画像](/images/careerlive_top.png)
+![top画像](/images/careerlive_top.jpg)
 
-![サンプル画像](/images/careerlive_about.png)
+![ビジョン画像](/images/careerlive_about.png)
 
-![サンプル画像](/images/careerlive_flow.png)
+![フロー画像](/images/careerlive_flow.png)
 
-![サンプル画像](/images/careerlive_profile.png)
+![プロフィール画像](/images/careerlive_profile.png)
