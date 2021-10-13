@@ -2,6 +2,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import matter from 'gray-matter';
 import marked from 'marked';
+import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import Breadcrumb from '@/components/Breadcrumb';
 import Contact from '@/components/Contact';
@@ -21,12 +22,13 @@ const NewsPage: React.VFC<MarkdownFileData> = (props) => {
 
   return (
     <>
+      <Head>
+        <title>{props.frontmatter.title}</title>
+      </Head>
       <Breadcrumb items={breadcrumbList} />
       <section className={`${styles.newsWrap} a-nbu`}>
         <div className={styles.date}>{props.frontmatter.date}</div>
-        <div className={styles.title}>
-          {props.frontmatter.title}
-        </div>
+        <div className={styles.title}>{props.frontmatter.title}</div>
         <div
           className={styles.body}
           dangerouslySetInnerHTML={{

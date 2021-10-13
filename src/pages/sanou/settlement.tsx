@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import Breadcrumb from '@/components/Breadcrumb';
 import Contact from '@/components/Contact';
 import SectionTitle from '@/components/common/SectionTitle';
@@ -7,6 +8,9 @@ import styles from 'styles/modules/Settlement.module.scss';
 const Settlement: React.VFC = () => {
   return (
     <>
+      <Head>
+        <title>決算公告 - 株式会社聴くと描く</title>
+      </Head>
       <Breadcrumb items={settlementBreadcrumb} />
       <div className='top-title-box'>
         <SectionTitle title={'決算公告'} />

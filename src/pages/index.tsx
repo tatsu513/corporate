@@ -1,5 +1,6 @@
 import { GetStaticProps } from 'next';
 import { useRouter } from 'next/dist/client/router';
+import Head from 'next/head';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import leftImg from 'images/top_left.png';
@@ -52,6 +53,9 @@ export const Home: React.VFC = () => {
   }, []);
   return (
     <div className={styles.homeWrap}>
+      <Head>
+        <title>株式会社聴くと描く</title>
+      </Head>
       <div className={styles.mainContents}>
         <div className={styles.contentBottom}>
           <h1 className={styles.leadText}>
