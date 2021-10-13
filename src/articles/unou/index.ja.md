@@ -11,5 +11,5 @@ categories: ['client']
 
 ![イラスト画像](/images/kijicafe-pacage.png)
 
-![陳列時画像](/images/kijicafe-pacage-shop.png)
+![陳列時画像](/images/kijicafe-pacage-shop.png)  
 ↑写真撮影：KIJICAFE様
