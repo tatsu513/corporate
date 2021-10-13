@@ -95,7 +95,7 @@
   line-height: 1.5;
 }
 
-@supports (-webkit-line-clamp: 4) {
+@supports (-webkit-line-clamp: 2) {
   .worksText {
     display: -webkit-box;
     -webkit-line-clamp: 2;
