@@ -102,7 +102,13 @@ const Unou: React.VFC<Props> = ({ articles, news }) => {
           <section className='a-nbu'>
             <ul className={styles.itemWrap}>
               {news.map((item, i) => (
-                <li className={styles.item} key={i}>
+                <li
+                  className={styles.item}
+                  key={i}
+                  onClick={() =>
+                    router.push(`/unou/news/${item.slug}`)
+                  }
+                >
                   <span className={styles.date}>
                     {item.frontmatter.date.replace(/-/g, '.')}
                   </span>
