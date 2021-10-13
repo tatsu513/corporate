@@ -4,6 +4,7 @@ import matter from 'gray-matter';
 // import marked from 'marked';
 import { GetStaticProps } from 'next';
 import { useRouter } from 'next/dist/client/router';
+import Head from 'next/head';
 import Image from 'next/image';
 import {
   createRef,
@@ -123,6 +124,9 @@ const Sanou: React.VFC<Props> = ({ articles }) => {
 
   return (
     <>
+      <Head>
+        <title>左脳 - 株式会社聴くと描く</title>
+      </Head>
       <div className={styles.topImage} ref={homeRef}>
         <h1 className={styles.topCopy}>
           <span className={styles.topText1}>よく</span>

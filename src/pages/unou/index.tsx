@@ -4,6 +4,7 @@ import matter from 'gray-matter';
 // import marked from 'marked';
 import { GetStaticProps } from 'next';
 import { useRouter } from 'next/dist/client/router';
+import Head from 'next/head';
 import Image from 'next/image';
 import React, {
   createRef,
@@ -90,12 +91,9 @@ const Unou: React.VFC<Props> = ({ articles, news }) => {
 
   return (
     <>
-      {/* {articles.map((article, i) => (
-        <div className={styles.aaa} key={i}>
-          <h3>{article.frontmatter.title}</h3>
-          <div dangerouslySetInnerHTML={{ __html: marked(article.content) }} />
-        </div>
-      ))} */}
+      <Head>
+        <title>右脳 - 株式会社聴くと描く</title>
+      </Head>
       <div className={`${styles.topImage} a-nop`} ref={homeRef}>
         <Image src={topImage} alt={'トップイメージ'} />
       </div>
@@ -104,7 +102,13 @@ const Unou: React.VFC<Props> = ({ articles, news }) => {
           <section className='a-nbu'>
             <ul className={styles.itemWrap}>
               {news.map((item, i) => (
-                <li className={styles.item} key={i}>
+                <li
+                  className={styles.item}
+                  key={i}
+                  onClick={() =>
+                    router.push(`/unou/news/${item.slug}`)
+                  }
+                >
                   <span className={styles.date}>
                     {item.frontmatter.date.replace(/-/g, '.')}
                   </span>

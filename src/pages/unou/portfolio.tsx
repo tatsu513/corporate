@@ -3,6 +3,7 @@ import * as path from 'path';
 import matter from 'gray-matter';
 // import marked from 'marked';
 import { GetStaticProps } from 'next';
+import Head from 'next/head';
 import { useState } from 'react';
 import Breadcrumb from '@/components/Breadcrumb';
 import Menu from '@/components/Menu';
@@ -41,6 +42,9 @@ const IllustPortfolio: React.VFC<Props> = ({ articles }) => {
 
   return (
     <>
+      <Head>
+        <title>Portfolio - 右脳 - 株式会社聴くと描く</title>
+      </Head>
       <Breadcrumb items={portfolioBreadcrumb} />
       <SectionTitle title={'Portfolio'} />
       <section className={`${styles.workWrap} a-nbu`}>

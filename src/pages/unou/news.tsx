@@ -4,6 +4,7 @@ import matter from 'gray-matter';
 import marked from 'marked';
 import { GetStaticProps } from 'next';
 import { useRouter } from 'next/dist/client/router';
+import Head from 'next/head';
 import { useState } from 'react';
 import Breadcrumb from '@/components/Breadcrumb';
 import Contact from '@/components/Contact';
@@ -23,6 +24,9 @@ const News: React.VFC<Props> = ({ news }) => {
 
   return (
     <>
+      <Head>
+        <title>News - 株式会社聴くと描く</title>
+      </Head>
       <Breadcrumb items={newsBreadcrumb} />
       <div className='top-title-box'>
         <SectionTitle title={'News Archive'} />
