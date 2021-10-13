@@ -1,12 +1,12 @@
 ---
 title: 'イベントサイト「Code for japan summit 2019」'
 date: '2021-10-14'
-excerpt: 'Code for chiba 様'
+excerpt: '一般社団法人 コードフォージャパン 様'
 coverImage: '/images/codeForJapanSummit2019_sumbnail.png'
 categories: ['web' , 'logo']
 ---
 
-・クライアント名：Code for chiba 様
+・クライアント名：一般社団法人 コードフォージャパン 様
 ・サイト：[Code for japan summit 2019](https://summit2019.code4japan.org/)  
 ・担当領域：ロゴデザイン・サイトディレクション・サイトデザイン・フロントコーディング  
 
