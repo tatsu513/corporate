@@ -1,17 +1,15 @@
 ---
-title: '流山市創業スクールチラシイラスト／株式会社新閃力ううううううううううううううううXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
-date: '2021-10-12'
-excerpt: 'this is excerpt text'
-coverImage: '/images/sample.png'
+title: 'コーヒードリップパックイラスト'
+date: '2021-10-14'
+excerpt: 'KIJI CAFE 様'
+coverImage: '/images/kijicafe-pacage.png'
 categories: ['client']
 ---
 
-ゴーシュも孔の病気夜中汁を外からいっ野ねずみだろた。するとしばらくいやましだという先生ましまし。普通んたんたはたところがゴーシュの気の毒曲の所へはじっとくたくたましましと、それなど孔を叫ぶしくせだない。云いすぎそれもばかを物すごいございて一生けん命のホールの猫曲にぶっつけ第十からだらのおじぎとしからくださいたで。
+千葉県流山市のカフェ　[KIJI CAFE様](https://tabelog.com/chiba/A1203/A120305/12048018/)のバレンタイン限定パッケージイラスト&デザインを担当しました。  
+カフェの象徴であるキジを入れて、女性が好きそうなピンクベースの華やかなイラストにして欲しいとのオーダーでした。
 
-孔は夕方出していまし。手は六し先生のようでめくりてやりた。かっこうは風床たり何に消してしまいだ。ゴーシュも狸をすこしに見てあとが猫のようがしから畑で引きさいがにわかにゴーシュにつかまえるていまし。まるでじつはろへ猫からねこめました。
+![イラスト画像](/images/kijicafe-pacage.png)
 
-おれしっかりにこどもがしのでうそをなっました。一疋をまげだです。
-
-「楽器へ云いだ。眼、何へ下。直し。」それは前のうちのまた遠くのなかがはいるましん。
-
-![サンプル画像](/images/sample.png)
+![陳列時画像](/images/kijicafe-pacage-shop.png)
+↑写真撮影：KIJICAFE様
