@@ -1,7 +1,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import matter from 'gray-matter';
-// import marked from 'marked';
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import { useState } from 'react';
