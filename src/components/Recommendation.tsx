@@ -8,7 +8,7 @@ import styles from 'styles/modules/Recommendation.module.scss';
 const Recommendation = () => {
   const ctx = useContext(ContextData);
   const isSp = ctx.width < 600;
-  const IsUnderMd = ctx.width < 1024;
+  const IsUnderMd = ctx.width <= 1024;
 
   const [contentRef, inView] = useInView({
     rootMargin: '-150px 0px',
