@@ -11,7 +11,7 @@ interface Props {
 const PageSecondSection: React.VFC<Props> = ({ children }) => {
   const ctx = useContext(ContextData);
   const isSanou = ctx.isSanou;
-  const isMd = ctx.width < 1024;
+  const isMd = ctx.width <= 1024;
 
   const sectionTitleText = isSanou ? 'About' : 'News';
 
