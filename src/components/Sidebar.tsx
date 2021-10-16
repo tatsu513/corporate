@@ -59,7 +59,7 @@ const Sidebar: React.VFC<Props> = (props) => {
           <li className={styles.listItem}>
             <TextLink
               text={'Home'}
-              size={24}
+              size={20}
               color={'white'}
               onClick={() => onClickMenu('home')}
             />
@@ -69,7 +69,7 @@ const Sidebar: React.VFC<Props> = (props) => {
               <li className={styles.listItem}>
                 <TextLink
                   text={'About'}
-                  size={24}
+                  size={20}
                   color={'white'}
                   onClick={() => onClickMenu('about')}
                 />
@@ -77,7 +77,7 @@ const Sidebar: React.VFC<Props> = (props) => {
               <li className={styles.listItem}>
                 <TextLink
                   text={'Portfolio'}
-                  size={24}
+                  size={20}
                   color={'white'}
                   onClick={() => onClickMenu('portfolio')}
                 />
@@ -85,7 +85,7 @@ const Sidebar: React.VFC<Props> = (props) => {
               <li className={styles.listItem}>
                 <TextLink
                   text={'GoodPoint'}
-                  size={24}
+                  size={20}
                   color={'white'}
                   onClick={() => onClickMenu('goodPoint')}
                 />
@@ -93,7 +93,7 @@ const Sidebar: React.VFC<Props> = (props) => {
               <li className={styles.listItem}>
                 <TextLink
                   text={'Flow & Price'}
-                  size={24}
+                  size={20}
                   color={'white'}
                   onClick={() => onClickMenu('flowPrice')}
                 />
@@ -101,7 +101,7 @@ const Sidebar: React.VFC<Props> = (props) => {
               <li className={styles.listItem}>
                 <TextLink
                   text={'Recommendation'}
-                  size={24}
+                  size={20}
                   color={'white'}
                   onClick={() => onClickMenu('recommendation')}
                 />
@@ -113,7 +113,7 @@ const Sidebar: React.VFC<Props> = (props) => {
               <li className={styles.listItem}>
                 <TextLink
                   text={'News'}
-                  size={24}
+                  size={20}
                   color={'white'}
                   onClick={() => onClickMenu('news')}
                 />
@@ -121,7 +121,7 @@ const Sidebar: React.VFC<Props> = (props) => {
               <li className={styles.listItem}>
                 <TextLink
                   text={'Portfolio'}
-                  size={24}
+                  size={20}
                   color={'white'}
                   onClick={() => onClickMenu('portfolio')}
                 />
@@ -131,7 +131,7 @@ const Sidebar: React.VFC<Props> = (props) => {
           <li className={styles.listItem}>
             <TextLink
               text={'Profile'}
-              size={24}
+              size={20}
               color={'white'}
               onClick={() => onClickMenu('profile')}
             />
@@ -139,7 +139,7 @@ const Sidebar: React.VFC<Props> = (props) => {
           <li className={styles.listItem}>
             <TextLink
               text={'Contact'}
-              size={24}
+              size={20}
               color={'white'}
               onClick={() => onClickMenu('contact')}
             />
