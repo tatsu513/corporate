@@ -28,6 +28,9 @@
   letter-spacing: 1em;
   text-align: center;
   writing-mode: vertical-rl;
+  -webkit-transform: translateZ(0);
+  -webkit-perspective: 1000;
+  -webkit-backface-visibility: hidden;
 }
 
 .topText1 {
