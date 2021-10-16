@@ -3,10 +3,10 @@
 @import '../_mixin';
 
 .sidebarWrap {
-  width: 322px;
+  width: 340px;
   position: fixed;
   top: 0;
-  right: -322px;
+  right: -340px;
   bottom: 0;
   left: auto;
   background-color: rgba($black, 0.9);
@@ -92,7 +92,7 @@
   }
 
   .listItem {
-    margin-bottom: 24px;
+    margin-bottom: 20px;
     padding: 16px 0;
     cursor: pointer;
     font-weight: 300;
