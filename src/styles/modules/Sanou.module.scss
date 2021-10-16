@@ -6,6 +6,8 @@
 .topImage {
   height: calc(100vh - 74px);
   overflow: hidden;
+  -webkit-backface-visibility:hidden;
+  backface-visibility:hidden;
 
   @include mq(md) {
     height: 700px;
