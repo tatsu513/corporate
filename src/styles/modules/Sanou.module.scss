@@ -6,8 +6,10 @@
 .topImage {
   height: calc(100vh - 74px);
   overflow: hidden;
-  -webkit-backface-visibility:hidden;
-  backface-visibility:hidden;
+
+  &.topImageBox, .topText1, .topText2, .topText3, .topText4{
+    will-change: transform, animation;
+  }
 
   @include mq(md) {
     height: 700px;
