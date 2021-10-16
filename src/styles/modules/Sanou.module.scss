@@ -6,10 +6,9 @@
 .topImage {
   height: calc(100vh - 74px);
   overflow: hidden;
-
-  &.topImageBox, .topText1, .topText2, .topText3, .topText4{
-    will-change: transform, animation;
-  }
+  -webkit-transform: translateZ(0);
+  -webkit-perspective: 1000;
+  -webkit-backface-visibility: hidden;
 
   @include mq(md) {
     height: 700px;
@@ -38,6 +37,9 @@
   animation-delay: 3.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+  -webkit-transform: translateZ(0);
+  -webkit-perspective: 1000;
+  -webkit-backface-visibility: hidden;
 }
 
 .topText2 {
@@ -47,6 +49,9 @@
   animation-delay: 4.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+  -webkit-transform: translateZ(0);
+  -webkit-perspective: 1000;
+  -webkit-backface-visibility: hidden;
 }
 
 .topText3 {
@@ -56,6 +61,9 @@
   animation-delay: 5.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+  -webkit-transform: translateZ(0);
+  -webkit-perspective: 1000;
+  -webkit-backface-visibility: hidden;
 }
 
 .topText4 {
@@ -65,6 +73,9 @@
   animation-delay: 6.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+  -webkit-transform: translateZ(0);
+  -webkit-perspective: 1000;
+  -webkit-backface-visibility: hidden;
 }
 
 .topImageBox {
@@ -77,6 +88,9 @@
   animation-duration: 3s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+  -webkit-transform: translateZ(0);
+  -webkit-perspective: 1000;
+  -webkit-backface-visibility: hidden;
 
   @include mq(sm) {
     transform: translate(-40%, 0) scale(3.5);
