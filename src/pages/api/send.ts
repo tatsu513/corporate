@@ -11,7 +11,7 @@ export default async function (
 
   const msg = {
     to: email,
-    bcc: ['contact@kiku-to-kaku.com', 'a7kitchen@gmail.com'],
+    bcc: 'contact@kiku-to-kaku.com',
     from: 'no-reply@kiku-to-kaku.com',
     subject:
       '【株式会社聴くと描く - 小久保】お問い合わせありがとうございます',
