@@ -60,6 +60,14 @@ const Header: React.VFC = () => {
     }
   };
 
+  const goOtherPage = () => {
+    ctx.setContextDate((prevState) => ({
+      ...prevState,
+      target: '',
+    }));
+    router.push('/sanou');
+  };
+
   useEffect(() => {
     if ((ctx.width <= 1024 && ctx.isUnou) || ctx.isSanou) {
       setIsShowMiniMenu(true);
@@ -114,7 +122,7 @@ const Header: React.VFC = () => {
             <div className={styles.goAnotherPageLink}>
               <ArrowLink
                 text={'左脳 - Design'}
-                onClick={() => router.push('/sanou')}
+                onClick={goOtherPage}
               />
             </div>
           </div>

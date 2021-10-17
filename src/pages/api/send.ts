@@ -9,8 +9,6 @@ export default async function (
 
   const { email, name, title, message } = req.body;
 
-  console.log(email, name, title, message);
-
   const msg = {
     to: email,
     bcc: ['contact@kiku-to-kaku.com', 'a7kitchen@gmail.com'],

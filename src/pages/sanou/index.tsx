@@ -114,6 +114,7 @@ const Sanou: React.VFC<Props> = ({ articles }) => {
     const targetSamePage = ctx.target;
     if (!targetQuery && targetSamePage === '') return;
     const moveInPage = targetSamePage !== '';
+
     if (moveInPage) {
       swichTarget(targetSamePage);
     } else {
