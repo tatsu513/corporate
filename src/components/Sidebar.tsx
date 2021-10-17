@@ -39,9 +39,16 @@ const Sidebar: React.VFC<Props> = (props) => {
     }
   };
 
-  const arrowLink = () => {
-    return ctx.isSanou ? '/unou' : '/sanou';
+  const goOtherPage = () => {
+    const link = ctx.isSanou ? '/unou' : '/sanou';
+    ctx.setContextDate((prevState) => ({
+      ...prevState,
+      target: '',
+    }));
+    router.push(link);
+    props.close();
   };
+
   return (
     <div
       className={`${styles.sidebarWrap} ${
@@ -168,10 +175,7 @@ const Sidebar: React.VFC<Props> = (props) => {
               }
               size={18}
               isWhite={true}
-              onClick={() => {
-                router.push(arrowLink());
-                props.close();
-              }}
+              onClick={goOtherPage}
             />
           </li>
         </ul>

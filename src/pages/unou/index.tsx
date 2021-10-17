@@ -185,8 +185,6 @@ export const getStaticProps: GetStaticProps = async () => {
     }
   });
 
-  console.log(orderedNews);
-
   const orderedArticles = articles.sort((a, b) => {
     if (a.frontmatter.date > b.frontmatter.date) {
       return -1;
