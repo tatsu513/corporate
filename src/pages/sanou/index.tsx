@@ -125,7 +125,14 @@ const Sanou: React.VFC<Props> = ({ articles }) => {
   return (
     <>
       <Head>
-        <title>左脳 - 株式会社聴くと描く</title>
+        <title>
+          株式会社聴くと描く | 株式会社聴くと描く |
+          流山市のデザイン会社・イラストレーター
+        </title>
+        <meta
+          property='description'
+          content='デザインに関わること、全部できます。相手の話や自分の内なる声に耳を傾ける、徹底的な「聴く」姿勢。聴いた事を咀嚼し、夢ある具体物へと「描く」力。この２つを両輪に、ワンストップで実現のお手伝いをします。'
+        />
       </Head>
       <div className={styles.topImage} ref={homeRef}>
         <h1 className={styles.topCopy}>
