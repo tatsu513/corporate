@@ -149,7 +149,7 @@ const SanouProfile = () => {
               </dl>
               <dt className={styles.label}>営業時間</dt>
               <dl className={styles.body}>
-                9:30~18:30（土日祝除く）
+                10:00~18:00（土日祝除く）
               </dl>
               <dt className={styles.label}>お問合せ</dt>
               <dl className={styles.body}>
