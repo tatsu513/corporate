@@ -13,10 +13,10 @@ categories: ['web', 'graphic']
 インスタのハッシュタグを利用して気軽に応募できるスマホ限定写真コンテストキャンペーンの、クリエイティブ全般を担った。  
 流山市のイメージカラーである緑と、明るい黄色を基調とし、本キャンペーンのコンセプト「手軽に応募できる」を表現する為、親しみやすく、明るく楽しいデザインを目指した。  
 
-<img src="/images/ntd_web01.png" width=60%>
+<img src="/images/ntd_web01.png" width=60%><br><br>
 
-<img src="/images/ntd_web02.png" width=60%>
+<img src="/images/ntd_web02.png" width=60%><br><br>
 
-<img src="/images/ntd_graphic01.png" width=60%>
+<img src="/images/ntd_graphic01.png" width=60%><br><br>
 
-<img src="/images/nntd_graphic02.png" width=60%>
+<img src="/images/ntd_graphic02.png" width=60%><br><br>
