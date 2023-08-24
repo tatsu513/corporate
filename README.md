@@ -32,3 +32,16 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Node のバージョン管理
+
+バージョンの管理は[VOLTA](https://volta.sh/)を使用しており、バージョンはプロジェクト直下の`package.json`に記載されています。
+バージョンを変更したい場合は PC 上(ターミナルなど)で以下を実施してください。
+
+- `cd`コマンドでプロジェクトへ移動
+- `volta pin node@(version)` を実行
+- package.json 内の`volta`が更新されていることを確認
+- 必要であれば vercel にて node のバージョンを指定
+
+※ VOLTA がインストールされていない場合は先にインストールしてください
+https://docs.volta.sh/guide/getting-started
