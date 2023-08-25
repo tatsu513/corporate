@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "set NODE_OPTIONS=--openssl-legacy-provider && next build && next-sitemap --config sitemap.config.js",
+    "build": "next build && next-sitemap --config sitemap.config.js",
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json,css}'"
@@ -38,6 +38,6 @@
     "printWidth": 70
   },
   "volta": {
-    "node": "18.17.1"
+    "node": "16.20.2"
   }
 }
