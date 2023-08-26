@@ -145,25 +145,27 @@ const SanouProfile = () => {
               <dl className={styles.body}>小久保 明美</dl>
               <dt className={styles.label}>所在地</dt>
               <dl className={styles.body}>
-                〒270-0163 千葉県流山市南流山3-6-7 Trist Airport
+                〒270-0157 千葉県流山市平和台３丁目４番１１
               </dl>
               <dt className={styles.label}>営業時間</dt>
               <dl className={styles.body}>
-                9:30~18:30（土日祝除く）
+                10:00~18:00（土日祝除く）
               </dl>
               <dt className={styles.label}>お問合せ</dt>
               <dl className={styles.body}>
                 下記 Contact formからお願いします
               </dl>
             </dl>
-            <div className={styles.settlement}>
-              <TextLink
-                color={'white'}
-                text={'決算公告 →'}
-                size={14}
-                onClick={() => router.push('sanou/settlement')}
-              />
-            </div>
+            {/*
+              <div className={styles.settlement}>
+                <TextLink
+                  color={'white'}
+                  text={'決算公告 →'}
+                  size={14}
+                  onClick={() => router.push('sanou/settlement')}
+                />
+              </div>
+            */}
           </div>
         </div>
       </div>

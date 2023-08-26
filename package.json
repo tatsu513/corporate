@@ -36,5 +36,8 @@
     "singleQuote": true,
     "jsxSingleQuote": true,
     "printWidth": 70
+  },
+  "volta": {
+    "node": "16.20.2"
   }
 }

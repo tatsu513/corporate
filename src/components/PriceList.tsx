@@ -18,6 +18,9 @@ const PriceList: React.VFC = () => {
       <p className={styles.priceText}>
         ご依頼内容により料金は変動します。目安としてご覧ください。
       </p>
+      <p className={styles.contentItemNotes}>
+        ※2022/2/1〜 最低料金を一部値上げしています。なお、限られたご予算でも、提案数を抑える等で以下の金額より抑えられる可能性もあります。一度ご相談ください。
+      </p>
       <div className={styles.priceBox}>
         {/* ウェブ */}
         <div className={styles.priceContents}>
@@ -31,7 +34,7 @@ const PriceList: React.VFC = () => {
                 - コーポレートサイト（数ページ）＋ブログ
               </div>
               <div className={styles.contentItemPrice}>
-                ¥200,000 + 税 〜
+                ¥320,000 + 税 〜
               </div>
             </li>
             <li className={styles.contentItem}>
@@ -39,7 +42,7 @@ const PriceList: React.VFC = () => {
                 LP（下層ページの無い、1ページだけのサイト）
               </h4>
               <div className={styles.contentItemPrice}>
-                ¥150,000 + 税 〜
+                ¥220,000 + 税 〜
               </div>
             </li>
             <li className={styles.contentItem}>
@@ -47,7 +50,7 @@ const PriceList: React.VFC = () => {
                 完全オリジナルデザイン（独自CMS／WordPress）
               </h4>
               <div className={styles.contentItemPrice}>
-                ¥300,000 + 税 〜
+                ¥430,000 + 税 〜
               </div>
             </li>
           </ul>
@@ -82,6 +85,14 @@ const PriceList: React.VFC = () => {
               </h4>
               <div className={styles.contentItemPrice}>
                 ¥300,000 + 税 〜
+              </div>
+            </li>
+            <li className={styles.contentItem}>
+              <h4 className={styles.contentItemTitle}>
+                VI（ロゴのみ）
+              </h4>
+              <div className={styles.contentItemPrice}>
+                ¥120,000 + 税 〜
               </div>
             </li>
           </ul>
