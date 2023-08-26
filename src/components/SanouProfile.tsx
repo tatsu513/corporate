@@ -1,17 +1,14 @@
-import { useRouter } from 'next/dist/client/router';
 import { useContext } from 'react';
 import { useInView } from 'react-intersection-observer';
 import Icon from './common/Icon';
 import SectionTitle from './common/SectionTitle';
 import SectionTitleVertical from './common/SectionTitleVertical';
-import TextLink from './common/TextLink';
 import facebookIcon from 'images/facebook.svg';
 import instaIcon from 'images/instagram.svg';
 import { ContextData } from 'pages/BaseProvider';
 import styles from 'styles/modules/SanouProfile.module.scss';
 
 const SanouProfile = () => {
-  const router = useRouter();
   const ctx = useContext(ContextData);
   const isMd = ctx.width <= 1024;
 
