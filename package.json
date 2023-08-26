@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next-sitemap --config sitemap.config.js",
-    "start": "next start",
+    "build": "export NODE_OPTIONS=--openssl-legacy-provider && next build && next-sitemap --config sitemap.config.js",
+    "start": "export NODE_OPTIONS=--openssl-legacy-provider && next start",
     "lint": "next lint",
     "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json,css}'"
   },
