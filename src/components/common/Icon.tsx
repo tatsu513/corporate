@@ -1,6 +1,5 @@
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import styles from 'styles/modules/Icon.module.scss';
-
 interface Props {
   alt: string;
   icon: string | StaticImageData;
@@ -13,7 +12,7 @@ interface Props {
   marginLeft?: number;
 }
 
-const Icon: React.VFC<Props> = (props) => {
+const Icon: React.FC<Props> = (props) => {
   return (
     <a
       className={`${styles.iconBox} ${props.href && styles.linkIcon}`}
