@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import matter from 'gray-matter';
-import marked from 'marked';
+import { marked } from 'marked';
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import Breadcrumb from '@/components/Breadcrumb';
