@@ -61,7 +61,7 @@ const IllustPortfolio: React.VFC<Props> = ({ articles }) => {
         />
       </section>
       <section className={`${styles.works} a-nbu`}>
-        <PortfolioList items={works} isPage={true} />
+        <PortfolioList items={works} isPage />
         <p className={styles.note}>
           ※
           公開している事例はごく一部です。より詳しい事例は直接お問い合わせください。
