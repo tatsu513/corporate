@@ -8,10 +8,8 @@ import Breadcrumb from '@/components/Breadcrumb';
 import Menu from '@/components/Menu';
 import PortfolioList from '@/components/PortfolioList';
 import SectionTitle from '@/components/common/SectionTitle';
-import {
-  sanouPortfolioBreadcrumb,
-  sanouPortfolioCategories,
-} from 'domains/sanou';
+import { sanouPortfolioBreadcrumb } from 'constants/sanouPortfolioBreadcrumb';
+import { sanouPortfolioCategories } from 'constants/sanouPortfolioCategories';
 import { MarkdownFileData } from 'models/';
 import styles from 'styles/modules/Illusts.module.scss';
 

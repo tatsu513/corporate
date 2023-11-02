@@ -8,8 +8,8 @@ import Breadcrumb from '@/components/Breadcrumb';
 import Menu from '@/components/Menu';
 import PortfolioList from '@/components/PortfolioList';
 import SectionTitle from '@/components/common/SectionTitle';
-import { unouPortfolioCategories } from 'domains/unou';
-import { portfolioBreadcrumb } from 'domains/unou';
+import { portfolioBreadcrumb } from 'constants/portfolioBreadcrumb';
+import { unouPortfolioCategories } from 'constants/unouPortfolioCategories';
 import { MarkdownFileData } from 'models/';
 import styles from 'styles/modules/Illusts.module.scss';
 
@@ -17,7 +17,7 @@ interface Props {
   articles: MarkdownFileData[];
 }
 
-const IllustPortfolio: React.VFC<Props> = ({ articles }) => {
+const IllustPortfolio: React.FC<Props> = ({ articles }) => {
   const [works, setWorks] = useState(articles);
   const [selectedItem, setSelectedItem] = useState('all');
 

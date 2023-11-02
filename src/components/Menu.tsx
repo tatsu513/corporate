@@ -4,7 +4,7 @@ import styles from 'styles/modules/Menu.module.scss';
 
 interface Props {
   selectedItem: string;
-  items: WorkCategories[];
+  items: Readonly<WorkCategories[]>;
   onClick: (category: string) => void; // eslint-disable-line
 }
 
