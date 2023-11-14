@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 import Breadcrumb from '@/components/Breadcrumb';
 import Contact from '@/components/Contact';
 import Categories from '@/components/common/Categories';
-import { portfolioBreadcrumb } from 'domains/unou';
+import { portfolioBreadcrumb } from 'constants/portfolioBreadcrumb';
 import { MarkdownFileData } from 'models/';
 import styles from 'styles/modules/PortfolioPage.module.scss';
 
