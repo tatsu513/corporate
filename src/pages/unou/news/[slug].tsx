@@ -6,7 +6,7 @@ import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import Breadcrumb from '@/components/Breadcrumb';
 import Contact from '@/components/Contact';
-import { newsBreadcrumb } from 'domains/unou';
+import { newsBreadcrumb } from 'constants/newsBreadcrumb';
 import { MarkdownFileData } from 'models/';
 import styles from 'styles/modules/NewsPage.module.scss';
 
