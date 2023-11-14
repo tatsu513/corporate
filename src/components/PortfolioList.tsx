@@ -3,10 +3,10 @@ import Image from 'next/image';
 import { useContext, useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import Categories from './common/Categories';
-import { isBelowMd } from 'logics/isMatchTargetDevice';
 import { MarkdownFileData } from 'models/';
 import { ContextData } from 'pages/BaseProvider';
 import styles from 'styles/modules/PortfolioList.module.scss';
+import { isBelowMd } from 'logics/isMatchTargetDevice';
 
 interface Props {
   items: MarkdownFileData[];
