@@ -19,6 +19,10 @@
     background-color: $grey-main;
     color: $white;
 
+    @include mq(sm) {
+      padding: 16px;
+    }
+
     @include mq(lg) {
       display: flex;
       padding: 0 24px 40px 40px;
@@ -26,7 +30,7 @@
   }
 
   @include mq(sm) {
-    padding: 16px;
+    padding: 32px;
   }
 
   @include mq(lg) {
