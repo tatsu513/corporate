@@ -11,7 +11,7 @@ import rightImg from 'images/top_right.png';
 import rightMdImg from 'images/top_right_md.png';
 import styles from 'styles/modules/Home.module.scss';
 
-export const Home: React.VFC = () => {
+export const Home: React.FC = () => {
   const router = useRouter();
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
