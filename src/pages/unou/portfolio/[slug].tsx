@@ -11,7 +11,7 @@ import { portfolioBreadcrumb } from 'constants/portfolioBreadcrumb';
 import { MarkdownFileData } from 'models/';
 import styles from 'styles/modules/PortfolioPage.module.scss';
 
-const PortfolioPage: React.VFC<MarkdownFileData> = (props) => {
+const PortfolioPage: React.FC<MarkdownFileData> = (props) => {
   const [breadcrumbList, setBreadcrumbList] = useState(
     portfolioBreadcrumb,
   );

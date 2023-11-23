@@ -9,7 +9,7 @@ interface Props {
   children: ReactNode;
 }
 
-const PageSecondSection: React.VFC<Props> = ({ children }) => {
+const PageSecondSection: React.FC<Props> = ({ children }) => {
   const ctx = useContext(ContextData);
   const isSanou = ctx.isSanou;
   const isMd = isBelowMd(ctx.width);

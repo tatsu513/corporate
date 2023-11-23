@@ -17,7 +17,7 @@ interface Props {
   news: MarkdownFileData[];
 }
 
-const News: React.VFC<Props> = ({ news }) => {
+const News: React.FC<Props> = ({ news }) => {
   const router = useRouter();
   const [hoveredItem, setIsHoverdItem] = useState(-1);
 
