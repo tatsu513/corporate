@@ -10,7 +10,7 @@ import { newsBreadcrumb } from 'constants/newsBreadcrumb';
 import { MarkdownFileData } from 'models/';
 import styles from 'styles/modules/NewsPage.module.scss';
 
-const NewsPage: React.VFC<MarkdownFileData> = (props) => {
+const NewsPage: React.FC<MarkdownFileData> = (props) => {
   const [breadcrumbList, setBreadcrumbList] =
     useState(newsBreadcrumb);
 
