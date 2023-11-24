@@ -9,14 +9,17 @@ import mainImg from 'images/top_main.png';
 import mainImg2 from 'images/top_main2.png';
 import rightImg from 'images/top_right.png';
 import rightMdImg from 'images/top_right_md.png';
+import isMatchTargetDevice from 'logics/isMatchTargetDevice';
 import styles from 'styles/modules/Home.module.scss';
 
-export const Home: React.VFC = () => {
+export const Home: React.FC = () => {
   const router = useRouter();
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
+  const isPc = isMatchTargetDevice(windowWidth, 'LG');
+
   const LeftImage = () => {
-    if (windowWidth > 1024) {
+    if (isPc) {
       return (
         <div className={styles.leftImageBox}>
           <Image src={leftImg} alt='右脳イラスト' />
@@ -31,7 +34,7 @@ export const Home: React.VFC = () => {
     }
   };
   const RightImage = () => {
-    if (windowWidth > 1024) {
+    if (isPc) {
       return (
         <div className={styles.rightImageBox}>
           <Image src={rightImg} alt='左脳イラスト' />

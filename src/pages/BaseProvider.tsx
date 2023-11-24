@@ -7,8 +7,6 @@ import {
   useEffect,
   useState,
 } from 'react';
-import Header from '@/components/Header';
-import PageTopLink from '@/components/common/PageTopLink';
 
 interface Props {
   children: ReactNode;
@@ -66,9 +64,7 @@ const BaseProvider: React.FC<Props> = ({ children }) => {
 
   return (
     <ContextData.Provider value={{ ...ctxData, setContextDate }}>
-      <Header />
       {children}
-      <PageTopLink text={'Page Top'} onClick={() => alert('top')} />
     </ContextData.Provider>
   );
 };
