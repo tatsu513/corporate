@@ -82,8 +82,8 @@ export const getStaticProps: GetStaticProps = async () => {
     const { data: frontmatter, content } = matter(markdownWithMeta);
     return { slug, frontmatter, content };
   });
-
-  return { props: { articles } };
+  const sortedAirticles = articles.sort((a, b) => a.frontmatter.date > b.frontmatter.date ? -1 : 1);
+  return { props: { articles: sortedAirticles } };
 };
 
 export default IllustPortfolio;
