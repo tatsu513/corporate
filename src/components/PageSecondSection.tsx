@@ -1,18 +1,20 @@
-import { ReactNode, useContext } from 'react';
+import { ReactNode } from 'react';
 import { useInView } from 'react-intersection-observer';
 import SectionTitle from './common/SectionTitle';
 import SectionTitleVertical from './common/SectionTitleVertical';
-import { isBelowMd } from 'logics/isMatchTargetDevice';
-import { ContextData } from 'pages/BaseProvider';
+import useMediaQuery, { mediaQuery } from 'hooks/useMediaQuery';
+import useSanouOrUnou from 'hooks/useSanouOrUnou';
 import styles from 'styles/modules/PageSecondSection.module.scss';
 interface Props {
   children: ReactNode;
 }
 
 const PageSecondSection: React.FC<Props> = ({ children }) => {
-  const ctx = useContext(ContextData);
-  const isSanou = ctx.isSanou;
-  const isMd = isBelowMd(ctx.width);
+  const pagename = useSanouOrUnou();
+  const isSanou = pagename === 'sanou';
+  const isSm = useMediaQuery(mediaQuery.sm);
+  const isMd = useMediaQuery(mediaQuery.mb);
+  const isBelowMd = isSm || isMd;
 
   const sectionTitleText = isSanou ? 'About' : 'News';
 
@@ -24,7 +26,7 @@ const PageSecondSection: React.FC<Props> = ({ children }) => {
     <>
       <div className={styles.contentWrap}>
         <div className={styles.sectionTitleBox}>
-          {isMd ? (
+          {isBelowMd ? (
             <SectionTitle title={sectionTitleText} side={'left'} />
           ) : (
             <SectionTitleVertical

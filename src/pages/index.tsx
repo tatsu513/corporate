@@ -3,20 +3,20 @@ import { useRouter } from 'next/dist/client/router';
 import Head from 'next/head';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import useMediaQuery, { mediaQuery } from 'hooks/useMediaQuery';
 import leftImg from 'images/top_left.png';
 import leftMdImg from 'images/top_left_md.png';
 import mainImg from 'images/top_main.png';
 import mainImg2 from 'images/top_main2.png';
 import rightImg from 'images/top_right.png';
 import rightMdImg from 'images/top_right_md.png';
-import isMatchTargetDevice from 'logics/isMatchTargetDevice';
 import styles from 'styles/modules/Home.module.scss';
 
 export const Home: React.FC = () => {
   const router = useRouter();
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-  const isPc = isMatchTargetDevice(windowWidth, 'LG');
+  const isPc = useMediaQuery(mediaQuery.lg);
 
   const LeftImage = () => {
     if (isPc) {

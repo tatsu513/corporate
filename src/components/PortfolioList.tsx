@@ -3,7 +3,8 @@ import Image from 'next/image';
 import { useContext, useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import Categories from './common/Categories';
-import { isBelowMd } from 'logics/isMatchTargetDevice';
+import useMediaQuery, { mediaQuery } from 'hooks/useMediaQuery';
+import useSanouOrUnou from 'hooks/useSanouOrUnou';
 import { MarkdownFileData } from 'models/';
 import { ContextData } from 'pages/BaseProvider';
 import styles from 'styles/modules/PortfolioList.module.scss';
@@ -15,11 +16,16 @@ interface Props {
 
 const PortfolioList: React.FC<Props> = ({ items, isPage }) => {
   const router = useRouter();
+  const pagename = useSanouOrUnou();
   const ctx = useContext(ContextData);
   const [isMin, setIsMin] = useState(false);
   const [maxLength, setMaxLength] = useState(0);
 
-  const portfolioPath = ctx.isSanou
+  const isSm = useMediaQuery(mediaQuery.sm);
+  const isMd = useMediaQuery(mediaQuery.mb);
+  const isBelowMd = isSm || isMd;
+
+  const portfolioPath = pagename === 'sanou'
     ? '/sanou/portfolio'
     : '/unou/portfolio';
 
@@ -29,22 +35,22 @@ const PortfolioList: React.FC<Props> = ({ items, isPage }) => {
   });
 
   useEffect(() => {
-    if (isBelowMd(ctx.width)) {
+    if (isBelowMd) {
       const sectionWidth = ctx.width * 0.9;
       const workBoxWidth = sectionWidth * 0.46;
       setIsMin(workBoxWidth <= 300);
     } else {
       setIsMin(false);
     }
-  }, [ctx.width]);
+  }, [isBelowMd, ctx.width]);
 
   useEffect(() => {
     if (isPage) {
       setMaxLength(items.length);
       return;
     }
-    !isBelowMd(ctx.width) ? setMaxLength(9) : setMaxLength(6);
-  }, [isPage, items.length, ctx.width]);
+    !isBelowMd ? setMaxLength(9) : setMaxLength(6);
+  }, [isPage, items.length, isBelowMd]);
 
   useEffect(() => {
     if (isPage) {

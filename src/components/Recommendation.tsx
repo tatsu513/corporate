@@ -1,15 +1,13 @@
 import Link from 'next/link';
-import { useContext } from 'react';
 import { useInView } from 'react-intersection-observer';
 import SectionTitle from './common/SectionTitle';
-import { isBelowMd, isBelowSm } from 'logics/isMatchTargetDevice';
-import { ContextData } from 'pages/BaseProvider';
+import useMediaQuery, { mediaQuery } from 'hooks/useMediaQuery';
 import styles from 'styles/modules/Recommendation.module.scss';
 
 const Recommendation = () => {
-  const ctx = useContext(ContextData);
-  const isSp = isBelowSm(ctx.width);
-  const IsUnderMd = isBelowMd(ctx.width);
+  const isSp = useMediaQuery(mediaQuery.sm);
+  const isMd = useMediaQuery(mediaQuery.mb);
+  const IsUnderMd = isSp || isMd;
 
   const [contentRef, inView] = useInView({
     rootMargin: '-150px 0px',

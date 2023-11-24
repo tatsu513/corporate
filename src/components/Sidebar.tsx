@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import ArrowLink from './common/ArrowLink';
 import Icon from './common/Icon';
 import TextLink from './common/TextLink';
+import useSanouOrUnou from 'hooks/useSanouOrUnou';
 import facebookIcon from 'images/facebook_white.svg';
 import instaIcon from 'images/instagram_white.svg';
 import { ContextData } from 'pages/BaseProvider';
@@ -15,10 +16,13 @@ interface Props {
 
 const Sidebar: React.FC<Props> = (props) => {
   const ctx = useContext(ContextData);
+  const pagename = useSanouOrUnou();
+  const isSanou = pagename === 'sanou';
+  const isUnou = pagename === 'unou';
   const router = useRouter();
 
   const onClickMenu = (target: string) => {
-    const basePage = ctx.isSanou ? 'sanou' : 'unou';
+    const basePage = isSanou ? 'sanou' : 'unou';
     const splitPath = router.pathname.split(/\//);
     const pathNum = splitPath.length;
     const isBasePage = basePage === splitPath[pathNum - 1];
@@ -40,7 +44,7 @@ const Sidebar: React.FC<Props> = (props) => {
   };
 
   const goOtherPage = () => {
-    const link = ctx.isSanou ? '/unou' : '/sanou';
+    const link = isSanou ? '/unou' : '/sanou';
     ctx.setContextDate((prevState) => ({
       ...prevState,
       target: '',
@@ -71,7 +75,7 @@ const Sidebar: React.FC<Props> = (props) => {
               onClick={() => onClickMenu('home')}
             />
           </li>
-          {ctx.isSanou && (
+          {isSanou && (
             <>
               <li className={styles.listItem}>
                 <TextLink
@@ -115,7 +119,7 @@ const Sidebar: React.FC<Props> = (props) => {
               </li>
             </>
           )}
-          {ctx.isUnou && (
+          {isUnou && (
             <>
               <li className={styles.listItem}>
                 <TextLink
@@ -170,9 +174,7 @@ const Sidebar: React.FC<Props> = (props) => {
             className={`${styles.listItem} ${styles.anotherPageLink}`}
           >
             <ArrowLink
-              text={
-                ctx.isSanou ? '右脳 - Art & Illust' : '左脳 -Design'
-              }
+              text={isSanou ? '右脳 - Art & Illust' : '左脳 -Design'}
               size={18}
               isWhite={true}
               onClick={goOtherPage}

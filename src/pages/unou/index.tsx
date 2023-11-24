@@ -17,8 +17,7 @@ import PortfolioList from '@/components/PortfolioList';
 import UnouProfile from '@/components/UnouProfile';
 import PrimaryButton from '@/components/buttons/PrimaryButton';
 import SectionTitle from '@/components/common/SectionTitle';
-import { WINDOW_WIDTH_TIPE } from 'constants/windowWidthType';
-import isMatchTargetDevice from 'logics/isMatchTargetDevice';
+import useMediaQuery, { mediaQuery } from 'hooks/useMediaQuery';
 import { MarkdownFileData } from 'models/';
 import { ContextData } from 'pages/BaseProvider';
 import styles from 'styles/modules/Unou.module.scss';
@@ -38,7 +37,7 @@ const Unou: React.FC<Props> = ({ articles, news }) => {
   const profileRef = createRef<HTMLDivElement>();
   const contactRef = createRef<HTMLDivElement>();
 
-  const isPc = isMatchTargetDevice(ctx.width, WINDOW_WIDTH_TIPE.lg);
+  const isPc = useMediaQuery(mediaQuery.lg);
 
   const scrollToTarget = (
     ref: RefObject<HTMLDivElement>,

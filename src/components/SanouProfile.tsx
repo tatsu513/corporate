@@ -3,16 +3,15 @@ import { useInView } from 'react-intersection-observer';
 import Icon from './common/Icon';
 import SectionTitle from './common/SectionTitle';
 import SectionTitleVertical from './common/SectionTitleVertical';
-import { WINDOW_WIDTH_TIPE } from 'constants/windowWidthType';
+import useMediaQuery, { mediaQuery } from 'hooks/useMediaQuery';
 import facebookIcon from 'images/facebook.svg';
 import instaIcon from 'images/instagram.svg';
-import isMatchTargetDevice from 'logics/isMatchTargetDevice';
 import { ContextData } from 'pages/BaseProvider';
 import styles from 'styles/modules/SanouProfile.module.scss';
 
 const SanouProfile = () => {
   const ctx = useContext(ContextData);
-  const isPc = isMatchTargetDevice(ctx.width, WINDOW_WIDTH_TIPE.lg);
+  const isPc = useMediaQuery(mediaQuery.lg);
 
   const [contentRef, inView] = useInView({
     rootMargin: '-150px 0px',

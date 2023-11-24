@@ -6,30 +6,34 @@ import Sidebar from './Sidebar';
 import ArrowLink from './common/ArrowLink';
 import Icon from './common/Icon';
 import TextLink from './common/TextLink';
-import { WINDOW_WIDTH_TIPE } from 'constants/windowWidthType';
+import useMediaQuery, { mediaQuery } from 'hooks/useMediaQuery';
+import useSanouOrUnou from 'hooks/useSanouOrUnou';
 import facebookIcon from 'images/facebook.svg';
 import instaIcon from 'images/instagram.svg';
 import logoBase from 'images/kikutokaku_logo.svg';
 import logoUnou from 'images/logo_unou.svg';
-import isMatchTargetDevice from 'logics/isMatchTargetDevice';
 import { ContextData } from 'pages/BaseProvider';
 import styles from 'styles/modules/Header.module.scss';
 
 const Header: React.FC = () => {
   const router = useRouter();
   const ctx = useContext(ContextData);
+  const pagename = useSanouOrUnou();
+  const isPc = useMediaQuery(mediaQuery.lg);
+
+  const isTop = pagename === '';
+  const isSanou = pagename === 'sanou';
+  const isUnou = pagename === 'unou';
 
   const [isOpenSidebar, setIsOpenSidebar] = useState(false);
   const [isShowMiniMenu, setIsShowMiniMenu] = useState(false);
 
-  const isTop = !ctx.isSanou && !ctx.isUnou;
-
   const goToHome = () => {
     if (isTop) {
       router.push('/');
-    } else if (ctx.isSanou) {
+    } else if (isSanou) {
       router.push('/sanou');
-    } else if (ctx.isUnou) {
+    } else if (isUnou) {
       router.push('/unou');
     }
   };
@@ -71,28 +75,28 @@ const Header: React.FC = () => {
   };
 
   useEffect(() => {
-    if ((ctx.width <= 1024 && ctx.isUnou) || ctx.isSanou) {
+    if ((ctx.width <= 1024 && isUnou) || isSanou) {
       setIsShowMiniMenu(true);
     } else {
       setIsShowMiniMenu(false);
     }
-  }, [ctx.width, ctx.isUnou, ctx.isSanou]);
+  }, [ctx.width, isUnou, isSanou]);
 
   return (
     <header
       className={`${styles.header} ${
-        ctx.isSanou && styles.headerSanou
+        isSanou && styles.headerSanou
       }`}
     >
       <div
         className={`${styles.headerWrap} ${
-          ctx.isSanou && styles.headerWrapSanou
+          isSanou && styles.headerWrapSanou
         }`}
       >
         <div className={styles.logo} onClick={goToHome}>
-          <Image src={ctx.isUnou ? logoUnou : logoBase} alt='ロゴ' />
+          <Image src={isUnou ? logoUnou : logoBase} alt='ロゴ' />
         </div>
-        {ctx.isUnou && isMatchTargetDevice(ctx.width, WINDOW_WIDTH_TIPE.lg) && (
+        {isUnou && isPc && (
           <div className={styles.controllers}>
             <TextLink
               text={'News'}

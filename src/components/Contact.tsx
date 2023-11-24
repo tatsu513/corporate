@@ -2,7 +2,6 @@ import {
   useState,
   useCallback,
   ChangeEvent,
-  useContext,
 } from 'react';
 import { useInView } from 'react-intersection-observer';
 import PrimaryButton from './buttons/PrimaryButton';
@@ -10,12 +9,12 @@ import Icon from './common/Icon';
 import SectionTitle from './common/SectionTitle';
 import TextArea from './forms/TextArea';
 import TextField from './forms/TextField';
+import useSanouOrUnou from 'hooks/useSanouOrUnou';
 import check from 'images/check-circle.svg';
-import { ContextData } from 'pages/BaseProvider';
 import styles from 'styles/modules/Contact.module.scss';
 
 const Contact: React.FC = () => {
-  const ctx = useContext(ContextData);
+  const pagename = useSanouOrUnou();
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
   const [title, setTitle] = useState('');
@@ -97,7 +96,7 @@ const Contact: React.FC = () => {
     <div className='sectionWrapper'>
       <div
         className={`${styles.contactWrap} ${
-          ctx.isSanou && styles.isSanou
+          pagename === 'sanou' && styles.isSanou
         } sectionWrapper`}
       >
         <SectionTitle title={'Contact'} side={'left'} />
