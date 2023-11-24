@@ -62,7 +62,7 @@
   @include mq(md) {
     display: flex;
     justify-content: space-between;
-    padding: 32px 0 0;
+    padding: 32px 0;
 
     &.minWidth {
       flex-direction: column;
