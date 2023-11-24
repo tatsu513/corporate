@@ -1,7 +1,7 @@
 @import '../animation';
-@import '../common.scss';
+@import '../common';
 @import '../breakpoint';
-@import '../_mixin.scss';
+@import '../mixin';
 
 .topImage {
   height: calc(100vh - 74px);
