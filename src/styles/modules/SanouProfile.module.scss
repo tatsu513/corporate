@@ -23,6 +23,10 @@
       padding: 16px;
     }
 
+    @include mq(md) {
+      padding: 32px;
+    }
+
     @include mq(lg) {
       display: flex;
       padding: 0 24px 40px 40px;
