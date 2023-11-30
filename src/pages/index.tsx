@@ -22,13 +22,13 @@ export const Home: React.FC = () => {
     if (isPc) {
       return (
         <div className={styles.leftImageBox}>
-          <Image src={leftImg} alt='右脳イラスト' />
+          <Image src={leftImg} alt='右脳イラストPC' />
         </div>
       );
     } else {
       return (
         <div className={styles.leftImageBox}>
-          <Image src={leftMdImg} alt='右脳イラスト' />
+          <Image src={leftMdImg} alt='右脳イラストSP' />
         </div>
       );
     }
@@ -37,13 +37,13 @@ export const Home: React.FC = () => {
     if (isPc) {
       return (
         <div className={styles.rightImageBox}>
-          <Image src={rightImg} alt='左脳イラスト' />
+          <Image src={rightImg} alt='左脳イラストPC' />
         </div>
       );
     } else {
       return (
         <div className={styles.rightImageBox}>
-          <Image src={rightMdImg} alt='左脳イラスト' />
+          <Image src={rightMdImg} alt='左脳イラストSP' />
         </div>
       );
     }
@@ -67,43 +67,42 @@ export const Home: React.FC = () => {
         />
       </Head>
       <div className={styles.contentBottom}>
-          <h1 className={styles.leadText}>
-            どちらを見ますか？
-            {windowWidth >= 600}
-          </h1>
-          <div className={styles.controllers}>
-            <button
-              className={styles.button}
-              onClick={() => router.push('/unou')}
-            >
-              <div className={styles.buttonText}>右脳</div>
-              <div className={styles.buttonSubText}>
-                （イラスト/アート）
-              </div>
-            </button>
-            <button
-              className={styles.button}
-              onClick={() => router.push('/sanou')}
-            >
-              <div className={styles.buttonText}>左脳</div>
-              <div className={styles.buttonSubText}>（デザイン）</div>
-            </button>
-          </div>
-          <LeftImage />
-          <div className={styles.mainImageBox}>
-            <div className={styles.mainImageTop}>
-              <Image src={mainImg} alt='右脳・左脳' />
-            </div>
-            <div className={styles.mainImageBottom}>
-              <Image
-                className={styles.ooooo}
-                src={mainImg2}
-                alt='右脳・左脳'
-              />
-            </div>
-          </div>
-          <RightImage />
+        <div className={styles.leadTextWrap}>
+          <h1 className={styles.leadText}>どちらを見ますか？</h1>
         </div>
+        <div className={styles.controllers}>
+          <button
+            className={styles.button}
+            onClick={() => router.push('/unou')}
+          >
+            <div className={styles.buttonText}>右脳</div>
+            <div className={styles.buttonSubText}>
+              （イラスト/アート）
+            </div>
+          </button>
+          <button
+            className={styles.button}
+            onClick={() => router.push('/sanou')}
+          >
+            <div className={styles.buttonText}>左脳</div>
+            <div className={styles.buttonSubText}>（デザイン）</div>
+          </button>
+        </div>
+        <LeftImage />
+        <div className={styles.mainImageBox}>
+          <div className={styles.mainImageTop}>
+            <Image src={mainImg} alt='右脳・左脳' />
+          </div>
+          <div className={styles.mainImageBottom}>
+            <Image
+              className={styles.ooooo}
+              src={mainImg2}
+              alt='右脳・左脳'
+            />
+          </div>
+        </div>
+        <RightImage />
+      </div>
     </div>
   );
 };
