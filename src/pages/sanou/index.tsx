@@ -137,11 +137,13 @@ const Sanou: React.FC<Props> = ({ articles }) => {
       </Head>
       <div className={styles.topImage} ref={homeRef}>
         <h1 className={styles.topCopy}>
-          <span className={styles.topText1}>よく</span>
-          <span className={styles.topText2}>聴き</span>
-          <br />
-          <span className={styles.topText3}>よく</span>
-          <span className={styles.topText4}>描く</span>
+          <div className={styles.textWrap}>
+            <span className={styles.topText1}>よく</span>
+            <span className={styles.topText2}>聴き</span>
+            <br />
+            <span className={styles.topText3}>よく</span>
+            <span className={styles.topText4}>描く</span>
+          </div>
           <div className={styles.topImageBox}>
             {isSp ? (
               <Image src={topImageSp} alt={'トップイメージ'} />
