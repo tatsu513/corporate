@@ -26,12 +26,12 @@
   background-position: center;
 
   @include mq(sm) {
-    height: 90vh;
+    height: 90dvh;
   }
 
   @include mq(md) {
     height: auto;
-    height: 70vh;
+    height: 70dvh;
   }
 }
 
